@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/c/</loc>
+    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/b/</loc>
+    <lastmod>2017-10-17T00:53:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/a/</loc>
+    <lastmod>2017-10-17T00:52:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/a/</loc>
+    <lastmod>2017-10-17T00:52:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/b/</loc>
+    <lastmod>2017-10-17T00:53:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/blog/</loc>
+    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/c/</loc>
+    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/hoge/</loc>
+    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/</loc>
+    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/</loc>
+    <lastmod>2017-10-17T00:52:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/</loc>
+    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
