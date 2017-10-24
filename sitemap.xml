@@ -2,42 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://foresukecom.github.io/post/c/</loc>
-    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <loc>http://foresukecom.github.io/post/katakana/</loc>
+    <lastmod>2017-10-21T12:21:09+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/post/b/</loc>
-    <lastmod>2017-10-17T00:53:01+09:00</lastmod>
+    <loc>http://foresukecom.github.io/post/restart/</loc>
+    <lastmod>2017-10-17T07:55:56+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/post/a/</loc>
-    <lastmod>2017-10-17T00:52:57+09:00</lastmod>
+    <loc>http://foresukecom.github.io/post/friday13th/</loc>
+    <lastmod>2017-01-13T08:47:12+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/tags/a/</loc>
-    <lastmod>2017-10-17T00:52:57+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://foresukecom.github.io/post/pocket_mail/</loc>
+    <lastmod>2016-12-22T07:50:59+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/tags/b/</loc>
-    <lastmod>2017-10-17T00:53:01+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://foresukecom.github.io/post/recursion/</loc>
+    <lastmod>2016-11-30T22:21:13+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/tags/blog/</loc>
-    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://foresukecom.github.io/post/octal/</loc>
+    <lastmod>2016-11-30T21:26:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/tags/c/</loc>
-    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://foresukecom.github.io/post/struct_slice/</loc>
+    <lastmod>2016-11-30T21:24:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/about/</loc>
+    <lastmod>2016-11-29T23:25:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/amazon/</loc>
+    <lastmod>2016-11-28T12:17:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/20171017_cloudshell/</loc>
   </url>
   
   <url>
@@ -46,26 +56,38 @@
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/tags/hoge/</loc>
-    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <loc>http://foresukecom.github.io/tags/golang/</loc>
+    <lastmod>2017-01-13T08:47:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/pocket/</loc>
+    <lastmod>2016-12-22T07:50:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <lastmod>2017-10-21T12:21:09+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/tags/</loc>
-    <lastmod>2017-10-17T00:52:57+09:00</lastmod>
+    <lastmod>2017-01-13T08:47:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</loc>
+    <lastmod>2017-10-21T12:21:09+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2017-10-17T00:53:05+09:00</lastmod>
+    <lastmod>2017-10-21T12:21:09+09:00</lastmod>
     <priority>0</priority>
   </url>
   

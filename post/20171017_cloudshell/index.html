@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | ふぉれすけ広場
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foresukecom.github.io/post/20171017_cloudshell/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
+        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>cd blo  &mdash;
+title: &ldquo;CloudShellでのブログ執筆環境&rdquo;
+slug: &ldquo;ClougShell_hugo&rdquo;
+tags: [&ldquo;GCP&rdquo;, &ldquo;ClougShell&rdquo;]
+date: 2017-10-17T22:08:58+09:00
+draft: false</p>
+
+<h2 id="author-foresuke">author: &ldquo;foresuke&rdquo;</h2>
+
+<h2 id="ブログ環境">ブログ環境</h2>
+
+<p>こんにちは、ブログを再開した<a href="https://twitter.com/foresukecom">@foresuke</a>です。<br />
+実は諸事情によりメインのPCをChoromeBookを使っています。ChoromeBookはブラウザと、Androidアプリしか使えない端末です。なので基本的にはネットワークに接続していることが前提となっており、スタンドアローンではまともに使うことができません。</p>
+
+<p>本ブログは、hugoと呼ばれる静的サイトジェネレータで構築しています。静的サイトジェネレータについては以下のサイトに詳しく書かれているので、ここでは省略します。<br />
+<a href="https://webdesign-trends.net/entry/2076">脱WordPress！静的サイトの特徴やメリットなどのまとめ</a></p>
+
+<p>静的サイトジェネレータの運用方法としては、ローカル上でhtml/cssファイルを生成し、webサーバにアップロードして公開する、といった流れを繰返すことになります。
+僕がChromeBookを使っており、ローカル上でhtml/cssファイルを生成できないので、<a href="https://cloud.google.com/shell/">GoogleClougShell</a>をローカル環境として使うことにしました。</p>
+
+<p>CloudShellはDebianベースのGoogleComputeEngineに開発ツールがインストールされた状態で提供される仮想マシンで、ブラウザから手軽にアクセスできる環境です。がっつり開発するには向きませんが、手軽な開発ツールとして重宝しています。</p>
+
+<p>Debianベースということもあるので、勉強がてらvimを使おうと四苦八苦していましたが、CloudShellにクラウド版エディタがベータとして提供されたので使ってみました。
+クラウド版エディタでmarkdownファイルを編集したところ、画面の右側にプレビューがリアルタイムで表示されました。
+これはなかなか便利で、ブログ記事を書くのはクラウド版エディタで充分な感じです。</p>
+
+<p>まだ改善の余地はありますが、いい感じにブログ執筆環境ができたので、細々と書いていきます。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+    
+      <span class="next"><a href="http://foresukecom.github.io/post/amazon/" rel="next">Amazonアソシエイト 参加表明文</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.JPG" width="64" height="64"><br>
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-89386946-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

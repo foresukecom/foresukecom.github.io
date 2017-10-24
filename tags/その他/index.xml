@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>その他 on ふぉれすけ広場</title>
+    <link>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
+    <description>Recent content in その他 on ふぉれすけ広場</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 21 Oct 2017 12:21:09 +0900</lastBuildDate>
+    
+	<atom:link href="http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>カタカナ表記について</title>
+      <link>http://foresukecom.github.io/post/katakana/</link>
+      <pubDate>Sat, 21 Oct 2017 12:21:09 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/katakana/</guid>
+      <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くときには長音符は省略した方がいい」と教わってきました。
+そのため「コンピュータ」「ルータ」のように末尾の長音符を省略して書いていました。
+長音符を省略する理由については覚えていないのですが、おそらくJIS規格に準拠しようとしたのでしょう。
+しかし、MicrosoftもWindows7から「コンピューター」「ディレクトリー」のように末尾に長音符をつけるようにしました。
+最近は製品やメディアによって、長音符の有無がバラバラになっている状況になっています。
+表記がブレると見栄えも悪くなり、検索も難しくなるので、少なくとも自分が自由に書く文章については、意識して表記を統一したいと考えています。 とりあえず、使用者が多いWindows製品を真似て、なるべく長音符を付ける方向で、テクニカルコミュニケーター協会が策定しているガイドラインに準拠していきます。
+外来語（カタカナ）表記ガイドライン第3版
+ガイドラインに様々な単語に対するカタカナ表記が記載されているので、これを元にしておけば統一感のでる文章が書けるようになります。
+これまで、長音符を省略して書いていたので、慣れるまでは混ざってしまうかもしれませんが、徐々に慣れていきます。
+ガイドラインに沿って書かれているかを判定してくれるツールがあると助かりますね。
+蛇足 ちなみにガイドラインに沿った場合、profileはプロファイルと表記するようです。 ずっとプロフィールだと思ってました。
+バトルロイヤルとバトルロワイヤルもごっちゃになっていましたが、バトルロイヤルはプロレスなどで全員敵の状態で戦うルールのこと(CoDでいうFree For Allですね)で、バトルロワイヤルは中学生が殺し合いをする小説、映画のタイトルということでした。
+最近人気のPLAYERUNKNOWN&amp;rsquo;S BATTLEGROUNDS(通称:ドン勝)がバトルロワイヤルに影響を受けた、と書かれた記事が多くあるので混乱してしまいました。
+この辺は、ガイドラインにも記載されていないので、それぞれの意味をググって正しい単語を選択しなくてはいけませんね。</description>
+    </item>
+    
+    <item>
+      <title>ブログ再開 -2017秋-</title>
+      <link>http://foresukecom.github.io/post/restart/</link>
+      <pubDate>Tue, 17 Oct 2017 07:55:56 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/restart/</guid>
+      <description>ご挨拶 お久しぶりです、foresukeです。
+転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開していきます。
+ブログに慣れるまでは、質より量を優先してどんどん書いていきたいです。</description>
+    </item>
+    
+    <item>
+      <title>ご挨拶</title>
+      <link>http://foresukecom.github.io/post/about/</link>
+      <pubDate>Tue, 29 Nov 2016 23:25:30 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/about/</guid>
+      <description>ご挨拶 はじめまして、foresukeです。
+これはIT系の技術ブログになる予定です。サーバサイド、フロントエンド、インフラと広く浅く、学習した内容を公開していきます。
+記載している内容への質問や指摘については、Twitterからお願いします。</description>
+    </item>
+    
+    <item>
+      <title>Amazonアソシエイト 参加表明文</title>
+      <link>http://foresukecom.github.io/post/amazon/</link>
+      <pubDate>Mon, 28 Nov 2016 12:17:44 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/amazon/</guid>
+      <description>当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。</description>
+    </item>
+    
+  </channel>
+</rss>
