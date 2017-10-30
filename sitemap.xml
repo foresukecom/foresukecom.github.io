@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://foresukecom.github.io/post/googlehomemini/</loc>
-    <lastmod>2017-10-26T05:56:33+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://foresukecom.github.io/post/english/</loc>
     <lastmod>2017-10-24T05:50:21+09:00</lastmod>
   </url>
@@ -56,6 +51,10 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/post/20171027_googlehome/</loc>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -67,12 +66,6 @@
   </url>
   
   <url>
-    <loc>http://foresukecom.github.io/tags/google/</loc>
-    <lastmod>2017-10-26T05:56:33+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://foresukecom.github.io/tags/pocket/</loc>
     <lastmod>2016-12-22T07:50:59+09:00</lastmod>
     <priority>0</priority>
@@ -80,7 +73,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2017-10-26T05:56:33+09:00</lastmod>
+    <lastmod>2017-10-24T05:50:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -98,7 +91,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2017-10-26T05:56:33+09:00</lastmod>
+    <lastmod>2017-10-24T05:50:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
