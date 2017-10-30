@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://foresukecom.github.io/post/comp/</loc>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/english/</loc>
     <lastmod>2017-10-24T05:50:21+09:00</lastmod>
   </url>
@@ -60,8 +65,20 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/food/</loc>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/tags/golang/</loc>
     <lastmod>2017-01-13T08:47:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/other/</loc>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -73,13 +90,13 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2017-10-24T05:50:21+09:00</lastmod>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/tags/</loc>
-    <lastmod>2017-01-13T08:47:12+09:00</lastmod>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -91,7 +108,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2017-10-24T05:50:21+09:00</lastmod>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
