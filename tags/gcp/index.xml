@@ -6,10 +6,23 @@
     <description>Recent content in Gcp on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 05 Nov 2017 20:12:53 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 24 Nov 2017 05:20:15 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GoogleComputeEngineとのファイルやりとり</title>
+      <link>http://foresukecom.github.io/post/gcp_scp/</link>
+      <pubDate>Fri, 24 Nov 2017 05:20:15 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/gcp_scp/</guid>
+      <description>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。
+gcloud compute scpでGCEとのファイルのアップロード/ダウンロードが行えます。 gcloud compute copy-filesでもファイルコピーが行えますが、非推奨となっているのでgcloud compute scpコマンドを使うのがいいようです。
+ローカルのカレントディレクトリにあるファイルを、GCEの/tmp配下にアップロードするには以下のコマンドで行えます。
+gcloud compute scp ./gokuhi.txt gce_server:/tmp/  逆に、GCEの/tmp配下のファイルを、ローカルのカレントディレクトリにダウンロードするには以下のコマンドです。
+gcloud compute scp gce_server:/tmp/gokuhi.txt ./  公式ドキュメントにも記載されている通り、gcloud compute scpにもいろいろとオプションが用意されていますが、単純なファイルアップロード/ダウンロードであればオプションを付けなくても簡単に使うことができます</description>
+    </item>
     
     <item>
       <title>DockerコンテナでDjango</title>
