@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    GoogleComputeEngineとのファイルやりとり | ふぉれすけ広場
+    Java | ふぉれすけ広場
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://foresukecom.github.io/post/gcp_scp/"/>
+  <link rel="canonical" href="http://foresukecom.github.io/tags/java/"/>
 
   
   <link rel="stylesheet" href="/css/sanitize.css">
@@ -58,50 +58,20 @@
 
 
   
-  <main id="single" role="main">
-    <div class="article-header">
-      <h1>GoogleComputeEngineとのファイルやりとり</h1>
+  <main id="list" role="main">
+    <div class="article-header light-gray"><h1>#Java</h1></div>
+    
+    <div class="summary">
+      <h2><a href="http://foresukecom.github.io/post/resas_java/">JavaからRESAS APIを使ってみましたよ </a></h2>
       <div class="meta">
-        Nov 24, 2017 &nbsp;
+        Feb 3, 2018 &nbsp;
         
-          #<a href="/tags/gcp">GCP</a>&nbsp;
+          #<a href="/tags/java">java</a>&nbsp;
         
       </div>
     </div>
-    <article>
-      <p>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。<br />
-<code>gcloud compute scp</code>でGCEとのファイルのアップロード/ダウンロードが行えます。
-<code>gcloud compute copy-files</code>でもファイルコピーが行えますが、非推奨となっているので<code>gcloud compute scp</code>コマンドを使うのがいいようです。</p>
-
-<p>ローカルのカレントディレクトリにあるファイルを、GCEの<code>/tmp</code>配下にアップロードするには以下のコマンドで行えます。</p>
-
-<pre><code>gcloud compute scp ./gokuhi.txt gce_server:/tmp/
-</code></pre>
-
-<p>逆に、GCEの<code>/tmp</code>配下のファイルを、ローカルのカレントディレクトリにダウンロードするには以下のコマンドです。</p>
-
-<pre><code>gcloud compute scp gce_server:/tmp/gokuhi.txt ./
-</code></pre>
-
-<p><a href="https://cloud.google.com/sdk/gcloud/reference/compute/scp">公式ドキュメント</a>にも記載されている通り、<code>gcloud compute scp</code>にもいろいろとオプションが用意されていますが、単純なファイルアップロード/ダウンロードであればオプションを付けなくても簡単に使うことができます</p>
-
-      
-      
-      
-    </article>
     
-
-
   </main>
-  
-  <nav class="pagination-single">
-    
-      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/gcp_docker_django/" rel="prev">DockerコンテナでDjango</a></span>
-    
-    
-      <span class="next"><a href="http://foresukecom.github.io/post/resas_java/" rel="next">JavaからRESAS APIを使ってみましたよ</a> &rarr;</span>
-    
-  </nav>
 
 
   

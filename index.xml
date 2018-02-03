@@ -6,10 +6,30 @@
     <description>Recent content on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 24 Nov 2017 05:20:15 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 13:33:02 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaからRESAS APIを使ってみましたよ</title>
+      <link>http://foresukecom.github.io/post/resas_java/</link>
+      <pubDate>Sat, 03 Feb 2018 13:33:02 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/resas_java/</guid>
+      <description>お久しぶりです。
+巷で話題のビッグデータを使って何かやってみようかと思い立ったので、RESASから情報を取得してみます。
+RESASとは地域の活性を目的とし、市町村名一覧や人口構成、観光資源などの多くの情報を公開しているWebサイトです。
+APIも公開されているので、かんたんに情報を取得することができます。
+ 地域経済分析システム（RESAS：リーサス）は、地方創生の様々な取り組みを情報面から支援するために、経済産業省と内閣官房（まち・ひと・しごと創生本部事務局）が提供しています。
+自治体職員の方や、地域の活性化に関心を持つ様々な分野の方によって、効果的な施策の立案・実行・検証のためなどに広く利用されています。
+引用元: RESAS 地域経済分析システム
+ とりあえず今回は勉強がてら、Javaを使って都道府県の一覧を取得してみます。
+※RESASのAPIを使うには利用登録をしてAPIキーを発行してもらう必要があります。利用登録は公式サイトから行えます。
+RESAS-API利用登録
+ 以下のように結果が返ってきます。 JSON形式なので簡単に加工が出来そうです。
+{ &amp;quot;message&amp;quot;: null, &amp;quot;result&amp;quot;: [ { &amp;quot;prefCode&amp;quot;: 1, &amp;quot;prefName&amp;quot;: &amp;quot;北海道&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 2, &amp;quot;prefName&amp;quot;: &amp;quot;青森県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 3, &amp;quot;prefName&amp;quot;: &amp;quot;岩手県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 4, &amp;quot;prefName&amp;quot;: &amp;quot;宮城県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 5, &amp;quot;prefName&amp;quot;: &amp;quot;秋田県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 6, &amp;quot;prefName&amp;quot;: &amp;quot;山形県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 7, &amp;quot;prefName&amp;quot;: &amp;quot;福島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 8, &amp;quot;prefName&amp;quot;: &amp;quot;茨城県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 9, &amp;quot;prefName&amp;quot;: &amp;quot;栃木県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 10, &amp;quot;prefName&amp;quot;: &amp;quot;群馬県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 11, &amp;quot;prefName&amp;quot;: &amp;quot;埼玉県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 12, &amp;quot;prefName&amp;quot;: &amp;quot;千葉県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 13, &amp;quot;prefName&amp;quot;: &amp;quot;東京都&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 14, &amp;quot;prefName&amp;quot;: &amp;quot;神奈川県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 15, &amp;quot;prefName&amp;quot;: &amp;quot;新潟県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 16, &amp;quot;prefName&amp;quot;: &amp;quot;富山県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 17, &amp;quot;prefName&amp;quot;: &amp;quot;石川県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 18, &amp;quot;prefName&amp;quot;: &amp;quot;福井県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 19, &amp;quot;prefName&amp;quot;: &amp;quot;山梨県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 20, &amp;quot;prefName&amp;quot;: &amp;quot;長野県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 21, &amp;quot;prefName&amp;quot;: &amp;quot;岐阜県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 22, &amp;quot;prefName&amp;quot;: &amp;quot;静岡県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 23, &amp;quot;prefName&amp;quot;: &amp;quot;愛知県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 24, &amp;quot;prefName&amp;quot;: &amp;quot;三重県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 25, &amp;quot;prefName&amp;quot;: &amp;quot;滋賀県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 26, &amp;quot;prefName&amp;quot;: &amp;quot;京都府&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 27, &amp;quot;prefName&amp;quot;: &amp;quot;大阪府&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 28, &amp;quot;prefName&amp;quot;: &amp;quot;兵庫県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 29, &amp;quot;prefName&amp;quot;: &amp;quot;奈良県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 30, &amp;quot;prefName&amp;quot;: &amp;quot;和歌山県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 31, &amp;quot;prefName&amp;quot;: &amp;quot;鳥取県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 32, &amp;quot;prefName&amp;quot;: &amp;quot;島根県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 33, &amp;quot;prefName&amp;quot;: &amp;quot;岡山県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 34, &amp;quot;prefName&amp;quot;: &amp;quot;広島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 35, &amp;quot;prefName&amp;quot;: &amp;quot;山口県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 36, &amp;quot;prefName&amp;quot;: &amp;quot;徳島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 37, &amp;quot;prefName&amp;quot;: &amp;quot;香川県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 38, &amp;quot;prefName&amp;quot;: &amp;quot;愛媛県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 39, &amp;quot;prefName&amp;quot;: &amp;quot;高知県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 40, &amp;quot;prefName&amp;quot;: &amp;quot;福岡県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 41, &amp;quot;prefName&amp;quot;: &amp;quot;佐賀県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 42, &amp;quot;prefName&amp;quot;: &amp;quot;長崎県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 43, &amp;quot;prefName&amp;quot;: &amp;quot;熊本県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 44, &amp;quot;prefName&amp;quot;: &amp;quot;大分県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 45, &amp;quot;prefName&amp;quot;: &amp;quot;宮崎県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 46, &amp;quot;prefName&amp;quot;: &amp;quot;鹿児島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 47, &amp;quot;prefName&amp;quot;: &amp;quot;沖縄県&amp;quot; } ] }  備考 モンハンワールドが面白すぎて…進捗ダメです。</description>
+    </item>
     
     <item>
       <title>GoogleComputeEngineとのファイルやりとり</title>
