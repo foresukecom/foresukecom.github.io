@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/golang_json_marshal/</loc>
+    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/resas_java/</loc>
     <lastmod>2018-02-03T13:33:02+09:00</lastmod>
   </url>
@@ -111,13 +116,19 @@
   
   <url>
     <loc>http://foresukecom.github.io/tags/golang/</loc>
-    <lastmod>2017-01-13T08:47:12+09:00</lastmod>
+    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/tags/java/</loc>
     <lastmod>2018-02-03T13:33:02+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/json/</loc>
+    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -135,7 +146,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2018-02-03T13:33:02+09:00</lastmod>
+    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -153,7 +164,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2018-02-03T13:33:02+09:00</lastmod>
+    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
