@@ -6,10 +6,27 @@
     <description>Recent content in Golang on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 11 May 2018 05:19:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 13 Aug 2018 20:18:12 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GAE上でGolangを動かしてみましたよ</title>
+      <link>http://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
+      <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
+      <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
+作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
+環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
+以下のようにバージョンが表示されればOKです。
+$ goapp version go version 1.9.4 (appengine-1.9.74) darwin/amd64  ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。
+構成説明 ディレクトリ構成は以下の通りです。
+├── app.yaml ├── hello.go └── static ├── js │ └── main.js ├── css │ └── main.css └── index.html  この中でGAE特有のファイルはapp.yamlになります。
+app.yamlリファレンスに各パラメータの説明が載ってますが、最低限のパラメータだけ書いておきます。
+runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新のバージョンを使用する場合はgo1を指定 handlers: #リクエストと実行する処理をURLパターン毎に指定 - url: / static_files: static/index.html upload: static/index.html - url: /js static_dir: static/js - url: /css static_dir: static/css - url: /.</description>
+    </item>
     
     <item>
       <title>Go言語でJSONを作成したときのイージーミス</title>

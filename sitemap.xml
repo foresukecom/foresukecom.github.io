@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/google_app_engine_go_ajax/</loc>
+    <lastmod>2018-08-13T20:18:12+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/english_comic/</loc>
     <lastmod>2018-05-20T22:58:10+09:00</lastmod>
   </url>
@@ -126,6 +131,12 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/gae/</loc>
+    <lastmod>2018-08-13T20:18:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/tags/gcp/</loc>
     <lastmod>2017-11-24T05:20:15+09:00</lastmod>
     <priority>0</priority>
@@ -133,7 +144,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/tags/golang/</loc>
-    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
+    <lastmod>2018-08-13T20:18:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -163,7 +174,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2018-05-20T22:58:10+09:00</lastmod>
+    <lastmod>2018-08-13T20:18:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -181,7 +192,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2018-05-20T22:58:10+09:00</lastmod>
+    <lastmod>2018-08-13T20:18:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
