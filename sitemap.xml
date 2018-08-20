@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/vue_array/</loc>
+    <lastmod>2018-08-21T07:05:51+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/google_app_engine_go_ajax/</loc>
     <lastmod>2018-08-13T20:18:12+09:00</lastmod>
   </url>
@@ -174,13 +179,19 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2018-08-13T20:18:12+09:00</lastmod>
+    <lastmod>2018-08-21T07:05:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/tags/</loc>
     <lastmod>2018-05-20T22:58:10+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/vue.js/</loc>
+    <lastmod>2018-08-21T07:05:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -192,7 +203,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2018-08-13T20:18:12+09:00</lastmod>
+    <lastmod>2018-08-21T07:05:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   

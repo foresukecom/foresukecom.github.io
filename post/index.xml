@@ -6,10 +6,36 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 13 Aug 2018 20:18:12 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 21 Aug 2018 07:05:51 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue.jsで配列を扱ったお話</title>
+      <link>http://foresukecom.github.io/post/vue_array/</link>
+      <pubDate>Tue, 21 Aug 2018 07:05:51 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/vue_array/</guid>
+      <description>はじめに Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。
+本文 ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。
+See the Pen vue_array_ng by foresukecom (@foresukecom) on CodePen.
+ …このサンプルだと、ボタンを押すたびに配列の中身は更新されるのですが、画面上は変化がありません。
+以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。 See the Pen vue_array_ok by foresukecom (@foresukecom) on CodePen.
+
+具体的には以下のように、要素番号を指定して配列の中身を変更しても画面上の値は変化しませんが、Vue.jsに用意されているメソッドを使えは配列の中身に応じて画面上の値も変化します。
+/*失敗例*/ this.num_list[i] = this.num_list[i] * 2; /*成功例*/ this.num_list.splice(i, 1, this.num_list[i] * 2)  公式ドキュメントにも注意事項としてちゃんと書かれていました。
+JavaScriptの制限じゃ仕方ないですね(´・ω・`)
+ JavaScript の制限のため、Vue は配列で以下の変更を検出することはできません:
+1.インデックスでアイテムを直接設定するとき。例: vm.items[indexOfItem] = newValue
+2.配列の長さを変更するとき。例: vm.items.length = newLength
+ まとめ 公式ドキュメントを読みましょう。
+内容とはまったく関係ないですが、記事の中にソースコードを埋め込みたかったのでCODEPENを初めて使ってみました。 ソースコードと実行内容をまとめて埋め込めるのは便利ですね。
+その他 最近はRocket Leagueにハマっています。
+車でサッカーをするという天才的発想。 FPSほどの精密な操作は求められないので、お酒を飲みながら遊ぶにはピッタリです。
+
+ワイルドスピードやバットマンに登場する車が使えるようになるDLCも多数用意されているので、金に物を言わせて自分の気に入った車で走り回ることもできます。</description>
+    </item>
     
     <item>
       <title>GAE上でGolangを動かしてみましたよ</title>
