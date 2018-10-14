@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on ふぉれすけ広場</title>
+    <link>http://foresukecom.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on ふぉれすけ広場</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 14 Oct 2018 10:46:30 +0900</lastBuildDate>
+    
+	<atom:link href="http://foresukecom.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScriptでクロージャ</title>
+      <link>http://foresukecom.github.io/post/javascript_closure/</link>
+      <pubDate>Sun, 14 Oct 2018 10:46:30 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/javascript_closure/</guid>
+      <description> はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。
+クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。 MDN web docs
+サンプル 1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。 連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。
+実際には結果を操作してるのでランダムとは言えなくなりましたが ^^;
+まずはクロージャを使わない例です。
+前回の結果を保持する変数prevNumをグローバル関数として定義しているので、関数dice()以外からもアクセスが出来てしまいます。
+See the Pen random_no_closure by foresukecom (@foresukecom) on CodePen.
+
+次がクロージャを使った例です。
+こちらではprevNumをdice()内で定義しているので、dice()の外ではprevNumが使えなくなりました。 See the Pen random_closure by foresukecom (@foresukecom) on CodePen.
+
+感想 クロージャを使わなくても同じ機能は実装できますが、グローバル変数の使用を抑えられるのは嬉しいところです。 今回のサンプルのような短いプログラムではありがたみも薄くなりますが、
+前回と違う乱数を生成する箇所はfor、ifを使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。
+もっといい感じの計算式をご存知の方がいたら教えてください。
+その他 最近、地元の静岡が舞台になっているローカル女子の遠吠えの4巻が発売されました。 作者の瀬戸口みづき先生も静岡出身ということで、思わず膝を連打するネタが多いです。
+ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。
+あー、亀まんじゅう食べたい。げんこつハンバーグ食べたい。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

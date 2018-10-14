@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    JavaScriptでクロージャ | ふぉれすけ広場
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foresukecom.github.io/post/javascript_closure/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
+        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>JavaScriptでクロージャ</h1>
+      <div class="meta">
+        Oct 14, 2018 &nbsp;
+        
+          #<a href="/tags/javascript">JavaScript</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。</p>
+
+<p>クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。
+<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Closures">MDN web docs</a></p>
+
+<h2 id="サンプル">サンプル</h2>
+
+<p>1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。
+連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。<br />
+実際には結果を操作してるのでランダムとは言えなくなりましたが ^^;</p>
+
+<p>まずはクロージャを使わない例です。<br />
+前回の結果を保持する変数<code>prevNum</code>をグローバル関数として定義しているので、関数<code>dice()</code>以外からもアクセスが出来てしまいます。</p>
+
+<p><p data-height="265" data-theme-id="0" data-slug-hash="PyKvOo" data-default-tab="js,result" data-user="foresukecom" data-pen-title="random_no_closure" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/PyKvOo/">random_no_closure</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>次がクロージャを使った例です。<br />
+こちらでは<code>prevNum</code>を<code>dice()</code>内で定義しているので、<code>dice()</code>の外では<code>prevNum</code>が使えなくなりました。
+<p data-height="265" data-theme-id="0" data-slug-hash="PyKdBX" data-default-tab="js,result" data-user="foresukecom" data-pen-title="random_closure" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/PyKdBX/">random_closure</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h2 id="感想">感想</h2>
+
+<p>クロージャを使わなくても同じ機能は実装できますが、グローバル変数の使用を抑えられるのは嬉しいところです。
+今回のサンプルのような短いプログラムではありがたみも薄くなりますが、</p>
+
+<p>前回と違う乱数を生成する箇所は<code>for</code>、<code>if</code>を使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。<br />
+もっといい感じの計算式をご存知の方がいたら教えてください。</p>
+
+<h2 id="その他">その他</h2>
+
+<p>最近、地元の静岡が舞台になっている<a href="https://comic.pixiv.net/works/5103">ローカル女子の遠吠え</a>の4巻が発売されました。
+作者の瀬戸口みづき先生も静岡出身ということで、思わず膝を連打するネタが多いです。</p>
+
+<p>ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。<br />
+あー、亀まんじゅう食べたい。げんこつハンバーグ食べたい。</p>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07HRKLVTP&linkId=30a12735485017e3a99f32035556c114"></iframe>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/vue_array/" rel="prev">Vue.jsで配列を扱ったお話</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.JPG" width="64" height="64"><br>
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-89386946-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
