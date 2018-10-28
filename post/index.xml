@@ -6,10 +6,35 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Oct 2018 10:46:30 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 28 Oct 2018 14:27:46 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ReactNativeを触ったお話</title>
+      <link>http://foresukecom.github.io/post/reactnativefetch/</link>
+      <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/reactnativefetch/</guid>
+      <description>はじめに お仕事でReactNativeを使うことになったので、触ってみました。
+導入手順について本記事内では説明をしないので、ReactNativeの公式サイトのGetting Startedをご参照ください。
+ちなみに、ReactNativeのバージョンは0.57.3です。
+サンプル 今回はRESAS-APIから都道府県一覧を取得してリスト表示してみます。
+react-native init projectNameを実行直後のディレクトリ構成は以下の通りになっています。
+projectName ├── android ├── ios ├── node_modules ├── App.js ├── app.json ├── index.js ├── package-lock.json └── package.json  今回はApp.jsのみを以下のように変更を加えていきます。
+ RESAS-APIを使うには事前に公式サイトから利用登録する必要があります。
+X-API-KEYはRESAS-API登録時に発行されるキーを指定して下さい。
+感想 ReactNativeは活発に開発が行われていますが、毎週のように最新バージョンが更新されているため、開発環境の構築が面倒ですね。
+今回は使わかなかったから影響ないですが、ReactNativeの0.57.3ではButtonコンポーネントを使うとAndroidシミュレータで以下のエラーが発生します。
+https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-to-my-react-native-app
+もう少し安定した(悪く言えば枯れた)技術を使った方が開発も運用も楽なんですが、最近はそんなことを言っていたら取り残されちゃうから、日々勉強するしかないですね。
+でも…せめてLTSがあるといいな…
+開発環境の構築が終われば、シミュレータ上でポンポンとテキストなりボタンなりを配置できるから面白いです。
+その他 最近、フラジャイルを読み返しました。
+医療漫画はいいですね。Dr.コトー診療所を読んだ時もそうですが、泣いてしまいます。特に3巻、4巻のアミノ製薬の話が好きです、火箱ちゃん可愛い。
+フラジャイルはドラマ化しているみたいなので、そのうち観てみたいです。</description>
+    </item>
     
     <item>
       <title>JavaScriptでクロージャを触ったお話</title>
