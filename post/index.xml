@@ -6,10 +6,56 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 28 Oct 2018 14:27:46 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 30 Oct 2018 00:04:23 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>祝日のカウントダウンタイマー</title>
+      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
+      <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
+      <description> はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
+https://shukujitsu.info
+処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
+GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。
+使ってる技術 GoogleAppEngine インフラとしてGAEを使いました。
+GAEに対応していない関数とかもあるので、ドキュメントを見ながら覚えていくしかなさそうです。
+たとえば、GolangでHTTPのリクエストを行うときにhttp.Get()を使いますが、GAEでは対応していないのでurlfetch.Clientを使う必要があります。 他にも、Javaでは時刻を扱うjava.time.LocalDateというライブラリがあるのですが、同様にGAEでは使うことができません。
+GAE使うなら言語に依らず注意する必要があります。
+Golang ネット上に公開されているCSVファイルを読み込んで、Cloud Storageにアップロードする部分をやってます。
+もともと、Golangの勉強を兼ねたプロジェクトだったんですが、あまりGolangを使いませんでした。
+Vue.js JavaScriptで変数を書き換えると、いい感じにHTMLで表示される内容も変更されます。
+まだVue.jsを使いこなせてはいませんが、低い学習コストでさっくり使うことができます。
+Scrollify マウススクロールでいい感じに画面を切り替える処理はScrollifyを使いました。
+これを使うだけで今風な感じがでます。
+今後の課題 データ保管場所 情報をCloudStorageに保存してるので、NoSQLを触ってみようかと考え中です。
+日付と祝日名を格納するだけなのでRDBでも問題ないんですけど…
+監視、ログ なんらかのエラーが起きた場合はソーリー画面を出し、StackDriver上にログを出すようにしていますが、能動的にチェックしないとエラーに気が付きません。
+エラーを検知したら通知する仕組みがほしいですね、LINEかSlackに飛ばすのが今風でしょうか…
+パッケージ管理 使用しているライブラリのバージョン管理とかをしていないので、一般的に使われている(らしい)、depを使ってみようかと考え中。
+次バージョンのGolangではmodulesという新たなパッケージ管理機能が正式リリース予定なので、最終的にはそっちに映る感じでしょうか。
+リファクタリング ディレクトリ階層がぐちゃぐちゃで、1つ1つのファイルも肥大化しているのでキレイにしたいです。
+ある程度キレイになったらリポジトリを公開するのもアリですね。
+CIツール導入 現在、dev_appserver.pyでローカル環境を立ち上げて、動作チェックが済んだらgcloud app deployで本番環境を更新する、という雑な運用をしています。
+雑すぎるので、CircleCIとかを使って、PR投げたらステージング環境でテストが実行されてー、というのを導入したいです。
+AltJS 「素のJavaScriptを書くのがツラい」という話を聞くことが増えてきました。
+この規模なら素のJavaScriptでも問題ないですが、今後のことを考えるとTypeScriptかCoffeeScriptあたりを勉強して置き換えることを考え中です。
+WPA化 WPAであれば、オンライン状態でアクセスしておけば、オフライン状態でもそのWebサイトにアクセスができるようです。
+地下鉄などの電波状況が悪い場所でも祝日カウンターが使えれば素敵ですね。
+見た目 レイアウト気にし始めるとキリがないので一旦リリースしてしまいました。
+運用しながら徐々に変更を加える予定です。
+感想 本当はcoinhive仕込みたかったけど神奈川県警に捕まったらいやなので我慢しました。
+認証も、DBへのアクセスもないページですが、1人でインフラ、サーバサイド、フロントエンドの構築を行ったのでいろいろと勉強になりました。
+細々としたTipsはブログに残していきたいです。 課題もたくさん出てきたので、徐々に直していきます。
+欲しい機能とか、気になる箇所があれば、お気軽に@foresukecomまでご連絡下さい。
+その他 ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。
+でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…
+悩ましい飲み物です。
+ </description>
+    </item>
     
     <item>
       <title>ReactNativeを触ったお話</title>

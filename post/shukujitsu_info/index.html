@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    祝日のカウントダウンタイマー | ふぉれすけ広場
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foresukecom.github.io/post/shukujitsu_info/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
+        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>祝日のカウントダウンタイマー</h1>
+      <div class="meta">
+        Oct 30, 2018 &nbsp;
+        
+          #<a href="/tags/golang">golang</a>&nbsp;
+        
+          #<a href="/tags/gae">GAE</a>&nbsp;
+        
+          #<a href="/tags/vue.js">Vue.js</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。</p>
+
+<p><a href="https://shukujitsu.info">https://shukujitsu.info</a></p>
+
+<h2 id="処理の内容">処理の内容</h2>
+
+<p>内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。<br />
+GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。</p>
+
+<h2 id="使ってる技術">使ってる技術</h2>
+
+<h3 id="googleappengine-https-cloud-google-com-appengine"><a href="https://cloud.google.com/appengine/">GoogleAppEngine</a></h3>
+
+<p>インフラとしてGAEを使いました。<br />
+GAEに対応していない関数とかもあるので、ドキュメントを見ながら覚えていくしかなさそうです。<br />
+たとえば、GolangでHTTPのリクエストを行うときに<code>http.Get()</code>を使いますが、GAEでは対応していないので<code>urlfetch.Client</code>を使う必要があります。
+他にも、Javaでは時刻を扱う<code>java.time.LocalDate</code>というライブラリがあるのですが、同様にGAEでは使うことができません。<br />
+GAE使うなら言語に依らず注意する必要があります。</p>
+
+<h3 id="golang-https-golang-org"><a href="https://golang.org/">Golang</a></h3>
+
+<p>ネット上に公開されているCSVファイルを読み込んで、Cloud Storageにアップロードする部分をやってます。<br />
+もともと、Golangの勉強を兼ねたプロジェクトだったんですが、あまりGolangを使いませんでした。</p>
+
+<h3 id="vue-js-https-jp-vuejs-org-index-html"><a href="https://jp.vuejs.org/index.html">Vue.js</a></h3>
+
+<p>JavaScriptで変数を書き換えると、いい感じにHTMLで表示される内容も変更されます。<br />
+まだVue.jsを使いこなせてはいませんが、低い学習コストでさっくり使うことができます。</p>
+
+<h3 id="scrollify-https-projects-lukehaas-me-scrollify"><a href="https://projects.lukehaas.me/scrollify/">Scrollify</a></h3>
+
+<p>マウススクロールでいい感じに画面を切り替える処理はScrollifyを使いました。<br />
+これを使うだけで今風な感じがでます。</p>
+
+<h2 id="今後の課題">今後の課題</h2>
+
+<h3 id="データ保管場所">データ保管場所</h3>
+
+<p>情報をCloudStorageに保存してるので、NoSQLを触ってみようかと考え中です。<br />
+日付と祝日名を格納するだけなのでRDBでも問題ないんですけど…</p>
+
+<h3 id="監視-ログ">監視、ログ</h3>
+
+<p>なんらかのエラーが起きた場合はソーリー画面を出し、StackDriver上にログを出すようにしていますが、能動的にチェックしないとエラーに気が付きません。<br />
+エラーを検知したら通知する仕組みがほしいですね、LINEかSlackに飛ばすのが今風でしょうか…</p>
+
+<h3 id="パッケージ管理">パッケージ管理</h3>
+
+<p>使用しているライブラリのバージョン管理とかをしていないので、一般的に使われている(らしい)、<code>dep</code>を使ってみようかと考え中。<br />
+次バージョンのGolangでは<code>modules</code>という新たなパッケージ管理機能が正式リリース予定なので、最終的にはそっちに映る感じでしょうか。</p>
+
+<h3 id="リファクタリング">リファクタリング</h3>
+
+<p>ディレクトリ階層がぐちゃぐちゃで、1つ1つのファイルも肥大化しているのでキレイにしたいです。<br />
+ある程度キレイになったらリポジトリを公開するのもアリですね。</p>
+
+<h3 id="ciツール導入">CIツール導入</h3>
+
+<p>現在、<code>dev_appserver.py</code>でローカル環境を立ち上げて、動作チェックが済んだら<code>gcloud app deploy</code>で本番環境を更新する、という雑な運用をしています。<br />
+雑すぎるので、CircleCIとかを使って、PR投げたらステージング環境でテストが実行されてー、というのを導入したいです。</p>
+
+<h3 id="altjs">AltJS</h3>
+
+<p>「素のJavaScriptを書くのがツラい」という話を聞くことが増えてきました。<br />
+この規模なら素のJavaScriptでも問題ないですが、今後のことを考えるとTypeScriptかCoffeeScriptあたりを勉強して置き換えることを考え中です。</p>
+
+<h3 id="wpa化">WPA化</h3>
+
+<p>WPAであれば、オンライン状態でアクセスしておけば、オフライン状態でもそのWebサイトにアクセスができるようです。<br />
+地下鉄などの電波状況が悪い場所でも祝日カウンターが使えれば素敵ですね。</p>
+
+<h3 id="見た目">見た目</h3>
+
+<p>レイアウト気にし始めるとキリがないので一旦リリースしてしまいました。<br />
+運用しながら徐々に変更を加える予定です。</p>
+
+<h2 id="感想">感想</h2>
+
+<p>本当はcoinhive仕込みたかったけど<del>神奈川県警に捕まったらいやなので</del>我慢しました。<br />
+認証も、DBへのアクセスもないページですが、1人でインフラ、サーバサイド、フロントエンドの構築を行ったのでいろいろと勉強になりました。<br />
+細々としたTipsはブログに残していきたいです。
+課題もたくさん出てきたので、徐々に直していきます。</p>
+
+<p>欲しい機能とか、気になる箇所があれば、お気軽に<a href="https://twitter.com/foresukecom">@foresukecom</a>までご連絡下さい。</p>
+
+<h2 id="その他">その他</h2>
+
+<p>ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。<br />
+でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…<br />
+悩ましい飲み物です。</p>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CNBT7NY&linkId=edcdb134d12eae912f6b4c0add1ea9e1"></iframe>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/reactnativefetch/" rel="prev">ReactNativeを触ったお話</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.JPG" width="64" height="64"><br>
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-89386946-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
