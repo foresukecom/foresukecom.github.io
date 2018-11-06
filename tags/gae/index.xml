@@ -6,7 +6,7 @@
     <description>Recent content in Gae on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 01 Nov 2018 23:48:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Nov 2018 23:48:25 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/tags/gae/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>GAEでfaviconを設定</title>
       <link>http://foresukecom.github.io/post/gae_favicon/</link>
-      <pubDate>Thu, 01 Nov 2018 23:48:25 +0900</pubDate>
+      <pubDate>Tue, 06 Nov 2018 23:48:25 +0900</pubDate>
       
       <guid>http://foresukecom.github.io/post/gae_favicon/</guid>
       <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。
