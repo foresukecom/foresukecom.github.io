@@ -6,10 +6,34 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 30 Oct 2018 00:04:23 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 01 Nov 2018 23:48:25 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GAEでfaviconを設定</title>
+      <link>http://foresukecom.github.io/post/gae_favicon/</link>
+      <pubDate>Thu, 01 Nov 2018 23:48:25 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/gae_favicon/</guid>
+      <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。
+faviconとは faviconとは、ブラウザのタブやブックマークに表示されてるアレです。
+最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。
+faviconについては、以下の資料に詳しくまとめられています。
+WEBサイトが「できた」と安心する前に最終チェックすること
+favicon準備 faviconの元にするイラストはこちらです。 このイラストをいい感じにfaviconとして使っていきます。 今回は、スライドで紹介されているFavicon Generatorを使ってfaviconを用意していきます。
+faviconを生成すると、favicon_package_v0.16.zipがダウンロードできます。
+favicon_package_v0.16.zipは以下のような中身になっています。
+favicon_package_v0.16 ├── android-chrome-192x192.png ├── android-chrome-384x384.png ├── apple-touch-icon.png ├── browserconfig.xml ├── favicon-16x16.png ├── favicon-32x32.png ├── favicon.ico ├── mstile-150x150.png ├── safari-pinned-tab.svg └── site.webmanifest  この中ので拡張子がpng、icoは実際に表示されるイメージファイルです。
+browserconfig.xmlはWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。
+safari-pinned-tab.svgはベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。
+site.webmanifestはAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。
+今回はGAE上でGolangを動かしてみましたよの構成を元に、faviconを設定します。
+browserconfig.xmlとsite.webmanifestはルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下のimagesに配置します。
+プロジェクトのディレクトリ構成は以下の通りです。
+. ├── app.yaml ├── gae_sample.iml ├── hello.go ├── index.yaml └── static ├── browserconfig.xml ├── site.webmanifest ├── images │ ├── android-chrome-192x192.png │ ├── android-chrome-384x384.png │ ├── apple-touch-icon.png │ ├── favicon-16x16.</description>
+    </item>
     
     <item>
       <title>祝日のカウントダウンタイマー</title>

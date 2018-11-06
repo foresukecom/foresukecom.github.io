@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/gae_favicon/</loc>
+    <lastmod>2018-11-01T23:48:25+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/shukujitsu_info/</loc>
     <lastmod>2018-10-30T00:04:23+09:00</lastmod>
   </url>
@@ -152,7 +157,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/tags/gae/</loc>
-    <lastmod>2018-10-30T00:04:23+09:00</lastmod>
+    <lastmod>2018-11-01T23:48:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -200,7 +205,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2018-10-30T00:04:23+09:00</lastmod>
+    <lastmod>2018-11-01T23:48:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -230,7 +235,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2018-10-30T00:04:23+09:00</lastmod>
+    <lastmod>2018-11-01T23:48:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   

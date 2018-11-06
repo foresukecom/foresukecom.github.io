@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    GAEでfaviconを設定 | ふぉれすけ広場
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foresukecom.github.io/post/gae_favicon/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
+        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>GAEでfaviconを設定</h1>
+      <div class="meta">
+        Nov 1, 2018 &nbsp;
+        
+          #<a href="/tags/gae">GAE</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。</p>
+
+<h2 id="faviconとは">faviconとは</h2>
+
+<p>faviconとは、ブラウザのタブやブックマークに表示されてるアレです。<br />
+最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。</p>
+
+<p>faviconについては、以下の資料に詳しくまとめられています。<br />
+<a href="https://speakerdeck.com/oscasierra/websaitoga-dekita-toan-xin-suruqian-nizui-zhong-tietukusurukoto?slide=5">WEBサイトが「できた」と安心する前に最終チェックすること</a></p>
+
+<h2 id="favicon準備">favicon準備</h2>
+
+<p>faviconの元にするイラストはこちらです。
+このイラストをいい感じにfaviconとして使っていきます。
+<img src='/images/20181101_favicon/star.png' width='150'></p>
+
+<p>今回は、スライドで紹介されている<a href="https://realfavicongenerator.net/">Favicon Generator</a>を使ってfaviconを用意していきます。<br />
+faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウンロードできます。<br />
+<code>favicon_package_v0.16.zip</code>は以下のような中身になっています。</p>
+
+<pre><code>favicon_package_v0.16
+├── android-chrome-192x192.png
+├── android-chrome-384x384.png
+├── apple-touch-icon.png
+├── browserconfig.xml
+├── favicon-16x16.png
+├── favicon-32x32.png
+├── favicon.ico
+├── mstile-150x150.png
+├── safari-pinned-tab.svg
+└── site.webmanifest
+</code></pre>
+
+<p>この中ので拡張子が<code>png</code>、<code>ico</code>は実際に表示されるイメージファイルです。<br />
+<code>browserconfig.xml</code>はWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。<br />
+<code>safari-pinned-tab.svg</code>はベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。<br />
+<code>site.webmanifest</code>はAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。</p>
+
+<p>今回は<a href="https://foresuke.com/post/google_app_engine_go_ajax/">GAE上でGolangを動かしてみましたよ</a>の構成を元に、faviconを設定します。<br />
+ <code>browserconfig.xml</code>と<code>site.webmanifest</code>はルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下の<code>images</code>に配置します。<br />
+プロジェクトのディレクトリ構成は以下の通りです。</p>
+
+<pre><code>.
+├── app.yaml
+├── gae_sample.iml
+├── hello.go
+├── index.yaml
+└── static
+    ├── browserconfig.xml
+    ├── site.webmanifest
+    ├── images
+    │   ├── android-chrome-192x192.png
+    │   ├── android-chrome-384x384.png
+    │   ├── apple-touch-icon.png
+    │   ├── favicon-16x16.png
+    │   ├── favicon-32x32.png
+    │   ├── favicon.ico
+    │   ├── mstile-150x150.png
+    │   └── safari-pinned-tab.svg
+    ├── index.html
+    └── js
+        └── main.js
+</code></pre>
+
+<h2 id="gaeで使う">GAEで使う</h2>
+
+<p>GoogleAppEngineでfaviconを使用するには、HTMLファイルの<code>&lt;head&gt;</code>で読み込む以外に、<a href="https://cloud.google.com/appengine/kb/#erroruris">Why do I get URI error for /favicon.ico?</a>にも書かれているとおり、<code>app.yaml</code>にも記載する必要があります。</p>
+
+<p>愚直に書く場合、<code>handlers:</code>の配下に以下の記載します。</p>
+
+<pre><code>- url: /site.webmanifest
+  static_files: static/site.webmanifest
+  upload: static/site.webmanifest
+
+- url: /browserconfig.xml
+  static_files: static/browserconfig.xml
+  upload: static/browserconfig.xml
+
+- url: /images/favicon.ico
+  static_files: static/images/favicon.ico
+  upload: static/favicon.ico
+
+- url: /images/favicon-32x32.png
+  static_files: static/images/favicon-32x32.png
+  upload: static/images/favicon-32x32.png
+
+- url: /images/favicon-16x16.png
+  static_files: static/images/favicon-16x16.png
+  upload: static/images/favicon-16x16.png
+
+- url: /images/android-chrome-192x192.png
+  static_files: static/images/android-chrome-192x192.png
+  upload: static/images/android-chrome-192x192.png
+
+- url: /images/android-chrome-384x384.png
+  static_files: static/images/android-chrome-384x384.png
+  upload: static/images/android-chrome-384x384.png
+
+- url: /images/mstile-150x150.png
+  static_files: static/images/mstile-150x150.png
+  upload: static/images/mstile-150x150.png
+
+- url: /images/apple-touch-icon.png
+  static_files: static/images/apple-touch-icon.png
+  upload: static/images/apple-touch-icon.png
+
+- url: /images/safari-pinned-tab.svg
+  static_files: static/images/safari-pinned-tab.svg
+  upload: static/images/safari-pinned-tab.svg
+</code></pre>
+
+<p>ファイル毎に書いていくのは面倒なので、以下のような感じで正規表現でまとめて記載することもできます。</p>
+
+<pre><code>- url: /site.webmanifest
+  static_files: static/site.webmanifest
+  upload: static/site.webmanifest
+
+- url: /browserconfig.xml
+  static_files: static/browserconfig.xml
+  upload: static/browserconfig.xml
+
+- url: /images/(.*\.(svg|ico|png))
+  static_files: static/images/\1
+  upload: static/(.*\.(svg|ico|png))
+</code></pre>
+
+<p>これで、GAEのページにfaviconを設定することが出来ました。<br />
+<a href="https://realfavicongenerator.net/">Favicon Generator</a>では、各プラットフォームからfaviconにアクセス出来ているかを一括でチェックできるのでとても便利です。<br />
+今回は、<code>favicon.ico</code>がルートディレクトリにない、と怒られていますが各プラットフォームからfaviconが見れているいることが確認できました。
+<img src='/images/20181101_favicon/favicon_checker.png'></p>
+
+<p>今回のサンプルファイルはgithubで公開してます。
+<a href="https://github.com/foresukecom/gae_favicon">https://github.com/foresukecom/gae_favicon</a></p>
+
+<h2 id="その他">その他</h2>
+
+<p>毎回なにかオススメを紹介してましたが、ネタが切れました。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/shukujitsu_info/" rel="prev">祝日のカウントダウンタイマー</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.JPG" width="64" height="64"><br>
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-89386946-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
