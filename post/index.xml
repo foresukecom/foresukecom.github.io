@@ -6,10 +6,34 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 06 Nov 2018 23:48:25 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Nov 2018 07:44:20 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GAEでバッチ処理</title>
+      <link>http://foresukecom.github.io/post/gae_cron/</link>
+      <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/gae_cron/</guid>
+      <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
+GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
+サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
+slackにメッセージを送る部分は以下のサイトに詳しく記載されているので省略します。
+CrossBridge Lab | GolangでSlackの特定のチャンネルにメッセージを送る
+今回はGAE上でGolangを動かしてみましたよの構成を元に、GAEのプロジェクトを構築します。
+ルートディレクトリ(app.yamlと同じ階層)にcrom.yamlを作成します。
+cron.yaml cron.yamlには、以下のように開始時刻や間隔で実行するタイミングを指定することが出来ます。
+cron: - description: &amp;quot;毎朝7時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every day 7:00 - description: &amp;quot;毎週日曜8時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every sunday 8:00 - description: &amp;quot;毎日0時を起点とし、1時間単位で実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every 1 hours  その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は公式のドキュメントに詳しく記載されています。
+注意点 GAEではdev_server.pyでローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、cron.yamlは動作しません。
+localhost:8000 からGAEローカル環境の管理画面を開くことができます。
+管理画面にcron.yamlで設定したスケジュールが一覧で表示されるので、Run nowをクリックすることで手動で実行することができます。 Cronの設定を本番環境にデプロイするときは、gcloud app deploy cron.yamlのようにcrom.yamlを指定します。
+指定しないと、crom.yamlが読み込まれないため、いつまで待っても処理が実行されません。 Cronが設定されているかどうかは、コンソール画面のcronジョブから確認することが出来ます。 仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。
+そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。
+GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine-Cron: trueが含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります
+例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。</description>
+    </item>
     
     <item>
       <title>GAEでfaviconを設定</title>
