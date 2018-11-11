@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/dynamic_tweet/</loc>
+    <lastmod>2018-11-11T08:15:12+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/gae_cron/</loc>
     <lastmod>2018-11-07T07:44:20+09:00</lastmod>
   </url>
@@ -186,7 +191,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/tags/javascript/</loc>
-    <lastmod>2018-10-14T10:46:30+09:00</lastmod>
+    <lastmod>2018-11-11T08:15:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -210,7 +215,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2018-11-07T07:44:20+09:00</lastmod>
+    <lastmod>2018-11-11T08:15:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -240,7 +245,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2018-11-07T07:44:20+09:00</lastmod>
+    <lastmod>2018-11-11T08:15:12+09:00</lastmod>
     <priority>0</priority>
   </url>
   
