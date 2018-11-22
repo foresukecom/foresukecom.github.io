@@ -6,10 +6,26 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Nov 2018 08:15:12 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 23:17:10 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golangのpanicのお話</title>
+      <link>http://foresukecom.github.io/post/golang_panic/</link>
+      <pubDate>Wed, 21 Nov 2018 23:17:10 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/golang_panic/</guid>
+      <description>はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。
+クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。
+今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。
+サンプルコード 実際のコードとは違いますが、当時は以下のようにエラーが発生したらpanic()で処理を中断させるコードを書いていました。
+
+で、このコードを以下のようなディレクトリ構成の中に配置していました。log_analysisが1つのプロジェクトというイメージです。
+tmp └── tanaka └── azunyan_prpr └── tools └── log_analysis └── main.go  このコードをmitchellh/goxを使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。
+$ gox Number of parallel builds: 3 --&amp;gt; freebsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; darwin/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; windows/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; openbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; openbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; windows/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; freebsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; darwin/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; freebsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis $ ls -1 log_analysis_darwin_386 log_analysis_darwin_amd64 log_analysis_freebsd_386 log_analysis_freebsd_amd64 log_analysis_freebsd_arm log_analysis_linux_386 log_analysis_linux_amd64 log_analysis_linux_arm log_analysis_netbsd_386 log_analysis_netbsd_amd64 log_analysis_netbsd_arm log_analysis_openbsd_386 log_analysis_openbsd_amd64 log_analysis_windows_386.</description>
+    </item>
     
     <item>
       <title>Tweetボタンでつぶやく内容を動的に変更する</title>

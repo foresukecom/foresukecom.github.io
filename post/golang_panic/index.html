@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Golangのpanicのお話 | ふぉれすけ広場
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foresukecom.github.io/post/golang_panic/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
+        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Golangのpanicのお話</h1>
+      <div class="meta">
+        Nov 21, 2018 &nbsp;
+        
+          #<a href="/tags/golang">golang</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h1 id="はじめに">はじめに</h1>
+
+<p>Golangというと、クロスコンパイルが特徴の1つとして挙げられます。<br />
+クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。<br />
+今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。</p>
+
+<h1 id="サンプルコード">サンプルコード</h1>
+
+<p>実際のコードとは違いますが、当時は以下のようにエラーが発生したら<code>panic()</code>で処理を中断させるコードを書いていました。<br />
+<script src="https://gist.github.com/foresukecom/79e23472c75c70a07184f0d4da0b6d4b.js"></script></p>
+
+<p>で、このコードを以下のようなディレクトリ構成の中に配置していました。<code>log_analysis</code>が1つのプロジェクトというイメージです。</p>
+
+<pre><code>tmp
+└── tanaka
+    └── azunyan_prpr
+        └── tools
+            └── log_analysis
+                └── main.go
+</code></pre>
+
+<p>このコードを<a href="https://github.com/mitchellh/gox">mitchellh/gox</a>を使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。</p>
+
+<pre><code>$ gox
+Number of parallel builds: 3
+
+--&gt;   freebsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;      netbsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;       linux/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;      darwin/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;   windows/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     openbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;   openbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     windows/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;      netbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     freebsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;    darwin/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;       linux/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     linux/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     freebsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;    netbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+
+$ ls -1
+log_analysis_darwin_386
+log_analysis_darwin_amd64
+log_analysis_freebsd_386
+log_analysis_freebsd_amd64
+log_analysis_freebsd_arm
+log_analysis_linux_386
+log_analysis_linux_amd64
+log_analysis_linux_arm
+log_analysis_netbsd_386
+log_analysis_netbsd_amd64
+log_analysis_netbsd_arm
+log_analysis_openbsd_386
+log_analysis_openbsd_amd64
+log_analysis_windows_386.exe
+log_analysis_windows_amd64.exe
+main.go
+</code></pre>
+
+<p><code>log_analysis_windows_amd64.exe</code>がWindows(64bit)向けの実行ファイルになるので、Windows10の<code>D:\tools</code>配下に置いておきます。<br />
+<code>log_analysis_windows_amd64.exe</code>を実行すると、読み込むべき<code>sample.log</code>が存在しないので<code>panic(&quot;ファイルないよ&quot;)</code>が実行されます。</p>
+
+<pre><code>D:\tools&gt;dir
+ ドライブ D のボリューム ラベルがありません。
+ ボリューム シリアル番号は XXXX-XXXX です
+
+ D:\tools のディレクトリ
+
+2018/11/22  00:04    &lt;DIR&gt;          .
+2018/11/22  00:04    &lt;DIR&gt;          ..
+2018/11/22  00:01         1,273,344 log_analysis_windows_amd64.exe
+               1 個のファイル           1,273,344 バイト
+               2 個のディレクトリ  159,870,349,312 バイトの空き領域
+
+D:\tools&gt;log_analysis_windows_amd64.exe
+panic: ファイルないよ
+
+goroutine 1 [running]:
+main.main()
+        /tmp/tanaka/azunyan_prpr/tools/log_analysis/main.go:9 +0xa1
+</code></pre>
+
+<p>想定通り<code>panic</code>にはなりましたが、ソースファイルをコンパイルした際のディレクトリが見えるようになってしまいました…</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>ツールの使用者からすれば、コンパイルした際のディレクトリ情報は不要な情報なので隠しておきたいところです。
+他のプラットフォームでテストしているときに気が付いたからよかったですが、危うく適当なディレクトリ名の情報をツール使用者に晒すところでした。</p>
+
+<p>当時はおそらく、「<code>panic()</code>使えば、エラー時のメッセージ出しつつ、プログラムも終了させれるじゃん」ぐらいの軽い気持ちで書いてたんだと思います。</p>
+
+<p><code>panic()</code>はメモリ不足などの「これ以上は処理が継続できない」ときに使用します。
+今回のような場合は<code>os.Exit(1)</code>か<code>log.Fatal(err)</code>でプログラムを終了させるべきでした。</p>
+
+<h1 id="その他">その他</h1>
+
+<p>少年チャンピオンで連載されている、<strong>ダーウィンズゲーム</strong>がアニメ化するようです。<br />
+主人公が<strong>アンリミテッド</strong>に<strong>ブレード</strong>を<strong>ワーク</strong>するのがとてもカッコイイので楽しみです。まだ放送時期などは公開されていませんが、ぜひ2クールでがっつりやってほしいものです。<br />
+あと、士明さんもカッコイイ。将来はあんな感じの老人になりたい。<br />
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00L9QZIAG&linkId=bd3eeb3bbce4a63c898c8ae7e8a7ecc9"></iframe></p>
+
+<p>もう1つのオススメ作品として、週刊少年マガジンで連載中の<strong>将来的に死んでくれ</strong>をご紹介します。<br />
+作品名は過激ですが、主人公(女子高生)がヒロイン(女子高生)に諭吉を渡したり、ホテルに誘ったりする百合ラブコメです。<br />
+ギャグのセンスや絵柄が好みなので、長門知大先生(<a href="https://twitter.com/ngt9chr">@ngt9chr</a>)の作品は読み続けていきます。
+サブタイトルが「交わりを水魚のように」や「臍を噛んでる暇は無い」のようになっているのもお気にポイントの1つです。<br />
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XX7ZGRS&linkId=78cfa6a9c6d58078af2db9f0eba4e459"></iframe></p>
+
+      
+      
+      
+    </article>
+    
+ <aside><div id="disqus_thread"></div></aside>
+
+<script type="text/javascript">
+     
+    var disqus_shortname = 'foresuke-com';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/dynamic_tweet/" rel="prev">Tweetボタンでつぶやく内容を動的に変更する</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.JPG" width="64" height="64"><br>
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-89386946-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
