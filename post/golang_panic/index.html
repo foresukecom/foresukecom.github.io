@@ -167,6 +167,62 @@ main.main()
 <p><code>panic()</code>はメモリ不足などの「これ以上は処理が継続できない」ときに使用します。
 今回のような場合は<code>os.Exit(1)</code>か<code>log.Fatal(err)</code>でプログラムを終了させるべきでした。</p>
 
+<h1 id="2018-11-23-追記">2018/11/23 追記</h1>
+
+<p>のぼのぼ☂さん(<a href="https://twitter.com/nobonobo">@nobonobo</a>)からご指摘をいただきました。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/golang?src=hash&amp;ref_src=twsrc%5Etfw">#golang</a> pro tips: go1.7以降であれば「go build -gcflags=-trimpath=$GOPATH -asmflags=-trimpath=$GOPATH」とかするとバイナリに埋められるファイルパスのプレフィックスだけは取り除ける。 <a href="https://t.co/YehDdOyZJ3">https://t.co/YehDdOyZJ3</a></p>&mdash; のぼのぼ☂️ (@nobonobo) <a href="https://twitter.com/nobonobo/status/1065526650996027392?ref_src=twsrc%5Etfw">2018年11月22日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>見慣れないオプションをお教えいただいたので、それぞれ調べてみました。<br />
+ビルド時のオプションで<code>gcflags</code>を指定すると<code>go tool compile</code>のオプションを指定でき、<code>asmflags</code>を指定すると<code>go tool asm</code>のオプションを指定できるようです。<br />
+<code>go tool compile</code>コマンドはソースコードを実行可能なオブジェクトコードに変換します。変換されたファイルは<code>.o</code>拡張子のファイルになり、<code>go run</code>コマンドで実行することができます。</p>
+
+<p>直接使ったことがないコマンドでしたが、<code>go run</code>コマンドでgoファイルを実行したときに、裏では <code>go tool compile</code>が実行されていたようです。
+「<code>go build</code>では実行ファイルを生成し、 <code>go run</code>では実行ファイルを一時的に作ってとりあえず実行する」程度のふわっとした認識でした…</p>
+
+<p><code>go tool asm</code>コマンドについては…アセンブリ関係らしいのですがドキュメント読んでもよく理解ができなかったので引き続き確認中です。<br />
+<code>gcflags</code>だけでもファイルのパスを隠すことができたので、一旦進めていきます。</p>
+
+<p><code>trimpath</code>で指定したパスを実行ファイルから取り除くことができます。<br />
+指定するパスによって、goファイル名まで取り除いたり、</p>
+
+<pre><code>$ go build -o log_analysis -gcflags=&quot;-trimpath=`pwd`/main.go&quot; main.go
+$ ./log_analysis
+panic: ファイルないよ
+
+goroutine 1 [running]:
+main.main()
+	??:9 +0x9a
+</code></pre>
+
+<p>goファイル名だけを残したり、</p>
+
+<pre><code>$ go build -o log_analysis -gcflags=&quot;-trimpath=`pwd`&quot; main.go
+$ ./log_analysis
+panic: ファイルないよ
+
+goroutine 1 [running]:
+main.main()
+	main.go:9 +0x9a
+</code></pre>
+
+<p>ディレクトリ名を途中まで取り除くことができます。</p>
+
+<pre><code>$ go build -o log_analysis -gcflags=&quot;-trimpath=/tmp/tanaka/azunyan_prpr&quot; main.go
+$ ./log_analysis
+panic: ファイルないよ
+
+goroutine 1 [running]:
+main.main()
+	tools/log_analysis/main.go:9 +0x9a
+</code></pre>
+
+<p>雰囲気で書いてるから、知らない便利な機能がたくさんありますね。
+今後仕事で使うことになるから使えるようになっておかないとです…</p>
+
+<p>※追記ここまで</p>
+
 <h1 id="その他">その他</h1>
 
 <p>少年チャンピオンで連載されている、<strong>ダーウィンズゲーム</strong>がアニメ化するようです。<br />
