@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/pocket_2018/</loc>
+    <lastmod>2018-12-23T10:09:07+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/golang_panic/</loc>
     <lastmod>2018-11-21T23:17:10+09:00</lastmod>
   </url>
@@ -214,13 +219,13 @@
   
   <url>
     <loc>http://foresukecom.github.io/tags/pocket/</loc>
-    <lastmod>2016-12-22T07:50:59+09:00</lastmod>
+    <lastmod>2018-12-23T10:09:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2018-11-21T23:17:10+09:00</lastmod>
+    <lastmod>2018-12-23T10:09:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -250,7 +255,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2018-11-21T23:17:10+09:00</lastmod>
+    <lastmod>2018-12-23T10:09:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,28 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 21 Nov 2018 23:17:10 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 10:09:07 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pocketからお祝いされました -2018-</title>
+      <link>http://foresukecom.github.io/post/pocket_2018/</link>
+      <pubDate>Sun, 23 Dec 2018 10:09:07 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/pocket_2018/</guid>
+      <description>Pocketから以下のメールが届きました。 2016年、2017年には上位5%になったことを祝福するメールが届きましたが、ついに2018年は上位1%のユーザになれたようです。
+I&amp;#39;m in the top 1% of readers on @Pocket for 2018! Here&amp;#39;s how much I read this year: https://t.co/CvC454chzZ #MyYearInPocket
+&amp;mdash; foresuke (@foresukecom) 2018年12月23日 
+自分が登録した記事の中から人気がある記事をピックアップしてみるとQiitaの記事が多いみたいです。
+やはりQiitaはSEOに力を入れているのか閲覧者が多いようですね。
+ちなみに、2018年12月21日時点では全記事数が9,720ページ、未読記事が2,289ページ、既読率76.5%という状況です。 2017年2月4日時点では全記事数が4,887ページ、未読記事が800ページ、既読率83.6%でしたので積読が捗っているようです。
+毎日、未読率を出したり、未読記事からランダムでSlackに投稿するようにしましたが、まだ手緩いようです。todoリストと連携して毎日記事を読むように仕向けましょうか…
+しかし…プレミアム会員にもなっていない自分が上位1%のユーザになれてしまうとは…
+若者のPocket離れが深刻ですね。 Pocketなら気になる記事を後から読み返すことも簡単に出来るし(実際は読み返さないけど)、PocketのArticle Viewなら邪魔くさい広告が表示されないから集中して記事が読めて便利ですよ!
+みんな使いましょう!!</description>
+    </item>
     
     <item>
       <title>Golangのpanicのお話</title>
