@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/golang_test/</loc>
+    <lastmod>2019-01-22T08:25:31+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/resign/</loc>
     <lastmod>2018-12-29T10:15:46+09:00</lastmod>
   </url>
@@ -199,7 +204,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/tags/golang/</loc>
-    <lastmod>2018-11-21T23:17:10+09:00</lastmod>
+    <lastmod>2019-01-22T08:25:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -235,7 +240,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2018-12-29T10:15:46+09:00</lastmod>
+    <lastmod>2019-01-22T08:25:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -265,7 +270,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2018-12-29T10:15:46+09:00</lastmod>
+    <lastmod>2019-01-22T08:25:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   

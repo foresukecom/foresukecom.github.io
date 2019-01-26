@@ -6,10 +6,33 @@
     <description>Recent content on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 29 Dec 2018 10:15:46 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2019 08:25:31 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golangでテストコードを書く少年のお話</title>
+      <link>http://foresukecom.github.io/post/golang_test/</link>
+      <pubDate>Tue, 22 Jan 2019 08:25:31 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/golang_test/</guid>
+      <description>はじめに お仕事でGolangのテストコードを書くことになったのでお勉強しました。
+テスト対象は以下のプログラムです。
+ 毎朝のルーティンを明文化し、以下の処理をしています。
+ 降水確率40%以上なら傘を装備する。 冬、もしくは最低気温が5度以下ならコートを装備する。  以下の通り、4つの命令と2つの条件分岐で構成されています。
+   項 種別 やってること     ① 命令 持ち物を入れるカバンを用意   ② 条件分岐 降水確率による判定   ③ 命令 カバンに傘を入れる   ④ 条件分岐 季節、最低気温による判定   ⑤ 命令 カバンにコートを入れる   ⑥ 命令 カバンを持ち出す    テストの種類 カバレッジとはテストの網羅率のことを指しています。
+「どのパターンのテストを行えば、必要な範囲のテストが完了したのか?」の指標となります。
+「必要な範囲」については、C0カバレッジ、C1カバレッジ、C2カバレッジ…とカバレッジの種類によって異なります。
+それぞのカバレッジについて簡単に説明していきます。
+※C3以降もありますが、よく使われるのはC2までみたいなので、今回は省略します。
+C0カバレッジ(命令網羅) すべての命令を最低1回は実行する、というテストケースを満たせばカバレッジが100%になります。
+以下のパターンを実行すれば、すべての命令を実行することができるので、C0カバレッジ100%になります。
+「降水確率が50%、季節は冬、最低気温12度。」
+C1カバレッジ(分岐網羅) すべて条件分岐の組み合わせを通る、というテストケースを満たせばカバレッジが100%になります。
+今回はTrue/Falseの分岐が2つあるので4パターンの組み合わせでテストを行う必要があります。
+   パターン ② ④ 具体例     パターン1 True True 降水確率が50%、季節は冬、最低気温12度。   パターン2 True False 降水確率が50%、季節は春、最低気温12度。   パターン3 False True 降水確率が20%、季節は冬、最低気温12度。   パターン4 False False 降水確率が20%、季節は春、最低気温12度。    具体的には以下のパラメータでテストをやればOKです。</description>
+    </item>
     
     <item>
       <title>退職エントリ</title>
