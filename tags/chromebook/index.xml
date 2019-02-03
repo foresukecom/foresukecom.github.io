@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chromebook on ふぉれすけ広場</title>
+    <link>http://foresukecom.github.io/tags/chromebook/</link>
+    <description>Recent content in Chromebook on ふぉれすけ広場</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 03 Feb 2019 08:25:15 +0900</lastBuildDate>
+    
+	<atom:link href="http://foresukecom.github.io/tags/chromebook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ChromebookにUbuntuをインストールしようとした愚か者のお話</title>
+      <link>http://foresukecom.github.io/post/goodby_chromebook/</link>
+      <pubDate>Sun, 03 Feb 2019 08:25:15 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/goodby_chromebook/</guid>
+      <description>はじめに ChromeBookにUbuntu入れようとしたら、キーボードとトラックパッドが反応しなくなりました。
+＼(^o^)／
+ChromebookのFile Systemへの書込み制限を解除する方法 ― Write-Protect-Screwの外し方 C300MA編
+詳しくはリンク先の記事に書いてありますが、ChromebookはWrite-Protect-Screwというネジで物理的にファイルシステムへの書き込みを制限しているようです。
+僕が持っている端末とはモデルが違うのですが、似たような仕組みだろうということで精密ドライバを使って分解してみました。
+Write-Protect-Screwらしいネジが見当たらないので、改めて組み直したのですが、キーボードとトラックパッドが反応しなくなってしまいました。
+やってしまった…
+さようならChromeBook。今まで楽しかったよ。</description>
+    </item>
+    
+  </channel>
+</rss>
