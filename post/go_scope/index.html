@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    ChromebookにUbuntuをインストールしようとした愚か者のお話 | ふぉれすけ広場
+    Golangのスコープについて | ふぉれすけ広場
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://foresukecom.github.io/post/goodby_chromebook/"/>
+  <link rel="canonical" href="http://foresukecom.github.io/post/go_scope/"/>
 
   
   <link rel="stylesheet" href="/css/sanitize.css">
@@ -78,11 +78,11 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>ChromebookにUbuntuをインストールしようとした愚か者のお話</h1>
+      <h1>Golangのスコープについて</h1>
       <div class="meta">
-        Feb 3, 2019 &nbsp;
+        Feb 9, 2019 &nbsp;
         
-          #<a href="/tags/chromebook">ChromeBook</a>&nbsp;
+          #<a href="/tags/golang">Golang</a>&nbsp;
         
       </div>
     </div>
@@ -91,19 +91,75 @@
 
 <h1 id="はじめに">はじめに</h1>
 
-<p>ChromeBookにUbuntu入れようとしたら、キーボードとトラックパッドが反応しなくなりました。<br />
-＼(^o^)／</p>
+<p>Golangを書いてて詰まったことがあったのでメモです。</p>
 
-<p><a href="https://chromesoku.com/rw-filesystem-on-chromebook/">ChromebookのFile Systemへの書込み制限を解除する方法 ― Write-Protect-Screwの外し方 C300MA編</a></p>
+<h1 id="本文">本文</h1>
 
-<p>詳しくはリンク先の記事に書いてありますが、ChromebookはWrite-Protect-Screwというネジで物理的にファイルシステムへの書き込みを制限しているようです。</p>
+<p>こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします。</p>
 
-<p>僕が持っている端末とはモデルが違うのですが、似たような仕組みだろうということで精密ドライバを使って分解してみました。<br />
-Write-Protect-Screwらしいネジが見当たらないので、改めて組み直したのですが、キーボードとトラックパッドが反応しなくなってしまいました。<br />
-やってしまった…</p>
+<pre><code>type product struct {
+	category string
+	name     string
+	price    uint64
+}
+showcase := []product{
+	{&quot;果物&quot;, &quot;りんご&quot;, 120},
+	{&quot;果物&quot;, &quot;バナナ&quot;, 100},
+	{&quot;果物&quot;, &quot;みかん&quot;, 70},
+	{&quot;肉&quot;, &quot;鶏もも&quot;, 250},
+	{&quot;肉&quot;, &quot;豚バラ&quot;, 300},
+	{&quot;肉&quot;, &quot;カルビ&quot;, 450},
+}
+</code></pre>
 
-<p>さようならChromeBook。今まで楽しかったよ。
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RgKAFK5djSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p>で、このスライスから果物の価格だけ10円引きします。</p>
+
+<pre><code>for _, v := range showcase {
+	if v.category == &quot;果物&quot; {
+	    v.price -= 10
+	}
+}
+</code></pre>
+
+<p>こんな感じで書いたのですが、上のfor文だと<code>showcase</code>の中身は変更されません。<br />
+変数のスコープを考えてなかったのが原因です。
+変数<code>v</code>はfor文の中でしか使えないので、いくら<code>v</code>の中身を変更しても<code>showcase</code>の中身は変わりません。</p>
+
+<pre><code>for i := 0; i &lt; len(showcase); i++ {
+	if showcase[i].category == &quot;果物&quot; {
+		showcase[i].price -= 10
+	}
+}
+</code></pre>
+
+<p>上のように要素を指定して直接変更すれば<code>showcase</code>の中身を変更することができます。</p>
+
+<pre><code>var showcaseNew []product
+for _, v := range showcase {
+	if v.category == &quot;果物&quot; {
+    	v.price -= 10
+    }
+    showcaseNew = append(showcaseNew, v)
+}
+</code></pre>
+
+<p>for文の中で要素を指定して処理するなんてナウくない、という場合はこんな感じで別のスライスを用意して、各要素を追加していく方法もあります。</p>
+
+<h1 id="おわりに">おわりに</h1>
+
+<p>なんか凄く初歩的なことで詰まってた気がします。</p>
+
+<h1 id="蛇足">蛇足</h1>
+
+<p>2019年冬アニメでやっている<strong>約束のネバーランド</strong>が面白いです。<br />
+ネタバレをせずに感想を書く自信がないので「いいから観て!」としか書けないです。
+Amazonプライムビデオでも配信してるので。早く、こんなブログ見てないで。</p>
+
+<p>ちなみに僕は続きが気になって、原作漫画を全巻買ってしまいました。</p>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MR7B5JS&linkId=6f9eac37f69c09f123e9223c58f95c99"></iframe>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M4LPGZU&linkId=46d90b0a01e90b0800c7e88549824db5"></iframe>
 
       
       
@@ -131,10 +187,8 @@ Write-Protect-Screwらしいネジが見当たらないので、改めて組み�
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/golang_test/" rel="prev">Golangでテストコードを書く少年のお話</a></span>
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/goodby_chromebook/" rel="prev">ChromebookにUbuntuをインストールしようとした愚か者のお話</a></span>
     
-    
-      <span class="next"><a href="http://foresukecom.github.io/post/go_scope/" rel="next">Golangのスコープについて</a> &rarr;</span>
     
   </nav>
 

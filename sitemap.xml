@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/go_scope/</loc>
+    <lastmod>2019-02-09T15:11:21+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/goodby_chromebook/</loc>
     <lastmod>2019-02-03T08:25:15+09:00</lastmod>
   </url>
@@ -215,7 +220,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/tags/golang/</loc>
-    <lastmod>2019-01-22T08:25:31+09:00</lastmod>
+    <lastmod>2019-02-09T15:11:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -251,7 +256,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2019-02-03T08:25:15+09:00</lastmod>
+    <lastmod>2019-02-09T15:11:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -281,7 +286,7 @@
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2019-02-03T08:25:15+09:00</lastmod>
+    <lastmod>2019-02-09T15:11:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
