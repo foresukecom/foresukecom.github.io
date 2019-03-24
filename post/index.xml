@@ -609,12 +609,14 @@ func delete(employees []employee, n int) []employee { result := make([]employee,
     </item>
     
     <item>
-      <title>Amazonアソシエイト 参加表明文</title>
-      <link>http://foresukecom.github.io/post/amazon/</link>
+      <title>本ブログのポリシーについて</title>
+      <link>http://foresukecom.github.io/post/privacy_policy/</link>
       <pubDate>Mon, 28 Nov 2016 12:17:44 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/amazon/</guid>
-      <description>当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。</description>
+      <guid>http://foresukecom.github.io/post/privacy_policy/</guid>
+      <description>Amazon 当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。
+Google Analytics 当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
+このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくはここをクリックしてください。</description>
     </item>
     
     <item>
