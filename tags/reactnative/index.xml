@@ -17,7 +17,7 @@
       <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
       
       <guid>http://foresukecom.github.io/post/reactnativefetch/</guid>
-      <description>はじめに お仕事でReactNativeを使うことになったので、触ってみました。
+      <description> はじめに お仕事でReactNativeを使うことになったので、触ってみました。
 導入手順について本記事内では説明をしないので、ReactNativeの公式サイトのGetting Startedをご参照ください。
 ちなみに、ReactNativeのバージョンは0.57.3です。
 サンプル 今回はRESAS-APIから都道府県一覧を取得してリスト表示してみます。
@@ -33,7 +33,8 @@ https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-t
 開発環境の構築が終われば、シミュレータ上でポンポンとテキストなりボタンなりを配置できるから面白いです。
 その他 最近、フラジャイルを読み返しました。
 医療漫画はいいですね。Dr.コトー診療所を読んだ時もそうですが、泣いてしまいます。特に3巻、4巻のアミノ製薬の話が好きです、火箱ちゃん可愛い。
-フラジャイルはドラマ化しているみたいなので、そのうち観てみたいです。</description>
+フラジャイルはドラマ化しているみたいなので、そのうち観てみたいです。
+ -- </description>
     </item>
     
   </channel>
