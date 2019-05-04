@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    Golangのスコープについて | ふぉれすけ広場
+    時計の秒針について | ふぉれすけ広場
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://foresukecom.github.io/post/go_scope/"/>
+  <link rel="canonical" href="http://foresukecom.github.io/post/analog_clock/"/>
 
   
   <link rel="stylesheet" href="/css/sanitize.css">
@@ -78,90 +78,64 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>Golangのスコープについて</h1>
+      <h1>時計の秒針について</h1>
       <div class="meta">
-        Feb 9, 2019 &nbsp;
+        May 4, 2019 &nbsp;
         
-          #<a href="/tags/golang">Golang</a>&nbsp;
+          #<a href="/tags/%E3%81%9D%E3%81%AE%E4%BB%96">その他</a>&nbsp;
         
       </div>
     </div>
     <article>
       
 
-<h1 id="はじめに">はじめに</h1>
+<p>今回は算数と理科のお話です。</p>
 
-<p>Golangを書いてて詰まったことがあったのでメモです。</p>
+<p>たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。</p>
 
-<h1 id="本文">本文</h1>
+<p>この場合、文字盤の円周は約6.28cmとなるので、秒針の先端は1分間で約6.28cm進みます。
+(実際は文字盤の内側を秒針が通るので、秒針が進む距離は少し短くなりますが、面倒なのでここでは文字盤の端を秒針が通るということで話を進めます。)</p>
 
-<p>こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします。</p>
+<p>半径15cmの柱時計の場合は、文字盤の円周は約94.2cmとなるので、秒針の先端は1分間で約94.2cm進むことになります。</p>
 
-<pre><code>type product struct {
-	category string
-	name     string
-	price    uint64
-}
-showcase := []product{
-	{&quot;果物&quot;, &quot;りんご&quot;, 120},
-	{&quot;果物&quot;, &quot;バナナ&quot;, 100},
-	{&quot;果物&quot;, &quot;みかん&quot;, 70},
-	{&quot;肉&quot;, &quot;鶏もも&quot;, 250},
-	{&quot;肉&quot;, &quot;豚バラ&quot;, 300},
-	{&quot;肉&quot;, &quot;カルビ&quot;, 450},
-}
-</code></pre>
+<p>時計の文字盤が大きいほど、円周も大きくなるので、秒針の先端のスピードも上昇します。<br />
+つまり…大きなアナログ時計を作れば、秒針が音速や光速を超えるのでは…🤔ということです。</p>
 
-<p>で、このスライスから果物の価格だけ10円引きします。</p>
+<p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="foresukecom" data-slug-hash="ROwpXN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="秒針">
+  <span>See the Pen <a href="https://codepen.io/foresukecom/pen/ROwpXN/">
+  秒針</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
 
-<pre><code>for _, v := range showcase {
-	if v.category == &quot;果物&quot; {
-	    v.price -= 10
-	}
-}
-</code></pre>
+<p>スカイツリー(634m)を秒針にした場合、秒針の先端は時速約95km(秒速66m)で進みます。</p>
 
-<p>こんな感じで書いたのですが、上のfor文だと<code>showcase</code>の中身は変更されません。<br />
-変数のスコープを考えてなかったのが原因です。
-変数<code>v</code>はfor文の中でしか使えないので、いくら<code>v</code>の中身を変更しても<code>showcase</code>の中身は変わりません。</p>
+<p>逆に、音速(秒速340m)を超えるのに必要な秒針の長さは約3.25km、光速(秒速300,000km)を超えるのに必要な秒針の長さは約2,866,242kmとなります。<br />
+太陽の半径が約700,000kmなので、光速を超えるための秒針を用意するのは大変そうです。</p>
 
-<pre><code>for i := 0; i &lt; len(showcase); i++ {
-	if showcase[i].category == &quot;果物&quot; {
-		showcase[i].price -= 10
-	}
-}
-</code></pre>
-
-<p>上のように要素を指定して直接変更すれば<code>showcase</code>の中身を変更することができます。</p>
-
-<pre><code>var showcaseNew []product
-for _, v := range showcase {
-	if v.category == &quot;果物&quot; {
-    	v.price -= 10
-    }
-    showcaseNew = append(showcaseNew, v)
-}
-</code></pre>
-
-<p>for文の中で要素を指定して処理するなんてナウくない、という場合はこんな感じで別のスライスを用意して、各要素を追加していく方法もあります。</p>
-
-<h1 id="おわりに">おわりに</h1>
-
-<p>なんか凄く初歩的なことで詰まってた気がします。</p>
+<p>実際には特殊相対性理論によると「物質は光速に近づくにつれて質量が増える」ので、どれだけ大きな時計を作っても秒針が光速を超えることはできません。<br />
+でも半径が約3.25kmの時計なら国を挙げて頑張れば可能なのでは…と、ちょっと期待してしまいます。</p>
 
 <h1 id="蛇足">蛇足</h1>
 
-<p>2019年冬アニメでやっている<strong>約束のネバーランド</strong>が面白いです。<br />
-ネタバレをせずに感想を書く自信がないので「いいから観て!」としか書けないです。
-Amazonプライムビデオでも配信してるので。早く、こんなブログ見てないで。</p>
+<p>最近、factorioというゲームにハマってます。<br />
+ある惑星に不時着したプレイヤーが、鉄鉱石や銅鉱石、石炭、木などの資源を使って再び宇宙を目指す、というゲームです。
+このゲームは採掘、運搬、加工を自動化し、効率的な工場を組み上げるのが楽しさの１つとなっています。</p>
 
-<p>ちなみに僕は続きが気になって、原作漫画を全巻買ってしまいました。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DR01YdFtWFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<!--
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MR7B5JS&linkId=6f9eac37f69c09f123e9223c58f95c99"></iframe>
+<p>このゲームは止め時が難しく、もう少しもう少しとラインを改良していく内に、どんどん時間が溶けていきます。
+週末にゲームを立ち上げたら10時間が経っていた、ということも珍しくありません。</p>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M4LPGZU&linkId=46d90b0a01e90b0800c7e88549824db5"></iframe>
--->
+<p>海外のインディーズゲームでは珍しく、日本語にも対応しています。
+それも自動翻訳のようなカタコトではなく、有志が翻訳したものを公式が取り込んでくれたので非常に自然な日本語になっています。</p>
+
+<p>さらにMODにも寛容で、ゲーム内からMODをインストールすることも可能です。
+MDOなしでも充分に長時間遊べるのですが、MODを入れることで無限に遊ぶことが可能です。</p>
+
+<p>まだ今年のGWは数日ありますので、みなさんもすぐにDLして時間を溶かしましょう。</p>
+
+<iframe src="https://store.steampowered.com/widget/427520/" frameborder="0" width="646" height="190"></iframe>
 
       
       
@@ -189,10 +163,8 @@ Amazonプライムビデオでも配信してるので。早く、こんなブ�
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/goodby_chromebook/" rel="prev">ChromebookにUbuntuをインストールしようとした愚か者のお話</a></span>
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/go_scope/" rel="prev">Golangのスコープについて</a></span>
     
-    
-      <span class="next"><a href="http://foresukecom.github.io/post/analog_clock/" rel="next">時計の秒針について</a> &rarr;</span>
     
   </nav>
 
