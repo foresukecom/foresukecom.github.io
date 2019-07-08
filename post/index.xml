@@ -6,10 +6,32 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 04 May 2019 08:25:08 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 06:52:24 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>朝食の数値化</title>
+      <link>http://foresukecom.github.io/post/breakfast/</link>
+      <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/breakfast/</guid>
+      <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。
+メニュー 毎日の朝食は以下の通りです。
+- シェイク(COMP POWDER+プロテイン+豆乳)
+- スムージー(ほうれん草+バナナ+ブルーベリー+豆乳)
+- コーヒー
+液体ばかりですね。
+COMP POWDERは株式会社コンプが出している完全栄養食です。
+http://www.comp.jp/products/powder.html
+プロテインはゴールドスタンダードシリーズを飲んでいます。ダブルリッチチョコレート味が美味。 https://www.optimumnutrition.jp/goldstandard.html
+豆乳はマルサンの調製豆乳です。
+https://www.marusanai.co.jp/lineup/detail-63005/
+メニュー詳細 シェイクで使われる材料の詳細です。
+   材料 分量 価格 1食分の価格 備考     COMP POWDER 96g(1袋) 8550円/24袋 356円 COMP公式サイトで定期購入   プロテイン 32g 6621円/2270g 88円 iHerbで購入   豆乳 360g 1187円/1リットル*6本 71円 Amazonで定期購入    スムージーで使われる材料の詳細です。
+   材料 分量 価格 1食分の価格 備考     豆乳 300g 1187円/1リットル*6本 59円 Amazonで定期購入   ほうれん草 40g 150円/1袋(約200g) 30円 スーパーで購入   バナナ 90g(1本) 100円/5本(約450g) 20円 スーパーでで購入   冷凍ブルーベリー 50g 150円/150g 50円 スーパーでで購入    コーヒーの詳細です。</description>
+    </item>
     
     <item>
       <title>時計の秒針について</title>

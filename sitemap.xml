@@ -3,6 +3,35 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/</loc>
+    <lastmod>2019-07-09T06:52:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/</loc>
+    <lastmod>2019-07-09T06:52:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</loc>
+    <lastmod>2019-07-09T06:52:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/</loc>
+    <lastmod>2019-07-09T06:52:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/breakfast/</loc>
+    <lastmod>2019-07-09T06:52:24+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/analog_clock/</loc>
     <lastmod>2019-05-04T08:25:08+09:00</lastmod>
   </url>
@@ -10,6 +39,18 @@
   <url>
     <loc>http://foresukecom.github.io/post/go_scope/</loc>
     <lastmod>2019-02-09T15:11:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/golang/</loc>
+    <lastmod>2019-02-09T15:11:21+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/chromebook/</loc>
+    <lastmod>2019-02-03T08:25:15+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -38,13 +79,31 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/pocket/</loc>
+    <lastmod>2018-12-23T10:09:07+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/golang_panic/</loc>
     <lastmod>2018-11-21T23:17:10+09:00</lastmod>
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/javascript/</loc>
+    <lastmod>2018-11-11T08:15:12+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/dynamic_tweet/</loc>
     <lastmod>2018-11-11T08:15:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/gae/</loc>
+    <lastmod>2018-11-07T07:44:20+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -58,8 +117,20 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/vue.js/</loc>
+    <lastmod>2018-10-30T00:04:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/shukujitsu_info/</loc>
     <lastmod>2018-10-30T00:04:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/reactnative/</loc>
+    <lastmod>2018-10-28T14:27:46+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -83,6 +154,18 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/comic/</loc>
+    <lastmod>2018-05-20T22:58:10+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/english/</loc>
+    <lastmod>2018-05-20T22:58:10+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/english_comic/</loc>
     <lastmod>2018-05-20T22:58:10+09:00</lastmod>
   </url>
@@ -93,8 +176,26 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/json/</loc>
+    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/resas_java/</loc>
     <lastmod>2018-02-03T13:33:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/java/</loc>
+    <lastmod>2018-02-03T13:33:02+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/gcp/</loc>
+    <lastmod>2017-11-24T05:20:15+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -103,8 +204,32 @@
   </url>
   
   <url>
+    <loc>http://foresukecom.github.io/tags/django/</loc>
+    <lastmod>2017-11-05T20:12:53+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/docker/</loc>
+    <lastmod>2017-11-05T20:12:53+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/gcp_docker_django/</loc>
     <lastmod>2017-11-05T20:12:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/food/</loc>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/other/</loc>
+    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -164,134 +289,16 @@
   
   <url>
     <loc>http://foresukecom.github.io/post/20171017_cloudshell/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/post/20171027_googlehome/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/chromebook/</loc>
-    <lastmod>2019-02-03T08:25:15+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/comic/</loc>
-    <lastmod>2018-05-20T22:58:10+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/django/</loc>
-    <lastmod>2017-11-05T20:12:53+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/docker/</loc>
-    <lastmod>2017-11-05T20:12:53+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/english/</loc>
-    <lastmod>2018-05-20T22:58:10+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/food/</loc>
-    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/gae/</loc>
-    <lastmod>2018-11-07T07:44:20+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/gcp/</loc>
-    <lastmod>2017-11-24T05:20:15+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/golang/</loc>
-    <lastmod>2019-02-09T15:11:21+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/java/</loc>
-    <lastmod>2018-02-03T13:33:02+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/javascript/</loc>
-    <lastmod>2018-11-11T08:15:12+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/json/</loc>
-    <lastmod>2018-05-11T05:19:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/other/</loc>
-    <lastmod>2017-10-29T16:51:19+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/pocket/</loc>
-    <lastmod>2018-12-23T10:09:07+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2019-05-04T08:25:08+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/reactnative/</loc>
-    <lastmod>2018-10-28T14:27:46+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/</loc>
-    <lastmod>2019-02-03T08:25:15+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/vue.js/</loc>
-    <lastmod>2018-10-30T00:04:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</loc>
-    <lastmod>2019-05-04T08:25:08+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2019-05-04T08:25:08+09:00</lastmod>
     <priority>0</priority>
   </url>
   

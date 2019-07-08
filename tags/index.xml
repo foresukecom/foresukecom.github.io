@@ -6,17 +6,80 @@
     <description>Recent content in Tags on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 03 Feb 2019 08:25:15 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 06:52:24 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Chromebook</title>
+      <title>その他</title>
+      <link>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
+      <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>http://foresukecom.github.io/tags/golang/</link>
+      <pubDate>Sat, 09 Feb 2019 15:11:21 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ChromeBook</title>
       <link>http://foresukecom.github.io/tags/chromebook/</link>
       <pubDate>Sun, 03 Feb 2019 08:25:15 +0900</pubDate>
       
       <guid>http://foresukecom.github.io/tags/chromebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pocket</title>
+      <link>http://foresukecom.github.io/tags/pocket/</link>
+      <pubDate>Sun, 23 Dec 2018 10:09:07 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/pocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>http://foresukecom.github.io/tags/javascript/</link>
+      <pubDate>Sun, 11 Nov 2018 08:15:12 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GAE</title>
+      <link>http://foresukecom.github.io/tags/gae/</link>
+      <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/gae/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue.js</title>
+      <link>http://foresukecom.github.io/tags/vue.js/</link>
+      <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/vue.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ReactNative</title>
+      <link>http://foresukecom.github.io/tags/reactnative/</link>
+      <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/reactnative/</guid>
       <description></description>
     </item>
     
@@ -26,6 +89,42 @@
       <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
       
       <guid>http://foresukecom.github.io/tags/comic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>http://foresukecom.github.io/tags/english/</link>
+      <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>json</title>
+      <link>http://foresukecom.github.io/tags/json/</link>
+      <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>http://foresukecom.github.io/tags/java/</link>
+      <pubDate>Sat, 03 Feb 2018 13:33:02 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP</title>
+      <link>http://foresukecom.github.io/tags/gcp/</link>
+      <pubDate>Fri, 24 Nov 2017 05:20:15 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/tags/gcp/</guid>
       <description></description>
     </item>
     
@@ -48,16 +147,7 @@
     </item>
     
     <item>
-      <title>English</title>
-      <link>http://foresukecom.github.io/tags/english/</link>
-      <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Food</title>
+      <title>food</title>
       <link>http://foresukecom.github.io/tags/food/</link>
       <pubDate>Sun, 29 Oct 2017 16:51:19 +0900</pubDate>
       
@@ -66,101 +156,11 @@
     </item>
     
     <item>
-      <title>Gae</title>
-      <link>http://foresukecom.github.io/tags/gae/</link>
-      <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/gae/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gcp</title>
-      <link>http://foresukecom.github.io/tags/gcp/</link>
-      <pubDate>Fri, 24 Nov 2017 05:20:15 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/gcp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>http://foresukecom.github.io/tags/golang/</link>
-      <pubDate>Sat, 09 Feb 2019 15:11:21 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>http://foresukecom.github.io/tags/java/</link>
-      <pubDate>Sat, 03 Feb 2018 13:33:02 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>http://foresukecom.github.io/tags/javascript/</link>
-      <pubDate>Sun, 11 Nov 2018 08:15:12 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Json</title>
-      <link>http://foresukecom.github.io/tags/json/</link>
-      <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/json/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Other</title>
+      <title>other</title>
       <link>http://foresukecom.github.io/tags/other/</link>
       <pubDate>Sun, 29 Oct 2017 16:51:19 +0900</pubDate>
       
       <guid>http://foresukecom.github.io/tags/other/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pocket</title>
-      <link>http://foresukecom.github.io/tags/pocket/</link>
-      <pubDate>Sun, 23 Dec 2018 10:09:07 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/pocket/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reactnative</title>
-      <link>http://foresukecom.github.io/tags/reactnative/</link>
-      <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/reactnative/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vue.js</title>
-      <link>http://foresukecom.github.io/tags/vue.js/</link>
-      <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/vue.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>その他</title>
-      <link>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
-      <pubDate>Sat, 04 May 2019 08:25:08 +0900</pubDate>
-      
-      <guid>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</guid>
       <description></description>
     </item>
     
