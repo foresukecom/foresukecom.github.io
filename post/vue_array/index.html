@@ -87,53 +87,34 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
+      <h2 id="はじめに">はじめに</h2>
 <p>Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。</p>
-
 <h2 id="本文">本文</h2>
-
-<p>ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。<br />
-<p data-height="400" data-theme-id="0" data-slug-hash="rZBjEL" data-default-tab="js,result" data-user="foresukecom" data-pen-title="vue_array_ng" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/rZBjEL/">vue_array_ng</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-…このサンプルだと、ボタンを押すたびに配列の中身は更新されるのですが、画面上は変化がありません。</p>
-
-<p>以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。
-<p data-height="400" data-theme-id="0" data-slug-hash="KxPajP" data-default-tab="js,result" data-user="foresukecom" data-pen-title="vue_array_ok" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/KxPajP/">vue_array_ok</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
-
+<p>ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。</p>
+<!-- raw HTML omitted -->
+<p>以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。</p>
+<!-- raw HTML omitted -->
 <p>具体的には以下のように、要素番号を指定して配列の中身を変更しても画面上の値は変化しませんが、Vue.jsに用意されているメソッドを使えは配列の中身に応じて画面上の値も変化します。</p>
-
-<pre><code class="language-javascript">/*失敗例*/ this.num_list[i] = this.num_list[i] * 2;
-/*成功例*/ this.num_list.splice(i, 1, this.num_list[i] * 2)
-</code></pre>
-
-<p><a href="https://jp.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85">公式ドキュメント</a>にも<strong>注意事項</strong>としてちゃんと書かれていました。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/*失敗例*/</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+<span style="color:#75715e">/*成功例*/</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+</code></pre></div><p><a href="https://jp.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85">公式ドキュメント</a>にも<strong>注意事項</strong>としてちゃんと書かれていました。<br>
 JavaScriptの制限じゃ仕方ないですね(´・ω・`)</p>
-
 <blockquote>
-<p>JavaScript の制限のため、Vue は配列で以下の変更を検出することはできません:<br />
-1.インデックスでアイテムを直接設定するとき。例: vm.items[indexOfItem] = newValue<br />
+<p>JavaScript の制限のため、Vue は配列で以下の変更を検出することはできません:<br>
+1.インデックスでアイテムを直接設定するとき。例: vm.items[indexOfItem] = newValue<br>
 2.配列の長さを変更するとき。例: vm.items.length = newLength</p>
 </blockquote>
-
 <h2 id="まとめ">まとめ</h2>
-
-<p>公式ドキュメントを読みましょう。<br />
+<p>公式ドキュメントを読みましょう。<br>
 内容とはまったく関係ないですが、記事の中にソースコードを埋め込みたかったので<a href="https://codepen.io/">CODEPEN</a>を初めて使ってみました。
 ソースコードと実行内容をまとめて埋め込めるのは便利ですね。</p>
-
 <h2 id="その他">その他</h2>
-
-<p>最近は<strong>Rocket League</strong>にハマっています。<br />
+<p>最近は<strong>Rocket League</strong>にハマっています。<br>
 車でサッカーをするという天才的発想。
-FPSほどの精密な操作は求められないので、お酒を飲みながら遊ぶにはピッタリです。<br />
-<iframe src="https://store.steampowered.com/widget/252950/" frameborder="0" width="750" height="200"></iframe></p>
-
-<p>ワイルドスピードやバットマンに登場する車が使えるようになるDLCも多数用意されているので、自分の気に入った車で走り回ることもできます。<br />
-<iframe src="https://store.steampowered.com/widget/675290/" frameborder="0" width="750" height="200"></iframe></p>
+FPSほどの精密な操作は求められないので、お酒を飲みながら遊ぶにはピッタリです。</p>
+<!-- raw HTML omitted -->
+<p>ワイルドスピードやバットマンに登場する車が使えるようになるDLCも多数用意されているので、自分の気に入った車で走り回ることもできます。</p>
+<!-- raw HTML omitted -->
 
       
       

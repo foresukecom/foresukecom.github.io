@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GAE on ふぉれすけ広場</title>
@@ -25,14 +25,16 @@ CrossBridge Lab | GolangでSlackの特定のチャンネルにメッセージを
 今回はGAE上でGolangを動かしてみましたよの構成を元に、GAEのプロジェクトを構築します。
 ルートディレクトリ(app.yamlと同じ階層)にcrom.yamlを作成します。
 cron.yaml cron.yamlには、以下のように開始時刻や間隔で実行するタイミングを指定することが出来ます。
-cron: - description: &amp;quot;毎朝7時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every day 7:00 - description: &amp;quot;毎週日曜8時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every sunday 8:00 - description: &amp;quot;毎日0時を起点とし、1時間単位で実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every 1 hours  その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は公式のドキュメントに詳しく記載されています。
+cron: - description: &amp;quot;毎朝7時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every day 7:00 - description: &amp;quot;毎週日曜8時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every sunday 8:00 - description: &amp;quot;毎日0時を起点とし、1時間単位で実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every 1 hours その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は公式のドキュメントに詳しく記載されています。
 注意点 GAEではdev_server.pyでローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、cron.yamlは動作しません。
 localhost:8000 からGAEローカル環境の管理画面を開くことができます。
 管理画面にcron.yamlで設定したスケジュールが一覧で表示されるので、Run nowをクリックすることで手動で実行することができます。 Cronの設定を本番環境にデプロイするときは、gcloud app deploy cron.yamlのようにcrom.yamlを指定します。
 指定しないと、crom.yamlが読み込まれないため、いつまで待っても処理が実行されません。 Cronが設定されているかどうかは、コンソール画面のcronジョブから確認することが出来ます。 仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。
 そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。
 GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine-Cron: trueが含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります
-例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。</description>
+例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。
+(弾いた後の処理がお粗末ですが…)
+// cron以外からのアクセスは弾く if r.</description>
     </item>
     
     <item>
@@ -49,7 +51,7 @@ WEBサイトが「できた」と安心する前に最終チェックするこ�
 favicon準備 faviconの元にするイラストはこちらです。 このイラストをいい感じにfaviconとして使っていきます。 今回は、スライドで紹介されているFavicon Generatorを使ってfaviconを用意していきます。
 faviconを生成すると、favicon_package_v0.16.zipがダウンロードできます。
 favicon_package_v0.16.zipは以下のような中身になっています。
-favicon_package_v0.16 ├── android-chrome-192x192.png ├── android-chrome-384x384.png ├── apple-touch-icon.png ├── browserconfig.xml ├── favicon-16x16.png ├── favicon-32x32.png ├── favicon.ico ├── mstile-150x150.png ├── safari-pinned-tab.svg └── site.webmanifest  この中ので拡張子がpng、icoは実際に表示されるイメージファイルです。
+favicon_package_v0.16 ├── android-chrome-192x192.png ├── android-chrome-384x384.png ├── apple-touch-icon.png ├── browserconfig.xml ├── favicon-16x16.png ├── favicon-32x32.png ├── favicon.ico ├── mstile-150x150.png ├── safari-pinned-tab.svg └── site.webmanifest この中ので拡張子がpng、icoは実際に表示されるイメージファイルです。
 browserconfig.xmlはWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。
 safari-pinned-tab.svgはベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。
 site.webmanifestはAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。
@@ -65,7 +67,7 @@ browserconfig.xmlとsite.webmanifestはルートディレクトリに配置し�
       <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
       
       <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
-      <description> はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
+      <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
 https://shukujitsu.info
 処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
 GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。
@@ -101,8 +103,7 @@ WPA化 WPAであれば、オンライン状態でアクセスしておけば、�
 欲しい機能とか、気になる箇所があれば、お気軽に@foresukecomまでご連絡下さい。
 その他 ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。
 でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…
-悩ましい飲み物です。
- -- </description>
+悩ましい飲み物です。</description>
     </item>
     
     <item>
@@ -115,11 +116,11 @@ WPA化 WPAであれば、オンライン状態でアクセスしておけば、�
 作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
 環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
 以下のようにバージョンが表示されればOKです。
-$ goapp version go version 1.9.4 (appengine-1.9.74) darwin/amd64  ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。
+$ goapp version go version 1.9.4 (appengine-1.9.74) darwin/amd64 ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。
 構成説明 ディレクトリ構成は以下の通りです。
-├── app.yaml ├── hello.go └── static ├── js │ └── main.js ├── css │ └── main.css └── index.html  この中でGAE特有のファイルはapp.yamlになります。
+├── app.yaml ├── hello.go └── static ├── js │ └── main.js ├── css │ └── main.css └── index.html この中でGAE特有のファイルはapp.yamlになります。
 app.yamlリファレンスに各パラメータの説明が載ってますが、最低限のパラメータだけ書いておきます。
-runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新のバージョンを使用する場合はgo1を指定 handlers: #リクエストと実行する処理をURLパターン毎に指定 - url: / static_files: static/index.html upload: static/index.html - url: /js static_dir: static/js - url: /css static_dir: static/css - url: /.</description>
+runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新のバージョンを使用する場合はgo1を指定 handlers: #リクエストと実行する処理をURLパターン毎に指定 - url: / static_files: static/index.html upload: static/index.html - url: /js static_dir: static/js - url: /css static_dir: static/css - url: /.* script: _go_app その他のファイルについては、特別なことはしていないので説明は省略します。</description>
     </item>
     
   </channel>

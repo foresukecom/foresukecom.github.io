@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChromeBook on ふぉれすけ広場</title>
@@ -19,7 +19,7 @@
       <guid>http://foresukecom.github.io/post/goodby_chromebook/</guid>
       <description>はじめに ChromeBookにUbuntu入れようとしたら、キーボードとトラックパッドが反応しなくなりました。
 ＼(^o^)／
-ChromebookのFile Systemへの書込み制限を解除する方法 ― Write-Protect-Screwの外し方 C300MA編
+[ChromebookのFile Systemへの書込み制限を解除する方法 ― Write-Protect-Screwの外し方 C300MA編] (https://chromesoku.com/rw-filesystem-on-chromebook/)
 詳しくはリンク先の記事に書いてありますが、ChromebookはWrite-Protect-Screwというネジで物理的にファイルシステムへの書き込みを制限しているようです。
 僕が持っている端末とはモデルが違うのですが、似たような仕組みだろうということで精密ドライバを使って分解してみました。
 Write-Protect-Screwらしいネジが見当たらないので、改めて組み直したのですが、キーボードとトラックパッドが反応しなくなってしまいました。

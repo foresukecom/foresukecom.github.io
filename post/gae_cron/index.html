@@ -89,27 +89,17 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
-<p>Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。<br />
+      <h2 id="はじめに">はじめに</h2>
+<p>Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。<br>
 GAEでは<code>cron.yaml</code>に設定を記載することで時間を指定した処理を行うことができます。</p>
-
 <h2 id="サンプル">サンプル</h2>
-
 <p>今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。</p>
-
-<p>slackにメッセージを送る部分は以下のサイトに詳しく記載されているので省略します。<br />
+<p>slackにメッセージを送る部分は以下のサイトに詳しく記載されているので省略します。<br>
 <a href="http://crossbridge-lab.hatenablog.com/entry/2017/04/26/000310">CrossBridge Lab | GolangでSlackの特定のチャンネルにメッセージを送る</a></p>
-
-<p>今回は<a href="https://foresuke.com/post/google_app_engine_go_ajax/">GAE上でGolangを動かしてみましたよ</a>の構成を元に、GAEのプロジェクトを構築します。<br />
+<p>今回は<a href="https://foresuke.com/post/google_app_engine_go_ajax/">GAE上でGolangを動かしてみましたよ</a>の構成を元に、GAEのプロジェクトを構築します。<br>
 ルートディレクトリ(<code>app.yaml</code>と同じ階層)に<code>crom.yaml</code>を作成します。</p>
-
-<h2 id="cron-yaml">cron.yaml</h2>
-
+<h2 id="cronyaml">cron.yaml</h2>
 <p><code>cron.yaml</code>には、以下のように開始時刻や間隔で実行するタイミングを指定することが出来ます。</p>
-
 <pre><code>cron:
 - description: &quot;毎朝7時(日本時間)に実行&quot;
   url: /morning
@@ -126,54 +116,39 @@ GAEでは<code>cron.yaml</code>に設定を記載することで時間を指定�
   timezone: Asia/Tokyo
   schedule: every 1 hours
 
-</code></pre>
-
-<p>その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は<a href="https://cloud.google.com/appengine/docs/standard/go/config/cron">公式のドキュメント</a>に詳しく記載されています。</p>
-
+</code></pre><p>その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は<a href="https://cloud.google.com/appengine/docs/standard/go/config/cron">公式のドキュメント</a>に詳しく記載されています。</p>
 <h2 id="注意点">注意点</h2>
-
-<p>GAEでは<code>dev_server.py</code>でローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、<code>cron.yaml</code>は動作しません。<br />
-<code>localhost:8000</code> からGAEローカル環境の管理画面を開くことができます。<br />
+<p>GAEでは<code>dev_server.py</code>でローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、<code>cron.yaml</code>は動作しません。<br>
+<code>localhost:8000</code> からGAEローカル環境の管理画面を開くことができます。<br>
 管理画面に<code>cron.yaml</code>で設定したスケジュールが一覧で表示されるので、<code>Run now</code>をクリックすることで手動で実行することができます。
-<img src='/images/20181107_cron/local_dev.png'></p>
-
-<p>Cronの設定を本番環境にデプロイするときは、<code>gcloud app deploy cron.yaml</code>のように<code>crom.yaml</code>を指定します。<br />
+<!-- raw HTML omitted --></p>
+<p>Cronの設定を本番環境にデプロイするときは、<code>gcloud app deploy cron.yaml</code>のように<code>crom.yaml</code>を指定します。<br>
 指定しないと、<code>crom.yaml</code>が読み込まれないため、いつまで待っても処理が実行されません。
 Cronが設定されているかどうかは、コンソール画面の<code>cronジョブ</code>から確認することが出来ます。
-<img src='/images/20181107_cron/console.png'></p>
-
-<p>仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。<br />
-そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。<br />
+<!-- raw HTML omitted --></p>
+<p>仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。<br>
+そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。<br>
 GAEのcronサービスからのHTTPアクセスにはHTTPヘッダに<code>X-Appengine-Cron: true</code>が含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります</p>
-
-<p>例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。<br />
+<p>例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。<br>
 (弾いた後の処理がお粗末ですが…)</p>
-
 <pre><code>// cron以外からのアクセスは弾く
 if r.Header.Get(&quot;X-Appengine-Cron&quot;) != &quot;true&quot; {
 	os.Exit(1)
 }
-</code></pre>
-
-<h2 id="感想">感想</h2>
-
+</code></pre><h2 id="感想">感想</h2>
 <p>GAEはhttp(s)でのリクエストに対してレスポンスを返すだけのサービスだと思っていたので、時間指定で処理を実行してくれるのはとても意外でした。</p>
-
 <p>タイミングを<code>every monday 09:00</code>や<code>schedule: 1,8,15,22 of month 09:00</code>のように指定するのはわかりやすくていいですね。
 個人的には、crontabの<code>分 時 日 月 曜日</code>でタイミングを指定する方法よりは、直感的に感じました。</p>
-
-<p>今回のサンプルファイルはgithubで公開してます。<br />
+<p>今回のサンプルファイルはgithubで公開してます。<br>
 <a href="https://github.com/foresukecom/gae_cron">https://github.com/foresukecom/gae_cron</a></p>
-
 <h2 id="その他">その他</h2>
-
-<p>迂闊先生(<a href="https://twitter.com/ukkariukatu">@ukkariukatu</a>)の「のみじょし」5巻が出てました!これは買わないと。<br />
-紙の本と同じタイミングでKindle版も発売されるのはありがたい限りです😆<br />
+<p>迂闊先生(<a href="https://twitter.com/ukkariukatu">@ukkariukatu</a>)の「のみじょし」5巻が出てました!これは買わないと。<br>
+紙の本と同じタイミングでKindle版も発売されるのはありがたい限りです😆<br>
 …先日までみっちゃんと同い年だったんですが、いつの間にか僕の方が年上になってました。</p>
-
-<!--
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07K79V1TF&linkId=313661b721e2b5cad516eea0c06c6671"></iframe>
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
 
       
       

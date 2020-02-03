@@ -91,22 +91,16 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
+      <h2 id="はじめに">はじめに</h2>
 <p>Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。
 Dockerエンジン自体はGoogleComputeEngine上で動かしています。</p>
-
-<p>今回は、GCPのプロジェクトが作られている前提で説明を進めていきます。<br />
-GCEの仮想マシン作成などはWebUIからも作成できるのですが、<del>説明が面倒くさいので</del>今回はCloudShellからGCE仮想マシンを作って行きます。<br />
+<p>今回は、GCPのプロジェクトが作られている前提で説明を進めていきます。<br>
+GCEの仮想マシン作成などはWebUIからも作成できるのですが、<del>説明が面倒くさいので</del>今回はCloudShellからGCE仮想マシンを作って行きます。<br>
 CloudShellは、GCPのリソースを管理できる仮想マシンで、GCPのプロジェクトを作成していれば無料で使用することが可能です。
-CloudShellの詳細は以下公式ドキュメントを参照してください。<br />
+CloudShellの詳細は以下公式ドキュメントを参照してください。<br>
 <a href="https://cloud.google.com/shell/docs/?hl=ja">Google Cloud Shell ドキュメント</a></p>
-
 <p>今回、3つの仮想マシンを操作するので、混乱しないようにプロンプトに仮想マシンを示すようにしています。
 使用する仮想マシンは以下の通りです。</p>
-
 <table>
 <thead>
 <tr>
@@ -114,27 +108,22 @@ CloudShellの詳細は以下公式ドキュメントを参照してください�
 <th>説明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>CloudShell</td>
 <td>GCPで標準で提供されている仮想マシン。</td>
 </tr>
-
 <tr>
 <td>HostMachine</td>
 <td>DockerEngineが稼働する仮想マシン。OSはCentOS7です。</td>
 </tr>
-
 <tr>
 <td>Container</td>
 <td>実際にDjangoが動くDockerコンテナ。OSはCentOS7です。</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="全体的な流れ">全体的な流れ</h2>
-
 <ol>
 <li>GCEでCentOS7を作成、SSHで接続</li>
 <li>docker導入</li>
@@ -144,19 +133,13 @@ CloudShellの詳細は以下公式ドキュメントを参照してください�
 <li>django開発用サーバ起動</li>
 <li>ブラウザからアクセス</li>
 </ol>
-
-<h3 id="gceでcentos7を作成-sshで接続">GCEでCentOS7を作成、SSHで接続</h3>
-
+<h3 id="gceでcentos7を作成sshで接続">GCEでCentOS7を作成、SSHで接続</h3>
 <p>以下コマンドで、GCEをのインスタンスを作成します。
 後半で必要になるので、作成したインスタンスのEXTERNAL_IP(外部IP)を控えておいてください。
 その後、インスタンスに対してSSHで接続します。</p>
-
 <pre><code>(CloudShell)$ gcloud compute instances create example-name --tags http-server --zone asia-east1-a --image centos-7
 (CloudShell)$ gcloud compute ssh example-name
-</code></pre>
-
-<p>GCEインスタンス作成時に使用したオプションは以下の通りです。</p>
-
+</code></pre><p>GCEインスタンス作成時に使用したオプションは以下の通りです。</p>
 <table>
 <thead>
 <tr>
@@ -165,26 +148,22 @@ CloudShellの詳細は以下公式ドキュメントを参照してください�
 <th>説明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>INSTANCE_NAMES</td>
 <td>example-name</td>
 <td>GCEインスタンス名です。オプション名は指定する必要がありません。</td>
 </tr>
-
 <tr>
 <td>zone</td>
 <td>asia-east1-a</td>
 <td>GCEインスタンスを作成するゾーンを指定します。指定しないと、対話形式でゾーンを指定することになります。</td>
 </tr>
-
 <tr>
 <td>tags</td>
 <td>http-server</td>
 <td>GCEインスタンスに適用するファイアウォールを指定します。今回はHTTPでの接続を許可するファイアウォールを指定しています。</td>
 </tr>
-
 <tr>
 <td>image</td>
 <td>centos-7</td>
@@ -192,20 +171,13 @@ CloudShellの詳細は以下公式ドキュメントを参照してください�
 </tr>
 </tbody>
 </table>
-
 <h3 id="docker導入">docker導入</h3>
-
 <p>以下コマンドでDcokerをインストールし、有効化します。</p>
-
 <pre><code>(HostMachine)$ sudo yum install -y docker
 (HostMachine)$ sudo systemctl start docker
 (HostMachine)$ sudo systemctl enable docker
-</code></pre>
-
-<h3 id="dockerfile作成">Dockerfile作成</h3>
-
+</code></pre><h3 id="dockerfile作成">Dockerfile作成</h3>
 <p>以下の通りDockerfileを作成します。</p>
-
 <pre><code>FROM centos:7
 
 # Python3.6
@@ -214,52 +186,33 @@ RUN yum install -y python36u python36u-libs python36u-devel python36u-pip
 
 # Django
 RUN pip3.6 install django
-</code></pre>
-
-<h3 id="dockerイメージとコンテナを作って接続">Dockerイメージとコンテナを作って接続</h3>
-
+</code></pre><h3 id="dockerイメージとコンテナを作って接続">Dockerイメージとコンテナを作って接続</h3>
 <p>カレントディレクトリにDockerfileが存在する状態<code>sudo docker</code>コマンドを実施し、Dockerイメージを作成します。
-ここでは、イメージ名が<code>django</code>、タグが<code>1.0</code>で作成しています。<br />
+ここでは、イメージ名が<code>django</code>、タグが<code>1.0</code>で作成しています。<br>
 <code>docker run</code>コマンドで、Dockerイメージからコンテナを作成し、接続します。</p>
-
 <pre><code>(HostMachine)$ sudo docker build -t django:1.0 .
 (HostMachine)$ sudo docker run -it -p 80:8000 django:1.0
-</code></pre>
-
-<h3 id="djangoプロジェクト作成-allowhost設定">djangoプロジェクト作成、allowhost設定</h3>
-
+</code></pre><h3 id="djangoプロジェクト作成allowhost設定">djangoプロジェクト作成、allowhost設定</h3>
 <p>接続したコンテナには、既にPython3.6やDjangoがインストールされているので、さっそく以下のコマンドでDjangoのプロジェクトを作成します。
-今回の例では<code>my_prj</code>のという名前でプロジェクトを作成します。<br />
+今回の例では<code>my_prj</code>のという名前でプロジェクトを作成します。<br>
 作成したプロジェクトの設定ファイル<code>settings.py</code>の、<code>ALLOWED_HOSTS = []</code>を<code>ALLOWED_HOSTS = [&quot;(EXTERNAL_IP)&quot;]</code>に書き換えます。
 EXTERNAL_IPはGCEインスタンスを作成したときに控えたIPアドレスを記載してください。</p>
-
 <pre><code>(Container)# django-admin startproject my_prj
 (Container)# vi my_prj/my_prj/settings.py
-</code></pre>
-
-<h3 id="django開発用サーバ起動">django開発用サーバ起動</h3>
-
+</code></pre><h3 id="django開発用サーバ起動">django開発用サーバ起動</h3>
 <p>Djangoの開発用サーバを起動します。</p>
-
 <pre><code>(Container)# python3.6 my_prj/manage.py runserver 0.0.0.0:8000
-</code></pre>
-
-<h3 id="ブラウザからアクセス">ブラウザからアクセス</h3>
-
-<p>ブラウザから、EXTERNAL_IP(外部IP)を指定してHTTPで接続します。<br />
+</code></pre><h3 id="ブラウザからアクセス">ブラウザからアクセス</h3>
+<p>ブラウザから、EXTERNAL_IP(外部IP)を指定してHTTPで接続します。<br>
 まだDjangoプロジェクトを作っただけなので、以下のデフォルト画面が表示されればOKです。</p>
-
 <pre><code>It worked!
 Congratulations on your first Django-powered page.
 
 Next, start your first app by running python manage.py startapp [app_label].
 You're seeing this message because you have DEBUG = True in your Django settings file and you haven't configured any URLs. Get to work!
-</code></pre>
-
-<h2 id="おわりに">おわりに</h2>
-
+</code></pre><h2 id="おわりに">おわりに</h2>
 <p>今回はとりあえずの接続確認が目的なので、ソフトウェアの更新などのセキュリティ対策や、ロケール設定を入れていません。
-また、コンテナ内にDjangoのプロジェクトフォルダを作っているので、コンテナを停止するとプロジェクトフォルダが消えてしまいます。<br />
+また、コンテナ内にDjangoのプロジェクトフォルダを作っているので、コンテナを停止するとプロジェクトフォルダが消えてしまいます。<br>
 なので、実際に開発環境や実行環境を作成する際には、必要なソフトウェアを入れたり、プロジェクトフォルダ用に外部ストレージをマウントしたりしてください。</p>
 
       

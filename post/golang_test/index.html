@@ -87,24 +87,16 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
-<p>お仕事でGolangのテストコードを書くことになったのでお勉強しました。<br />
+      <h2 id="はじめに">はじめに</h2>
+<p>お仕事でGolangのテストコードを書くことになったのでお勉強しました。<br>
 テスト対象は以下のプログラムです。</p>
-
-<script src="https://gist.github.com/foresukecom/3a3fb85080fb43500bc83d7b98c41458.js"></script>
-
+<!-- raw HTML omitted -->
 <p>毎朝のルーティンを明文化し、以下の処理をしています。</p>
-
 <ul>
 <li>降水確率40%以上なら傘を装備する。</li>
 <li>冬、もしくは最低気温が5度以下ならコートを装備する。</li>
 </ul>
-
 <p>以下の通り、4つの命令と2つの条件分岐で構成されています。</p>
-
 <table>
 <thead>
 <tr>
@@ -113,38 +105,32 @@
 <th align="left">やってること</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">①</td>
 <td align="left">命令</td>
 <td align="left">持ち物を入れるカバンを用意</td>
 </tr>
-
 <tr>
 <td align="left">②</td>
 <td align="left">条件分岐</td>
 <td align="left">降水確率による判定</td>
 </tr>
-
 <tr>
 <td align="left">③</td>
 <td align="left">命令</td>
 <td align="left">カバンに傘を入れる</td>
 </tr>
-
 <tr>
 <td align="left">④</td>
 <td align="left">条件分岐</td>
 <td align="left">季節、最低気温による判定</td>
 </tr>
-
 <tr>
 <td align="left">⑤</td>
 <td align="left">命令</td>
 <td align="left">カバンにコートを入れる</td>
 </tr>
-
 <tr>
 <td align="left">⑥</td>
 <td align="left">命令</td>
@@ -152,27 +138,19 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="テストの種類">テストの種類</h2>
-
-<p>カバレッジとはテストの網羅率のことを指しています。<br />
-「どのパターンのテストを行えば、必要な範囲のテストが完了したのか?」の指標となります。<br />
+<p>カバレッジとはテストの網羅率のことを指しています。<br>
+「どのパターンのテストを行えば、必要な範囲のテストが完了したのか?」の指標となります。<br>
 「必要な範囲」については、C0カバレッジ、C1カバレッジ、C2カバレッジ…とカバレッジの種類によって異なります。</p>
-
-<p>それぞのカバレッジについて簡単に説明していきます。<br />
+<p>それぞのカバレッジについて簡単に説明していきます。<br>
 ※C3以降もありますが、よく使われるのはC2までみたいなので、今回は省略します。</p>
-
-<h3 id="c0カバレッジ-命令網羅">C0カバレッジ(命令網羅)</h3>
-
-<p>すべての命令を最低1回は実行する、というテストケースを満たせばカバレッジが100%になります。<br />
-以下のパターンを実行すれば、すべての命令を実行することができるので、C0カバレッジ100%になります。<br />
+<h3 id="c0カバレッジ命令網羅">C0カバレッジ(命令網羅)</h3>
+<p>すべての命令を最低1回は実行する、というテストケースを満たせばカバレッジが100%になります。<br>
+以下のパターンを実行すれば、すべての命令を実行することができるので、C0カバレッジ100%になります。<br>
 「降水確率が50%、季節は冬、最低気温12度。」</p>
-
-<h3 id="c1カバレッジ-分岐網羅">C1カバレッジ(分岐網羅)</h3>
-
-<p>すべて条件分岐の組み合わせを通る、というテストケースを満たせばカバレッジが100%になります。<br />
+<h3 id="c1カバレッジ分岐網羅">C1カバレッジ(分岐網羅)</h3>
+<p>すべて条件分岐の組み合わせを通る、というテストケースを満たせばカバレッジが100%になります。<br>
 今回はTrue/Falseの分岐が2つあるので4パターンの組み合わせでテストを行う必要があります。</p>
-
 <table>
 <thead>
 <tr>
@@ -182,7 +160,6 @@
 <th align="left">具体例</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">パターン1</td>
@@ -190,21 +167,18 @@
 <td align="center">True</td>
 <td align="left">降水確率が50%、季節は冬、最低気温12度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン2</td>
 <td align="center">True</td>
 <td align="center">False</td>
 <td align="left">降水確率が50%、季節は春、最低気温12度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン3</td>
 <td align="center">False</td>
 <td align="center">True</td>
 <td align="left">降水確率が20%、季節は冬、最低気温12度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン4</td>
 <td align="center">False</td>
@@ -213,17 +187,12 @@
 </tr>
 </tbody>
 </table>
-
 <p>具体的には以下のパラメータでテストをやればOKです。</p>
-
-<h3 id="c2カバレッジ-条件網羅率">C2カバレッジ(条件網羅率)</h3>
-
-<p>すべての条件の組み合わせを通る、というテストケースを満たせばカバレッジが100%になります。<br />
-C1カバレッジと似ていますが、C1カバレッジは条件分岐の結果をすべて通ればOKですが、C2カバレッジではすべての条件の結果を通る必要があります。<br />
+<h3 id="c2カバレッジ条件網羅率">C2カバレッジ(条件網羅率)</h3>
+<p>すべての条件の組み合わせを通る、というテストケースを満たせばカバレッジが100%になります。<br>
+C1カバレッジと似ていますが、C1カバレッジは条件分岐の結果をすべて通ればOKですが、C2カバレッジではすべての条件の結果を通る必要があります。<br>
 今回のケースだと、「冬か?」と「最低気温が5度以下か?」という2つの条件のそれぞれに対してTrue/Falseの組み合わせを試す必要があります。</p>
-
 <p>そのため、④の条件分岐を2つに分割し、以下のパターンのテストが必要になります。</p>
-
 <table>
 <thead>
 <tr>
@@ -234,7 +203,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <th align="left">具体例</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">パターン1</td>
@@ -243,7 +211,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <td align="center">True</td>
 <td align="left">降水確率が20%、季節は冬、最低気温2度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン2</td>
 <td align="center">True</td>
@@ -251,7 +218,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <td align="center">False</td>
 <td align="left">降水確率が20%、季節は冬、最低気温12度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン3</td>
 <td align="center">True</td>
@@ -259,7 +225,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <td align="center">True</td>
 <td align="left">降水確率が20%、季節は春、最低気温2度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン4</td>
 <td align="center">True</td>
@@ -267,7 +232,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <td align="center">False</td>
 <td align="left">降水確率が20%、季節は春、最低気温12度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン5</td>
 <td align="center">False</td>
@@ -275,7 +239,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <td align="center">True</td>
 <td align="left">降水確率が50%、季節は冬、最低気温2度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン6</td>
 <td align="center">False</td>
@@ -283,7 +246,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <td align="center">False</td>
 <td align="left">降水確率が50%、季節は冬、最低気温12度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン7</td>
 <td align="center">False</td>
@@ -291,7 +253,6 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <td align="center">False</td>
 <td align="left">降水確率が50%、季節は春、最低気温2度。</td>
 </tr>
-
 <tr>
 <td align="left">パターン8</td>
 <td align="center">False</td>
@@ -301,30 +262,21 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 </tr>
 </tbody>
 </table>
-
 <p>具体的には以下のパラメータでテストをやればOKです。</p>
-
 <h2 id="テストコード">テストコード</h2>
-
-<p>それぞれのカバレッジでのパターンも把握したので、さっそくテストコードを書いていきます。<br />
+<p>それぞれのカバレッジでのパターンも把握したので、さっそくテストコードを書いていきます。<br>
 Golangには標準でテスト用のパッケージが用意されているのでそれを使います。</p>
-
-<p>C0カバレッジ100%のコードは以下の通りです。<br />
-単純にテスト対象の関数を呼び出して、想定通りの結果が返ってくるか、を見ています。<br />
-<script src="https://gist.github.com/foresukecom/065709efaf129cfad317f8daaeaa92c9.js"></script></p>
-
-<p>C1カバレッジ100%のコードは以下の通りです。<br />
-テストパターンが増えたので、テストの入力、想定される出力、実際の出力をまとめた構造体の配列を用意して、繰り返し処理をしています。<br />
-<script src="https://gist.github.com/foresukecom/58d22dcfe10f45d1d24b4d2224f143e9.js"></script></p>
-
-<p>C2カバレッジ100%のコードは以下の通りです。<br />
-こちらはC1カバレッジと同じ構造ですね。パターンだけ増やしました。
-<script src="https://gist.github.com/foresukecom/fdee2f025b6c7353511d1ed06c25bf5c.js"></script></p>
-
+<p>C0カバレッジ100%のコードは以下の通りです。<br>
+単純にテスト対象の関数を呼び出して、想定通りの結果が返ってくるか、を見ています。</p>
+<!-- raw HTML omitted -->
+<p>C1カバレッジ100%のコードは以下の通りです。<br>
+テストパターンが増えたので、テストの入力、想定される出力、実際の出力をまとめた構造体の配列を用意して、繰り返し処理をしています。</p>
+<!-- raw HTML omitted -->
+<p>C2カバレッジ100%のコードは以下の通りです。<br>
+こちらはC1カバレッジと同じ構造ですね。パターンだけ増やしました。</p>
+<!-- raw HTML omitted -->
 <h2 id="カバレッジ">カバレッジ</h2>
-
 <p><code>go test</code>では <code>-cover</code>オプションでカバレッジを確認することもできます。</p>
-
 <pre><code>$ go test -cover -run  TestEquipmentC0
 PASS
 coverage: 100.0% of statements
@@ -339,25 +291,19 @@ $ go test -cover -run  TestEquipmentC2
 PASS
 coverage: 100.0% of statements
 ok      github.com/foresukecom/go_test  0.005s
-</code></pre>
-
-<p>各テストコードを確認したところ、全コードでカバレッジが100%になりました。C0のカバレッジが確認できるようです。<br />
-C1、C2カバレッジも確認できるといいんですが、オプションとかを見た感じだとなさそうです…<br />
+</code></pre><p>各テストコードを確認したところ、全コードでカバレッジが100%になりました。C0のカバレッジが確認できるようです。<br>
+C1、C2カバレッジも確認できるといいんですが、オプションとかを見た感じだとなさそうです…<br>
 なにかC1、C2カバレッジが確認しやすいツールがあれば教えてください。</p>
-
 <h2 id="その他">その他</h2>
-
-<p>Life is Strange: Before the Stormをクリアしました。<br />
+<p>Life is Strange: Before the Stormをクリアしました。<br>
 Life is Strangeの前日譚ということで、結末はある程度わかっていたので余計に辛いものがありました。
-前作と同様に、プレイヤーに大きな選択を強いてくるのですが、プレッシャーに耐えきれず、腕立て伏せをして気を落ち着かせてから改めてプレイしたことはいい思い出です。<br />
+前作と同様に、プレイヤーに大きな選択を強いてくるのですが、プレッシャーに耐えきれず、腕立て伏せをして気を落ち着かせてから改めてプレイしたことはいい思い出です。<br>
 クロエ、マックス、レイチェル…みな尊い😇</p>
-
 <p>前作に引続き音楽もよかったので、在宅中はよくスマートスピーカーで再生し続けています。</p>
-
-<!--
-<iframe src="https://store.steampowered.com/widget/554620/" frameborder="0" width="750" height="200"></iframe>
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07B422RFF&linkId=b20de089d6533f6b71a51f1f725d4c5a"></iframe>
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
 
       
       

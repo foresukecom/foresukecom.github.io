@@ -87,20 +87,13 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
+      <h2 id="はじめに">はじめに</h2>
 <p>お仕事でReactNativeを使うことになったので、触ってみました。</p>
-
-<p>導入手順について本記事内では説明をしないので、ReactNativeの公式サイトの<a href="https://facebook.github.io/react-native/docs/getting-started">Getting Started</a>をご参照ください。<br />
+<p>導入手順について本記事内では説明をしないので、ReactNativeの公式サイトの<a href="https://facebook.github.io/react-native/docs/getting-started">Getting Started</a>をご参照ください。<br>
 ちなみに、ReactNativeのバージョンは<code>0.57.3</code>です。</p>
-
 <h2 id="サンプル">サンプル</h2>
-
-<p>今回はRESAS-APIから都道府県一覧を取得してリスト表示してみます。<br />
+<p>今回はRESAS-APIから都道府県一覧を取得してリスト表示してみます。<br>
 <code>react-native init projectName</code>を実行直後のディレクトリ構成は以下の通りになっています。</p>
-
 <pre><code>projectName
 ├── android
 ├── ios
@@ -110,35 +103,23 @@
 ├── index.js
 ├── package-lock.json
 └── package.json
-</code></pre>
-
-<p>今回は<code>App.js</code>のみを以下のように変更を加えていきます。</p>
-
-<script src="https://gist.github.com/foresukecom/a0c4865b7d1dcece272160a5e8d68898.js"></script>
-
-<p>RESAS-APIを使うには事前に<a href="https://opendata.resas-portal.go.jp/">公式サイト</a>から利用登録する必要があります。<br />
+</code></pre><p>今回は<code>App.js</code>のみを以下のように変更を加えていきます。</p>
+<!-- raw HTML omitted -->
+<p>RESAS-APIを使うには事前に<a href="https://opendata.resas-portal.go.jp/">公式サイト</a>から利用登録する必要があります。<br>
 <code>X-API-KEY</code>はRESAS-API登録時に発行されるキーを指定して下さい。</p>
-
 <h2 id="感想">感想</h2>
-
-<p>ReactNativeは活発に開発が行われていますが、毎週のように最新バージョンが更新されているため、開発環境の構築が面倒ですね。<br />
-今回は使わかなかったから影響ないですが、ReactNativeの<code>0.57.3</code>ではButtonコンポーネントを使うとAndroidシミュレータで以下のエラーが発生します。<br />
+<p>ReactNativeは活発に開発が行われていますが、毎週のように最新バージョンが更新されているため、開発環境の構築が面倒ですね。<br>
+今回は使わかなかったから影響ないですが、ReactNativeの<code>0.57.3</code>ではButtonコンポーネントを使うとAndroidシミュレータで以下のエラーが発生します。<br>
 <a href="https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-to-my-react-native-app">https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-to-my-react-native-app</a></p>
-
-<p>もう少し安定した(悪く言えば枯れた)技術を使った方が開発も運用も楽なんですが、最近はそんなことを言っていたら取り残されちゃうから、日々勉強するしかないですね。<br />
+<p>もう少し安定した(悪く言えば枯れた)技術を使った方が開発も運用も楽なんですが、最近はそんなことを言っていたら取り残されちゃうから、日々勉強するしかないですね。<br>
 でも…せめてLTSがあるといいな…</p>
-
 <p>開発環境の構築が終われば、シミュレータ上でポンポンとテキストなりボタンなりを配置できるから面白いです。</p>
-
 <h2 id="その他">その他</h2>
-
-<p>最近、フラジャイルを読み返しました。<br />
-医療漫画はいいですね。Dr.コトー診療所を読んだ時もそうですが、泣いてしまいます。特に3巻、4巻のアミノ製薬の話が好きです、火箱ちゃん可愛い。<br />
+<p>最近、フラジャイルを読み返しました。<br>
+医療漫画はいいですね。Dr.コトー診療所を読んだ時もそうですが、泣いてしまいます。特に3巻、4巻のアミノ製薬の話が好きです、火箱ちゃん可愛い。<br>
 フラジャイルはドラマ化しているみたいなので、そのうち観てみたいです。</p>
-
-<!--
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00PI1BDS4&linkId=5d937a6005fc5d63e9b2102cd21db1fc"></iframe>  
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
       
       

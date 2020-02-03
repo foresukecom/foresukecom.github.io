@@ -87,25 +87,15 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
+      <h2 id="はじめに">はじめに</h2>
 <p>今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。</p>
-
 <h2 id="本文">本文</h2>
-
 <p>Twitterの共有ボタンを設置するだけなら、<a href="https://publish.twitter.com/#">Twitter公式サイト</a>で生成できる以下のコードをHTMLに埋め込むことで簡単に実現できます。</p>
-
 <pre><code>&lt;a href=&quot;https://twitter.com/share?ref_src=twsrc%5Etfw&quot; class=&quot;twitter-share-button&quot; data-text=&quot;ハローワールド&quot; data-show-count=&quot;false&quot;&gt;Tweet&lt;/a&gt;
 &lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>しかし、この方法だとTweetする文章を動的に変更することはできません。</p>
-
-<p>そこで、JavaScriptでTweetする内容を生成して、<code>window.open</code>メソッドでTweet共有用のURL(<a href="https://twitter.com/share">https://twitter.com/share</a>) を呼び出すことで対応します。<br />
+</code></pre><p>しかし、この方法だとTweetする文章を動的に変更することはできません。</p>
+<p>そこで、JavaScriptでTweetする内容を生成して、<code>window.open</code>メソッドでTweet共有用のURL(<a href="https://twitter.com/share">https://twitter.com/share</a>) を呼び出すことで対応します。<br>
 URLに以下のパラメータを追加することで、ハッシュタグやアカウントを含めたTweetを行うことができます。</p>
-
 <table>
 <thead>
 <tr>
@@ -113,64 +103,47 @@ URLに以下のパラメータを追加することで、ハッシュタグや�
 <th>説明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>text</td>
 <td>Tweetする文章</td>
 </tr>
-
 <tr>
 <td>url</td>
 <td>Tweetに含めるURL</td>
 </tr>
-
 <tr>
 <td>via</td>
 <td>Tweetに含めるアカウント</td>
 </tr>
-
 <tr>
 <td>hashtags</td>
 <td>Tweetに含めるハッシュタグ</td>
 </tr>
-
 <tr>
 <td>related</td>
 <td>Tweet後にフォローを勧めるアカウント</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="サンプルコード">サンプルコード</h2>
-
-<p>以下がサンプルコードになります。<br />
-JavaScriptのコードが18行ありますが、ほとんどは現在時刻を求めているだけで、実際にTweetを行うのに必要なのは17行目の<code>window.open(...);</code>だけです。<br />
-<p data-height="265" data-theme-id="0" data-slug-hash="mQrWxz" data-default-tab="js,result" data-user="foresukecom" data-pen-title="mQrWxz" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/mQrWxz/">mQrWxz</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
-
-<p>Tweetボタンを押すと、以下のようなTweetを投稿できます。<br />
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">今は2018年11月11日17時19分23秒です。 <a href="https://t.co/ESavfnXCUe">https://t.co/ESavfnXCUe</a> <a href="https://twitter.com/hashtag/testTag?src=hash&amp;ref_src=twsrc%5Etfw">#testTag</a> <a href="https://twitter.com/foresukecom?ref_src=twsrc%5Etfw">@foresukecom</a>さんから</p>&mdash; foresuke (@foresukecom) <a href="https://twitter.com/foresukecom/status/1061533855755067392?ref_src=twsrc%5Etfw">2018年11月11日</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<p>※追記<br />
-Tweetが140文字を超えたらどうなるか確認したところ、以下のように403エラーとなりました。<br />
-実際に使うなら、文字数チェックの処理が必要ですね。<br />
-<p data-height="265" data-theme-id="0" data-slug-hash="OaRgym" data-default-tab="js,result" data-user="foresukecom" data-pen-title="dynamit_tweet_long" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/OaRgym/">dynamit_tweet_long</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
-
-<p><img src='/images/20181110_dynamic_tweet/error.png'></p>
-
+<p>以下がサンプルコードになります。<br>
+JavaScriptのコードが18行ありますが、ほとんどは現在時刻を求めているだけで、実際にTweetを行うのに必要なのは17行目の<code>window.open(...);</code>だけです。</p>
+<!-- raw HTML omitted -->
+<p>Tweetボタンを押すと、以下のようなTweetを投稿できます。</p>
+<!-- raw HTML omitted -->
+<p>※追記<br>
+Tweetが140文字を超えたらどうなるか確認したところ、以下のように403エラーとなりました。<br>
+実際に使うなら、文字数チェックの処理が必要ですね。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="その他">その他</h2>
-
-<p>最近<strong>Ultimate Chicken Horse</strong>をはじめました。<br />
+<p>最近<strong>Ultimate Chicken Horse</strong>をはじめました。<br>
 このゲームは4人対戦の2Dアクションゲームです。スタートからゴールまで早く到着したプレイヤーが勝ち、というシンプルなルールなのですが、試合ごとに足場やトラップを自由に設置できるので、後半になるほどカオスなコースになり、ワイワイと楽しむには最適なゲームです。</p>
-
-<p>オンライン対戦に対応しているので、今は知らない人たちと野良で遊んでいるのですが、ボイチャをしてこそ真価を発揮するゲームだと思います。<br />
+<p>オンライン対戦に対応しているので、今は知らない人たちと野良で遊んでいるのですが、ボイチャをしてこそ真価を発揮するゲームだと思います。<br>
 おそらく年末のsteamセールの対象になるので、誰か買って一緒に遊んでください。</p>
-
-<p>…作品名をアルティメイト・チキン・ヒーローズだと思っていたことは内緒です。<br />
-<iframe src="https://store.steampowered.com/widget/386940/" frameborder="0" width="750" height="200"></iframe></p>
+<p>…作品名をアルティメイト・チキン・ヒーローズだと思っていたことは内緒です。</p>
+<!-- raw HTML omitted -->
 
       
       

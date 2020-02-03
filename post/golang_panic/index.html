@@ -87,31 +87,21 @@
       </div>
     </div>
     <article>
-      
-
-<h1 id="はじめに">はじめに</h1>
-
-<p>Golangというと、クロスコンパイルが特徴の1つとして挙げられます。<br />
-クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。<br />
+      <h1 id="はじめに">はじめに</h1>
+<p>Golangというと、クロスコンパイルが特徴の1つとして挙げられます。<br>
+クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。<br>
 今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。</p>
-
 <h1 id="サンプルコード">サンプルコード</h1>
-
-<p>実際のコードとは違いますが、当時は以下のようにエラーが発生したら<code>panic()</code>で処理を中断させるコードを書いていました。<br />
-<script src="https://gist.github.com/foresukecom/79e23472c75c70a07184f0d4da0b6d4b.js"></script></p>
-
+<p>実際のコードとは違いますが、当時は以下のようにエラーが発生したら<code>panic()</code>で処理を中断させるコードを書いていました。</p>
+<!-- raw HTML omitted -->
 <p>で、このコードを以下のようなディレクトリ構成の中に配置していました。<code>log_analysis</code>が1つのプロジェクトというイメージです。</p>
-
 <pre><code>tmp
 └── tanaka
     └── azunyan_prpr
         └── tools
             └── log_analysis
                 └── main.go
-</code></pre>
-
-<p>このコードを<a href="https://github.com/mitchellh/gox">mitchellh/gox</a>を使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。</p>
-
+</code></pre><p>このコードを<a href="https://github.com/mitchellh/gox">mitchellh/gox</a>を使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。</p>
 <pre><code>$ gox
 Number of parallel builds: 3
 
@@ -148,11 +138,8 @@ log_analysis_openbsd_amd64
 log_analysis_windows_386.exe
 log_analysis_windows_amd64.exe
 main.go
-</code></pre>
-
-<p><code>log_analysis_windows_amd64.exe</code>がWindows(64bit)向けの実行ファイルになるので、Windows10の<code>D:\tools</code>配下に置いておきます。<br />
+</code></pre><p><code>log_analysis_windows_amd64.exe</code>がWindows(64bit)向けの実行ファイルになるので、Windows10の<code>D:\tools</code>配下に置いておきます。<br>
 <code>log_analysis_windows_amd64.exe</code>を実行すると、読み込むべき<code>sample.log</code>が存在しないので<code>panic(&quot;ファイルないよ&quot;)</code>が実行されます。</p>
-
 <pre><code>D:\tools&gt;dir
  ドライブ D のボリューム ラベルがありません。
  ボリューム シリアル番号は XXXX-XXXX です
@@ -171,40 +158,25 @@ panic: ファイルないよ
 goroutine 1 [running]:
 main.main()
         /tmp/tanaka/azunyan_prpr/tools/log_analysis/main.go:9 +0xa1
-</code></pre>
-
-<p>想定通り<code>panic</code>にはなりましたが、ソースファイルをコンパイルした際のディレクトリが見えるようになってしまいました…</p>
-
+</code></pre><p>想定通り<code>panic</code>にはなりましたが、ソースファイルをコンパイルした際のディレクトリが見えるようになってしまいました…</p>
 <h1 id="まとめ">まとめ</h1>
-
 <p>ツールの使用者からすれば、コンパイルした際のディレクトリ情報は不要な情報なので隠しておきたいところです。
 他のプラットフォームでテストしているときに気が付いたからよかったですが、危うく適当なディレクトリ名の情報をツール使用者に晒すところでした。</p>
-
 <p>当時はおそらく、「<code>panic()</code>使えば、エラー時のメッセージ出しつつ、プログラムも終了させれるじゃん」ぐらいの軽い気持ちで書いてたんだと思います。</p>
-
 <p><code>panic()</code>はメモリ不足などの「これ以上は処理が継続できない」ときに使用します。
 今回のような場合は<code>os.Exit(1)</code>か<code>log.Fatal(err)</code>でプログラムを終了させるべきでした。</p>
-
-<h1 id="2018-11-23-追記">2018/11/23 追記</h1>
-
+<h1 id="20181123-追記">2018/11/23 追記</h1>
 <p>のぼのぼ☂さん(<a href="https://twitter.com/nobonobo">@nobonobo</a>)からご指摘をいただきました。</p>
-
-<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/golang?src=hash&amp;ref_src=twsrc%5Etfw">#golang</a> pro tips: go1.7以降であれば「go build -gcflags=-trimpath=$GOPATH -asmflags=-trimpath=$GOPATH」とかするとバイナリに埋められるファイルパスのプレフィックスだけは取り除ける。 <a href="https://t.co/YehDdOyZJ3">https://t.co/YehDdOyZJ3</a></p>&mdash; のぼのぼ☂️ (@nobonobo) <a href="https://twitter.com/nobonobo/status/1065526650996027392?ref_src=twsrc%5Etfw">2018年11月22日</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<p>見慣れないオプションをお教えいただいたので、それぞれ調べてみました。<br />
-ビルド時のオプションで<code>gcflags</code>を指定すると<code>go tool compile</code>のオプションを指定でき、<code>asmflags</code>を指定すると<code>go tool asm</code>のオプションを指定できるようです。<br />
+<!-- raw HTML omitted -->
+<p>見慣れないオプションをお教えいただいたので、それぞれ調べてみました。<br>
+ビルド時のオプションで<code>gcflags</code>を指定すると<code>go tool compile</code>のオプションを指定でき、<code>asmflags</code>を指定すると<code>go tool asm</code>のオプションを指定できるようです。<br>
 <code>go tool compile</code>コマンドはソースコードを実行可能なオブジェクトコードに変換します。変換されたファイルは<code>.o</code>拡張子のファイルになり、<code>go run</code>コマンドで実行することができます。</p>
-
 <p>直接使ったことがないコマンドでしたが、<code>go run</code>コマンドでgoファイルを実行したときに、裏では <code>go tool compile</code>が実行されていたようです。
 「<code>go build</code>では実行ファイルを生成し、 <code>go run</code>では実行ファイルを一時的に作ってとりあえず実行する」程度のふわっとした認識でした…</p>
-
-<p><code>go tool asm</code>コマンドについては…アセンブリ関係らしいのですがドキュメント読んでもよく理解ができなかったので引き続き確認中です。<br />
+<p><code>go tool asm</code>コマンドについては…アセンブリ関係らしいのですがドキュメント読んでもよく理解ができなかったので引き続き確認中です。<br>
 <code>gcflags</code>だけでもファイルのパスを隠すことができたので、一旦進めていきます。</p>
-
-<p><code>trimpath</code>で指定したパスを実行ファイルから取り除くことができます。<br />
+<p><code>trimpath</code>で指定したパスを実行ファイルから取り除くことができます。<br>
 指定するパスによって、goファイル名まで取り除いたり、</p>
-
 <pre><code>$ go build -o log_analysis -gcflags=&quot;-trimpath=`pwd`/main.go&quot; main.go
 $ ./log_analysis
 panic: ファイルないよ
@@ -212,10 +184,7 @@ panic: ファイルないよ
 goroutine 1 [running]:
 main.main()
 	??:9 +0x9a
-</code></pre>
-
-<p>goファイル名だけを残したり、</p>
-
+</code></pre><p>goファイル名だけを残したり、</p>
 <pre><code>$ go build -o log_analysis -gcflags=&quot;-trimpath=`pwd`&quot; main.go
 $ ./log_analysis
 panic: ファイルないよ
@@ -223,10 +192,7 @@ panic: ファイルないよ
 goroutine 1 [running]:
 main.main()
 	main.go:9 +0x9a
-</code></pre>
-
-<p>ディレクトリ名を途中まで取り除くことができます。</p>
-
+</code></pre><p>ディレクトリ名を途中まで取り除くことができます。</p>
 <pre><code>$ go build -o log_analysis -gcflags=&quot;-trimpath=/tmp/tanaka/azunyan_prpr&quot; main.go
 $ ./log_analysis
 panic: ファイルないよ
@@ -234,31 +200,21 @@ panic: ファイルないよ
 goroutine 1 [running]:
 main.main()
 	tools/log_analysis/main.go:9 +0x9a
-</code></pre>
-
-<p>雰囲気で書いてるから、知らない便利な機能がたくさんありますね。
+</code></pre><p>雰囲気で書いてるから、知らない便利な機能がたくさんありますね。
 今後仕事で使うことになるから使えるようになっておかないとです…</p>
-
 <p>※追記ここまで</p>
-
 <h1 id="その他">その他</h1>
-
-<p>少年チャンピオンで連載されている、<strong>ダーウィンズゲーム</strong>がアニメ化するようです。<br />
-主人公が<strong>アンリミテッド</strong>に<strong>ブレード</strong>を<strong>ワーク</strong>するのがとてもカッコイイので楽しみです。まだ放送時期などは公開されていませんが、ぜひ2クールでがっつりやってほしいものです。<br />
+<p>少年チャンピオンで連載されている、<strong>ダーウィンズゲーム</strong>がアニメ化するようです。<br>
+主人公が<strong>アンリミテッド</strong>に<strong>ブレード</strong>を<strong>ワーク</strong>するのがとてもカッコイイので楽しみです。まだ放送時期などは公開されていませんが、ぜひ2クールでがっつりやってほしいものです。<br>
 あと、士明さんもカッコイイ。将来はあんな感じの老人になりたい。</p>
-
-<!--
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00L9QZIAG&linkId=bd3eeb3bbce4a63c898c8ae7e8a7ecc9"></iframe>
--->
-
-<p>もう1つのオススメ作品として、週刊少年マガジンで連載中の<strong>将来的に死んでくれ</strong>をご紹介します。<br />
-作品名は過激ですが、主人公(女子高生)がヒロイン(女子高生)に諭吉を渡したり、ホテルに誘ったりする百合ラブコメです。<br />
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>もう1つのオススメ作品として、週刊少年マガジンで連載中の<strong>将来的に死んでくれ</strong>をご紹介します。<br>
+作品名は過激ですが、主人公(女子高生)がヒロイン(女子高生)に諭吉を渡したり、ホテルに誘ったりする百合ラブコメです。<br>
 ギャグのセンスや絵柄が好みなので、長門知大先生(<a href="https://twitter.com/ngt9chr">@ngt9chr</a>)の作品は読み続けていきます。
 サブタイトルが「交わりを水魚のように」や「臍を噛んでる暇は無い」のようになっているのもお気にポイントの1つです。</p>
-
-<!--
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XX7ZGRS&linkId=78cfa6a9c6d58078af2db9f0eba4e459"></iframe>
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
       
       

@@ -87,21 +87,14 @@
       </div>
     </div>
     <article>
-      <p>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。<br />
+      <p>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。<br>
 <code>gcloud compute scp</code>でGCEとのファイルのアップロード/ダウンロードが行えます。
 <code>gcloud compute copy-files</code>でもファイルコピーが行えますが、非推奨となっているので<code>gcloud compute scp</code>コマンドを使うのがいいようです。</p>
-
 <p>ローカルのカレントディレクトリにあるファイルを、GCEの<code>/tmp</code>配下にアップロードするには以下のコマンドで行えます。</p>
-
 <pre><code>gcloud compute scp ./gokuhi.txt gce_server:/tmp/
-</code></pre>
-
-<p>逆に、GCEの<code>/tmp</code>配下のファイルを、ローカルのカレントディレクトリにダウンロードするには以下のコマンドです。</p>
-
+</code></pre><p>逆に、GCEの<code>/tmp</code>配下のファイルを、ローカルのカレントディレクトリにダウンロードするには以下のコマンドです。</p>
 <pre><code>gcloud compute scp gce_server:/tmp/gokuhi.txt ./
-</code></pre>
-
-<p><a href="https://cloud.google.com/sdk/gcloud/reference/compute/scp">公式ドキュメント</a>にも記載されている通り、<code>gcloud compute scp</code>にもいろいろとオプションが用意されていますが、単純なファイルアップロード/ダウンロードであればオプションを付けなくても簡単に使うことができます</p>
+</code></pre><p><a href="https://cloud.google.com/sdk/gcloud/reference/compute/scp">公式ドキュメント</a>にも記載されている通り、<code>gcloud compute scp</code>にもいろいろとオプションが用意されていますが、単純なファイルアップロード/ダウンロードであればオプションを付けなくても簡単に使うことができます</p>
 
       
       

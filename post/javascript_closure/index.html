@@ -87,51 +87,32 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
+      <h2 id="はじめに">はじめに</h2>
 <p>クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。</p>
-
 <p>クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。
 <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Closures">MDN web docs</a></p>
-
 <h2 id="サンプル">サンプル</h2>
-
 <p>1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。
-連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。<br />
+連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。<br>
 実際には結果を操作してるのでランダムとは言えなくなりましたが ^^;</p>
-
-<p>まずはクロージャを使わない例です。<br />
+<p>まずはクロージャを使わない例です。<br>
 前回の結果を保持する変数<code>prevNum</code>をグローバル関数として定義しているので、関数<code>dice()</code>以外からもアクセスが出来てしまいます。</p>
-
-<p><p data-height="265" data-theme-id="0" data-slug-hash="PyKvOo" data-default-tab="js,result" data-user="foresukecom" data-pen-title="random_no_closure" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/PyKvOo/">random_no_closure</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
-
-<p>次がクロージャを使った例です。<br />
-こちらでは<code>prevNum</code>を<code>dice()</code>内で定義しているので、<code>dice()</code>の外では<code>prevNum</code>が使えなくなりました。
-<p data-height="265" data-theme-id="0" data-slug-hash="PyKdBX" data-default-tab="js,result" data-user="foresukecom" data-pen-title="random_closure" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/PyKdBX/">random_closure</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
-
+<!-- raw HTML omitted -->
+<p>次がクロージャを使った例です。<br>
+こちらでは<code>prevNum</code>を<code>dice()</code>内で定義しているので、<code>dice()</code>の外では<code>prevNum</code>が使えなくなりました。</p>
+<!-- raw HTML omitted -->
 <h2 id="感想">感想</h2>
-
 <p>クロージャを使わなくても同じ機能は実装できますが、グローバル変数の使用を抑えられるのは嬉しいところです。
 今回のサンプルのような短いプログラムではありがたみも薄くなりますが、</p>
-
-<p>前回と違う乱数を生成する箇所は<code>for</code>、<code>if</code>を使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。<br />
+<p>前回と違う乱数を生成する箇所は<code>for</code>、<code>if</code>を使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。<br>
 もっといい感じの計算式をご存知の方がいたら教えてください。</p>
-
 <h2 id="その他">その他</h2>
-
 <p>最近、地元の静岡が舞台になっている<a href="https://comic.pixiv.net/works/5103">ローカル女子の遠吠え</a>の4巻が発売されました。
 作者の瀬戸口みづき先生も静岡出身ということで、思わず膝を連打するネタが多いです。</p>
-
-<p>ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。<br />
+<p>ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。<br>
 あー、亀まんじゅう食べたい。げんこつハンバーグ食べたい。</p>
-
-<!--
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07HRKLVTP&linkId=30a12735485017e3a99f32035556c114"></iframe>
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
       
       

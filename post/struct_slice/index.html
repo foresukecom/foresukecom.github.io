@@ -87,51 +87,37 @@
       </div>
     </div>
     <article>
-      
-
-<p>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。</p>
-
+      <p>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。</p>
 <p>ここで構造体やスライスについて詳しく説明はしません。詳細は<a href="https://go-tour-jp.appspot.com/welcome/1">A Tour of Go</a>などに記載されているので、そちらをご確認下さい。
 今回は、構造体を要素として持つスライスを扱う方法をまとめています。</p>
-
 <h2 id="いろいろな操作">いろいろな操作</h2>
-
 <ul>
-<li><p>要素にする構造体<br />
+<li>要素にする構造体<br>
 今回の説明で使用する構造体は以下の通り定義されています。
-社員番号(number)と名前(name)を持つ社員(employee)型です。スライスで複数人の社員情報をまとめて扱うようなイメージです。</p>
-
+社員番号(number)と名前(name)を持つ社員(employee)型です。スライスで複数人の社員情報をまとめて扱うようなイメージです。</li>
+</ul>
 <pre><code>type employee struct {
 	number int
 	name   string
 }
-</code></pre></li>
-
-<li><p>スライスの作成<br />
-以下のように<code>make</code>関数を使えば、要素数が0のemployee型のスライスを作成することが出来ます。</p>
-
+</code></pre><ul>
+<li>スライスの作成<br>
+以下のように<code>make</code>関数を使えば、要素数が0のemployee型のスライスを作成することが出来ます。</li>
+</ul>
 <pre><code>employees := make([]employee, 0)
-</code></pre>
-
-<p>スライスの作成と初期化をまとめて行うこともできます。</p>
-
+</code></pre><p>スライスの作成と初期化をまとめて行うこともできます。</p>
 <pre><code>employees := []employee{employee{1, &quot;Taro&quot;}}
-</code></pre>
-
-<p>複数の要素を持つスライスを1行で書くことも可能です。</p>
-
+</code></pre><p>複数の要素を持つスライスを1行で書くことも可能です。</p>
 <pre><code>employees := []employee{employee{1, &quot;Taro&quot;}, employee{2, &quot;Jiro&quot;}, employee{3, &quot;Saburo&quot;}}
-</code></pre></li>
-
-<li><p>要素の追加<br />
-既存のスライスに対して、要素を追加させるには以下のように記載します。</p>
-
+</code></pre><ul>
+<li>要素の追加<br>
+既存のスライスに対して、要素を追加させるには以下のように記載します。</li>
+</ul>
 <pre><code>employees = append(employees, employee{4, &quot;Shiro&quot;})
-</code></pre></li>
-
-<li><p>要素の削除<br />
-組込み関数にはスライスの要素を削除する仕組みは実装されていません。そのため、個別に関数を作成する必要があります。例としては、以下のような関数で要素の削除機能が実現できます。</p>
-
+</code></pre><ul>
+<li>要素の削除<br>
+組込み関数にはスライスの要素を削除する仕組みは実装されていません。そのため、個別に関数を作成する必要があります。例としては、以下のような関数で要素の削除機能が実現できます。</li>
+</ul>
 <pre><code>func delete(employees []employee, n int) []employee {
 	result := make([]employee, 0)
 	for i, v := range employees {
@@ -141,34 +127,24 @@
 	}
 	return result
 }
-</code></pre></li>
-
-<li><p>要素のへのアクセス<br />
-スライスの各要素のフィールドには個別にアクセスすることが出来ます。ここでは、先頭要素の各フィールドを出力してます。</p>
-
+</code></pre><ul>
+<li>要素のへのアクセス<br>
+スライスの各要素のフィールドには個別にアクセスすることが出来ます。ここでは、先頭要素の各フィールドを出力してます。</li>
+</ul>
 <pre><code>fmt.Println(employees[0].number)
 fmt.Println(employees[0].name)
-</code></pre>
-
-<p>以下のように、フィールドの値を変更することも出来ます。</p>
-
+</code></pre><p>以下のように、フィールドの値を変更することも出来ます。</p>
 <pre><code>employees[0].name = &quot;Ichiro&quot;
-</code></pre></li>
-
-<li><p>全要素の参照<br />
-for文を使うことで、スライスは内の全要素を順次参照することが出来ます。</p>
-
-<pre><code>for _, v := range employees {
-fmt.Printf(&quot;number=%d, name=%s\n&quot;, v.number, v.name)
-}
-</code></pre></li>
+</code></pre><ul>
+<li>全要素の参照<br>
+for文を使うことで、スライスは内の全要素を順次参照することが出来ます。</li>
 </ul>
-
-<h2 id="おわりに">おわりに</h2>
-
-<p>要素を追加する方法がわからず悩んだのですが、まとめてみると、複雑なことはなにもないですね。一晩悩んだのが悔しかったのでブログのネタとして使ってしまいます。<br />
+<pre><code>for _, v := range employees {
+  fmt.Printf(&quot;number=%d, name=%s\n&quot;, v.number, v.name)
+}
+</code></pre><h2 id="おわりに">おわりに</h2>
+<p>要素を追加する方法がわからず悩んだのですが、まとめてみると、複雑なことはなにもないですね。一晩悩んだのが悔しかったのでブログのネタとして使ってしまいます。<br>
 標準で要素の削除機能が用意されていないのは以外でした。それなりに使用頻度は高い気がするんですけどねぇ。</p>
-
 <p>今回はポインタには一切触れていないので、第2弾があれば、その辺も記事にしたいところです。</p>
 
       

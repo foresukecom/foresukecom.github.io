@@ -87,30 +87,20 @@
       </div>
     </div>
     <article>
-      
-
-<h2 id="はじめに">はじめに</h2>
-
+      <h2 id="はじめに">はじめに</h2>
 <p>GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。</p>
-
 <h2 id="faviconとは">faviconとは</h2>
-
-<p>faviconとは、ブラウザのタブやブックマークに表示されてるアレです。<br />
+<p>faviconとは、ブラウザのタブやブックマークに表示されてるアレです。<br>
 最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。</p>
-
-<p>faviconについては、以下の資料に詳しくまとめられています。<br />
+<p>faviconについては、以下の資料に詳しくまとめられています。<br>
 <a href="https://speakerdeck.com/oscasierra/websaitoga-dekita-toan-xin-suruqian-nizui-zhong-tietukusurukoto?slide=5">WEBサイトが「できた」と安心する前に最終チェックすること</a></p>
-
 <h2 id="favicon準備">favicon準備</h2>
-
 <p>faviconの元にするイラストはこちらです。
 このイラストをいい感じにfaviconとして使っていきます。
-<img src='/images/20181101_favicon/star.png' width='150'></p>
-
-<p>今回は、スライドで紹介されている<a href="https://realfavicongenerator.net/">Favicon Generator</a>を使ってfaviconを用意していきます。<br />
-faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウンロードできます。<br />
+<!-- raw HTML omitted --></p>
+<p>今回は、スライドで紹介されている<a href="https://realfavicongenerator.net/">Favicon Generator</a>を使ってfaviconを用意していきます。<br>
+faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウンロードできます。<br>
 <code>favicon_package_v0.16.zip</code>は以下のような中身になっています。</p>
-
 <pre><code>favicon_package_v0.16
 ├── android-chrome-192x192.png
 ├── android-chrome-384x384.png
@@ -122,17 +112,13 @@ faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウン�
 ├── mstile-150x150.png
 ├── safari-pinned-tab.svg
 └── site.webmanifest
-</code></pre>
-
-<p>この中ので拡張子が<code>png</code>、<code>ico</code>は実際に表示されるイメージファイルです。<br />
-<code>browserconfig.xml</code>はWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。<br />
-<code>safari-pinned-tab.svg</code>はベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。<br />
+</code></pre><p>この中ので拡張子が<code>png</code>、<code>ico</code>は実際に表示されるイメージファイルです。<br>
+<code>browserconfig.xml</code>はWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。<br>
+<code>safari-pinned-tab.svg</code>はベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。<br>
 <code>site.webmanifest</code>はAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。</p>
-
-<p>今回は<a href="https://foresuke.com/post/google_app_engine_go_ajax/">GAE上でGolangを動かしてみましたよ</a>の構成を元に、faviconを設定します。<br />
- <code>browserconfig.xml</code>と<code>site.webmanifest</code>はルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下の<code>images</code>に配置します。<br />
+<p>今回は<a href="https://foresuke.com/post/google_app_engine_go_ajax/">GAE上でGolangを動かしてみましたよ</a>の構成を元に、faviconを設定します。<br>
+<code>browserconfig.xml</code>と<code>site.webmanifest</code>はルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下の<code>images</code>に配置します。<br>
 プロジェクトのディレクトリ構成は以下の通りです。</p>
-
 <pre><code>.
 ├── app.yaml
 ├── gae_sample.iml
@@ -153,14 +139,9 @@ faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウン�
     ├── index.html
     └── js
         └── main.js
-</code></pre>
-
-<h2 id="gaeで使う">GAEで使う</h2>
-
+</code></pre><h2 id="gaeで使う">GAEで使う</h2>
 <p>GoogleAppEngineでfaviconを使用するには、HTMLファイルの<code>&lt;head&gt;</code>で読み込む以外に、<a href="https://cloud.google.com/appengine/kb/#erroruris">Why do I get URI error for /favicon.ico?</a>にも書かれているとおり、<code>app.yaml</code>にも記載する必要があります。</p>
-
 <p>愚直に書く場合、<code>handlers:</code>の配下に以下の記載します。</p>
-
 <pre><code>- url: /site.webmanifest
   static_files: static/site.webmanifest
   upload: static/site.webmanifest
@@ -200,10 +181,7 @@ faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウン�
 - url: /images/safari-pinned-tab.svg
   static_files: static/images/safari-pinned-tab.svg
   upload: static/images/safari-pinned-tab.svg
-</code></pre>
-
-<p>ファイル毎に書いていくのは面倒なので、以下のような感じで正規表現でまとめて記載することもできます。</p>
-
+</code></pre><p>ファイル毎に書いていくのは面倒なので、以下のような感じで正規表現でまとめて記載することもできます。</p>
 <pre><code>- url: /site.webmanifest
   static_files: static/site.webmanifest
   upload: static/site.webmanifest
@@ -215,18 +193,13 @@ faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウン�
 - url: /images/(.*\.(svg|ico|png))
   static_files: static/images/\1
   upload: static/(.*\.(svg|ico|png))
-</code></pre>
-
-<p>これで、GAEのページにfaviconを設定することが出来ました。<br />
-<a href="https://realfavicongenerator.net/">Favicon Generator</a>では、各プラットフォームからfaviconにアクセス出来ているかを一括でチェックできるのでとても便利です。<br />
+</code></pre><p>これで、GAEのページにfaviconを設定することが出来ました。<br>
+<a href="https://realfavicongenerator.net/">Favicon Generator</a>では、各プラットフォームからfaviconにアクセス出来ているかを一括でチェックできるのでとても便利です。<br>
 今回は、<code>favicon.ico</code>がルートディレクトリにない、と怒られていますが各プラットフォームからfaviconが見れているいることが確認できました。
-<img src='/images/20181101_favicon/favicon_checker.png'></p>
-
-<p>今回のサンプルファイルはgithubで公開してます。<br />
+<!-- raw HTML omitted --></p>
+<p>今回のサンプルファイルはgithubで公開してます。<br>
 <a href="https://github.com/foresukecom/gae_favicon">https://github.com/foresukecom/gae_favicon</a></p>
-
 <h2 id="その他">その他</h2>
-
 <p>毎回なにかオススメを紹介してましたが、ネタが切れました。</p>
 
       
