@@ -6,10 +6,43 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Jul 2019 18:44:51 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
+      <link>http://foresukecom.github.io/post/human_fall_flat/</link>
+      <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/human_fall_flat/</guid>
+      <description>友人とHuman: Fall Flatというゲームを遊びました。 &amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;315&amp;quot; src=&amp;quot;https://www.youtube.com/embed/R2_GR1M7kC0&amp;quot; frameborder=&amp;quot;0&amp;quot; allow=&amp;quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&amp;quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt; ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3Dの物理演算を用いたアクションパズルゲームです。 コースはすべて1人でクリア出来るようにデザインされているのですが、同じコースを複数人で遊ぶことが出来るのでゴリ押しでどんどん進めることが出来ます。 2人だとクリアまでのプレイ時間はだいたい10時間ぐらいでした。 軟体人間を操るので操作性が悪いのですが、30分も遊んでいるとだんだんと癖になってきて、マップを歩き回るだけでも充分に笑えます。 今回はSteamの[Remote Play Together](https://store.steampowered.com/remoteplay?#together)という機能を使ってマルチプレイを行いました。 Human: Fall Flat自体はもともとオンラインマルチプレイに対応しているので、プレイヤーがそれぞれゲームを買っていればRemote Play Togetherを使わなくてもマルチプレイが出来ます。 しかし、Remote Play Togetherを使えば、1人がゲームを買っているだけで複数人で遊ぶことが可能になるのです。 ただし、オフラインマルチを遊んでいる事になるので、左右に分割した画面で遊ぶことになります。 Ultimate Chicken HorseやOvercookedのように全プレイヤーが同じ画面を見て遊ぶゲームがRemote Play Togetherに向いています。 逆に、FPS やレースゲームはオフラインマルチでは画面分割することになるので、小さいディスプレイでは見にくくなるかもしれません。 格闘ゲームも同じ画面で遊ぶゲームではあるのですが、ネットワーク越しということで多少の遅延が発生するので、あまり向いていないと思われます。 Remote Play Togetherがあればゲーム側でオンラインマルチ機能を実装する必要がなくなるので、ローカルマルチのゲームが増えると思います。 個人的にも1画面でワイワイ遊べるゲームが好きなので、今後のPCゲーム業界のトレンドがどうなるのか楽しみです。 &amp;lt;iframe src=&amp;quot;https://store.steampowered.com/widget/477160/&amp;quot; frameborder=&amp;quot;0&amp;quot; width=&amp;quot;646&amp;quot; height=&amp;quot;190&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=&amp;quot;https://store.steampowered.com/widget/386940/&amp;quot; frameborder=&amp;quot;0&amp;quot; width=&amp;quot;646&amp;quot; height=&amp;quot;190&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=&amp;quot;https://store.steampowered.com/widget/448510/&amp;quot; frameborder=&amp;quot;0&amp;quot; width=&amp;quot;646&amp;quot; height=&amp;quot;190&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title>TOMLをGolangで読み込もうとして躓いた話</title>
+      <link>http://foresukecom.github.io/post/go_toml/</link>
+      <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/go_toml/</guid>
+      <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。
+※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。
+https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md
+TOMLを読み込むのは以下のライブラリを使用しています。
+https://github.com/BurntSushi/toml
+焼き寿司🔥🍣…?
+今回は例として、以下のTOMLファイルを読み込もうとします。
+[API] user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 失敗例 このコードを実行したところ、以下のような結果になりました。
+エラーにはなっていませんが、TOMLの内容が読み込まれていません。
+$ go run main1.go false 0 TOMLでは、複数のキー/バリューの組み合わせを纏めたものをテーブルと呼びます。
+角括弧([])で囲まれた文字がテーブル名となり、その下に書かれたキー/バリューがテーブルに含まれる要素になります。
+今回の例ではAPIというテーブル名の中にuser、version、debug、limitという要素が存在することになります。
+解決策 こんな感じにTOML全体を表すConfigとAPIテーブルを表すAPIという構造体を個別に用意したところ、問題なくTOMLの内容を読み込むことが出来ました。
+$ go run main2.go foresuke v0.0.1 true 500 よくない解決策 テーブルを使わないようにTOMLファイルを書き換えれば、main1.goでも値を取得することが出来ます。
+ただ記載する項目が多い場合にはキーの重複が考えられるので実用的ではありません。
+user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 </description>
+    </item>
     
     <item>
       <title>渋谷落語を観てきました</title>
