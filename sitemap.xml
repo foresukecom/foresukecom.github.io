@@ -3,23 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://foresukecom.github.io/post/human_fall_flat/</loc>
+    <lastmod>2020-02-03T13:23:38+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://foresukecom.github.io/post/</loc>
-    <lastmod>2019-07-14T18:44:51+09:00</lastmod>
+    <lastmod>2020-02-03T13:23:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/steam/</loc>
+    <lastmod>2020-02-03T13:23:38+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/tags/</loc>
-    <lastmod>2019-07-14T18:44:51+09:00</lastmod>
+    <lastmod>2020-02-03T13:23:38+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</loc>
-    <lastmod>2019-07-14T18:44:51+09:00</lastmod>
+    <lastmod>2020-02-03T13:23:38+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://foresukecom.github.io/</loc>
-    <lastmod>2019-07-14T18:44:51+09:00</lastmod>
+    <lastmod>2020-02-03T13:23:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/tags/golang/</loc>
+    <lastmod>2020-02-03T09:29:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://foresukecom.github.io/post/go_toml/</loc>
+    <lastmod>2020-02-03T09:29:53+09:00</lastmod>
   </url>
   
   <url>
@@ -35,11 +55,6 @@
   <url>
     <loc>http://foresukecom.github.io/post/analog_clock/</loc>
     <lastmod>2019-05-04T08:25:08+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://foresukecom.github.io/tags/golang/</loc>
-    <lastmod>2019-02-09T15:11:21+09:00</lastmod>
   </url>
   
   <url>
