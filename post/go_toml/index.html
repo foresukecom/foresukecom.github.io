@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    渋谷落語を観てきました | ふぉれすけ広場
+    TOMLをGolangで読み込もうとして躓いた話 | ふぉれすけ広場
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://foresukecom.github.io/post/shiburaku/"/>
+  <link rel="canonical" href="http://foresukecom.github.io/post/go_toml/"/>
 
   
   <link rel="stylesheet" href="/css/sanitize.css">
@@ -78,24 +78,56 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>渋谷落語を観てきました</h1>
+      <h1>TOMLをGolangで読み込もうとして躓いた話</h1>
       <div class="meta">
-        Jul 14, 2019 &nbsp;
+        Feb 3, 2020 &nbsp;
         
-          #<a href="/tags/%E3%81%9D%E3%81%AE%E4%BB%96">その他</a>&nbsp;
+          #<a href="/tags/golang">Golang</a>&nbsp;
         
       </div>
     </div>
     <article>
-      <p>渋谷で毎月開催される初心者向け落語会、<a href="http://eurolive.jp/shibuya-rakugo/">渋谷落語</a>を観てきました。</p>
+      <p>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。</p>
+<p>※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。<br>
+<a href="https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md">https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md</a></p>
+<p>TOMLを読み込むのは以下のライブラリを使用しています。<br>
+<a href="https://github.com/BurntSushi/toml">https://github.com/BurntSushi/toml</a><br>
+焼き寿司🔥🍣…?</p>
+<p>今回は例として、以下のTOMLファイルを読み込もうとします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">API</span>]
+<span style="color:#a6e22e">user</span> = <span style="color:#e6db74">&#34;foresuke&#34;</span>
+<span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;v0.0.1&#34;</span>
+<span style="color:#a6e22e">debug</span>  = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">500</span>
+</code></pre></div><h1 id="失敗例">失敗例</h1>
 <!-- raw HTML omitted -->
-<p>5日間で10公演開かれるのですが、今回は上のツイートで紹介されている5公演目を観てきました。<br>
-まともに落語を観るのは初めてだったのですが、演者さんを紹介するペーパーも配られており、初心者へのハードルを下げている感じがしました。<br>
-4組とも面白かったのですが、柳家わさびさんに垂乳根が特に気に入りました。寿限無のような感じでしょうか。<br>
-柳家わさびさんの別の演目や、他の演者さんの垂乳根も観てみたいです。</p>
-<p>落語は声色だけでキャラクターを使い分けて場面を想像させるのですが、同じ話を聴いても観客ごとに異なる世界を想像するのは読書に近い体験でしょうか。</p>
-<p>8月の落語会では創作落語のネタを初披露する会が予定されているようです。創作落語では現代を舞台にした話もあるようなので観に行こうかと思っています。</p>
+<p>このコードを実行したところ、以下のような結果になりました。<br>
+エラーにはなっていませんが、TOMLの内容が読み込まれていません。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run main1.go 
 
+
+false
+<span style="color:#ae81ff">0</span>
+</code></pre></div><p>TOMLでは、複数のキー/バリューの組み合わせを纏めたものをテーブルと呼びます。<br>
+角括弧(<code>[]</code>)で囲まれた文字がテーブル名となり、その下に書かれたキー/バリューがテーブルに含まれる要素になります。<br>
+今回の例では<code>API</code>というテーブル名の中に<code>user</code>、<code>version</code>、<code>debug</code>、<code>limit</code>という要素が存在することになります。</p>
+<h1 id="解決策">解決策</h1>
+<!-- raw HTML omitted -->
+<p>こんな感じにTOML全体を表す<code>Config</code>とAPIテーブルを表す<code>API</code>という構造体を個別に用意したところ、問題なくTOMLの内容を読み込むことが出来ました。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run main2.go 
+foresuke
+v0.0.1
+true
+<span style="color:#ae81ff">500</span>
+</code></pre></div><h1 id="よくない解決策">よくない解決策</h1>
+<p>テーブルを使わないようにTOMLファイルを書き換えれば、main1.goでも値を取得することが出来ます。<br>
+ただ記載する項目が多い場合にはキーの重複が考えられるので実用的ではありません。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">user</span> = <span style="color:#e6db74">&#34;foresuke&#34;</span>
+<span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;v0.0.1&#34;</span>
+<span style="color:#a6e22e">debug</span>  = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">500</span>
+</code></pre></div>
       
       
       
@@ -122,10 +154,8 @@
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/go_toml/" rel="prev">TOMLをGolangで読み込もうとして躓いた話</a></span>
     
-    
-      <span class="next"><a href="http://foresukecom.github.io/post/breakfast/" rel="next">朝食の数値化</a> &rarr;</span>
+      <span class="next"><a href="http://foresukecom.github.io/post/shiburaku/" rel="next">渋谷落語を観てきました</a> &rarr;</span>
     
   </nav>
 

@@ -6,10 +6,34 @@
     <description>Recent content in Posts on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Jul 2019 18:44:51 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 09:29:53 +0900</lastBuildDate>
     
 	<atom:link href="http://foresukecom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TOMLをGolangで読み込もうとして躓いた話</title>
+      <link>http://foresukecom.github.io/post/go_toml/</link>
+      <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/go_toml/</guid>
+      <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。
+※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。
+https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md
+TOMLを読み込むのは以下のライブラリを使用しています。
+https://github.com/BurntSushi/toml
+焼き寿司🔥🍣…?
+今回は例として、以下のTOMLファイルを読み込もうとします。
+[API] user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 失敗例 このコードを実行したところ、以下のような結果になりました。
+エラーにはなっていませんが、TOMLの内容が読み込まれていません。
+$ go run main1.go false 0 TOMLでは、複数のキー/バリューの組み合わせを纏めたものをテーブルと呼びます。
+角括弧([])で囲まれた文字がテーブル名となり、その下に書かれたキー/バリューがテーブルに含まれる要素になります。
+今回の例ではAPIというテーブル名の中にuser、version、debug、limitという要素が存在することになります。
+解決策 こんな感じにTOML全体を表すConfigとAPIテーブルを表すAPIという構造体を個別に用意したところ、問題なくTOMLの内容を読み込むことが出来ました。
+$ go run main2.go foresuke v0.0.1 true 500 よくない解決策 テーブルを使わないようにTOMLファイルを書き換えれば、main1.goでも値を取得することが出来ます。
+ただ記載する項目が多い場合にはキーの重複が考えられるので実用的ではありません。
+user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 </description>
+    </item>
     
     <item>
       <title>渋谷落語を観てきました</title>
