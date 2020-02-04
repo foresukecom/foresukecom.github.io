@@ -23,7 +23,7 @@
 サンプル 今回はRESAS-APIから都道府県一覧を取得してリスト表示してみます。
 react-native init projectNameを実行直後のディレクトリ構成は以下の通りになっています。
 projectName ├── android ├── ios ├── node_modules ├── App.js ├── app.json ├── index.js ├── package-lock.json └── package.json 今回はApp.jsのみを以下のように変更を加えていきます。
-RESAS-APIを使うには事前に公式サイトから利用登録する必要があります。
+ RESAS-APIを使うには事前に公式サイトから利用登録する必要があります。
 X-API-KEYはRESAS-API登録時に発行されるキーを指定して下さい。
 感想 ReactNativeは活発に開発が行われていますが、毎週のように最新バージョンが更新されているため、開発環境の構築が面倒ですね。
 今回は使わかなかったから影響ないですが、ReactNativeの0.57.3ではButtonコンポーネントを使うとAndroidシミュレータで以下のエラーが発生します。

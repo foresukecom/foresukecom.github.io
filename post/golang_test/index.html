@@ -90,7 +90,8 @@
       <h2 id="はじめに">はじめに</h2>
 <p>お仕事でGolangのテストコードを書くことになったのでお勉強しました。<br>
 テスト対象は以下のプログラムです。</p>
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/foresukecom/3a3fb85080fb43500bc83d7b98c41458.js"></script>
+
 <p>毎朝のルーティンを明文化し、以下の処理をしています。</p>
 <ul>
 <li>降水確率40%以上なら傘を装備する。</li>
@@ -267,14 +268,17 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <p>それぞれのカバレッジでのパターンも把握したので、さっそくテストコードを書いていきます。<br>
 Golangには標準でテスト用のパッケージが用意されているのでそれを使います。</p>
 <p>C0カバレッジ100%のコードは以下の通りです。<br>
-単純にテスト対象の関数を呼び出して、想定通りの結果が返ってくるか、を見ています。</p>
-<!-- raw HTML omitted -->
+単純にテスト対象の関数を呼び出して、想定通りの結果が返ってくるか、を見ています。<br>
+<script type="application/javascript" src="https://gist.github.com/foresukecom/065709efaf129cfad317f8daaeaa92c9.js"></script>
+</p>
 <p>C1カバレッジ100%のコードは以下の通りです。<br>
-テストパターンが増えたので、テストの入力、想定される出力、実際の出力をまとめた構造体の配列を用意して、繰り返し処理をしています。</p>
-<!-- raw HTML omitted -->
+テストパターンが増えたので、テストの入力、想定される出力、実際の出力をまとめた構造体の配列を用意して、繰り返し処理をしています。<br>
+<script type="application/javascript" src="https://gist.github.com/foresukecom/58d22dcfe10f45d1d24b4d2224f143e9.js"></script>
+</p>
 <p>C2カバレッジ100%のコードは以下の通りです。<br>
-こちらはC1カバレッジと同じ構造ですね。パターンだけ増やしました。</p>
-<!-- raw HTML omitted -->
+こちらはC1カバレッジと同じ構造ですね。パターンだけ増やしました。
+<script type="application/javascript" src="https://gist.github.com/foresukecom/fdee2f025b6c7353511d1ed06c25bf5c.js"></script>
+</p>
 <h2 id="カバレッジ">カバレッジ</h2>
 <p><code>go test</code>では <code>-cover</code>オプションでカバレッジを確認することもできます。</p>
 <pre><code>$ go test -cover -run  TestEquipmentC0
@@ -302,8 +306,6 @@ Life is Strangeの前日譚ということで、結末はある程度わかっ�
 <p>前作に引続き音楽もよかったので、在宅中はよくスマートスピーカーで再生し続けています。</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<blockquote>
-</blockquote>
 
       
       
