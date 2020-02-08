@@ -1,47 +1,93 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="ja">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<title> TOMLをGolangで読み込もうとして躓いた話 &middot; ふぉれすけ広場 </title>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    TOMLをGolangで読み込もうとして躓いた話 | ふぉれすけ広場
+  </title>
 
 
-<link rel="stylesheet" href="http://foresukecom.github.io/css/slim.css">
-<link rel="stylesheet" href="http://foresukecom.github.io/css/highlight.min.css">
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="canonical" href="http://foresukecom.github.io/post/go_toml/"/>
 
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
 
-<link href="" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  
+  
+
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
 </head>
 
+
+
 <body>
-  <div class="container">
-    <div class="header">
-  <h1 class="site-title"><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
-  <p class="site-tagline">筋トレしたり、お酒を飲んだり、壁を登ったり。</p>
-  <div class="nav">
-    <a class="nav-btn" href="#">
-      <span class="ci ci-burger"></span>
-    </a>
-    <ul class="nav-list">
-       
-	  <li class="spacer">&ac;</li>
+<div class="container">
+
   
-    </ul>
-  </div>
-</div>
-    <div class="content">
-      <div class="posts">
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/go_toml/">TOMLをGolangで読み込もうとして躓いた話</a></h2>
-          <span class="post-date">Feb 3, 2020 </span>
-          <div class="post-content">
-            <p>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。</p>
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
+        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>TOMLをGolangで読み込もうとして躓いた話</h1>
+      <div class="meta">
+        Feb 3, 2020 &nbsp;
+        
+          #<a href="/tags/golang">Golang</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      <p>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。</p>
 <p>※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。<br>
 <a href="https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md">https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md</a></p>
 <p>TOMLを読み込むのは以下のライブラリを使用しています。<br>
@@ -83,28 +129,63 @@ true
 <span style="color:#a6e22e">debug</span>  = <span style="color:#66d9ef">true</span>
 <span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">500</span>
 </code></pre></div>
-          </div>
-        </div>
-        <div class="pagination">
-          <a class="btn previous " href="http://foresukecom.github.io/post/shiburaku/"> Prev</a>  
-          <a class="btn next " href="http://foresukecom.github.io/post/human_fall_flat/"> Next</a> 
-        </div>
-      </div>
-    </div>
+      
+      
+      
+    </article>
     
-    <div class="footer">
+ <aside><div id="disqus_thread"></div></aside>
+
+<script type="text/javascript">
+     
+    var disqus_shortname = 'foresuke-com';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+  </main>
   
-  <p>Powered by <a href="https://gohugo.io">Hugo</a>. This theme—Slim—is open sourced on <a href="https://github.com/zhe/hugo-theme-slim">Github</a>.</p>
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/human_fall_flat/" rel="prev">Human Fall FlatとSteam Remote Play Togetherについて</a></span>
+    
+    
+      <span class="next"><a href="http://foresukecom.github.io/post/shiburaku/" rel="next">渋谷落語を観てきました</a> &rarr;</span>
+    
+  </nav>
+
+
   
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.JPG" width="64" height="64"><br>
+      
+    </div>
+  </footer>
+
+
 </div>
 
-  </div>
-  <script src="http://foresukecom.github.iojs/slim.js"></script>
-  <script src="http://foresukecom.github.iojs/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
-  
-</body>
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-89386946-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
 </html>
+
