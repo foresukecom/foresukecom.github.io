@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>json on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/json/</link>
+    <link>https://foresukecom.github.io/tags/json/</link>
     <description>Recent content in json on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 11 May 2018 05:19:00 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://foresukecom.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go言語でJSONを作成したときのイージーミス</title>
-      <link>http://foresukecom.github.io/post/golang_json_marshal/</link>
+      <link>https://foresukecom.github.io/post/golang_json_marshal/</link>
       <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/golang_json_marshal/</guid>
+      <guid>https://foresukecom.github.io/post/golang_json_marshal/</guid>
       <description>はじめに Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。
 JSON形式への変換は標準パッケージに含まれているjson.Marshalを使っています。
 失敗例 こんな感じで構造体のスライスをJSONにしようとしたところ、作成されたJSONの中身が空になっていました。  成功例 原因がわからなかったので色々と試行錯誤した結果、下記のコードで想定した動きを確認することができました。 失敗例では10〜12行目の構造体のフィード名の先頭文字を小文字にしていましたが、成功例では先頭文字を大文字に変えています。

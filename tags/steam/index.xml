@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>steam on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/steam/</link>
+    <link>https://foresukecom.github.io/tags/steam/</link>
     <description>Recent content in steam on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/steam/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://foresukecom.github.io/tags/steam/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
-      <link>http://foresukecom.github.io/post/human_fall_flat/</link>
+      <link>https://foresukecom.github.io/post/human_fall_flat/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/human_fall_flat/</guid>
+      <guid>https://foresukecom.github.io/post/human_fall_flat/</guid>
       <description>友人とHuman Fall Flatというゲームを遊びました。
   ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3Dの物理演算を用いたアクションパズルゲームです。
 コースはすべて1人でクリア出来るようにデザインされているのですが、同じコースを複数人で遊ぶことが出来るのでゴリ押しでどんどん進めることが出来ます。 2人だとクリアまでのプレイ時間はだいたい10時間ぐらいでした。

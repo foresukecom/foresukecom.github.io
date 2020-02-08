@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/javascript/</link>
+    <link>https://foresukecom.github.io/tags/javascript/</link>
     <description>Recent content in JavaScript on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 11 Nov 2018 08:15:12 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://foresukecom.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tweetボタンでつぶやく内容を動的に変更する</title>
-      <link>http://foresukecom.github.io/post/dynamic_tweet/</link>
+      <link>https://foresukecom.github.io/post/dynamic_tweet/</link>
       <pubDate>Sun, 11 Nov 2018 08:15:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/dynamic_tweet/</guid>
+      <guid>https://foresukecom.github.io/post/dynamic_tweet/</guid>
       <description>はじめに 今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。
 本文 Twitterの共有ボタンを設置するだけなら、Twitter公式サイトで生成できる以下のコードをHTMLに埋め込むことで簡単に実現できます。
 &amp;lt;a href=&amp;quot;https://twitter.com/share?ref_src=twsrc%5Etfw&amp;quot; class=&amp;quot;twitter-share-button&amp;quot; data-text=&amp;quot;ハローワールド&amp;quot; data-show-count=&amp;quot;false&amp;quot;&amp;gt;Tweet&amp;lt;/a&amp;gt; &amp;lt;script async src=&amp;quot;https://platform.twitter.com/widgets.js&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; しかし、この方法だとTweetする文章を動的に変更することはできません。
@@ -38,10 +38,10 @@ Tweetが140文字を超えたらどうなるか確認したところ、以下の
     
     <item>
       <title>JavaScriptでクロージャを触ったお話</title>
-      <link>http://foresukecom.github.io/post/javascript_closure/</link>
+      <link>https://foresukecom.github.io/post/javascript_closure/</link>
       <pubDate>Sun, 14 Oct 2018 10:46:30 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/javascript_closure/</guid>
+      <guid>https://foresukecom.github.io/post/javascript_closure/</guid>
       <description>はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。
 クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。 MDN web docs
 サンプル 1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。 連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。

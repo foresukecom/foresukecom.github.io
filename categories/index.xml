@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/categories/</link>
+    <link>https://foresukecom.github.io/categories/</link>
     <description>Recent content in Categories on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
-	<atom:link href="http://foresukecom.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://foresukecom.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
