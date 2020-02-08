@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GCP on ふぉれすけ広場</title>
-    <link>https://foresukecom.github.io/tags/gcp/</link>
+    <link>http://foresukecom.github.io/tags/gcp/</link>
     <description>Recent content in GCP on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 24 Nov 2017 05:20:15 +0900</lastBuildDate>
     
-	<atom:link href="https://foresukecom.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GoogleComputeEngineとのファイルやりとり</title>
-      <link>https://foresukecom.github.io/post/gcp_scp/</link>
+      <link>http://foresukecom.github.io/post/gcp_scp/</link>
       <pubDate>Fri, 24 Nov 2017 05:20:15 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/gcp_scp/</guid>
+      <guid>http://foresukecom.github.io/post/gcp_scp/</guid>
       <description>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。
 gcloud compute scpでGCEとのファイルのアップロード/ダウンロードが行えます。 gcloud compute copy-filesでもファイルコピーが行えますが、非推奨となっているのでgcloud compute scpコマンドを使うのがいいようです。
 ローカルのカレントディレクトリにあるファイルを、GCEの/tmp配下にアップロードするには以下のコマンドで行えます。
@@ -26,10 +26,10 @@ gcloud compute scp gce_server:/tmp/gokuhi.txt ./ 公式ドキュメントにも�
     
     <item>
       <title>DockerコンテナでDjango</title>
-      <link>https://foresukecom.github.io/post/gcp_docker_django/</link>
+      <link>http://foresukecom.github.io/post/gcp_docker_django/</link>
       <pubDate>Sun, 05 Nov 2017 20:12:53 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/gcp_docker_django/</guid>
+      <guid>http://foresukecom.github.io/post/gcp_docker_django/</guid>
       <description>はじめに Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。 Dockerエンジン自体はGoogleComputeEngine上で動かしています。
 今回は、GCPのプロジェクトが作られている前提で説明を進めていきます。
 GCEの仮想マシン作成などはWebUIからも作成できるのですが、説明が面倒くさいので今回はCloudShellからGCE仮想マシンを作って行きます。

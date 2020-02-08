@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ふぉれすけ広場</title>
-    <link>https://foresukecom.github.io/</link>
+    <link>http://foresukecom.github.io/</link>
     <description>Recent content on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
     
-	<atom:link href="https://foresukecom.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
-      <link>https://foresukecom.github.io/post/human_fall_flat/</link>
+      <link>http://foresukecom.github.io/post/human_fall_flat/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/human_fall_flat/</guid>
+      <guid>http://foresukecom.github.io/post/human_fall_flat/</guid>
       <description>友人とHuman Fall Flatというゲームを遊びました。
   ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3Dの物理演算を用いたアクションパズルゲームです。
 コースはすべて1人でクリア出来るようにデザインされているのですが、同じコースを複数人で遊ぶことが出来るのでゴリ押しでどんどん進めることが出来ます。 2人だとクリアまでのプレイ時間はだいたい10時間ぐらいでした。
@@ -34,10 +34,10 @@ Remote Play Togetherがあればゲーム側でオンラインマルチ機能を
     
     <item>
       <title>TOMLをGolangで読み込もうとして躓いた話</title>
-      <link>https://foresukecom.github.io/post/go_toml/</link>
+      <link>http://foresukecom.github.io/post/go_toml/</link>
       <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/go_toml/</guid>
+      <guid>http://foresukecom.github.io/post/go_toml/</guid>
       <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。
 ※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。
 https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md
@@ -58,10 +58,10 @@ user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = tru
     
     <item>
       <title>渋谷落語を観てきました</title>
-      <link>https://foresukecom.github.io/post/shiburaku/</link>
+      <link>http://foresukecom.github.io/post/shiburaku/</link>
       <pubDate>Sun, 14 Jul 2019 18:44:51 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/shiburaku/</guid>
+      <guid>http://foresukecom.github.io/post/shiburaku/</guid>
       <description>渋谷で毎月開催される初心者向け落語会、渋谷落語を観てきました。
 5日間で10公演開かれるのですが、今回は上のツイートで紹介されている5公演目を観てきました。
 まともに落語を観るのは初めてだったのですが、演者さんを紹介するペーパーも配られており、初心者へのハードルを下げている感じがしました。
@@ -73,10 +73,10 @@ user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = tru
     
     <item>
       <title>朝食の数値化</title>
-      <link>https://foresukecom.github.io/post/breakfast/</link>
+      <link>http://foresukecom.github.io/post/breakfast/</link>
       <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/breakfast/</guid>
+      <guid>http://foresukecom.github.io/post/breakfast/</guid>
       <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。
 メニュー 毎日の朝食は以下の通りです。
  シェイク(COMP POWDER+プロテイン+豆乳) スムージー(ほうれん草+バナナ+ブルーベリー+豆乳) コーヒー  液体ばかりですね。
@@ -92,10 +92,10 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>時計の秒針について</title>
-      <link>https://foresukecom.github.io/post/analog_clock/</link>
+      <link>http://foresukecom.github.io/post/analog_clock/</link>
       <pubDate>Sat, 04 May 2019 08:25:08 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/analog_clock/</guid>
+      <guid>http://foresukecom.github.io/post/analog_clock/</guid>
       <description>今回は算数と理科のお話です。
 たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。
 この場合、文字盤の円周は約6.28cmとなるので、秒針の先端は1分間で約6.28cm進みます。 (実際は文字盤の内側を秒針が通るので、秒針が進む距離は少し短くなりますが、面倒なのでここでは文字盤の端を秒針が通るということで話を進めます。)
@@ -118,10 +118,10 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>Golangのスコープについて</title>
-      <link>https://foresukecom.github.io/post/go_scope/</link>
+      <link>http://foresukecom.github.io/post/go_scope/</link>
       <pubDate>Sat, 09 Feb 2019 15:11:21 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/go_scope/</guid>
+      <guid>http://foresukecom.github.io/post/go_scope/</guid>
       <description>はじめに Golangを書いてて詰まったことがあったのでメモです。
 本文 こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします。
 type product struct { category string name string price uint64 } showcase := []product{ {&amp;quot;果物&amp;quot;, &amp;quot;りんご&amp;quot;, 120}, {&amp;quot;果物&amp;quot;, &amp;quot;バナナ&amp;quot;, 100}, {&amp;quot;果物&amp;quot;, &amp;quot;みかん&amp;quot;, 70}, {&amp;quot;肉&amp;quot;, &amp;quot;鶏もも&amp;quot;, 250}, {&amp;quot;肉&amp;quot;, &amp;quot;豚バラ&amp;quot;, 300}, {&amp;quot;肉&amp;quot;, &amp;quot;カルビ&amp;quot;, 450}, } で、このスライスから果物の価格だけ10円引きします。
@@ -132,10 +132,10 @@ for i := 0; i &amp;lt; len(showcase); i++ { if showcase[i].category == &amp;quot
     
     <item>
       <title>ChromebookにUbuntuをインストールしようとした愚か者のお話</title>
-      <link>https://foresukecom.github.io/post/goodby_chromebook/</link>
+      <link>http://foresukecom.github.io/post/goodby_chromebook/</link>
       <pubDate>Sun, 03 Feb 2019 08:25:15 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/goodby_chromebook/</guid>
+      <guid>http://foresukecom.github.io/post/goodby_chromebook/</guid>
       <description>はじめに ChromeBookにUbuntu入れようとしたら、キーボードとトラックパッドが反応しなくなりました。
 ＼(^o^)／
 [ChromebookのFile Systemへの書込み制限を解除する方法 ― Write-Protect-Screwの外し方 C300MA編] (https://chromesoku.com/rw-filesystem-on-chromebook/)
@@ -148,10 +148,10 @@ Write-Protect-Screwらしいネジが見当たらないので、改めて組み�
     
     <item>
       <title>Golangでテストコードを書く少年のお話</title>
-      <link>https://foresukecom.github.io/post/golang_test/</link>
+      <link>http://foresukecom.github.io/post/golang_test/</link>
       <pubDate>Tue, 22 Jan 2019 08:25:31 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/golang_test/</guid>
+      <guid>http://foresukecom.github.io/post/golang_test/</guid>
       <description>はじめに お仕事でGolangのテストコードを書くことになったのでお勉強しました。
 テスト対象は以下のプログラムです。
  毎朝のルーティンを明文化し、以下の処理をしています。
@@ -171,20 +171,20 @@ C1カバレッジ(分岐網羅) すべて条件分岐の組み合わせを通る
     
     <item>
       <title>退職エントリ</title>
-      <link>https://foresukecom.github.io/post/resign/</link>
+      <link>http://foresukecom.github.io/post/resign/</link>
       <pubDate>Sat, 29 Dec 2018 10:15:46 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/resign/</guid>
+      <guid>http://foresukecom.github.io/post/resign/</guid>
       <description>12月いっぱいで今の会社を退職します。
 次の職場でもがんばるぞい！</description>
     </item>
     
     <item>
       <title>コーヒー美味しい</title>
-      <link>https://foresukecom.github.io/post/coffee/</link>
+      <link>http://foresukecom.github.io/post/coffee/</link>
       <pubDate>Tue, 25 Dec 2018 07:29:54 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/coffee/</guid>
+      <guid>http://foresukecom.github.io/post/coffee/</guid>
       <description>コーヒーサーバを手に入れました。
 ありがとうサンタさん、来月はクレカ支払い頑張るよ。
 マグカップが汚い…黒色のマグカップを使えば汚れが目立たなくていいのでは🤔
@@ -196,10 +196,10 @@ C1カバレッジ(分岐網羅) すべて条件分岐の組み合わせを通る
     
     <item>
       <title>Pocketからお祝いされました -2018-</title>
-      <link>https://foresukecom.github.io/post/pocket_2018/</link>
+      <link>http://foresukecom.github.io/post/pocket_2018/</link>
       <pubDate>Sun, 23 Dec 2018 10:09:07 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/pocket_2018/</guid>
+      <guid>http://foresukecom.github.io/post/pocket_2018/</guid>
       <description>Pocketから以下のメールが届きました。 2016年、2017年には上位5%になったことを祝福するメールが届きましたが、ついに2018年は上位1%のユーザになれたようです。
 自分が登録した記事の中から人気がある記事をピックアップしてみるとQiitaの記事が多いみたいです。
 やはりQiitaはSEOに力を入れているのか閲覧者が多いようですね。
@@ -212,10 +212,10 @@ C1カバレッジ(分岐網羅) すべて条件分岐の組み合わせを通る
     
     <item>
       <title>Golangのpanicのお話</title>
-      <link>https://foresukecom.github.io/post/golang_panic/</link>
+      <link>http://foresukecom.github.io/post/golang_panic/</link>
       <pubDate>Wed, 21 Nov 2018 23:17:10 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/golang_panic/</guid>
+      <guid>http://foresukecom.github.io/post/golang_panic/</guid>
       <description>はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。
 クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。
 今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。
@@ -227,10 +227,10 @@ $ gox Number of parallel builds: 3 --&amp;gt; freebsd/amd64: _/tmp/tanaka/azunya
     
     <item>
       <title>Tweetボタンでつぶやく内容を動的に変更する</title>
-      <link>https://foresukecom.github.io/post/dynamic_tweet/</link>
+      <link>http://foresukecom.github.io/post/dynamic_tweet/</link>
       <pubDate>Sun, 11 Nov 2018 08:15:12 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/dynamic_tweet/</guid>
+      <guid>http://foresukecom.github.io/post/dynamic_tweet/</guid>
       <description>はじめに 今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。
 本文 Twitterの共有ボタンを設置するだけなら、Twitter公式サイトで生成できる以下のコードをHTMLに埋め込むことで簡単に実現できます。
 &amp;lt;a href=&amp;quot;https://twitter.com/share?ref_src=twsrc%5Etfw&amp;quot; class=&amp;quot;twitter-share-button&amp;quot; data-text=&amp;quot;ハローワールド&amp;quot; data-show-count=&amp;quot;false&amp;quot;&amp;gt;Tweet&amp;lt;/a&amp;gt; &amp;lt;script async src=&amp;quot;https://platform.twitter.com/widgets.js&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; しかし、この方法だとTweetする文章を動的に変更することはできません。
@@ -252,10 +252,10 @@ Tweetが140文字を超えたらどうなるか確認したところ、以下の
     
     <item>
       <title>GAEでバッチ処理</title>
-      <link>https://foresukecom.github.io/post/gae_cron/</link>
+      <link>http://foresukecom.github.io/post/gae_cron/</link>
       <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/gae_cron/</guid>
+      <guid>http://foresukecom.github.io/post/gae_cron/</guid>
       <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
 GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
 サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
@@ -278,10 +278,10 @@ GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine
     
     <item>
       <title>GAEでfaviconを設定</title>
-      <link>https://foresukecom.github.io/post/gae_favicon/</link>
+      <link>http://foresukecom.github.io/post/gae_favicon/</link>
       <pubDate>Tue, 06 Nov 2018 23:48:25 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/gae_favicon/</guid>
+      <guid>http://foresukecom.github.io/post/gae_favicon/</guid>
       <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。
 faviconとは faviconとは、ブラウザのタブやブックマークに表示されてるアレです。
 最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。
@@ -302,10 +302,10 @@ browserconfig.xmlとsite.webmanifestはルートディレクトリに配置し�
     
     <item>
       <title>祝日のカウントダウンタイマー</title>
-      <link>https://foresukecom.github.io/post/shukujitsu_info/</link>
+      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
       <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/shukujitsu_info/</guid>
+      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
       <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
 https://shukujitsu.info
 処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
@@ -347,10 +347,10 @@ WPA化 WPAであれば、オンライン状態でアクセスしておけば、�
     
     <item>
       <title>ReactNativeを触ったお話</title>
-      <link>https://foresukecom.github.io/post/reactnativefetch/</link>
+      <link>http://foresukecom.github.io/post/reactnativefetch/</link>
       <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/reactnativefetch/</guid>
+      <guid>http://foresukecom.github.io/post/reactnativefetch/</guid>
       <description>はじめに お仕事でReactNativeを使うことになったので、触ってみました。
 導入手順について本記事内では説明をしないので、ReactNativeの公式サイトのGetting Startedをご参照ください。
 ちなみに、ReactNativeのバージョンは0.57.3です。
@@ -372,10 +372,10 @@ https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-t
     
     <item>
       <title>JavaScriptでクロージャを触ったお話</title>
-      <link>https://foresukecom.github.io/post/javascript_closure/</link>
+      <link>http://foresukecom.github.io/post/javascript_closure/</link>
       <pubDate>Sun, 14 Oct 2018 10:46:30 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/javascript_closure/</guid>
+      <guid>http://foresukecom.github.io/post/javascript_closure/</guid>
       <description>はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。
 クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。 MDN web docs
 サンプル 1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。 連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。
@@ -394,10 +394,10 @@ https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-t
     
     <item>
       <title>Vue.jsで配列を扱ったお話</title>
-      <link>https://foresukecom.github.io/post/vue_array/</link>
+      <link>http://foresukecom.github.io/post/vue_array/</link>
       <pubDate>Tue, 21 Aug 2018 07:05:51 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/vue_array/</guid>
+      <guid>http://foresukecom.github.io/post/vue_array/</guid>
       <description>はじめに Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。
 本文 ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。
 以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。
@@ -417,10 +417,10 @@ JavaScriptの制限じゃ仕方ないですね(´・ω・`)
     
     <item>
       <title>GAE上でGolangを動かしてみましたよ</title>
-      <link>https://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
+      <link>http://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
       <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
+      <guid>http://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
       <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
 作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
 環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
@@ -434,10 +434,10 @@ runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新�
     
     <item>
       <title>英語漫画のススメ</title>
-      <link>https://foresukecom.github.io/post/english_comic/</link>
+      <link>http://foresukecom.github.io/post/english_comic/</link>
       <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/english_comic/</guid>
+      <guid>http://foresukecom.github.io/post/english_comic/</guid>
       <description>はじめに 最近、海外ドラマを観たりオンライン英会話を受けたりして英語を勉強しています。
 しかし学生時代に英語の勉強をサボっていたので、わからない単語が多すぎて会話に付いていけず苦労しています。
 単語帳なんかも買ってみたのですがすぐに飽きてしまったので、英語版HUNTER×HUNTERをKindleで買って試してみました。
@@ -457,10 +457,10 @@ Kindleでは漫画を画像として取り込んでいるので、セリフの�
     
     <item>
       <title>Go言語でJSONを作成したときのイージーミス</title>
-      <link>https://foresukecom.github.io/post/golang_json_marshal/</link>
+      <link>http://foresukecom.github.io/post/golang_json_marshal/</link>
       <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/golang_json_marshal/</guid>
+      <guid>http://foresukecom.github.io/post/golang_json_marshal/</guid>
       <description>はじめに Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。
 JSON形式への変換は標準パッケージに含まれているjson.Marshalを使っています。
 失敗例 こんな感じで構造体のスライスをJSONにしようとしたところ、作成されたJSONの中身が空になっていました。  成功例 原因がわからなかったので色々と試行錯誤した結果、下記のコードで想定した動きを確認することができました。 失敗例では10〜12行目の構造体のフィード名の先頭文字を小文字にしていましたが、成功例では先頭文字を大文字に変えています。
@@ -473,10 +473,10 @@ Go言語では変数や関数のスコープが先頭文字列が小文字か、
     
     <item>
       <title>JavaからRESAS APIを使ってみましたよ</title>
-      <link>https://foresukecom.github.io/post/resas_java/</link>
+      <link>http://foresukecom.github.io/post/resas_java/</link>
       <pubDate>Sat, 03 Feb 2018 13:33:02 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/resas_java/</guid>
+      <guid>http://foresukecom.github.io/post/resas_java/</guid>
       <description>お久しぶりです。
 巷で話題のビッグデータを使って何かやってみようかと思い立ったので、RESASから情報を取得してみます。
 RESASとは地域の活性を目的とし、市町村名一覧や人口構成、観光資源などの多くの情報を公開しているWebサイトです。
@@ -493,10 +493,10 @@ RESAS-API利用登録
     
     <item>
       <title>GoogleComputeEngineとのファイルやりとり</title>
-      <link>https://foresukecom.github.io/post/gcp_scp/</link>
+      <link>http://foresukecom.github.io/post/gcp_scp/</link>
       <pubDate>Fri, 24 Nov 2017 05:20:15 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/gcp_scp/</guid>
+      <guid>http://foresukecom.github.io/post/gcp_scp/</guid>
       <description>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。
 gcloud compute scpでGCEとのファイルのアップロード/ダウンロードが行えます。 gcloud compute copy-filesでもファイルコピーが行えますが、非推奨となっているのでgcloud compute scpコマンドを使うのがいいようです。
 ローカルのカレントディレクトリにあるファイルを、GCEの/tmp配下にアップロードするには以下のコマンドで行えます。
@@ -506,10 +506,10 @@ gcloud compute scp gce_server:/tmp/gokuhi.txt ./ 公式ドキュメントにも�
     
     <item>
       <title>DockerコンテナでDjango</title>
-      <link>https://foresukecom.github.io/post/gcp_docker_django/</link>
+      <link>http://foresukecom.github.io/post/gcp_docker_django/</link>
       <pubDate>Sun, 05 Nov 2017 20:12:53 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/gcp_docker_django/</guid>
+      <guid>http://foresukecom.github.io/post/gcp_docker_django/</guid>
       <description>はじめに Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。 Dockerエンジン自体はGoogleComputeEngine上で動かしています。
 今回は、GCPのプロジェクトが作られている前提で説明を進めていきます。
 GCEの仮想マシン作成などはWebUIからも作成できるのですが、説明が面倒くさいので今回はCloudShellからGCE仮想マシンを作って行きます。
@@ -523,10 +523,10 @@ Google Cloud Shell ドキュメント
     
     <item>
       <title>完全栄養食COMPを食べてます</title>
-      <link>https://foresukecom.github.io/post/comp/</link>
+      <link>http://foresukecom.github.io/post/comp/</link>
       <pubDate>Sun, 29 Oct 2017 16:51:19 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/comp/</guid>
+      <guid>http://foresukecom.github.io/post/comp/</guid>
       <description>はじめに みなさんは完全栄養食COMPをご存知でしょうか。
 完全栄養食の名の通り、これを食べるだけで必要な栄養素が取得できるという優れものです。 アメリカではソイレントが有名ですね。
 概要 COMPはパウダータイプ(水などとシェイクして飲む)と、グミタイプの2種類を販売していますが、今回はパウダータイプのお話になります。
@@ -551,10 +551,10 @@ Google Cloud Shell ドキュメント
     
     <item>
       <title>英語のお勉強</title>
-      <link>https://foresukecom.github.io/post/english/</link>
+      <link>http://foresukecom.github.io/post/english/</link>
       <pubDate>Tue, 24 Oct 2017 05:50:21 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/english/</guid>
+      <guid>http://foresukecom.github.io/post/english/</guid>
       <description>はじめに みなさんは英語を使いこなしていますか。僕は使えません。
 最近はGoogle翻訳の精度も上がりましたが、英語の講演を聞いたり、画像として表示されている英語を理解するためには自身の英語力を鍛える必要があります。
 国内で開催されるAmazonWebServiceやGoogleCloudPlatformのイベント、セミナーによく参加しているのですが、英語の講演を理解できず、せっかくの貴重な機会を逃してしまうことが多々ありました。
@@ -576,10 +576,10 @@ Duolingo 無料で使える語学勉強用のWebサービスDuolingoも使って
     
     <item>
       <title>カタカナ表記について</title>
-      <link>https://foresukecom.github.io/post/katakana/</link>
+      <link>http://foresukecom.github.io/post/katakana/</link>
       <pubDate>Sat, 21 Oct 2017 12:21:09 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/katakana/</guid>
+      <guid>http://foresukecom.github.io/post/katakana/</guid>
       <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くときには長音符は省略した方がいい」と教わってきました。
 そのため「コンピュータ」「ルータ」のように末尾の長音符を省略して書いていました。
 長音符を省略する理由については覚えていないのですが、おそらくJIS規格に準拠しようとしたのでしょう。
@@ -598,10 +598,10 @@ Duolingo 無料で使える語学勉強用のWebサービスDuolingoも使って
     
     <item>
       <title>ブログ再開 -2017秋-</title>
-      <link>https://foresukecom.github.io/post/restart/</link>
+      <link>http://foresukecom.github.io/post/restart/</link>
       <pubDate>Tue, 17 Oct 2017 07:55:56 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/restart/</guid>
+      <guid>http://foresukecom.github.io/post/restart/</guid>
       <description>ご挨拶 お久しぶりです、foresukeです。
 転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開していきます。
 ブログに慣れるまでは、質より量を優先してどんどん書いていきたいです。</description>
@@ -609,10 +609,10 @@ Duolingo 無料で使える語学勉強用のWebサービスDuolingoも使って
     
     <item>
       <title>13日の金曜日です</title>
-      <link>https://foresukecom.github.io/post/friday13th/</link>
+      <link>http://foresukecom.github.io/post/friday13th/</link>
       <pubDate>Fri, 13 Jan 2017 08:47:12 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/friday13th/</guid>
+      <guid>http://foresukecom.github.io/post/friday13th/</guid>
       <description>はじめに 2017年1月13日は金曜日です。 Wikipediaをみると諸説あるようですが、主に海外では縁起の悪い日として知られています。
  キリストの最後の晩餐に13人の人がいたことから、13は不吉な数とされた。また、キリストが金曜日に磔刑に処せられたとされていることから、13日の金曜日が不吉であるとされるようになった。一説には、イヴによるアダムの誘惑も大洪水からノアが脱出したのもバベルの塔が壊されたのも13日の金曜日だと言われるが、聖書にそのような記述はない。
 北欧神話では12人の神が祝宴を催していた時に、13人目となる招かれざる客ロキが乱入して人気者のバルドルを殺してしまったとされ、キリスト教以前から13を不吉な数としており、13日の金曜日についても伝説を持つ。それは魔女としてキリスト教に追いやられたフリッグが11人の魔女と悪魔を招いて毎週金曜日に悪事を企んでいたからだという。なおゲルマン諸語で「金曜日」を表す語は「フリッグの日」に由来する。
@@ -626,10 +626,10 @@ Duolingo 無料で使える語学勉強用のWebサービスDuolingoも使って
     
     <item>
       <title>Pocketからお祝いメールが届きました</title>
-      <link>https://foresukecom.github.io/post/pocket_mail/</link>
+      <link>http://foresukecom.github.io/post/pocket_mail/</link>
       <pubDate>Thu, 22 Dec 2016 07:50:59 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/pocket_mail/</guid>
+      <guid>http://foresukecom.github.io/post/pocket_mail/</guid>
       <description>みなさんは、「あとで読む」サービスのPocketを使用していますか?
 僕はスマートフォンでニュースを読んだり、ブラウジングしたときに、気になる記事を一時保管するために以前から使っています。
 先日、Pocketから以下のようなメールが届きました。
@@ -642,10 +642,10 @@ We’re thrilled to let you know that you’re one of the top 5% of readers in P
     
     <item>
       <title>再帰処理してみた</title>
-      <link>https://foresukecom.github.io/post/recursion/</link>
+      <link>http://foresukecom.github.io/post/recursion/</link>
       <pubDate>Wed, 30 Nov 2016 22:21:13 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/recursion/</guid>
+      <guid>http://foresukecom.github.io/post/recursion/</guid>
       <description>はじめに Go言語を使っているときに、「再帰処理できるのか?」と疑問に思ったので試してみました。
 どういった問題が再帰処理に向いているのか分からないので、とりあえず素数判定の処理を作成しています。
 素数判定 標準入力された数値が素数か判断するプログラムです。
@@ -656,10 +656,10 @@ We’re thrilled to let you know that you’re one of the top 5% of readers in P
     
     <item>
       <title>8進数のエラーについて</title>
-      <link>https://foresukecom.github.io/post/octal/</link>
+      <link>http://foresukecom.github.io/post/octal/</link>
       <pubDate>Wed, 30 Nov 2016 21:26:57 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/octal/</guid>
+      <guid>http://foresukecom.github.io/post/octal/</guid>
       <description>はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。
 エラーの内容 試験用にサンプルの日付データを作っていたら、以下のようなコンパイルエラーとなりました。
 malformed octal constant malformed integer constant: 08 エラーとなった原因のコードはこちらです。
@@ -671,10 +671,10 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;os&amp;quot; &amp;quot;s
     
     <item>
       <title>Go言語で構造体のスライスを扱ってみる</title>
-      <link>https://foresukecom.github.io/post/struct_slice/</link>
+      <link>http://foresukecom.github.io/post/struct_slice/</link>
       <pubDate>Wed, 30 Nov 2016 21:24:20 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/struct_slice/</guid>
+      <guid>http://foresukecom.github.io/post/struct_slice/</guid>
       <description>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。
 ここで構造体やスライスについて詳しく説明はしません。詳細はA Tour of Goなどに記載されているので、そちらをご確認下さい。 今回は、構造体を要素として持つスライスを扱う方法をまとめています。
 いろいろな操作  要素にする構造体
@@ -688,10 +688,10 @@ employees := []employee{employee{1, &amp;quot;Taro&amp;quot;}, employee{2, &amp;
     
     <item>
       <title>ご挨拶</title>
-      <link>https://foresukecom.github.io/post/about/</link>
+      <link>http://foresukecom.github.io/post/about/</link>
       <pubDate>Tue, 29 Nov 2016 23:25:30 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/about/</guid>
+      <guid>http://foresukecom.github.io/post/about/</guid>
       <description>ご挨拶 はじめまして、foresukeです。
 これはIT系の技術ブログになる予定です。サーバサイド、フロントエンド、インフラと広く浅く、学習した内容を公開していきます。
 記載している内容への質問や指摘については、Twitterからお願いします。</description>
@@ -699,10 +699,10 @@ employees := []employee{employee{1, &amp;quot;Taro&amp;quot;}, employee{2, &amp;
     
     <item>
       <title>本ブログのポリシーについて</title>
-      <link>https://foresukecom.github.io/post/privacy_policy/</link>
+      <link>http://foresukecom.github.io/post/privacy_policy/</link>
       <pubDate>Mon, 28 Nov 2016 12:17:44 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/privacy_policy/</guid>
+      <guid>http://foresukecom.github.io/post/privacy_policy/</guid>
       <description>Amazon 当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。
 Google Analytics 当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
 このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくはここをクリックしてください。</description>
@@ -710,10 +710,10 @@ Google Analytics 当ブログでは、Googleによるアクセス解析ツール
     
     <item>
       <title></title>
-      <link>https://foresukecom.github.io/post/20171017_cloudshell/</link>
+      <link>http://foresukecom.github.io/post/20171017_cloudshell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://foresukecom.github.io/post/20171017_cloudshell/</guid>
+      <guid>http://foresukecom.github.io/post/20171017_cloudshell/</guid>
       <description>cd blo	&amp;mdash; title: &amp;ldquo;CloudShellでのブログ執筆環境&amp;rdquo; slug: &amp;ldquo;ClougShell_hugo&amp;rdquo; tags: [&amp;ldquo;GCP&amp;rdquo;, &amp;ldquo;ClougShell&amp;rdquo;] date: 2017-10-17T22:08:58+09:00 draft: false author: &amp;ldquo;foresuke&amp;rdquo; ブログ環境 こんにちは、ブログを再開した@foresukeです。
 実は諸事情によりメインのPCをChoromeBookを使っています。ChoromeBookはブラウザと、Androidアプリしか使えない端末です。なので基本的にはネットワークに接続していることが前提となっており、スタンドアローンではまともに使うことができません。
 本ブログは、hugoと呼ばれる静的サイトジェネレータで構築しています。静的サイトジェネレータについては以下のサイトに詳しく書かれているので、ここでは省略します。
@@ -726,10 +726,10 @@ Debianベースということもあるので、勉強がてらvimを使おう�
     
     <item>
       <title></title>
-      <link>https://foresukecom.github.io/post/20171027_googlehome/</link>
+      <link>http://foresukecom.github.io/post/20171027_googlehome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://foresukecom.github.io/post/20171027_googlehome/</guid>
+      <guid>http://foresukecom.github.io/post/20171027_googlehome/</guid>
       <description>hu&amp;mdash; title: &amp;ldquo;Google Home Miniを買いました&amp;rdquo; slug: &amp;ldquo;googlehomemini&amp;rdquo; tags: [&amp;ldquo;Google&amp;rdquo;] date: 2017-10-26T05:56:33+09:00 draft: false author: &amp;ldquo;foresuke&amp;rdquo; はじめに 先日のGoogleイベントで日本での発売が発表されたGoogle Home Miniを購入しました。
 Google Home Miniができることや同封物については以下のようなページで多数公開されているので、ここでは省略します。 Google HomeとGoogle Home Miniの違いはスピーカーの音質程度のようで、動作内容自体に差異は内容です。
 手のひらに乗るスマートスピーカ「Google Home Mini」開封の儀

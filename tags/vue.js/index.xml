@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue.js on ふぉれすけ広場</title>
-    <link>https://foresukecom.github.io/tags/vue.js/</link>
+    <link>http://foresukecom.github.io/tags/vue.js/</link>
     <description>Recent content in Vue.js on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 30 Oct 2018 00:04:23 +0900</lastBuildDate>
     
-	<atom:link href="https://foresukecom.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>祝日のカウントダウンタイマー</title>
-      <link>https://foresukecom.github.io/post/shukujitsu_info/</link>
+      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
       <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/shukujitsu_info/</guid>
+      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
       <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
 https://shukujitsu.info
 処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
@@ -58,10 +58,10 @@ WPA化 WPAであれば、オンライン状態でアクセスしておけば、�
     
     <item>
       <title>Vue.jsで配列を扱ったお話</title>
-      <link>https://foresukecom.github.io/post/vue_array/</link>
+      <link>http://foresukecom.github.io/post/vue_array/</link>
       <pubDate>Tue, 21 Aug 2018 07:05:51 +0900</pubDate>
       
-      <guid>https://foresukecom.github.io/post/vue_array/</guid>
+      <guid>http://foresukecom.github.io/post/vue_array/</guid>
       <description>はじめに Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。
 本文 ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。
 以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。
