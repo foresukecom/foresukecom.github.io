@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>English on ふぉれすけ広場</title>
-    <link>/tags/english/</link>
+    <link>http://foresukecom.github.io/tags/english/</link>
     <description>Recent content in English on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 20 May 2018 22:58:10 +0900</lastBuildDate>
     
-        <atom:link href="/tags/english/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/tags/english/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>英語漫画のススメ</title>
-      <link>/post/english_comic/</link>
+      <link>http://foresukecom.github.io/post/english_comic/</link>
       <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
       
-      <guid>/post/english_comic/</guid>
+      <guid>http://foresukecom.github.io/post/english_comic/</guid>
       <description>はじめに 最近、海外ドラマを観たりオンライン英会話を受けたりして英語を勉強しています。
 しかし学生時代に英語の勉強をサボっていたので、わからない単語が多すぎて会話に付いていけず苦労しています。
 単語帳なんかも買ってみたのですがすぐに飽きてしまったので、英語版HUNTER×HUNTERをKindleで買って試してみました。
@@ -36,10 +36,10 @@ Kindleでは漫画を画像として取り込んでいるので、セリフの�
     
     <item>
       <title>英語のお勉強</title>
-      <link>/post/english/</link>
+      <link>http://foresukecom.github.io/post/english/</link>
       <pubDate>Tue, 24 Oct 2017 05:50:21 +0900</pubDate>
       
-      <guid>/post/english/</guid>
+      <guid>http://foresukecom.github.io/post/english/</guid>
       <description>はじめに みなさんは英語を使いこなしていますか。僕は使えません。
 最近はGoogle翻訳の精度も上がりましたが、英語の講演を聞いたり、画像として表示されている英語を理解するためには自身の英語力を鍛える必要があります。
 国内で開催されるAmazonWebServiceやGoogleCloudPlatformのイベント、セミナーによく参加しているのですが、英語の講演を理解できず、せっかくの貴重な機会を逃してしまうことが多々ありました。

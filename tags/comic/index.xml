@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Comic on ふぉれすけ広場</title>
-    <link>/tags/comic/</link>
+    <link>http://foresukecom.github.io/tags/comic/</link>
     <description>Recent content in Comic on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 20 May 2018 22:58:10 +0900</lastBuildDate>
     
-        <atom:link href="/tags/comic/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/tags/comic/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>英語漫画のススメ</title>
-      <link>/post/english_comic/</link>
+      <link>http://foresukecom.github.io/post/english_comic/</link>
       <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
       
-      <guid>/post/english_comic/</guid>
+      <guid>http://foresukecom.github.io/post/english_comic/</guid>
       <description>はじめに 最近、海外ドラマを観たりオンライン英会話を受けたりして英語を勉強しています。
 しかし学生時代に英語の勉強をサボっていたので、わからない単語が多すぎて会話に付いていけず苦労しています。
 単語帳なんかも買ってみたのですがすぐに飽きてしまったので、英語版HUNTER×HUNTERをKindleで買って試してみました。

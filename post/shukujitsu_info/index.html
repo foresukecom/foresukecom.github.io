@@ -1,30 +1,116 @@
+
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>祝日のカウントダウンタイマー&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
-    <div class="base-body"><section id="header" class="site header">
-    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">ふぉれすけ広場</span></a></span>
-        <span class="header right-side"></span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">祝日のカウントダウンタイマー</h1><p class="article date">2018-10-30</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    祝日のカウントダウンタイマー | ふぉれすけ広場
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foresukecom.github.io/post/shukujitsu_info/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
+  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
+        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
+          
+          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>祝日のカウントダウンタイマー</h1>
+      <div class="meta">
+        Oct 30, 2018 &nbsp;
+        
+          #<a href="/tags/golang">golang</a>&nbsp;
+        
+          #<a href="/tags/gae">GAE</a>&nbsp;
+        
+          #<a href="/tags/vue.js">Vue.js</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      <h2 id="はじめに">はじめに</h2>
 <p>GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。</p>
 <p><a href="https://shukujitsu.info">https://shukujitsu.info</a></p>
 <h2 id="処理の内容">処理の内容</h2>
 <p>内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。<br>
 GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。</p>
 <h2 id="使ってる技術">使ってる技術</h2>
-<h3 id="googleappenginehttpscloudgooglecomappengine"><a href="https://cloud.google.com/appengine/"target="_blank">GoogleAppEngine</a></h3>
+<h3 id="googleappenginehttpscloudgooglecomappengine"><a href="https://cloud.google.com/appengine/">GoogleAppEngine</a></h3>
 <p>インフラとしてGAEを使いました。<br>
 GAEに対応していない関数とかもあるので、ドキュメントを見ながら覚えていくしかなさそうです。<br>
 たとえば、GolangでHTTPのリクエストを行うときに<code>http.Get()</code>を使いますが、GAEでは対応していないので<code>urlfetch.Client</code>を使う必要があります。
 他にも、Javaでは時刻を扱う<code>java.time.LocalDate</code>というライブラリがあるのですが、同様にGAEでは使うことができません。<br>
 GAE使うなら言語に依らず注意する必要があります。</p>
-<h3 id="golanghttpsgolangorg"><a href="https://golang.org/"target="_blank">Golang</a></h3>
+<h3 id="golanghttpsgolangorg"><a href="https://golang.org/">Golang</a></h3>
 <p>ネット上に公開されているCSVファイルを読み込んで、Cloud Storageにアップロードする部分をやってます。<br>
 もともと、Golangの勉強を兼ねたプロジェクトだったんですが、あまりGolangを使いませんでした。</p>
-<h3 id="vuejshttpsjpvuejsorgindexhtml"><a href="https://jp.vuejs.org/index.html"target="_blank">Vue.js</a></h3>
+<h3 id="vuejshttpsjpvuejsorgindexhtml"><a href="https://jp.vuejs.org/index.html">Vue.js</a></h3>
 <p>JavaScriptで変数を書き換えると、いい感じにHTMLで表示される内容も変更されます。<br>
 まだVue.jsを使いこなせてはいませんが、低い学習コストでさっくり使うことができます。</p>
-<h3 id="scrollifyhttpsprojectslukehaasmescrollify"><a href="https://projects.lukehaas.me/scrollify/"target="_blank">Scrollify</a></h3>
+<h3 id="scrollifyhttpsprojectslukehaasmescrollify"><a href="https://projects.lukehaas.me/scrollify/">Scrollify</a></h3>
 <p>マウススクロールでいい感じに画面を切り替える処理はScrollifyを使いました。<br>
 これを使うだけで今風な感じがでます。</p>
 <h2 id="今後の課題">今後の課題</h2>
@@ -57,31 +143,71 @@ GAE使うなら言語に依らず注意する必要があります。</p>
 認証も、DBへのアクセスもないページですが、1人でインフラ、サーバサイド、フロントエンドの構築を行ったのでいろいろと勉強になりました。<br>
 細々としたTipsはブログに残していきたいです。
 課題もたくさん出てきたので、徐々に直していきます。</p>
-<p>欲しい機能とか、気になる箇所があれば、お気軽に<a href="https://twitter.com/foresukecom"target="_blank">@foresukecom</a>までご連絡下さい。</p>
+<p>欲しい機能とか、気になる箇所があれば、お気軽に<a href="https://twitter.com/foresukecom">@foresukecom</a>までご連絡下さい。</p>
 <h2 id="その他">その他</h2>
 <p>ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。<br>
 でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…<br>
 悩ましい飲み物です。</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-</article><section class="article labels"><a class="tag" href=/tags/golang/>golang</a><a class="tag" href=/tags/gae/>GAE</a><a class="tag" href=/tags/vue.js/>Vue.js</a></section><section class="article navigation"><p><a class="link" href="/post/gae_favicon/"><span class="li">&larr;</span>GAEでfaviconを設定</a></p><p><a class="link" href="/post/reactnativefetch/"><span class="li">&rarr;</span>ReactNativeを触ったお話</a class="link">
-    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
-    <p class="copyright">ふぉれすけ広場</p>
-    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
-        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
-        target="_blank">Notepadium</a></p>
-</div></section>
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-89386946-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-</div>
-</body>
 
+      
+      
+      
+    </article>
+    
+ <aside><div id="disqus_thread"></div></aside>
+
+<script type="text/javascript">
+     
+    var disqus_shortname = 'foresuke-com';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/gae_favicon/" rel="prev">GAEでfaviconを設定</a></span>
+    
+    
+      <span class="next"><a href="http://foresukecom.github.io/post/reactnativefetch/" rel="next">ReactNativeを触ったお話</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.JPG" width="64" height="64"><br>
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-89386946-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
 </html>
+

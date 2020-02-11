@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ReactNative on ふぉれすけ広場</title>
-    <link>/tags/reactnative/</link>
+    <link>http://foresukecom.github.io/tags/reactnative/</link>
     <description>Recent content in ReactNative on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 28 Oct 2018 14:27:46 +0900</lastBuildDate>
     
-        <atom:link href="/tags/reactnative/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/tags/reactnative/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ReactNativeを触ったお話</title>
-      <link>/post/reactnativefetch/</link>
+      <link>http://foresukecom.github.io/post/reactnativefetch/</link>
       <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
       
-      <guid>/post/reactnativefetch/</guid>
+      <guid>http://foresukecom.github.io/post/reactnativefetch/</guid>
       <description>はじめに お仕事でReactNativeを使うことになったので、触ってみました。
 導入手順について本記事内では説明をしないので、ReactNativeの公式サイトのGetting Startedをご参照ください。
 ちなみに、ReactNativeのバージョンは0.57.3です。

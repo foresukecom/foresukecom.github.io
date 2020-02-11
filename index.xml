@@ -1,23 +1,752 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ふぉれすけ広場</title>
-    <link>/</link>
+    <link>http://foresukecom.github.io/</link>
     <description>Recent content on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Posts</title>
-      <link>/post/</link>
+      <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
+      <link>http://foresukecom.github.io/post/human_fall_flat/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
-      <guid>/post/</guid>
-      <description></description>
+      <guid>http://foresukecom.github.io/post/human_fall_flat/</guid>
+      <description>友人とHuman Fall Flatというゲームを遊びました。
+  ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3Dの物理演算を用いたアクションパズルゲームです。
+コースはすべて1人でクリア出来るようにデザインされているのですが、同じコースを複数人で遊ぶことが出来るのでゴリ押しでどんどん進めることが出来ます。 2人だとクリアまでのプレイ時間はだいたい10時間ぐらいでした。
+軟体人間を操るので操作性が悪いのですが、30分も遊んでいるとだんだんと癖になってきて、マップを歩き回るだけでも充分に笑えます。
+今回はSteamのRemote Play Togetherという機能を使ってマルチプレイを行いました。
+Human: Fall Flat自体はもともとオンラインマルチプレイに対応しているので、プレイヤーがそれぞれゲームを買っていればRemote Play Togetherを使わなくてもマルチプレイが出来ます。 しかし、Remote Play Togetherを使えば、1人がゲームを買っているだけで複数人で遊ぶことが可能になるのです。
+ただし、オフラインマルチを遊んでいる事になるので、左右に分割した画面で遊ぶことになります。
+Ultimate Chicken HorseやOvercookedのように全プレイヤーが同じ画面を見て遊ぶゲームがRemote Play Togetherに向いています。
+逆に、FPS やレースゲームはオフラインマルチでは画面分割することになるので、小さいディスプレイでは見にくくなるかもしれません。
+格闘ゲームも同じ画面で遊ぶゲームではあるのですが、ネットワーク越しということで多少の遅延が発生するので、あまり向いていないと思われます。
+Remote Play Togetherがあればゲーム側でオンラインマルチ機能を実装する必要がなくなるので、ローカルマルチのゲームが増えると思います。
+個人的にも1画面でワイワイ遊べるゲームが好きなので、今後のPCゲーム業界のトレンドがどうなるのか楽しみです。
+      </description>
+    </item>
+    
+    <item>
+      <title>TOMLをGolangで読み込もうとして躓いた話</title>
+      <link>http://foresukecom.github.io/post/go_toml/</link>
+      <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/go_toml/</guid>
+      <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。
+※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。
+https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md
+TOMLを読み込むのは以下のライブラリを使用しています。
+https://github.com/BurntSushi/toml
+焼き寿司🔥🍣…?
+今回は例として、以下のTOMLファイルを読み込もうとします。
+[API] user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 失敗例  このコードを実行したところ、以下のような結果になりました。
+エラーにはなっていませんが、TOMLの内容が読み込まれていません。
+$ go run main1.go false 0 TOMLでは、複数のキー/バリューの組み合わせを纏めたものをテーブルと呼びます。
+角括弧([])で囲まれた文字がテーブル名となり、その下に書かれたキー/バリューがテーブルに含まれる要素になります。
+今回の例ではAPIというテーブル名の中にuser、version、debug、limitという要素が存在することになります。
+解決策  こんな感じにTOML全体を表すConfigとAPIテーブルを表すAPIという構造体を個別に用意したところ、問題なくTOMLの内容を読み込むことが出来ました。
+$ go run main2.go foresuke v0.0.1 true 500 (あまり)よくない解決策 テーブルを使わないようにTOMLファイルを書き換えれば、main1.goでも値を取得することが出来ます。
+ただ記載する項目が多い場合にはキーの重複が考えられるので実用的ではありません。
+user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 </description>
+    </item>
+    
+    <item>
+      <title>渋谷落語を観てきました</title>
+      <link>http://foresukecom.github.io/post/shiburaku/</link>
+      <pubDate>Sun, 14 Jul 2019 18:44:51 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/shiburaku/</guid>
+      <description>渋谷で毎月開催される初心者向け落語会、渋谷落語を観てきました。
+5日間で10公演開かれるのですが、今回は上のツイートで紹介されている5公演目を観てきました。
+まともに落語を観るのは初めてだったのですが、演者さんを紹介するペーパーも配られており、初心者へのハードルを下げている感じがしました。
+4組とも面白かったのですが、柳家わさびさんに垂乳根が特に気に入りました。寿限無のような感じでしょうか。
+柳家わさびさんの別の演目や、他の演者さんの垂乳根も観てみたいです。
+落語は声色だけでキャラクターを使い分けて場面を想像させるのですが、同じ話を聴いても観客ごとに異なる世界を想像するのは読書に近い体験でしょうか。
+8月の落語会では創作落語のネタを初披露する会が予定されているようです。創作落語では現代を舞台にした話もあるようなので観に行こうかと思っています。</description>
+    </item>
+    
+    <item>
+      <title>朝食の数値化</title>
+      <link>http://foresukecom.github.io/post/breakfast/</link>
+      <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/breakfast/</guid>
+      <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。
+メニュー 毎日の朝食は以下の通りです。
+ シェイク(COMP POWDER+プロテイン+豆乳) スムージー(ほうれん草+バナナ+ブルーベリー+豆乳) コーヒー  液体ばかりですね。
+COMP POWDERは株式会社コンプが出している完全栄養食です。
+http://www.comp.jp/products/powder.html
+プロテインはゴールドスタンダードシリーズを飲んでいます。ダブルリッチチョコレート味が美味。 https://www.optimumnutrition.jp/goldstandard.html
+豆乳はマルサンの調製豆乳です。
+https://www.marusanai.co.jp/lineup/detail-63005/
+メニュー詳細 シェイクで使われる材料の詳細です。
+   材料 分量 価格 1食分の価格 備考     COMP POWDER 96g(1袋) 8550円/24袋 356円 COMP公式サイトで定期購入   プロテイン 32g 6621円/2270g 88円 iHerbで購入   豆乳 360g 1187円/1リットル*6本 71円 Amazonで定期購入    スムージーで使われる材料の詳細です。
+   材料 分量 価格 1食分の価格 備考     豆乳 300g 1187円/1リットル*6本 59円 Amazonで定期購入   ほうれん草 40g 150円/1袋(約200g) 30円 スーパーで購入   バナナ 90g(1本) 100円/5本(約450g) 20円 スーパーでで購入   冷凍ブルーベリー 50g 150円/150g 50円 スーパーでで購入    コーヒーです。</description>
+    </item>
+    
+    <item>
+      <title>時計の秒針について</title>
+      <link>http://foresukecom.github.io/post/analog_clock/</link>
+      <pubDate>Sat, 04 May 2019 08:25:08 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/analog_clock/</guid>
+      <description>今回は算数と理科のお話です。
+たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。
+この場合、文字盤の円周は約6.28cmとなるので、秒針の先端は1分間で約6.28cm進みます。 (実際は文字盤の内側を秒針が通るので、秒針が進む距離は少し短くなりますが、面倒なのでここでは文字盤の端を秒針が通るということで話を進めます。)
+半径15cmの柱時計の場合は、文字盤の円周は約94.2cmとなるので、秒針の先端は1分間で約94.2cm進むことになります。
+時計の文字盤が大きいほど、円周も大きくなるので、秒針の先端のスピードも上昇します。
+つまり…大きなアナログ時計を作れば、秒針が音速や光速を超えるのでは…🤔ということです。
+スカイツリー(634m)を秒針にした場合、秒針の先端は時速約95km(秒速66m)で進みます。
+逆に、音速(秒速340m)を超えるのに必要な秒針の長さは約3.25km、光速(秒速300,000km)を超えるのに必要な秒針の長さは約2,866,242kmとなります。
+太陽の半径が約700,000kmなので、光速を超えるための秒針を用意するのは大変そうです。
+実際には特殊相対性理論によると「物質は光速に近づくにつれて質量が増える」ので、どれだけ大きな時計を作っても秒針が光速を超えることはできません。
+でも半径が約3.25kmの時計なら国を挙げて頑張れば可能なのでは…と、ちょっと期待してしまいます。
+蛇足 最近、factorioというゲームにハマってます。
+ある惑星に不時着したプレイヤーが、鉄鉱石や銅鉱石、石炭、木などの資源を使って再び宇宙を目指す、というゲームです。 このゲームは採掘、運搬、加工を自動化し、効率的な工場を組み上げるのが楽しさの１つとなっています。
+  このゲームは止め時が難しく、もう少しもう少しとラインを改良していく内に、どんどん時間が溶けていきます。 週末にゲームを立ち上げたら10時間が経っていた、ということも珍しくありません。
+海外のインディーズゲームでは珍しく、日本語にも対応しています。 それも自動翻訳のようなカタコトではなく、有志が翻訳したものを公式が取り込んでくれたので非常に自然な日本語になっています。
+さらにMODにも寛容で、ゲーム内からMODをインストールすることも可能です。 MDOなしでも充分に長時間遊べるのですが、MODを入れることで無限に遊ぶことが可能です。
+まだ今年のGWは数日ありますので、みなさんもすぐにDLして時間を溶かしましょう。
+  </description>
+    </item>
+    
+    <item>
+      <title>Golangのスコープについて</title>
+      <link>http://foresukecom.github.io/post/go_scope/</link>
+      <pubDate>Sat, 09 Feb 2019 15:11:21 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/go_scope/</guid>
+      <description>はじめに Golangを書いてて詰まったことがあったのでメモです。
+本文 こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします。
+type product struct { category string name string price uint64 } showcase := []product{ {&amp;quot;果物&amp;quot;, &amp;quot;りんご&amp;quot;, 120}, {&amp;quot;果物&amp;quot;, &amp;quot;バナナ&amp;quot;, 100}, {&amp;quot;果物&amp;quot;, &amp;quot;みかん&amp;quot;, 70}, {&amp;quot;肉&amp;quot;, &amp;quot;鶏もも&amp;quot;, 250}, {&amp;quot;肉&amp;quot;, &amp;quot;豚バラ&amp;quot;, 300}, {&amp;quot;肉&amp;quot;, &amp;quot;カルビ&amp;quot;, 450}, } で、このスライスから果物の価格だけ10円引きします。
+for _, v := range showcase { if v.category == &amp;quot;果物&amp;quot; { v.price -= 10 } } こんな感じで書いたのですが、上のfor文だとshowcaseの中身は変更されません。
+変数のスコープを考えてなかったのが原因です。 変数vはfor文の中でしか使えないので、いくらvの中身を変更してもshowcaseの中身は変わりません。
+for i := 0; i &amp;lt; len(showcase); i++ { if showcase[i].category == &amp;quot;果物&amp;quot; { showcase[i].</description>
+    </item>
+    
+    <item>
+      <title>ChromebookにUbuntuをインストールしようとした愚か者のお話</title>
+      <link>http://foresukecom.github.io/post/goodby_chromebook/</link>
+      <pubDate>Sun, 03 Feb 2019 08:25:15 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/goodby_chromebook/</guid>
+      <description>はじめに ChromeBookにUbuntu入れようとしたら、キーボードとトラックパッドが反応しなくなりました。
+＼(^o^)／
+[ChromebookのFile Systemへの書込み制限を解除する方法 ― Write-Protect-Screwの外し方 C300MA編] (https://chromesoku.com/rw-filesystem-on-chromebook/)
+詳しくはリンク先の記事に書いてありますが、ChromebookはWrite-Protect-Screwというネジで物理的にファイルシステムへの書き込みを制限しているようです。
+僕が持っている端末とはモデルが違うのですが、似たような仕組みだろうということで精密ドライバを使って分解してみました。
+Write-Protect-Screwらしいネジが見当たらないので、改めて組み直したのですが、キーボードとトラックパッドが反応しなくなってしまいました。
+やってしまった…
+さようならChromeBook。今まで楽しかったよ。   </description>
+    </item>
+    
+    <item>
+      <title>Golangでテストコードを書く少年のお話</title>
+      <link>http://foresukecom.github.io/post/golang_test/</link>
+      <pubDate>Tue, 22 Jan 2019 08:25:31 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/golang_test/</guid>
+      <description>はじめに お仕事でGolangのテストコードを書くことになったのでお勉強しました。
+テスト対象は以下のプログラムです。
+ 毎朝のルーティンを明文化し、以下の処理をしています。
+ 降水確率40%以上なら傘を装備する。 冬、もしくは最低気温が5度以下ならコートを装備する。  以下の通り、4つの命令と2つの条件分岐で構成されています。
+   項 種別 やってること     ① 命令 持ち物を入れるカバンを用意   ② 条件分岐 降水確率による判定   ③ 命令 カバンに傘を入れる   ④ 条件分岐 季節、最低気温による判定   ⑤ 命令 カバンにコートを入れる   ⑥ 命令 カバンを持ち出す    テストの種類 カバレッジとはテストの網羅率のことを指しています。
+「どのパターンのテストを行えば、必要な範囲のテストが完了したのか?」の指標となります。
+「必要な範囲」については、C0カバレッジ、C1カバレッジ、C2カバレッジ…とカバレッジの種類によって異なります。
+それぞのカバレッジについて簡単に説明していきます。
+※C3以降もありますが、よく使われるのはC2までみたいなので、今回は省略します。
+C0カバレッジ(命令網羅) すべての命令を最低1回は実行する、というテストケースを満たせばカバレッジが100%になります。
+以下のパターンを実行すれば、すべての命令を実行することができるので、C0カバレッジ100%になります。
+「降水確率が50%、季節は冬、最低気温12度。」
+C1カバレッジ(分岐網羅) すべて条件分岐の組み合わせを通る、というテストケースを満たせばカバレッジが100%になります。
+今回はTrue/Falseの分岐が2つあるので4パターンの組み合わせでテストを行う必要があります。
+   パターン ② ④ 具体例     パターン1 True True 降水確率が50%、季節は冬、最低気温12度。   パターン2 True False 降水確率が50%、季節は春、最低気温12度。   パターン3 False True 降水確率が20%、季節は冬、最低気温12度。   パターン4 False False 降水確率が20%、季節は春、最低気温12度。    具体的には以下のパラメータでテストをやればOKです。</description>
+    </item>
+    
+    <item>
+      <title>退職エントリ</title>
+      <link>http://foresukecom.github.io/post/resign/</link>
+      <pubDate>Sat, 29 Dec 2018 10:15:46 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/resign/</guid>
+      <description>12月いっぱいで今の会社を退職します。
+次の職場でもがんばるぞい！</description>
+    </item>
+    
+    <item>
+      <title>コーヒー美味しい</title>
+      <link>http://foresukecom.github.io/post/coffee/</link>
+      <pubDate>Tue, 25 Dec 2018 07:29:54 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/coffee/</guid>
+      <description>コーヒーサーバを手に入れました。
+ありがとうサンタさん、来月はクレカ支払い頑張るよ。
+マグカップが汚い…黒色のマグカップを使えば汚れが目立たなくていいのでは🤔
+ステンレスフィルタを使うのは初めてなのですが粉が残りますね。フィルタを洗うのも手間なので、普段はペーパーフィルタを重ねて使った方が手軽そうです。
+電気ケトルから直接お湯を注いでいるのですが、注ぎ口が広いのでまともに「の」の字を書いてドリップすることができませんでした。 注ぎ口が細くなっている電気ケトルかヤカンが欲しくなります。
+どうせなら、自宅でコーヒー豆を挽いたり、焙煎したり…沼が広がります。
+  </description>
+    </item>
+    
+    <item>
+      <title>Pocketからお祝いされました -2018-</title>
+      <link>http://foresukecom.github.io/post/pocket_2018/</link>
+      <pubDate>Sun, 23 Dec 2018 10:09:07 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/pocket_2018/</guid>
+      <description>Pocketから以下のメールが届きました。 2016年、2017年には上位5%になったことを祝福するメールが届きましたが、ついに2018年は上位1%のユーザになれたようです。
+自分が登録した記事の中から人気がある記事をピックアップしてみるとQiitaの記事が多いみたいです。
+やはりQiitaはSEOに力を入れているのか閲覧者が多いようですね。
+ちなみに、2018年12月21日時点では全記事数が9,720ページ、未読記事が2,289ページ、既読率76.5%という状況です。 2017年2月4日時点では全記事数が4,887ページ、未読記事が800ページ、既読率83.6%でしたので積読が捗っているようです。
+毎日、未読率を出したり、未読記事からランダムでSlackに投稿するようにしましたが、まだ手緩いようです。todoリストと連携して毎日記事を読むように仕向けましょうか…
+しかし…プレミアム会員にもなっていない自分が上位1%のユーザになれてしまうとは…
+若者のPocket離れが深刻ですね。 Pocketなら気になる記事を後から読み返すことも簡単に出来るし(実際は読み返さないけど)、PocketのArticle Viewなら邪魔くさい広告が表示されないから集中して記事が読めて便利ですよ!
+みんな使いましょう!!</description>
+    </item>
+    
+    <item>
+      <title>Golangのpanicのお話</title>
+      <link>http://foresukecom.github.io/post/golang_panic/</link>
+      <pubDate>Wed, 21 Nov 2018 23:17:10 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/golang_panic/</guid>
+      <description>はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。
+クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。
+今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。
+サンプルコード 実際のコードとは違いますが、当時は以下のようにエラーが発生したらpanic()で処理を中断させるコードを書いていました。
+ で、このコードを以下のようなディレクトリ構成の中に配置していました。log_analysisが1つのプロジェクトというイメージです。
+tmp └── tanaka └── azunyan_prpr └── tools └── log_analysis └── main.go このコードをmitchellh/goxを使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。
+$ gox Number of parallel builds: 3 --&amp;gt; freebsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; darwin/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; windows/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; openbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; openbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; windows/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; freebsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; darwin/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; freebsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis $ ls -1 log_analysis_darwin_386 log_analysis_darwin_amd64 log_analysis_freebsd_386 log_analysis_freebsd_amd64 log_analysis_freebsd_arm log_analysis_linux_386 log_analysis_linux_amd64 log_analysis_linux_arm log_analysis_netbsd_386 log_analysis_netbsd_amd64 log_analysis_netbsd_arm log_analysis_openbsd_386 log_analysis_openbsd_amd64 log_analysis_windows_386.</description>
+    </item>
+    
+    <item>
+      <title>Tweetボタンでつぶやく内容を動的に変更する</title>
+      <link>http://foresukecom.github.io/post/dynamic_tweet/</link>
+      <pubDate>Sun, 11 Nov 2018 08:15:12 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/dynamic_tweet/</guid>
+      <description>はじめに 今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。
+本文 Twitterの共有ボタンを設置するだけなら、Twitter公式サイトで生成できる以下のコードをHTMLに埋め込むことで簡単に実現できます。
+&amp;lt;a href=&amp;quot;https://twitter.com/share?ref_src=twsrc%5Etfw&amp;quot; class=&amp;quot;twitter-share-button&amp;quot; data-text=&amp;quot;ハローワールド&amp;quot; data-show-count=&amp;quot;false&amp;quot;&amp;gt;Tweet&amp;lt;/a&amp;gt; &amp;lt;script async src=&amp;quot;https://platform.twitter.com/widgets.js&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; しかし、この方法だとTweetする文章を動的に変更することはできません。
+そこで、JavaScriptでTweetする内容を生成して、window.openメソッドでTweet共有用のURL(https://twitter.com/share) を呼び出すことで対応します。
+URLに以下のパラメータを追加することで、ハッシュタグやアカウントを含めたTweetを行うことができます。
+   パラメータ 説明     text Tweetする文章   url Tweetに含めるURL   via Tweetに含めるアカウント   hashtags Tweetに含めるハッシュタグ   related Tweet後にフォローを勧めるアカウント    サンプルコード 以下がサンプルコードになります。
+JavaScriptのコードが18行ありますが、ほとんどは現在時刻を求めているだけで、実際にTweetを行うのに必要なのは17行目のwindow.open(...);だけです。
+Tweetボタンを押すと、以下のようなTweetを投稿できます。
+※追記
+Tweetが140文字を超えたらどうなるか確認したところ、以下のように403エラーとなりました。
+実際に使うなら、文字数チェックの処理が必要ですね。
+その他 最近Ultimate Chicken Horseをはじめました。
+このゲームは4人対戦の2Dアクションゲームです。スタートからゴールまで早く到着したプレイヤーが勝ち、というシンプルなルールなのですが、試合ごとに足場やトラップを自由に設置できるので、後半になるほどカオスなコースになり、ワイワイと楽しむには最適なゲームです。
+オンライン対戦に対応しているので、今は知らない人たちと野良で遊んでいるのですが、ボイチャをしてこそ真価を発揮するゲームだと思います。
+おそらく年末のsteamセールの対象になるので、誰か買って一緒に遊んでください。
+…作品名をアルティメイト・チキン・ヒーローズだと思っていたことは内緒です。
+  </description>
+    </item>
+    
+    <item>
+      <title>GAEでバッチ処理</title>
+      <link>http://foresukecom.github.io/post/gae_cron/</link>
+      <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/gae_cron/</guid>
+      <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
+GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
+サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
+slackにメッセージを送る部分は以下のサイトに詳しく記載されているので省略します。
+CrossBridge Lab | GolangでSlackの特定のチャンネルにメッセージを送る
+今回はGAE上でGolangを動かしてみましたよの構成を元に、GAEのプロジェクトを構築します。
+ルートディレクトリ(app.yamlと同じ階層)にcrom.yamlを作成します。
+cron.yaml cron.yamlには、以下のように開始時刻や間隔で実行するタイミングを指定することが出来ます。
+cron: - description: &amp;quot;毎朝7時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every day 7:00 - description: &amp;quot;毎週日曜8時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every sunday 8:00 - description: &amp;quot;毎日0時を起点とし、1時間単位で実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every 1 hours その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は公式のドキュメントに詳しく記載されています。
+注意点 GAEではdev_server.pyでローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、cron.yamlは動作しません。
+localhost:8000 からGAEローカル環境の管理画面を開くことができます。
+管理画面にcron.yamlで設定したスケジュールが一覧で表示されるので、Run nowをクリックすることで手動で実行することができます。 Cronの設定を本番環境にデプロイするときは、gcloud app deploy cron.yamlのようにcrom.yamlを指定します。
+指定しないと、crom.yamlが読み込まれないため、いつまで待っても処理が実行されません。 Cronが設定されているかどうかは、コンソール画面のcronジョブから確認することが出来ます。 仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。
+そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。
+GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine-Cron: trueが含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります
+例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。
+(弾いた後の処理がお粗末ですが…)
+// cron以外からのアクセスは弾く if r.</description>
+    </item>
+    
+    <item>
+      <title>GAEでfaviconを設定</title>
+      <link>http://foresukecom.github.io/post/gae_favicon/</link>
+      <pubDate>Tue, 06 Nov 2018 23:48:25 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/gae_favicon/</guid>
+      <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。
+faviconとは faviconとは、ブラウザのタブやブックマークに表示されてるアレです。
+最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。
+faviconについては、以下の資料に詳しくまとめられています。
+WEBサイトが「できた」と安心する前に最終チェックすること
+favicon準備 faviconの元にするイラストはこちらです。 このイラストをいい感じにfaviconとして使っていきます。 今回は、スライドで紹介されているFavicon Generatorを使ってfaviconを用意していきます。
+faviconを生成すると、favicon_package_v0.16.zipがダウンロードできます。
+favicon_package_v0.16.zipは以下のような中身になっています。
+favicon_package_v0.16 ├── android-chrome-192x192.png ├── android-chrome-384x384.png ├── apple-touch-icon.png ├── browserconfig.xml ├── favicon-16x16.png ├── favicon-32x32.png ├── favicon.ico ├── mstile-150x150.png ├── safari-pinned-tab.svg └── site.webmanifest この中ので拡張子がpng、icoは実際に表示されるイメージファイルです。
+browserconfig.xmlはWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。
+safari-pinned-tab.svgはベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。
+site.webmanifestはAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。
+今回はGAE上でGolangを動かしてみましたよの構成を元に、faviconを設定します。
+browserconfig.xmlとsite.webmanifestはルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下のimagesに配置します。
+プロジェクトのディレクトリ構成は以下の通りです。
+. ├── app.yaml ├── gae_sample.iml ├── hello.go ├── index.yaml └── static ├── browserconfig.xml ├── site.webmanifest ├── images │ ├── android-chrome-192x192.png │ ├── android-chrome-384x384.png │ ├── apple-touch-icon.png │ ├── favicon-16x16.</description>
+    </item>
+    
+    <item>
+      <title>祝日のカウントダウンタイマー</title>
+      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
+      <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
+      <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
+https://shukujitsu.info
+処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
+GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。
+使ってる技術 GoogleAppEngine インフラとしてGAEを使いました。
+GAEに対応していない関数とかもあるので、ドキュメントを見ながら覚えていくしかなさそうです。
+たとえば、GolangでHTTPのリクエストを行うときにhttp.Get()を使いますが、GAEでは対応していないのでurlfetch.Clientを使う必要があります。 他にも、Javaでは時刻を扱うjava.time.LocalDateというライブラリがあるのですが、同様にGAEでは使うことができません。
+GAE使うなら言語に依らず注意する必要があります。
+Golang ネット上に公開されているCSVファイルを読み込んで、Cloud Storageにアップロードする部分をやってます。
+もともと、Golangの勉強を兼ねたプロジェクトだったんですが、あまりGolangを使いませんでした。
+Vue.js JavaScriptで変数を書き換えると、いい感じにHTMLで表示される内容も変更されます。
+まだVue.jsを使いこなせてはいませんが、低い学習コストでさっくり使うことができます。
+Scrollify マウススクロールでいい感じに画面を切り替える処理はScrollifyを使いました。
+これを使うだけで今風な感じがでます。
+今後の課題 データ保管場所 情報をCloudStorageに保存してるので、NoSQLを触ってみようかと考え中です。
+日付と祝日名を格納するだけなのでRDBでも問題ないんですけど…
+監視、ログ なんらかのエラーが起きた場合はソーリー画面を出し、StackDriver上にログを出すようにしていますが、能動的にチェックしないとエラーに気が付きません。
+エラーを検知したら通知する仕組みがほしいですね、LINEかSlackに飛ばすのが今風でしょうか…
+パッケージ管理 使用しているライブラリのバージョン管理とかをしていないので、一般的に使われている(らしい)、depを使ってみようかと考え中。
+次バージョンのGolangではmodulesという新たなパッケージ管理機能が正式リリース予定なので、最終的にはそっちに映る感じでしょうか。
+リファクタリング ディレクトリ階層がぐちゃぐちゃで、1つ1つのファイルも肥大化しているのでキレイにしたいです。
+ある程度キレイになったらリポジトリを公開するのもアリですね。
+CIツール導入 現在、dev_appserver.pyでローカル環境を立ち上げて、動作チェックが済んだらgcloud app deployで本番環境を更新する、という雑な運用をしています。
+雑すぎるので、CircleCIとかを使って、PR投げたらステージング環境でテストが実行されてー、というのを導入したいです。
+AltJS 「素のJavaScriptを書くのがツラい」という話を聞くことが増えてきました。
+この規模なら素のJavaScriptでも問題ないですが、今後のことを考えるとTypeScriptかCoffeeScriptあたりを勉強して置き換えることを考え中です。
+WPA化 WPAであれば、オンライン状態でアクセスしておけば、オフライン状態でもそのWebサイトにアクセスができるようです。
+地下鉄などの電波状況が悪い場所でも祝日カウンターが使えれば素敵ですね。
+見た目 レイアウト気にし始めるとキリがないので一旦リリースしてしまいました。
+運用しながら徐々に変更を加える予定です。
+感想 本当はcoinhive仕込みたかったけど神奈川県警に捕まったらいやなので我慢しました。
+認証も、DBへのアクセスもないページですが、1人でインフラ、サーバサイド、フロントエンドの構築を行ったのでいろいろと勉強になりました。
+細々としたTipsはブログに残していきたいです。 課題もたくさん出てきたので、徐々に直していきます。
+欲しい機能とか、気になる箇所があれば、お気軽に@foresukecomまでご連絡下さい。
+その他 ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。
+でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…
+悩ましい飲み物です。</description>
+    </item>
+    
+    <item>
+      <title>ReactNativeを触ったお話</title>
+      <link>http://foresukecom.github.io/post/reactnativefetch/</link>
+      <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/reactnativefetch/</guid>
+      <description>はじめに お仕事でReactNativeを使うことになったので、触ってみました。
+導入手順について本記事内では説明をしないので、ReactNativeの公式サイトのGetting Startedをご参照ください。
+ちなみに、ReactNativeのバージョンは0.57.3です。
+サンプル 今回はRESAS-APIから都道府県一覧を取得してリスト表示してみます。
+react-native init projectNameを実行直後のディレクトリ構成は以下の通りになっています。
+projectName ├── android ├── ios ├── node_modules ├── App.js ├── app.json ├── index.js ├── package-lock.json └── package.json 今回はApp.jsのみを以下のように変更を加えていきます。
+ RESAS-APIを使うには事前に公式サイトから利用登録する必要があります。
+X-API-KEYはRESAS-API登録時に発行されるキーを指定して下さい。
+感想 ReactNativeは活発に開発が行われていますが、毎週のように最新バージョンが更新されているため、開発環境の構築が面倒ですね。
+今回は使わかなかったから影響ないですが、ReactNativeの0.57.3ではButtonコンポーネントを使うとAndroidシミュレータで以下のエラーが発生します。
+https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-to-my-react-native-app
+もう少し安定した(悪く言えば枯れた)技術を使った方が開発も運用も楽なんですが、最近はそんなことを言っていたら取り残されちゃうから、日々勉強するしかないですね。
+でも…せめてLTSがあるといいな…
+開発環境の構築が終われば、シミュレータ上でポンポンとテキストなりボタンなりを配置できるから面白いです。
+その他 最近、フラジャイルを読み返しました。
+医療漫画はいいですね。Dr.コトー診療所を読んだ時もそうですが、泣いてしまいます。特に3巻、4巻のアミノ製薬の話が好きです、火箱ちゃん可愛い。
+フラジャイルはドラマ化しているみたいなので、そのうち観てみたいです。</description>
+    </item>
+    
+    <item>
+      <title>JavaScriptでクロージャを触ったお話</title>
+      <link>http://foresukecom.github.io/post/javascript_closure/</link>
+      <pubDate>Sun, 14 Oct 2018 10:46:30 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/javascript_closure/</guid>
+      <description>はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。
+クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。 MDN web docs
+サンプル 1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。 連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。
+実際には結果を操作してるのでランダムとは言えなくなりましたが ^^;
+まずはクロージャを使わない例です。
+前回の結果を保持する変数prevNumをグローバル関数として定義しているので、関数dice()以外からもアクセスが出来てしまいます。
+次がクロージャを使った例です。
+こちらではprevNumをdice()内で定義しているので、dice()の外ではprevNumが使えなくなりました。
+感想 クロージャを使わなくても同じ機能は実装できますが、グローバル変数の使用を抑えられるのは嬉しいところです。 今回のサンプルのような短いプログラムではありがたみも薄くなりますが、
+前回と違う乱数を生成する箇所はfor、ifを使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。
+もっといい感じの計算式をご存知の方がいたら教えてください。
+その他 最近、地元の静岡が舞台になっているローカル女子の遠吠えの4巻が発売されました。 作者の瀬戸口みづき先生も静岡出身ということで、思わず膝を連打するネタが多いです。
+ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。
+あー、亀まんじゅう食べたい。げんこつハンバーグ食べたい。</description>
+    </item>
+    
+    <item>
+      <title>Vue.jsで配列を扱ったお話</title>
+      <link>http://foresukecom.github.io/post/vue_array/</link>
+      <pubDate>Tue, 21 Aug 2018 07:05:51 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/vue_array/</guid>
+      <description>はじめに Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。
+本文 ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。
+以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。
+具体的には以下のように、要素番号を指定して配列の中身を変更しても画面上の値は変化しませんが、Vue.jsに用意されているメソッドを使えは配列の中身に応じて画面上の値も変化します。
+/*失敗例*/ this.num_list[i] = this.num_list[i] * 2; /*成功例*/ this.num_list.splice(i, 1, this.num_list[i] * 2) 公式ドキュメントにも注意事項としてちゃんと書かれていました。
+JavaScriptの制限じゃ仕方ないですね(´・ω・`)
+ JavaScript の制限のため、Vue は配列で以下の変更を検出することはできません:
+1.インデックスでアイテムを直接設定するとき。例: vm.items[indexOfItem] = newValue
+2.配列の長さを変更するとき。例: vm.items.length = newLength
+ まとめ 公式ドキュメントを読みましょう。
+内容とはまったく関係ないですが、記事の中にソースコードを埋め込みたかったのでCODEPENを初めて使ってみました。 ソースコードと実行内容をまとめて埋め込めるのは便利ですね。
+その他 最近はRocket Leagueにハマっています。
+車でサッカーをするという天才的発想。 FPSほどの精密な操作は求められないので、お酒を飲みながら遊ぶにはピッタリです。
+  ワイルドスピードやバットマンに登場する車が使えるようになるDLCも多数用意されているので、自分の気に入った車で走り回ることもできます。
+  </description>
+    </item>
+    
+    <item>
+      <title>GAE上でGolangを動かしてみましたよ</title>
+      <link>http://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
+      <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
+      <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
+作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
+環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
+以下のようにバージョンが表示されればOKです。
+$ goapp version go version 1.9.4 (appengine-1.9.74) darwin/amd64 ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。
+構成説明 ディレクトリ構成は以下の通りです。
+├── app.yaml ├── hello.go └── static ├── js │ └── main.js ├── css │ └── main.css └── index.html この中でGAE特有のファイルはapp.yamlになります。
+app.yamlリファレンスに各パラメータの説明が載ってますが、最低限のパラメータだけ書いておきます。
+runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新のバージョンを使用する場合はgo1を指定 handlers: #リクエストと実行する処理をURLパターン毎に指定 - url: / static_files: static/index.html upload: static/index.html - url: /js static_dir: static/js - url: /css static_dir: static/css - url: /.* script: _go_app その他のファイルについては、特別なことはしていないので説明は省略します。</description>
+    </item>
+    
+    <item>
+      <title>英語漫画のススメ</title>
+      <link>http://foresukecom.github.io/post/english_comic/</link>
+      <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/english_comic/</guid>
+      <description>はじめに 最近、海外ドラマを観たりオンライン英会話を受けたりして英語を勉強しています。
+しかし学生時代に英語の勉強をサボっていたので、わからない単語が多すぎて会話に付いていけず苦労しています。
+単語帳なんかも買ってみたのですがすぐに飽きてしまったので、英語版HUNTER×HUNTERをKindleで買って試してみました。
+とりあえず飽きずに10巻まで読み進められたので、メリット/デメリットをまとめてみます。
+メリット  なんとなく読める
+僕は日本語版のHUNTER×HUNTERを何度も読み返しているので、英語版でも100％理解しなくても読み進めることができます。 すぐに買える
+大型書店でないと英語版の漫画は売っていないと思います。(少なくとも僕は売っているのを見たことがありません。) 読みたい時にすぐ買えるのは電子書籍ならではです。 (紙版の本と比べると)安い
+1冊だいたい850円ぐらいなので、日本語版と比べれば割高になります。 しかし、英語版HUNTER×HUNTERは紙の本では1冊1,000円ぐらいします。 翻訳コストがかかるので日本語版よりも高くなるのは仕方がありませんが、紙の本と比べて1〜2割引で買えるのはありがたい限りです。  デメリット  翻訳機能が使えない
+Kindleでは漫画を画像として取り込んでいるので、セリフの検索や翻訳ができません。
+しかし先日、Google I/O 2018で写真に写っているモノをAIが認識するGoogleLensというサービスが発表されました。 KindleはAmazonのサービスなので、Googleのサービスを使うとは思えませんが、こういった技術が発展すれば漫画の中の文字も翻訳対象として扱えるようになると思います。
+最終的にはNetflixの音声や字幕のように、1冊の本を買ったら自由に言語を切り替えて読める世界になるのでしょうか。 英語がすべて大文字
+理由は諸説あるようですが、アメリカンコミックではセリフが大文字で書かれていることが多いようです。 英語版HUNTER×HUNTERでは作者コメントは大文字と小文字が混ざっているのですが、セリフや説明分はすべて大文字で書かれています。 慣れの問題かもしれませんが、なかなか読みにくいものです。  今後 HUNTER×HUNTERを読み終えたら、ハガレンかドラゴンボールに挑戦予定です。
+ハガレンも日本語で何度も読み返しているから大丈夫でしょう。 実はドラゴンボールをしっかりと読んだことがないので、せっかくなので教養として読んでおこうかと。
+3月のライオン、よつばと、ヨルムンガンドあたりもKindleで翻訳版が出てほしいのです。
+  </description>
+    </item>
+    
+    <item>
+      <title>Go言語でJSONを作成したときのイージーミス</title>
+      <link>http://foresukecom.github.io/post/golang_json_marshal/</link>
+      <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/golang_json_marshal/</guid>
+      <description>はじめに Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。
+JSON形式への変換は標準パッケージに含まれているjson.Marshalを使っています。
+失敗例 こんな感じで構造体のスライスをJSONにしようとしたところ、作成されたJSONの中身が空になっていました。  成功例 原因がわからなかったので色々と試行錯誤した結果、下記のコードで想定した動きを確認することができました。 失敗例では10〜12行目の構造体のフィード名の先頭文字を小文字にしていましたが、成功例では先頭文字を大文字に変えています。
+ 原因 ここまで書けば原因がわかる方も多いと思いますが…
+Go言語では変数や関数のスコープが先頭文字列が小文字か、大文字かで判定されます。 先頭文字が大文字の場合は他パッケージからの参照が可能(いわゆるpublic)、先頭文字が小文字の場合は他パッケージから参照不可(いわゆるprivate)となります。 このルールは構造体のフィードにも適用されます。
+そのため、失敗例では構造体のフィードに対してパッケージ外からアクセスすることができず、作成されたJSONが空っぽになっていました。
+ちなみに 作成されるJSONのKeyを先頭小文字にしたい場合、以下のようにフィードに対してタグをつけることで任意の名前を指定することができます。  おわりに 初歩的なミスでしたが原因に気づくまで時間がかかってしまいました。 前に触ったことがあるはずなんですが…先頭文字でスコープが変化するのは慣れないと忘れちゃいますね。
+コンパイルエラーとかで教えてくれないかなぁ。</description>
+    </item>
+    
+    <item>
+      <title>JavaからRESAS APIを使ってみましたよ</title>
+      <link>http://foresukecom.github.io/post/resas_java/</link>
+      <pubDate>Sat, 03 Feb 2018 13:33:02 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/resas_java/</guid>
+      <description>お久しぶりです。
+巷で話題のビッグデータを使って何かやってみようかと思い立ったので、RESASから情報を取得してみます。
+RESASとは地域の活性を目的とし、市町村名一覧や人口構成、観光資源などの多くの情報を公開しているWebサイトです。
+APIも公開されているので、かんたんに情報を取得することができます。
+ 地域経済分析システム（RESAS：リーサス）は、地方創生の様々な取り組みを情報面から支援するために、経済産業省と内閣官房（まち・ひと・しごと創生本部事務局）が提供しています。
+自治体職員の方や、地域の活性化に関心を持つ様々な分野の方によって、効果的な施策の立案・実行・検証のためなどに広く利用されています。
+引用元: RESAS 地域経済分析システム
+ とりあえず今回は勉強がてら、Javaを使って都道府県の一覧を取得してみます。
+※RESASのAPIを使うには利用登録をしてAPIキーを発行してもらう必要があります。利用登録は公式サイトから行えます。
+RESAS-API利用登録
+ 以下のように結果が返ってきます。 JSON形式なので簡単に加工が出来そうです。
+{ &amp;quot;message&amp;quot;: null, &amp;quot;result&amp;quot;: [ { &amp;quot;prefCode&amp;quot;: 1, &amp;quot;prefName&amp;quot;: &amp;quot;北海道&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 2, &amp;quot;prefName&amp;quot;: &amp;quot;青森県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 3, &amp;quot;prefName&amp;quot;: &amp;quot;岩手県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 4, &amp;quot;prefName&amp;quot;: &amp;quot;宮城県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 5, &amp;quot;prefName&amp;quot;: &amp;quot;秋田県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 6, &amp;quot;prefName&amp;quot;: &amp;quot;山形県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 7, &amp;quot;prefName&amp;quot;: &amp;quot;福島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 8, &amp;quot;prefName&amp;quot;: &amp;quot;茨城県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 9, &amp;quot;prefName&amp;quot;: &amp;quot;栃木県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 10, &amp;quot;prefName&amp;quot;: &amp;quot;群馬県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 11, &amp;quot;prefName&amp;quot;: &amp;quot;埼玉県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 12, &amp;quot;prefName&amp;quot;: &amp;quot;千葉県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 13, &amp;quot;prefName&amp;quot;: &amp;quot;東京都&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 14, &amp;quot;prefName&amp;quot;: &amp;quot;神奈川県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 15, &amp;quot;prefName&amp;quot;: &amp;quot;新潟県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 16, &amp;quot;prefName&amp;quot;: &amp;quot;富山県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 17, &amp;quot;prefName&amp;quot;: &amp;quot;石川県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 18, &amp;quot;prefName&amp;quot;: &amp;quot;福井県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 19, &amp;quot;prefName&amp;quot;: &amp;quot;山梨県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 20, &amp;quot;prefName&amp;quot;: &amp;quot;長野県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 21, &amp;quot;prefName&amp;quot;: &amp;quot;岐阜県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 22, &amp;quot;prefName&amp;quot;: &amp;quot;静岡県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 23, &amp;quot;prefName&amp;quot;: &amp;quot;愛知県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 24, &amp;quot;prefName&amp;quot;: &amp;quot;三重県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 25, &amp;quot;prefName&amp;quot;: &amp;quot;滋賀県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 26, &amp;quot;prefName&amp;quot;: &amp;quot;京都府&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 27, &amp;quot;prefName&amp;quot;: &amp;quot;大阪府&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 28, &amp;quot;prefName&amp;quot;: &amp;quot;兵庫県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 29, &amp;quot;prefName&amp;quot;: &amp;quot;奈良県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 30, &amp;quot;prefName&amp;quot;: &amp;quot;和歌山県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 31, &amp;quot;prefName&amp;quot;: &amp;quot;鳥取県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 32, &amp;quot;prefName&amp;quot;: &amp;quot;島根県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 33, &amp;quot;prefName&amp;quot;: &amp;quot;岡山県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 34, &amp;quot;prefName&amp;quot;: &amp;quot;広島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 35, &amp;quot;prefName&amp;quot;: &amp;quot;山口県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 36, &amp;quot;prefName&amp;quot;: &amp;quot;徳島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 37, &amp;quot;prefName&amp;quot;: &amp;quot;香川県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 38, &amp;quot;prefName&amp;quot;: &amp;quot;愛媛県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 39, &amp;quot;prefName&amp;quot;: &amp;quot;高知県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 40, &amp;quot;prefName&amp;quot;: &amp;quot;福岡県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 41, &amp;quot;prefName&amp;quot;: &amp;quot;佐賀県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 42, &amp;quot;prefName&amp;quot;: &amp;quot;長崎県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 43, &amp;quot;prefName&amp;quot;: &amp;quot;熊本県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 44, &amp;quot;prefName&amp;quot;: &amp;quot;大分県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 45, &amp;quot;prefName&amp;quot;: &amp;quot;宮崎県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 46, &amp;quot;prefName&amp;quot;: &amp;quot;鹿児島県&amp;quot; }, { &amp;quot;prefCode&amp;quot;: 47, &amp;quot;prefName&amp;quot;: &amp;quot;沖縄県&amp;quot; } ] } 備考 モンハンワールドが面白すぎて…進捗ダメです。</description>
+    </item>
+    
+    <item>
+      <title>GoogleComputeEngineとのファイルやりとり</title>
+      <link>http://foresukecom.github.io/post/gcp_scp/</link>
+      <pubDate>Fri, 24 Nov 2017 05:20:15 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/gcp_scp/</guid>
+      <description>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。
+gcloud compute scpでGCEとのファイルのアップロード/ダウンロードが行えます。 gcloud compute copy-filesでもファイルコピーが行えますが、非推奨となっているのでgcloud compute scpコマンドを使うのがいいようです。
+ローカルのカレントディレクトリにあるファイルを、GCEの/tmp配下にアップロードするには以下のコマンドで行えます。
+gcloud compute scp ./gokuhi.txt gce_server:/tmp/ 逆に、GCEの/tmp配下のファイルを、ローカルのカレントディレクトリにダウンロードするには以下のコマンドです。
+gcloud compute scp gce_server:/tmp/gokuhi.txt ./ 公式ドキュメントにも記載されている通り、gcloud compute scpにもいろいろとオプションが用意されていますが、単純なファイルアップロード/ダウンロードであればオプションを付けなくても簡単に使うことができます</description>
+    </item>
+    
+    <item>
+      <title>DockerコンテナでDjango</title>
+      <link>http://foresukecom.github.io/post/gcp_docker_django/</link>
+      <pubDate>Sun, 05 Nov 2017 20:12:53 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/gcp_docker_django/</guid>
+      <description>はじめに Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。 Dockerエンジン自体はGoogleComputeEngine上で動かしています。
+今回は、GCPのプロジェクトが作られている前提で説明を進めていきます。
+GCEの仮想マシン作成などはWebUIからも作成できるのですが、説明が面倒くさいので今回はCloudShellからGCE仮想マシンを作って行きます。
+CloudShellは、GCPのリソースを管理できる仮想マシンで、GCPのプロジェクトを作成していれば無料で使用することが可能です。 CloudShellの詳細は以下公式ドキュメントを参照してください。
+Google Cloud Shell ドキュメント
+今回、3つの仮想マシンを操作するので、混乱しないようにプロンプトに仮想マシンを示すようにしています。 使用する仮想マシンは以下の通りです。
+   項目 説明     CloudShell GCPで標準で提供されている仮想マシン。   HostMachine DockerEngineが稼働する仮想マシン。OSはCentOS7です。   Container 実際にDjangoが動くDockerコンテナ。OSはCentOS7です。    全体的な流れ  GCEでCentOS7を作成、SSHで接続 docker導入 Dockerfile作成 Dockerイメージとコンテナを作って接続 djangoプロジェクト作成、allowhost設定 django開発用サーバ起動 ブラウザからアクセス  GCEでCentOS7を作成、SSHで接続 以下コマンドで、GCEをのインスタンスを作成します。 後半で必要になるので、作成したインスタンスのEXTERNAL_IP(外部IP)を控えておいてください。 その後、インスタンスに対してSSHで接続します。
+(CloudShell)$ gcloud compute instances create example-name --tags http-server --zone asia-east1-a --image centos-7 (CloudShell)$ gcloud compute ssh example-name GCEインスタンス作成時に使用したオプションは以下の通りです。
+   オプション名 記事内の値 説明     INSTANCE_NAMES example-name GCEインスタンス名です。オプション名は指定する必要がありません。   zone asia-east1-a GCEインスタンスを作成するゾーンを指定します。指定しないと、対話形式でゾーンを指定することになります。   tags http-server GCEインスタンスに適用するファイアウォールを指定します。今回はHTTPでの接続を許可するファイアウォールを指定しています。   image centos-7 GCEインスタンスの元イメージです。デフォルトではdebian-9が指定されています。    docker導入 以下コマンドでDcokerをインストールし、有効化します。</description>
+    </item>
+    
+    <item>
+      <title>完全栄養食COMPを食べてます</title>
+      <link>http://foresukecom.github.io/post/comp/</link>
+      <pubDate>Sun, 29 Oct 2017 16:51:19 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/comp/</guid>
+      <description>はじめに みなさんは完全栄養食COMPをご存知でしょうか。
+完全栄養食の名の通り、これを食べるだけで必要な栄養素が取得できるという優れものです。 アメリカではソイレントが有名ですね。
+概要 COMPはパウダータイプ(水などとシェイクして飲む)と、グミタイプの2種類を販売していますが、今回はパウダータイプのお話になります。
+パウダータイプのCOMPには、400キロカロリーの小袋と、4,000キロカロリーの大袋が販売されています。 大袋で買った方が、カロリー単価の値段は安いのですが、僕は飲むときの手間が少ないことを優先して小袋を購入しています。
+最初は1日3食なので、小袋で3袋分を摂取すれば必要な栄養素が摂取できると考えていました。 調べてみると、小袋3食分ということではなく、人間が生きるために必要なカロリー分のCOMPを飲めば必要な栄養素が摂取できる、ということでした。
+必要なカロリーについては、COMP公式サイトをはじめ、いろいろなサイトに掲載されているのですが、体格、年齢、性別、運動量などが影響する関係でサイトに毎に必要なカロリーが異なっています。 いくつかのサイトから平均を取ったところ、僕の場合は2,000キロカロリー(±200キロカロリー)ぐらいが妥当みたいでした。 2,000キロカロリーをCOMPで摂取すると、小袋で5袋が必要になります。
+さすがに、毎日5袋のCOMPを飲んで生活をするのは非人間的な気がするので、僕は朝食のみをCOMPで補い、昼夜は普通の食事を取るようにしています。
+メリット COMPのメリットとしては、まず朝食の時間短縮が挙げられます。
+朝食をCOMPにする前は、卵焼いてー、キャベツ千切りにしてー、適当な野菜でスムージー作ってー、と雑ながらも朝食を作っていました。 料理に慣れていないこともあり、作り始めてから片付けるまで1時間ぐらいかかっていました。 COMPにしてからは、作り始めてから片付けるまで10分以内に収まるようになりました。
+直接的な食事時間以外にも、買い物の時間が短縮できたことも大きなメリットになります。 今までは週に2,3回は食材の買い出しに行っていたのですが、買い出しの頻度を減らすことができました。 スーパーに行くと、つい余計なものまで買ってしまうので、スーパーに行く頻度が下がったのは時間だけでなく、無駄遣い防止にも大きく貢献ししています。
+また、冷蔵庫の中身を把握しておく必要がなくなったのは、精神的にかなり楽になりました。
+朝食を作っていると、食材の残量を把握して、足りなければ買い出しをする必要が出てきます。 毎朝料理をするとなると、冷蔵庫の中身を気にする頻度も高くなり、それがストレスにつながっていました。。
+今は週末にしか料理をしないので、平日に冷蔵庫の中身を気にする必要がなくなったので、ストレスフリーになりました。
+おすすめの味 COMP自体は豆乳っぽい味なので、水に溶かして飲むのがベーシックなスタイルになります。
+ベーシックな味があまり気に入らなかったので、以下を混ぜて作っています。
+とりあえず、健康によさそうなものを入れてみたら美味しくなりました。
+(純ココアはCOMPの鈴木社長が以前おすすめしていたので取り込んでいます。)
+ COMP SAVAS(ココア味) ナチュラルヘルシースタンダード(ピーチ) 純ココア 調整豆乳  まとめ 日本には「ハレとケ」の文化があります。
+友人知人との会食や、時間があるときにはハレの食事として、美味しいものをのんびり食べる。 それ以外はケの食事として、最低限栄養の取れるものを食べる。 と、使い分けていけばいいのかな、と思っています。
+  </description>
+    </item>
+    
+    <item>
+      <title>英語のお勉強</title>
+      <link>http://foresukecom.github.io/post/english/</link>
+      <pubDate>Tue, 24 Oct 2017 05:50:21 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/english/</guid>
+      <description>はじめに みなさんは英語を使いこなしていますか。僕は使えません。
+最近はGoogle翻訳の精度も上がりましたが、英語の講演を聞いたり、画像として表示されている英語を理解するためには自身の英語力を鍛える必要があります。
+国内で開催されるAmazonWebServiceやGoogleCloudPlatformのイベント、セミナーによく参加しているのですが、英語の講演を理解できず、せっかくの貴重な機会を逃してしまうことが多々ありました。
+なので、中学生レベルの英語力があるかも怪しい僕ですが、一念発起して英語の勉強を始めてみました。
+試している勉強方法 とりあえず、英語を読む、聴くことが人並みになることが目標なので、Podcastを使ったリスニング、 Kindleでのリーディングを中心に進めています。
+Podcast 通勤中に以下のPodcastを中心に聴いています。 アメリカとの文化の違いや、最近の時事問題をテーマにすることも多く、飽きずに聴き続ける事ができます。
+ 解説！1日5分ビジネス英語 Hapa英会話 Podcast バイリンガルニュース (Bilingual News)  以下のような英語のテック系Podcastも聴いています。 正直なところshow noteで概要を見ながら聴いても内容が聴き取れていません。
+なので、これらのPodcastをスムーズに聴き取れることが現状の目的になっています。
+ Python Bytes Google Cloud Platform Podcast  Kindle リーディングの勉強としては、Kindkeを使って、英語の絵本や童謡を読んでいます。
+電子書籍であれば、わからない単語の翻訳も行えるので、なんとか読み進めることができます。 最初は絵本を読むことに恥ずかしさがあったのですが、読んで見ると読めない単語が多いことに気が付き、恥ずかしがっている場合ではないと腹をくくることができました。
+最終的にはO&amp;rsquo;Reillyの洋書とか読みたいですね(格安、または無料で公開されている本も多くありますし)。
+今のところ、読み終えた本は以下の通りです。
+Duolingo 無料で使える語学勉強用のWebサービスDuolingoも使っています。
+このサービスはゲーム感覚でリスニングやリーディング能力を鍛えることができるので毎日続けています。 英文の意味を日本語で解答する問題では、日本語を入力して解答する都合上、文章の揺らぎが生まれるのですが、ある程度はDuolingo側で吸収してくれるので、自分の言葉で解答することができます。
+問題を解いていると「あれ」「これ」「それ」がごっちゃになったり、代名詞の変化を忘れていたりするので、レベルの低さに落ち込むこともありますが、なのか続いています。 1回の学習が10分程度と短時間で完結し、PC版やスマホ版が出ているので、少し空いた時間にサクッとこなせるように設計されているようです。
+おわりに 今のところ、スピーキングについては必要としていないのでスカイプ英会話などは使っていません。
+海外の人と話したい欲求が生まれたら、スピーキングの勉強を始めてもいいかもしれません。</description>
+    </item>
+    
+    <item>
+      <title>カタカナ表記について</title>
+      <link>http://foresukecom.github.io/post/katakana/</link>
+      <pubDate>Sat, 21 Oct 2017 12:21:09 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/katakana/</guid>
+      <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くときには長音符は省略した方がいい」と教わってきました。
+そのため「コンピュータ」「ルータ」のように末尾の長音符を省略して書いていました。
+長音符を省略する理由については覚えていないのですが、おそらくJIS規格に準拠しようとしたのでしょう。
+しかし、MicrosoftもWindows7から「コンピューター」「ディレクトリー」のように末尾に長音符をつけるようにしました。
+最近は製品やメディアによって、長音符の有無がバラバラになっている状況になっています。
+表記がブレると見栄えも悪くなり、検索も難しくなるので、少なくとも自分が自由に書く文章については、意識して表記を統一したいと考えています。 とりあえず、使用者が多いWindows製品を真似て、なるべく長音符を付ける方向で、テクニカルコミュニケーター協会が策定しているガイドラインに準拠していきます。
+外来語（カタカナ）表記ガイドライン第3版
+ガイドラインに様々な単語に対するカタカナ表記が記載されているので、これを元にしておけば統一感のでる文章が書けるようになります。
+これまで、長音符を省略して書いていたので、慣れるまでは混ざってしまうかもしれませんが、徐々に慣れていきます。
+ガイドラインに沿って書かれているかを判定してくれるツールがあると助かりますね。
+蛇足 ちなみにガイドラインに沿った場合、profileはプロファイルと表記するようです。 ずっとプロフィールだと思ってました。
+バトルロイヤルとバトルロワイヤルもごっちゃになっていましたが、バトルロイヤルはプロレスなどで全員敵の状態で戦うルールのこと(CoDでいうFree For Allですね)で、バトルロワイヤルは中学生が殺し合いをする小説、映画のタイトルということでした。
+最近人気のPLAYERUNKNOWN&amp;rsquo;S BATTLEGROUNDS(通称:ドン勝)がバトルロワイヤルに影響を受けた、と書かれた記事が多くあるので混乱してしまいました。
+この辺は、ガイドラインにも記載されていないので、それぞれの意味をググって正しい単語を選択しなくてはいけませんね。</description>
+    </item>
+    
+    <item>
+      <title>ブログ再開 -2017秋-</title>
+      <link>http://foresukecom.github.io/post/restart/</link>
+      <pubDate>Tue, 17 Oct 2017 07:55:56 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/restart/</guid>
+      <description>ご挨拶 お久しぶりです、foresukeです。
+転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開していきます。
+ブログに慣れるまでは、質より量を優先してどんどん書いていきたいです。</description>
+    </item>
+    
+    <item>
+      <title>13日の金曜日です</title>
+      <link>http://foresukecom.github.io/post/friday13th/</link>
+      <pubDate>Fri, 13 Jan 2017 08:47:12 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/friday13th/</guid>
+      <description>はじめに 2017年1月13日は金曜日です。 Wikipediaをみると諸説あるようですが、主に海外では縁起の悪い日として知られています。
+ キリストの最後の晩餐に13人の人がいたことから、13は不吉な数とされた。また、キリストが金曜日に磔刑に処せられたとされていることから、13日の金曜日が不吉であるとされるようになった。一説には、イヴによるアダムの誘惑も大洪水からノアが脱出したのもバベルの塔が壊されたのも13日の金曜日だと言われるが、聖書にそのような記述はない。
+北欧神話では12人の神が祝宴を催していた時に、13人目となる招かれざる客ロキが乱入して人気者のバルドルを殺してしまったとされ、キリスト教以前から13を不吉な数としており、13日の金曜日についても伝説を持つ。それは魔女としてキリスト教に追いやられたフリッグが11人の魔女と悪魔を招いて毎週金曜日に悪事を企んでいたからだという。なおゲルマン諸語で「金曜日」を表す語は「フリッグの日」に由来する。
+フィリップ4世がフランス全土においてテンプル騎士団の壊滅を図るため、メンバーたちを一斉に逮捕したのが、1307年10月13日の金曜日だった。その後騎士団は異端とされ財産を没収の上解散、幹部たちを火刑に処している。 wikipedia
+ 21世紀に発生する13日の金曜日 そこで、21世紀に13日の金曜日が発生するタイミングを求めてみました。手作業で確認してもいいのですが、どうせなので勉強中のGo言語を使って楽をしています。
+作成したプログラムは以下の通りです。
+ 21世紀に発生する13日の金曜日、CSVでの結果は以下の通りとなりました。
+2000/10/13,2001/04/13,2001/07/13,2002/09/13,2002/12/13,2003/06/13,2004/02/13,2004/08/13,2005/05/13,2006/01/13,2006/10/13,2007/04/13,2007/07/13,2008/06/13,2009/02/13,2009/03/13,2009/11/13,2010/08/13,2011/05/13,2012/01/13,2012/04/13,2012/07/13,2013/09/13,2013/12/13,2014/06/13,2015/02/13,2015/03/13,2015/11/13,2016/05/13,2017/01/13,2017/10/13,2018/04/13,2018/07/13,2019/09/13,2019/12/13,2020/03/13,2020/11/13,2021/08/13,2022/05/13,2023/01/13,2023/10/13,2024/09/13,2024/12/13,2025/06/13,2026/02/13,2026/03/13,2026/11/13,2027/08/13,2028/10/13,2029/04/13,2029/07/13,2030/09/13,2030/12/13,2031/06/13,2032/02/13,2032/08/13,2033/05/13,2034/01/13,2034/10/13,2035/04/13,2035/07/13,2036/06/13,2037/02/13,2037/03/13,2037/11/13,2038/08/13,2039/05/13,2040/01/13,2040/04/13,2040/07/13,2041/09/13,2041/12/13,2042/06/13,2043/02/13,2043/03/13,2043/11/13,2044/05/13,2045/01/13,2045/10/13,2046/04/13,2046/07/13,2047/09/13,2047/12/13,2048/03/13,2048/11/13,2049/08/13,2050/05/13,2051/01/13,2051/10/13,2052/09/13,2052/12/13,2053/06/13,2054/02/13,2054/03/13,2054/11/13,2055/08/13,2056/10/13,2057/04/13,2057/07/13,2058/09/13,2058/12/13,2059/06/13,2060/02/13,2060/08/13,2061/05/13,2062/01/13,2062/10/13,2063/04/13,2063/07/13,2064/06/13,2065/02/13,2065/03/13,2065/11/13,2066/08/13,2067/05/13,2068/01/13,2068/04/13,2068/07/13,2069/09/13,2069/12/13,2070/06/13,2071/02/13,2071/03/13,2071/11/13,2072/05/13,2073/01/13,2073/10/13,2074/04/13,2074/07/13,2075/09/13,2075/12/13,2076/03/13,2076/11/13,2077/08/13,2078/05/13,2079/01/13,2079/10/13,2080/09/13,2080/12/13,2081/06/13,2082/02/13,2082/03/13,2082/11/13,2083/08/13,2084/10/13,2085/04/13,2085/07/13,2086/09/13,2086/12/13,2087/06/13,2088/02/13,2088/08/13,2089/05/13,2090/01/13,2090/10/13,2091/04/13,2091/07/13,2092/06/13,2093/02/13,2093/03/13,2093/11/13,2094/08/13,2095/05/13,2096/01/13,2096/04/13,2096/07/13,2097/09/13,2097/12/13,2098/06/13,2099/02/13,2099/03/13,2099/11/13,2100/08/13 13日の金曜日ということで、JSON形式でも出力できるようにしています。
+[{&amp;quot;Year&amp;quot;:2000,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2001,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2001,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2002,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2002,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2003,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2004,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2004,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2005,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2006,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2006,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2007,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2007,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2008,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2009,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2009,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2009,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2010,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2011,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2012,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2012,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2012,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2013,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2013,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2014,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2015,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2015,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2015,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2016,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2017,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2017,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2018,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2018,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2019,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2019,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2020,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2020,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2021,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2022,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2023,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2023,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2024,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2024,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2025,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2026,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2026,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2026,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2027,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2028,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2029,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2029,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2030,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2030,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2031,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2032,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2032,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2033,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2034,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2034,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2035,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2035,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2036,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2037,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2037,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2037,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2038,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2039,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2040,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2040,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2040,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2041,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2041,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2042,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2043,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2043,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2043,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2044,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2045,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2045,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2046,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2046,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2047,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2047,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2048,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2048,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2049,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2050,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2051,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2051,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2052,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2052,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2053,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2054,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2054,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2054,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2055,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2056,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2057,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2057,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2058,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2058,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2059,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2060,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2060,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2061,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2062,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2062,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2063,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2063,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2064,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2065,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2065,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2065,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2066,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2067,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2068,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2068,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2068,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2069,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2069,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2070,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2071,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2071,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2071,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2072,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2073,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2073,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2074,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2074,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2075,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2075,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2076,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2076,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2077,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2078,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2079,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2079,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2080,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2080,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2081,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2082,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2082,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2082,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2083,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2084,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2085,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2085,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2086,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2086,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2087,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2088,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2088,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2089,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2090,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2090,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2091,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2091,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2092,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2093,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2093,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2093,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2094,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2095,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2096,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2096,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2096,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2097,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2097,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2098,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2099,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2099,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2099,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2100,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13}] おわりに 日本で仏滅を忌嫌うように、海外では13日の金曜日を嫌っている人がいる…かもしれません。 グローバルな社会を生きる我々は、様々な文化の中で親しまれている、吉日や凶日を知っておくべきではないのでしょうか。</description>
+    </item>
+    
+    <item>
+      <title>Pocketからお祝いメールが届きました</title>
+      <link>http://foresukecom.github.io/post/pocket_mail/</link>
+      <pubDate>Thu, 22 Dec 2016 07:50:59 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/pocket_mail/</guid>
+      <description>みなさんは、「あとで読む」サービスのPocketを使用していますか?
+僕はスマートフォンでニュースを読んだり、ブラウジングしたときに、気になる記事を一時保管するために以前から使っています。
+先日、Pocketから以下のようなメールが届きました。
+ Congratulations!
+We’re thrilled to let you know that you’re one of the top 5% of readers in Pocket for 2016! To celebrate, we&amp;rsquo;ve put together your very own Year in Review page with some fun stats to review and share.
+ どうやら、Pocketの使用頻度が高いユーザになれたようです。確かに毎日のようにPocketは使っていますが、一般的な使い方をしているつもりなので、上位5%に含まれているとは驚きです。
+今後は、Pocketヘビーユーザの自覚を持ち、真摯にサービスと向き合っていきたいと思います。
+とりあえず、未読の記事が溜まっているので消化していかなきゃですね…</description>
+    </item>
+    
+    <item>
+      <title>再帰処理してみた</title>
+      <link>http://foresukecom.github.io/post/recursion/</link>
+      <pubDate>Wed, 30 Nov 2016 22:21:13 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/recursion/</guid>
+      <description>はじめに Go言語を使っているときに、「再帰処理できるのか?」と疑問に思ったので試してみました。
+どういった問題が再帰処理に向いているのか分からないので、とりあえず素数判定の処理を作成しています。
+素数判定 標準入力された数値が素数か判断するプログラムです。
+ これを元に、標準入力された数値以下の素数をすべて出力するプログラムも作ってみました。
+ おわりに 今回は、再帰処理が行えることの確認がメインテーマです。100万以下のすべての素数を求めたところ、2時間20分かかりました。効率とか速度とかは度外視しているので、その辺は何卒ご容赦下さい。
+学生時代、再帰処理の課題に苦労し「全部while文でいいじゃねぇか」と思っていましたが、再帰処理が使えてよかったと思える場面が来るのでしょうか。</description>
+    </item>
+    
+    <item>
+      <title>8進数のエラーについて</title>
+      <link>http://foresukecom.github.io/post/octal/</link>
+      <pubDate>Wed, 30 Nov 2016 21:26:57 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/octal/</guid>
+      <description>はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。
+エラーの内容 試験用にサンプルの日付データを作っていたら、以下のようなコンパイルエラーとなりました。
+malformed octal constant malformed integer constant: 08 エラーとなった原因のコードはこちらです。
+t = time.Date(2016, time.Month(11), 08, 00, 00, 00, 00, time.Local) 原因 Go言語は先頭に0が付いた数値を8進数だと認識します。08は8進数としては存在しない値のためエラーとなってしまうのでした。同様に、09も同じエラーとなります。
+対策 単純に対策をするのであれば、以下のように08から0を除いてしまえばエラーは解消されます。
+t = time.Date(2016, time.Month(11), 8, 00, 00, 00, 00, time.Local) どうしても08、09と記載したい、そんなときには、数値を&amp;quot;で囲って文字列として指定しておき、文字列から数値に変換させれば大丈夫です。ただし、標準で用意されているstrconv.Atoi関数は2つの戻り値を返すので、そのままでは使えません。以下のように、変換用の関数を用意する必要があります。
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;os&amp;quot; &amp;quot;strconv&amp;quot; &amp;quot;time&amp;quot; ) func main() { t := time.Date(2016, time.Month(atoi(&amp;quot;11&amp;quot;)), atoi(&amp;quot;08&amp;quot;), atoi(&amp;quot;00&amp;quot;), atoi(&amp;quot;00&amp;quot;), atoi(&amp;quot;00&amp;quot;), atoi(&amp;quot;00&amp;quot;), time.Local) fmt.Println(t) } func atoi(str string) int { num, err := strconv.Atoi(str) if err !</description>
+    </item>
+    
+    <item>
+      <title>Go言語で構造体のスライスを扱ってみる</title>
+      <link>http://foresukecom.github.io/post/struct_slice/</link>
+      <pubDate>Wed, 30 Nov 2016 21:24:20 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/struct_slice/</guid>
+      <description>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。
+ここで構造体やスライスについて詳しく説明はしません。詳細はA Tour of Goなどに記載されているので、そちらをご確認下さい。 今回は、構造体を要素として持つスライスを扱う方法をまとめています。
+いろいろな操作  要素にする構造体
+今回の説明で使用する構造体は以下の通り定義されています。 社員番号(number)と名前(name)を持つ社員(employee)型です。スライスで複数人の社員情報をまとめて扱うようなイメージです。  type employee struct { number int name string }  スライスの作成
+以下のようにmake関数を使えば、要素数が0のemployee型のスライスを作成することが出来ます。  employees := make([]employee, 0) スライスの作成と初期化をまとめて行うこともできます。
+employees := []employee{employee{1, &amp;quot;Taro&amp;quot;}} 複数の要素を持つスライスを1行で書くことも可能です。
+employees := []employee{employee{1, &amp;quot;Taro&amp;quot;}, employee{2, &amp;quot;Jiro&amp;quot;}, employee{3, &amp;quot;Saburo&amp;quot;}}  要素の追加
+既存のスライスに対して、要素を追加させるには以下のように記載します。  employees = append(employees, employee{4, &amp;quot;Shiro&amp;quot;})  要素の削除
+組込み関数にはスライスの要素を削除する仕組みは実装されていません。そのため、個別に関数を作成する必要があります。例としては、以下のような関数で要素の削除機能が実現できます。  func delete(employees []employee, n int) []employee { result := make([]employee, 0) for i, v := range employees { if i !</description>
+    </item>
+    
+    <item>
+      <title>ご挨拶</title>
+      <link>http://foresukecom.github.io/post/about/</link>
+      <pubDate>Tue, 29 Nov 2016 23:25:30 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/about/</guid>
+      <description>ご挨拶 はじめまして、foresukeです。
+これはIT系の技術ブログになる予定です。サーバサイド、フロントエンド、インフラと広く浅く、学習した内容を公開していきます。
+記載している内容への質問や指摘については、Twitterからお願いします。</description>
+    </item>
+    
+    <item>
+      <title>本ブログのポリシーについて</title>
+      <link>http://foresukecom.github.io/post/privacy_policy/</link>
+      <pubDate>Mon, 28 Nov 2016 12:17:44 +0900</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/privacy_policy/</guid>
+      <description>Amazon 当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。
+Google Analytics 当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
+このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくはここをクリックしてください。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://foresukecom.github.io/post/20171017_cloudshell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/20171017_cloudshell/</guid>
+      <description>cd blo	&amp;mdash; title: &amp;ldquo;CloudShellでのブログ執筆環境&amp;rdquo; slug: &amp;ldquo;ClougShell_hugo&amp;rdquo; tags: [&amp;ldquo;GCP&amp;rdquo;, &amp;ldquo;ClougShell&amp;rdquo;] date: 2017-10-17T22:08:58+09:00 draft: false author: &amp;ldquo;foresuke&amp;rdquo; ブログ環境 こんにちは、ブログを再開した@foresukeです。
+実は諸事情によりメインのPCをChoromeBookを使っています。ChoromeBookはブラウザと、Androidアプリしか使えない端末です。なので基本的にはネットワークに接続していることが前提となっており、スタンドアローンではまともに使うことができません。
+本ブログは、hugoと呼ばれる静的サイトジェネレータで構築しています。静的サイトジェネレータについては以下のサイトに詳しく書かれているので、ここでは省略します。
+脱WordPress！静的サイトの特徴やメリットなどのまとめ
+静的サイトジェネレータの運用方法としては、ローカル上でhtml/cssファイルを生成し、webサーバにアップロードして公開する、といった流れを繰返すことになります。 僕がChromeBookを使っており、ローカル上でhtml/cssファイルを生成できないので、GoogleClougShellをローカル環境として使うことにしました。
+CloudShellはDebianベースのGoogleComputeEngineに開発ツールがインストールされた状態で提供される仮想マシンで、ブラウザから手軽にアクセスできる環境です。がっつり開発するには向きませんが、手軽な開発ツールとして重宝しています。
+Debianベースということもあるので、勉強がてらvimを使おうと四苦八苦していましたが、CloudShellにクラウド版エディタがベータとして提供されたので使ってみました。 クラウド版エディタでmarkdownファイルを編集したところ、画面の右側にプレビューがリアルタイムで表示されました。 これはなかなか便利で、ブログ記事を書くのはクラウド版エディタで充分な感じです。
+まだ改善の余地はありますが、いい感じにブログ執筆環境ができたので、細々と書いていきます。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://foresukecom.github.io/post/20171027_googlehome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://foresukecom.github.io/post/20171027_googlehome/</guid>
+      <description>hu&amp;mdash; title: &amp;ldquo;Google Home Miniを買いました&amp;rdquo; slug: &amp;ldquo;googlehomemini&amp;rdquo; tags: [&amp;ldquo;Google&amp;rdquo;] date: 2017-10-26T05:56:33+09:00 draft: false author: &amp;ldquo;foresuke&amp;rdquo; はじめに 先日のGoogleイベントで日本での発売が発表されたGoogle Home Miniを購入しました。
+Google Home Miniができることや同封物については以下のようなページで多数公開されているので、ここでは省略します。 Google HomeとGoogle Home Miniの違いはスピーカーの音質程度のようで、動作内容自体に差異は内容です。
+手のひらに乗るスマートスピーカ「Google Home Mini」開封の儀
+Google Home Miniの電源ポートはマイクロUSBです。次期的にTypr-Cが使われると思っていたので意外なところです。 ただ、僕の身の回りにはマイクロUSBを使っているデバイスがまだ多いので、他のケーブルを流用できるので結果オーライと考えていました。
+しかし、下の写真を見ていただくと分かる通り、マイクロUSBポートが本体の奥の方についているので、Google Home Mini自体がケーブルと干渉してしまい、僕の持っている他のケーブルでは代用することができませんでした。
+まぁ、持ち運ぶ想定をしていないので仕方がないのですが、ちょっと別の部屋に持っていきたいときには不便でですね(バッテリーも内蔵していないので、給電しながらでないと使えませんし)。 とりあえず、天気やニュースを尋ねたり、音楽を再生したりしましたが、対応しているサービスについては、求めている解答が返ってくるのでとても気持ちがいいです。
+僕は滑舌が悪いので、音声認識がうまく動作するか不安だったのですが問題なく使うことができました。 さすがはGoogleさんです。
+しかし、対応しているサービスがまだ少ないので、かゆいところに手が届かないと感じる部分も多いです。 例えば、僕はPocket Castsというサービスはを使ってPodcastを聴いているのですが、まだGoogle Home Miniに対応していません。 「未視聴のPodcastを順次再生」とかを音声で指示ができればベストです。
+懸念事項 Google Home Miniは物理的にミュートボタンがあるので、マイクを無効にすることもできますが、基本的には音を拾い続けたまま使うことになると思われます。
+以下のようなバグもあったようですし、悪意の有無に関わらず、情報が外部に漏れてしまうリスクは考えておくべきでしょう。
+Google Home Miniに常時録音してしまうバグ発覚、すでに修正済みで製品版には影響なし
+極端に悪意がある例では、ジョージオーウェルの1984に登場するテレスコープを使って、国民の監視をしていました。 現時点でのGoogle Home(Mini)は音を拾うだけですが、今後カメラなどが搭載されると、ますますテレスコープ化していくことになります。
+良い例でいうと、自分の家に異常があったことを検知できるので防犯、防災対策に活用することが期待できます。 また、体調の変化をすぐ発見してもらえたり、アリバイの証明に使うこともできるかもしれません。
+今後の希望 現在は、一問一答での対話となっているので、正直なところ会話をしている感じではありません。 会話のキャッチボールが長く続けられるのであれば、英会話のレッスンを受けたり、愚痴を聞いてもらったりできそうです。
+HoloLensをはじめとする、Mixed Realityのヘッドマウントディスプレイと連携させ、アシスタント用のアバターを仮想空間上に表示することも可能になると思います。 そうすれば、Haloシリーズのコルタナや、PSYCHO-PASSの登場人物 常守茜の部屋にいるクラゲ型アバターのキャンディ、のようにますます愛着を持って扱うことができそうです。
+Googleの公式ブログにも記載されているように、開発キットも公開されています。 日本語にも対応し始めたようなので、何か作ってみても面白いかもしれません。
+Google アシスタント対応アプリを日本語で開発してみよう</description>
     </item>
     
   </channel>

@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>その他 on ふぉれすけ広場</title>
-    <link>/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
+    <link>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
     <description>Recent content in その他 on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
     
-        <atom:link href="/tags/%E3%81%9D%E3%81%AE%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
-      <link>/post/human_fall_flat/</link>
+      <link>http://foresukecom.github.io/post/human_fall_flat/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
-      <guid>/post/human_fall_flat/</guid>
+      <guid>http://foresukecom.github.io/post/human_fall_flat/</guid>
       <description>友人とHuman Fall Flatというゲームを遊びました。
   ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3Dの物理演算を用いたアクションパズルゲームです。
 コースはすべて1人でクリア出来るようにデザインされているのですが、同じコースを複数人で遊ぶことが出来るのでゴリ押しでどんどん進めることが出来ます。 2人だとクリアまでのプレイ時間はだいたい10時間ぐらいでした。
@@ -34,10 +34,10 @@ Remote Play Togetherがあればゲーム側でオンラインマルチ機能を
     
     <item>
       <title>渋谷落語を観てきました</title>
-      <link>/post/shiburaku/</link>
+      <link>http://foresukecom.github.io/post/shiburaku/</link>
       <pubDate>Sun, 14 Jul 2019 18:44:51 +0900</pubDate>
       
-      <guid>/post/shiburaku/</guid>
+      <guid>http://foresukecom.github.io/post/shiburaku/</guid>
       <description>渋谷で毎月開催される初心者向け落語会、渋谷落語を観てきました。
 5日間で10公演開かれるのですが、今回は上のツイートで紹介されている5公演目を観てきました。
 まともに落語を観るのは初めてだったのですが、演者さんを紹介するペーパーも配られており、初心者へのハードルを下げている感じがしました。
@@ -49,10 +49,10 @@ Remote Play Togetherがあればゲーム側でオンラインマルチ機能を
     
     <item>
       <title>朝食の数値化</title>
-      <link>/post/breakfast/</link>
+      <link>http://foresukecom.github.io/post/breakfast/</link>
       <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
       
-      <guid>/post/breakfast/</guid>
+      <guid>http://foresukecom.github.io/post/breakfast/</guid>
       <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。
 メニュー 毎日の朝食は以下の通りです。
  シェイク(COMP POWDER+プロテイン+豆乳) スムージー(ほうれん草+バナナ+ブルーベリー+豆乳) コーヒー  液体ばかりですね。
@@ -68,10 +68,10 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>時計の秒針について</title>
-      <link>/post/analog_clock/</link>
+      <link>http://foresukecom.github.io/post/analog_clock/</link>
       <pubDate>Sat, 04 May 2019 08:25:08 +0900</pubDate>
       
-      <guid>/post/analog_clock/</guid>
+      <guid>http://foresukecom.github.io/post/analog_clock/</guid>
       <description>今回は算数と理科のお話です。
 たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。
 この場合、文字盤の円周は約6.28cmとなるので、秒針の先端は1分間で約6.28cm進みます。 (実際は文字盤の内側を秒針が通るので、秒針が進む距離は少し短くなりますが、面倒なのでここでは文字盤の端を秒針が通るということで話を進めます。)
@@ -94,20 +94,20 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>退職エントリ</title>
-      <link>/post/resign/</link>
+      <link>http://foresukecom.github.io/post/resign/</link>
       <pubDate>Sat, 29 Dec 2018 10:15:46 +0900</pubDate>
       
-      <guid>/post/resign/</guid>
+      <guid>http://foresukecom.github.io/post/resign/</guid>
       <description>12月いっぱいで今の会社を退職します。
 次の職場でもがんばるぞい！</description>
     </item>
     
     <item>
       <title>コーヒー美味しい</title>
-      <link>/post/coffee/</link>
+      <link>http://foresukecom.github.io/post/coffee/</link>
       <pubDate>Tue, 25 Dec 2018 07:29:54 +0900</pubDate>
       
-      <guid>/post/coffee/</guid>
+      <guid>http://foresukecom.github.io/post/coffee/</guid>
       <description>コーヒーサーバを手に入れました。
 ありがとうサンタさん、来月はクレカ支払い頑張るよ。
 マグカップが汚い…黒色のマグカップを使えば汚れが目立たなくていいのでは🤔
@@ -119,10 +119,10 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>カタカナ表記について</title>
-      <link>/post/katakana/</link>
+      <link>http://foresukecom.github.io/post/katakana/</link>
       <pubDate>Sat, 21 Oct 2017 12:21:09 +0900</pubDate>
       
-      <guid>/post/katakana/</guid>
+      <guid>http://foresukecom.github.io/post/katakana/</guid>
       <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くときには長音符は省略した方がいい」と教わってきました。
 そのため「コンピュータ」「ルータ」のように末尾の長音符を省略して書いていました。
 長音符を省略する理由については覚えていないのですが、おそらくJIS規格に準拠しようとしたのでしょう。
@@ -141,10 +141,10 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>ブログ再開 -2017秋-</title>
-      <link>/post/restart/</link>
+      <link>http://foresukecom.github.io/post/restart/</link>
       <pubDate>Tue, 17 Oct 2017 07:55:56 +0900</pubDate>
       
-      <guid>/post/restart/</guid>
+      <guid>http://foresukecom.github.io/post/restart/</guid>
       <description>ご挨拶 お久しぶりです、foresukeです。
 転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開していきます。
 ブログに慣れるまでは、質より量を優先してどんどん書いていきたいです。</description>
@@ -152,10 +152,10 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>ご挨拶</title>
-      <link>/post/about/</link>
+      <link>http://foresukecom.github.io/post/about/</link>
       <pubDate>Tue, 29 Nov 2016 23:25:30 +0900</pubDate>
       
-      <guid>/post/about/</guid>
+      <guid>http://foresukecom.github.io/post/about/</guid>
       <description>ご挨拶 はじめまして、foresukeです。
 これはIT系の技術ブログになる予定です。サーバサイド、フロントエンド、インフラと広く浅く、学習した内容を公開していきます。
 記載している内容への質問や指摘については、Twitterからお願いします。</description>
@@ -163,10 +163,10 @@ https://www.marusanai.co.jp/lineup/detail-63005/
     
     <item>
       <title>本ブログのポリシーについて</title>
-      <link>/post/privacy_policy/</link>
+      <link>http://foresukecom.github.io/post/privacy_policy/</link>
       <pubDate>Mon, 28 Nov 2016 12:17:44 +0900</pubDate>
       
-      <guid>/post/privacy_policy/</guid>
+      <guid>http://foresukecom.github.io/post/privacy_policy/</guid>
       <description>Amazon 当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。
 Google Analytics 当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
 このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくはここをクリックしてください。</description>
