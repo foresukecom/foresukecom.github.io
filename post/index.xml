@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugoの記事にコンテンツを埋め込む</title>
+      <link>/post/hugo_embed/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugo_embed/</guid>
+      <description>&lt;p&gt;ブログに埋め込んだGistのコードやYouTubeが表示されなくなっていたので対処法メモです。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
@@ -18,7 +27,7 @@
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
       <guid>/post/human_fall_flat/</guid>
-      <description>友人とHuman Fall Flatというゲームを遊びました。 ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3D</description>
+      <description>&lt;p&gt;友人とHuman Fall Flatというゲームを遊びました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,7 +36,7 @@
       <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
       
       <guid>/post/go_toml/</guid>
-      <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。 ※TOMLファイルについては、公式ドキュメン</description>
+      <description>&lt;p&gt;GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。&lt;/p&gt;</description>
     </item>
     
     <item>
