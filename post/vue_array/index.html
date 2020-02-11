@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Vue.jsで配列を扱ったお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Vue.jsで配列を扱ったお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.74944aa943a96ac5fff6f6a7fe73247fa2b3e447b1cb440114496410dbbb90d134f9355562889a7ecd2f6cbe99f44a0f.css" integrity="sha384-dJRKqUOpasX/9van/nMkf6Kz5Eexy0QBFElkENu7kNE0&#43;TVVYoiafs0vbL6Z9EoP"><body>
     <div class="base-body"><section id="header" class="site header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
-        <span class="header right-side"></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、壁を登ったり。</span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">Vue.jsで配列を扱ったお話</h1><p class="article date">2018-08-21</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Vue.jsで配列を扱ったお話</h1><p class="article date">2018/08/21</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
 <p>Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。</p>
 <h2 id="本文">本文</h2>
 <p>ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。</p>
-<!-- raw HTML omitted -->
+<p data-height="400" data-theme-id="0" data-slug-hash="rZBjEL" data-default-tab="js,result" data-user="foresukecom" data-pen-title="vue_array_ng" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/rZBjEL/">vue_array_ng</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+…このサンプルだと、ボタンを押すたびに配列の中身は更新されるのですが、画面上は変化がありません。  
 <p>以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。</p>
-<!-- raw HTML omitted -->
+<p data-height="400" data-theme-id="0" data-slug-hash="KxPajP" data-default-tab="js,result" data-user="foresukecom" data-pen-title="vue_array_ok" class="codepen">See the Pen <a href="https://codepen.io/foresukecom/pen/KxPajP/">vue_array_ok</a> by foresukecom (<a href="https://codepen.io/foresukecom">@foresukecom</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 <p>具体的には以下のように、要素番号を指定して配列の中身を変更しても画面上の値は変化しませんが、Vue.jsに用意されているメソッドを使えは配列の中身に応じて画面上の値も変化します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/*失敗例*/</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#75715e">/*成功例*/</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">num_list</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/*失敗例*/</span> <span class="k">this</span><span class="p">.</span><span class="nx">num_list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">num_list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="cm">/*成功例*/</span> <span class="k">this</span><span class="p">.</span><span class="nx">num_list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">num_list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div><p><a href="https://jp.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"target="_blank">公式ドキュメント</a>にも<strong>注意事項</strong>としてちゃんと書かれていました。<br>
 JavaScriptの制限じゃ仕方ないですね(´・ω・`)</p>
 <blockquote>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Golangのpanicのお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Golangのpanicのお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.74944aa943a96ac5fff6f6a7fe73247fa2b3e447b1cb440114496410dbbb90d134f9355562889a7ecd2f6cbe99f44a0f.css" integrity="sha384-dJRKqUOpasX/9van/nMkf6Kz5Eexy0QBFElkENu7kNE0&#43;TVVYoiafs0vbL6Z9EoP"><body>
     <div class="base-body"><section id="header" class="site header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
-        <span class="header right-side"></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、壁を登ったり。</span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">Golangのpanicのお話</h1><p class="article date">2018-11-21</p></section><article class="article markdown-body"><h1 id="はじめに">はじめに</h1>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Golangのpanicのお話</h1><p class="article date">2018/11/21</p></section><article class="article markdown-body"><h1 id="はじめに">はじめに</h1>
 <p>Golangというと、クロスコンパイルが特徴の1つとして挙げられます。<br>
 クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。<br>
 今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。</p>
@@ -14,15 +14,15 @@
 <script type="application/javascript" src="https://gist.github.com/foresukecom/79e23472c75c70a07184f0d4da0b6d4b.js"></script>
 </p>
 <p>で、このコードを以下のようなディレクトリ構成の中に配置していました。<code>log_analysis</code>が1つのプロジェクトというイメージです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tmp
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">tmp
 └── tanaka
     └── azunyan_prpr
         └── tools
             └── log_analysis
                 └── main.go
 </code></pre></div><p>このコードを<a href="https://github.com/mitchellh/gox"target="_blank">mitchellh/gox</a>を使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ gox
-Number of parallel builds: <span style="color:#ae81ff">3</span>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ gox
+Number of parallel builds: <span class="m">3</span>
 
 --&gt;   freebsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
 --&gt;      netbsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
@@ -59,23 +59,23 @@ log_analysis_windows_amd64.exe
 main.go
 </code></pre></div><p><code>log_analysis_windows_amd64.exe</code>がWindows(64bit)向けの実行ファイルになるので、Windows10の<code>D:\tools</code>配下に置いておきます。<br>
 <code>log_analysis_windows_amd64.exe</code>を実行すると、読み込むべき<code>sample.log</code>が存在しないので<code>panic(&quot;ファイルないよ&quot;)</code>が実行されます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">D:<span style="color:#ae81ff">\t</span>ools&gt;dir
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">D:<span class="se">\t</span>ools&gt;dir
  ドライブ D のボリューム ラベルがありません。
  ボリューム シリアル番号は XXXX-XXXX です
 
- D:<span style="color:#ae81ff">\t</span>ools のディレクトリ
+ D:<span class="se">\t</span>ools のディレクトリ
 
 2018/11/22  00:04    &lt;DIR&gt;          .
 2018/11/22  00:04    &lt;DIR&gt;          ..
 2018/11/22  00:01         1,273,344 log_analysis_windows_amd64.exe
-               <span style="color:#ae81ff">1</span> 個のファイル           1,273,344 バイト
-               <span style="color:#ae81ff">2</span> 個のディレクトリ  159,870,349,312 バイトの空き領域
+               <span class="m">1</span> 個のファイル           1,273,344 バイト
+               <span class="m">2</span> 個のディレクトリ  159,870,349,312 バイトの空き領域
 
-D:<span style="color:#ae81ff">\t</span>ools&gt;log_analysis_windows_amd64.exe
+D:<span class="se">\t</span>ools&gt;log_analysis_windows_amd64.exe
 panic: ファイルないよ
 
-goroutine <span style="color:#ae81ff">1</span> <span style="color:#f92672">[</span>running<span style="color:#f92672">]</span>:
-main.main<span style="color:#f92672">(</span><span style="color:#f92672">)</span>
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">(</span><span class="o">)</span>
         /tmp/tanaka/azunyan_prpr/tools/log_analysis/main.go:9 +0xa1
 </code></pre></div><p>想定通り<code>panic</code>にはなりましたが、ソースファイルをコンパイルした際のディレクトリが見えるようになってしまいました…</p>
 <h1 id="まとめ">まとめ</h1>
@@ -98,28 +98,28 @@ main.main<span style="color:#f92672">(</span><span style="color:#f92672">)</span
 <code>gcflags</code>だけでもファイルのパスを隠すことができたので、一旦進めていきます。</p>
 <p><code>trimpath</code>で指定したパスを実行ファイルから取り除くことができます。<br>
 指定するパスによって、goファイル名まで取り除いたり、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-trimpath=`pwd`/main.go&#34;</span> main.go
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=`pwd`/main.go&#34;</span> main.go
 $ ./log_analysis
 panic: ファイルないよ
 
-goroutine <span style="color:#ae81ff">1</span> <span style="color:#f92672">[</span>running<span style="color:#f92672">]</span>:
-main.main<span style="color:#f92672">(</span><span style="color:#f92672">)</span>
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">(</span><span class="o">)</span>
 	??:9 +0x9a
 </code></pre></div><p>goファイル名だけを残したり、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-trimpath=`pwd`&#34;</span> main.go
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=`pwd`&#34;</span> main.go
 $ ./log_analysis
 panic: ファイルないよ
 
-goroutine <span style="color:#ae81ff">1</span> <span style="color:#f92672">[</span>running<span style="color:#f92672">]</span>:
-main.main<span style="color:#f92672">(</span><span style="color:#f92672">)</span>
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">(</span><span class="o">)</span>
 	main.go:9 +0x9a
 </code></pre></div><p>ディレクトリ名を途中まで取り除くことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-trimpath=/tmp/tanaka/azunyan_prpr&#34;</span> main.go
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=/tmp/tanaka/azunyan_prpr&#34;</span> main.go
 $ ./log_analysis
 panic: ファイルないよ
 
-goroutine <span style="color:#ae81ff">1</span> <span style="color:#f92672">[</span>running<span style="color:#f92672">]</span>:
-main.main<span style="color:#f92672">(</span><span style="color:#f92672">)</span>
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">(</span><span class="o">)</span>
 	tools/log_analysis/main.go:9 +0x9a
 </code></pre></div><p>雰囲気で書いてるから、知らない便利な機能がたくさんありますね。
 今後仕事で使うことになるから使えるようになっておかないとです…</p>

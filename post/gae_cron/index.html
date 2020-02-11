@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>GAEでバッチ処理&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
+<meta name="supported-color-schemes" content="light dark"><title>GAEでバッチ処理&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.74944aa943a96ac5fff6f6a7fe73247fa2b3e447b1cb440114496410dbbb90d134f9355562889a7ecd2f6cbe99f44a0f.css" integrity="sha384-dJRKqUOpasX/9van/nMkf6Kz5Eexy0QBFElkENu7kNE0&#43;TVVYoiafs0vbL6Z9EoP"><body>
     <div class="base-body"><section id="header" class="site header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
-        <span class="header right-side"></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、壁を登ったり。</span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">GAEでバッチ処理</h1><p class="article date">2018-11-07</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">GAEでバッチ処理</h1><p class="article date">2018/11/07</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
 <p>Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。<br>
 GAEでは<code>cron.yaml</code>に設定を記載することで時間を指定した処理を行うことができます。</p>
 <h2 id="サンプル">サンプル</h2>
@@ -37,11 +37,11 @@ GAEでは<code>cron.yaml</code>に設定を記載することで時間を指定�
 <p>GAEでは<code>dev_server.py</code>でローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、<code>cron.yaml</code>は動作しません。<br>
 <code>localhost:8000</code> からGAEローカル環境の管理画面を開くことができます。<br>
 管理画面に<code>cron.yaml</code>で設定したスケジュールが一覧で表示されるので、<code>Run now</code>をクリックすることで手動で実行することができます。
-<!-- raw HTML omitted --></p>
+<img src='/images/20181107_cron/local_dev.png'></p>
 <p>Cronの設定を本番環境にデプロイするときは、<code>gcloud app deploy cron.yaml</code>のように<code>crom.yaml</code>を指定します。<br>
 指定しないと、<code>crom.yaml</code>が読み込まれないため、いつまで待っても処理が実行されません。
 Cronが設定されているかどうかは、コンソール画面の<code>cronジョブ</code>から確認することが出来ます。
-<!-- raw HTML omitted --></p>
+<img src='/images/20181107_cron/console.png'></p>
 <p>仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。<br>
 そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。<br>
 GAEのcronサービスからのHTTPアクセスにはHTTPヘッダに<code>X-Appengine-Cron: true</code>が含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります</p>
@@ -61,9 +61,9 @@ if r.Header.Get(&quot;X-Appengine-Cron&quot;) != &quot;true&quot; {
 <p>迂闊先生(<a href="https://twitter.com/ukkariukatu"target="_blank">@ukkariukatu</a>)の「のみじょし」5巻が出てました!これは買わないと。<br>
 紙の本と同じタイミングでKindle版も発売されるのはありがたい限りです😆<br>
 …先日までみっちゃんと同い年だったんですが、いつの間にか僕の方が年上になってました。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<blockquote>
+<!--
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke0a-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07K79V1TF&linkId=313661b721e2b5cad516eea0c06c6671"></iframe>
+--><blockquote>
 </blockquote>
 </article><section class="article labels"><a class="tag" href=/tags/gae/>GAE</a><a class="tag" href=/tags/golang/>golang</a></section><section class="article navigation"><p><a class="link" href="/post/dynamic_tweet/"><span class="li">&larr;</span>Tweetボタンでつぶやく内容を動的に変更する</a></p><p><a class="link" href="/post/gae_favicon/"><span class="li">&rarr;</span>GAEでfaviconを設定</a class="link">
     </p></section></div><section id="footer" class="footer"><div class="footer-wrap">

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>TOMLをGolangで読み込もうとして躓いた話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
+<meta name="supported-color-schemes" content="light dark"><title>TOMLをGolangで読み込もうとして躓いた話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.74944aa943a96ac5fff6f6a7fe73247fa2b3e447b1cb440114496410dbbb90d134f9355562889a7ecd2f6cbe99f44a0f.css" integrity="sha384-dJRKqUOpasX/9van/nMkf6Kz5Eexy0QBFElkENu7kNE0&#43;TVVYoiafs0vbL6Z9EoP"><body>
     <div class="base-body"><section id="header" class="site header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
-        <span class="header right-side"></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、壁を登ったり。</span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">TOMLをGolangで読み込もうとして躓いた話</h1><p class="article date">2020-02-03</p></section><article class="article markdown-body"><p>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。</p>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">TOMLをGolangで読み込もうとして躓いた話</h1><p class="article date">2020/02/03</p></section><article class="article markdown-body"><p>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。</p>
 <p>※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。<br>
 <a href="https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md">https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md</a></p>
 <p>TOMLを読み込むのは以下のライブラリを使用しています。<br>
 <a href="https://github.com/BurntSushi/toml">https://github.com/BurntSushi/toml</a><br>
 焼き寿司🔥🍣…?</p>
 <p>今回は例として、以下のTOMLファイルを読み込もうとします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">API</span>]
-<span style="color:#a6e22e">user</span> = <span style="color:#e6db74">&#34;foresuke&#34;</span>
-<span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;v0.0.1&#34;</span>
-<span style="color:#a6e22e">debug</span>  = <span style="color:#66d9ef">true</span>
-<span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">500</span>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">API</span><span class="p">]</span>
+<span class="nx">user</span> <span class="p">=</span> <span class="s2">&#34;foresuke&#34;</span>
+<span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;v0.0.1&#34;</span>
+<span class="nx">debug</span>  <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">limit</span> <span class="p">=</span> <span class="mi">500</span>
 </code></pre></div><h1 id="失敗例">失敗例</h1>
 <p><script type="application/javascript" src="https://gist.github.com/foresukecom/2ef3f2883fb063e451c020e56b141f38.js?file=toml1.go"></script>
 
 このコードを実行したところ、以下のような結果になりました。<br>
 エラーにはなっていませんが、TOMLの内容が読み込まれていません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run main1.go 
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ go run main1.go 
 
 
-false
-<span style="color:#ae81ff">0</span>
+<span class="nb">false</span>
+<span class="m">0</span>
 </code></pre></div><p>TOMLでは、複数のキー/バリューの組み合わせを纏めたものをテーブルと呼びます。<br>
 角括弧(<code>[]</code>)で囲まれた文字がテーブル名となり、その下に書かれたキー/バリューがテーブルに含まれる要素になります。<br>
 今回の例では<code>API</code>というテーブル名の中に<code>user</code>、<code>version</code>、<code>debug</code>、<code>limit</code>という要素が存在することになります。</p>
@@ -34,18 +34,18 @@ false
 <script type="application/javascript" src="https://gist.github.com/foresukecom/2ef3f2883fb063e451c020e56b141f38.js?file=toml2.go"></script>
 
 <p>こんな感じにTOML全体を表す<code>Config</code>とAPIテーブルを表す<code>API</code>という構造体を個別に用意したところ、問題なくTOMLの内容を読み込むことが出来ました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run main2.go 
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ go run main2.go 
 foresuke
 v0.0.1
-true
-<span style="color:#ae81ff">500</span>
+<span class="nb">true</span>
+<span class="m">500</span>
 </code></pre></div><h1 id="あまりよくない解決策">(あまり)よくない解決策</h1>
 <p>テーブルを使わないようにTOMLファイルを書き換えれば、main1.goでも値を取得することが出来ます。<br>
 ただ記載する項目が多い場合にはキーの重複が考えられるので実用的ではありません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">user</span> = <span style="color:#e6db74">&#34;foresuke&#34;</span>
-<span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;v0.0.1&#34;</span>
-<span style="color:#a6e22e">debug</span>  = <span style="color:#66d9ef">true</span>
-<span style="color:#a6e22e">limit</span> = <span style="color:#ae81ff">500</span>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">user</span> <span class="p">=</span> <span class="s2">&#34;foresuke&#34;</span>
+<span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;v0.0.1&#34;</span>
+<span class="nx">debug</span>  <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">limit</span> <span class="p">=</span> <span class="mi">500</span>
 </code></pre></div></article><section class="article labels"><a class="tag" href=/tags/golang/>Golang</a></section><section class="article navigation"><p><a class="link" href="/post/human_fall_flat/"><span class="li">&larr;</span>Human Fall FlatとSteam Remote Play Togetherについて</a></p><p><a class="link" href="/post/shiburaku/"><span class="li">&rarr;</span>渋谷落語を観てきました</a class="link">
     </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
     <p class="copyright">©2019 foresuke.</p>
