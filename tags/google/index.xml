@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on ふぉれすけ広場</title>
+    <link>/tags/google/</link>
+    <description>Recent content in Google on ふぉれすけ広場</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>©2019 foresuke.</copyright>
+    <lastBuildDate>Thu, 26 Oct 2017 05:56:33 +0900</lastBuildDate>
+    
+        <atom:link href="/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Home Miniを買いました</title>
+      <link>/post/googlehomemini/</link>
+      <pubDate>Thu, 26 Oct 2017 05:56:33 +0900</pubDate>
+      
+      <guid>/post/googlehomemini/</guid>
+      <description>はじめに 先日のGoogleイベントで日本での発売が発表されたGoogle Home Miniを購入しました。 Google Home Miniができることや同封物については</description>
+    </item>
+    
+  </channel>
+</rss>

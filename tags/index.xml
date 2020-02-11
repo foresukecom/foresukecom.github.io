@@ -13,20 +13,20 @@
     
     
     <item>
-      <title>steam</title>
-      <link>/tags/steam/</link>
+      <title>other</title>
+      <link>/tags/other/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
-      <guid>/tags/steam/</guid>
+      <guid>/tags/other/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>その他</title>
-      <link>/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
+      <title>Steam</title>
+      <link>/tags/steam/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
-      <guid>/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</guid>
+      <guid>/tags/steam/</guid>
       <description></description>
     </item>
     
@@ -166,11 +166,20 @@
     </item>
     
     <item>
-      <title>other</title>
-      <link>/tags/other/</link>
-      <pubDate>Sun, 29 Oct 2017 16:51:19 +0900</pubDate>
+      <title>Google</title>
+      <link>/tags/google/</link>
+      <pubDate>Thu, 26 Oct 2017 05:56:33 +0900</pubDate>
       
-      <guid>/tags/other/</guid>
+      <guid>/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ClougShell</title>
+      <link>/tags/clougshell/</link>
+      <pubDate>Tue, 17 Oct 2017 22:08:58 +0900</pubDate>
+      
+      <guid>/tags/clougshell/</guid>
       <description></description>
     </item>
     

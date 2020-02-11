@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>http://foresukecom.github.io/post/human_fall_flat/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/other/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/steam/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/golang/</loc><lastmod>2020-02-03T09:29:53+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/go_toml/</loc><lastmod>2020-02-03T09:29:53+09:00</lastmod></url><url>
@@ -46,18 +46,17 @@
     <loc>http://foresukecom.github.io/tags/docker/</loc><lastmod>2017-11-05T20:12:53+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/gcp_docker_django/</loc><lastmod>2017-11-05T20:12:53+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/food/</loc><lastmod>2017-10-29T16:51:19+09:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/other/</loc><lastmod>2017-10-29T16:51:19+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/comp/</loc><lastmod>2017-10-29T16:51:19+09:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/google/</loc><lastmod>2017-10-26T05:56:33+09:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/googlehomemini/</loc><lastmod>2017-10-26T05:56:33+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/english/</loc><lastmod>2017-10-24T05:50:21+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/katakana/</loc><lastmod>2017-10-21T12:21:09+09:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/clougshell_hugo/</loc><lastmod>2017-10-17T22:08:58+09:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/clougshell/</loc><lastmod>2017-10-17T22:08:58+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/restart/</loc><lastmod>2017-10-17T07:55:56+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/friday13th/</loc><lastmod>2017-01-13T08:47:12+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/pocket_mail/</loc><lastmod>2016-12-22T07:50:59+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/recursion/</loc><lastmod>2016-11-30T22:21:13+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/octal/</loc><lastmod>2016-11-30T21:26:57+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/struct_slice/</loc><lastmod>2016-11-30T21:24:20+09:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/post/about/</loc><lastmod>2016-11-29T23:25:30+09:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/post/privacy_policy/</loc><lastmod>2016-11-28T12:17:44+09:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/post/20171017_cloudshell/</loc><priority>0</priority></url><url>
-    <loc>http://foresukecom.github.io/post/20171027_googlehome/</loc><priority>0</priority></url><url>
     <loc>http://foresukecom.github.io/categories/</loc></url></urlset>

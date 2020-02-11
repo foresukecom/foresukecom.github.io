@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Sun, 29 Oct 2017 16:51:19 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
     
         <atom:link href="/tags/other/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
+      <link>/post/human_fall_flat/</link>
+      <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
+      
+      <guid>/post/human_fall_flat/</guid>
+      <description>友人とHuman Fall Flatというゲームを遊びました。 ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3D</description>
+    </item>
+    
+    <item>
+      <title>渋谷落語を観てきました</title>
+      <link>/post/shiburaku/</link>
+      <pubDate>Sun, 14 Jul 2019 18:44:51 +0900</pubDate>
+      
+      <guid>/post/shiburaku/</guid>
+      <description>渋谷で毎月開催される初心者向け落語会、渋谷落語を観てきました。 「渋谷らくご」3日目 7/14(日) 14:00-16:00 柳家わさび-垂乳根 台所おさん-愛宕山 風藤松</description>
+    </item>
+    
+    <item>
+      <title>朝食の数値化</title>
+      <link>/post/breakfast/</link>
+      <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
+      
+      <guid>/post/breakfast/</guid>
+      <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。 メニュー 毎日の朝食は以下の通りです。 シェイク(COMP</description>
+    </item>
+    
+    <item>
+      <title>時計の秒針について</title>
+      <link>/post/analog_clock/</link>
+      <pubDate>Sat, 04 May 2019 08:25:08 +0900</pubDate>
+      
+      <guid>/post/analog_clock/</guid>
+      <description>今回は算数と理科のお話です。 たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。 この場合、文字盤の円周は約6.28cmとなるので、</description>
+    </item>
+    
+    <item>
+      <title>退職エントリ</title>
+      <link>/post/resign/</link>
+      <pubDate>Sat, 29 Dec 2018 10:15:46 +0900</pubDate>
+      
+      <guid>/post/resign/</guid>
+      <description>12月いっぱいで今の会社を退職します。 次の職場でもがんばるぞい！</description>
+    </item>
+    
+    <item>
+      <title>コーヒー美味しい</title>
+      <link>/post/coffee/</link>
+      <pubDate>Tue, 25 Dec 2018 07:29:54 +0900</pubDate>
+      
+      <guid>/post/coffee/</guid>
+      <description>コーヒーサーバを手に入れました。 ありがとうサンタさん、来月はクレカ支払い頑張るよ。 マグカップが汚い…黒色のマグカップを使えば汚れが目立たなく</description>
+    </item>
     
     <item>
       <title>完全栄養食COMPを食べてます</title>
@@ -19,6 +73,24 @@
       
       <guid>/post/comp/</guid>
       <description>はじめに みなさんは完全栄養食COMPをご存知でしょうか。 完全栄養食の名の通り、これを食べるだけで必要な栄養素が取得できるという優れものです。</description>
+    </item>
+    
+    <item>
+      <title>カタカナ表記について</title>
+      <link>/post/katakana/</link>
+      <pubDate>Sat, 21 Oct 2017 12:21:09 +0900</pubDate>
+      
+      <guid>/post/katakana/</guid>
+      <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くと</description>
+    </item>
+    
+    <item>
+      <title>ブログ再開 -2017秋-</title>
+      <link>/post/restart/</link>
+      <pubDate>Tue, 17 Oct 2017 07:55:56 +0900</pubDate>
+      
+      <guid>/post/restart/</guid>
+      <description>ご挨拶 お久しぶりです、foresukeです。 転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開してい</description>
     </item>
     
   </channel>
