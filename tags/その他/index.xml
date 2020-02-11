@@ -1,175 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>その他 on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
+    <link>/tags/%E3%81%9D%E3%81%AE%E4%BB%96/</link>
     <description>Recent content in その他 on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>©2019 foresuke.</copyright>
     <lastBuildDate>Mon, 03 Feb 2020 13:23:38 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/%E3%81%9D%E3%81%AE%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/%E3%81%9D%E3%81%AE%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
-      <link>http://foresukecom.github.io/post/human_fall_flat/</link>
+      <link>/post/human_fall_flat/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/human_fall_flat/</guid>
-      <description>友人とHuman Fall Flatというゲームを遊びました。
-  ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3Dの物理演算を用いたアクションパズルゲームです。
-コースはすべて1人でクリア出来るようにデザインされているのですが、同じコースを複数人で遊ぶことが出来るのでゴリ押しでどんどん進めることが出来ます。 2人だとクリアまでのプレイ時間はだいたい10時間ぐらいでした。
-軟体人間を操るので操作性が悪いのですが、30分も遊んでいるとだんだんと癖になってきて、マップを歩き回るだけでも充分に笑えます。
-今回はSteamのRemote Play Togetherという機能を使ってマルチプレイを行いました。
-Human: Fall Flat自体はもともとオンラインマルチプレイに対応しているので、プレイヤーがそれぞれゲームを買っていればRemote Play Togetherを使わなくてもマルチプレイが出来ます。 しかし、Remote Play Togetherを使えば、1人がゲームを買っているだけで複数人で遊ぶことが可能になるのです。
-ただし、オフラインマルチを遊んでいる事になるので、左右に分割した画面で遊ぶことになります。
-Ultimate Chicken HorseやOvercookedのように全プレイヤーが同じ画面を見て遊ぶゲームがRemote Play Togetherに向いています。
-逆に、FPS やレースゲームはオフラインマルチでは画面分割することになるので、小さいディスプレイでは見にくくなるかもしれません。
-格闘ゲームも同じ画面で遊ぶゲームではあるのですが、ネットワーク越しということで多少の遅延が発生するので、あまり向いていないと思われます。
-Remote Play Togetherがあればゲーム側でオンラインマルチ機能を実装する必要がなくなるので、ローカルマルチのゲームが増えると思います。
-個人的にも1画面でワイワイ遊べるゲームが好きなので、今後のPCゲーム業界のトレンドがどうなるのか楽しみです。
-      </description>
+      <guid>/post/human_fall_flat/</guid>
+      <description>友人とHuman Fall Flatというゲームを遊びました。 ゲームの内容は動画を観てもらえばわかると思うのですが、軟体人間を操作してゴールに導く3D</description>
     </item>
     
     <item>
       <title>渋谷落語を観てきました</title>
-      <link>http://foresukecom.github.io/post/shiburaku/</link>
+      <link>/post/shiburaku/</link>
       <pubDate>Sun, 14 Jul 2019 18:44:51 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/shiburaku/</guid>
-      <description>渋谷で毎月開催される初心者向け落語会、渋谷落語を観てきました。
-5日間で10公演開かれるのですが、今回は上のツイートで紹介されている5公演目を観てきました。
-まともに落語を観るのは初めてだったのですが、演者さんを紹介するペーパーも配られており、初心者へのハードルを下げている感じがしました。
-4組とも面白かったのですが、柳家わさびさんに垂乳根が特に気に入りました。寿限無のような感じでしょうか。
-柳家わさびさんの別の演目や、他の演者さんの垂乳根も観てみたいです。
-落語は声色だけでキャラクターを使い分けて場面を想像させるのですが、同じ話を聴いても観客ごとに異なる世界を想像するのは読書に近い体験でしょうか。
-8月の落語会では創作落語のネタを初披露する会が予定されているようです。創作落語では現代を舞台にした話もあるようなので観に行こうかと思っています。</description>
+      <guid>/post/shiburaku/</guid>
+      <description>渋谷で毎月開催される初心者向け落語会、渋谷落語を観てきました。 5日間で10公演開かれるのですが、今回は上のツイートで紹介されている5公演目を</description>
     </item>
     
     <item>
       <title>朝食の数値化</title>
-      <link>http://foresukecom.github.io/post/breakfast/</link>
+      <link>/post/breakfast/</link>
       <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/breakfast/</guid>
-      <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。
-メニュー 毎日の朝食は以下の通りです。
- シェイク(COMP POWDER+プロテイン+豆乳) スムージー(ほうれん草+バナナ+ブルーベリー+豆乳) コーヒー  液体ばかりですね。
-COMP POWDERは株式会社コンプが出している完全栄養食です。
-http://www.comp.jp/products/powder.html
-プロテインはゴールドスタンダードシリーズを飲んでいます。ダブルリッチチョコレート味が美味。 https://www.optimumnutrition.jp/goldstandard.html
-豆乳はマルサンの調製豆乳です。
-https://www.marusanai.co.jp/lineup/detail-63005/
-メニュー詳細 シェイクで使われる材料の詳細です。
-   材料 分量 価格 1食分の価格 備考     COMP POWDER 96g(1袋) 8550円/24袋 356円 COMP公式サイトで定期購入   プロテイン 32g 6621円/2270g 88円 iHerbで購入   豆乳 360g 1187円/1リットル*6本 71円 Amazonで定期購入    スムージーで使われる材料の詳細です。
-   材料 分量 価格 1食分の価格 備考     豆乳 300g 1187円/1リットル*6本 59円 Amazonで定期購入   ほうれん草 40g 150円/1袋(約200g) 30円 スーパーで購入   バナナ 90g(1本) 100円/5本(約450g) 20円 スーパーでで購入   冷凍ブルーベリー 50g 150円/150g 50円 スーパーでで購入    コーヒーです。</description>
+      <guid>/post/breakfast/</guid>
+      <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。 メニュー 毎日の朝食は以下の通りです。 シェイク(COMP</description>
     </item>
     
     <item>
       <title>時計の秒針について</title>
-      <link>http://foresukecom.github.io/post/analog_clock/</link>
+      <link>/post/analog_clock/</link>
       <pubDate>Sat, 04 May 2019 08:25:08 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/analog_clock/</guid>
-      <description>今回は算数と理科のお話です。
-たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。
-この場合、文字盤の円周は約6.28cmとなるので、秒針の先端は1分間で約6.28cm進みます。 (実際は文字盤の内側を秒針が通るので、秒針が進む距離は少し短くなりますが、面倒なのでここでは文字盤の端を秒針が通るということで話を進めます。)
-半径15cmの柱時計の場合は、文字盤の円周は約94.2cmとなるので、秒針の先端は1分間で約94.2cm進むことになります。
-時計の文字盤が大きいほど、円周も大きくなるので、秒針の先端のスピードも上昇します。
-つまり…大きなアナログ時計を作れば、秒針が音速や光速を超えるのでは…🤔ということです。
-スカイツリー(634m)を秒針にした場合、秒針の先端は時速約95km(秒速66m)で進みます。
-逆に、音速(秒速340m)を超えるのに必要な秒針の長さは約3.25km、光速(秒速300,000km)を超えるのに必要な秒針の長さは約2,866,242kmとなります。
-太陽の半径が約700,000kmなので、光速を超えるための秒針を用意するのは大変そうです。
-実際には特殊相対性理論によると「物質は光速に近づくにつれて質量が増える」ので、どれだけ大きな時計を作っても秒針が光速を超えることはできません。
-でも半径が約3.25kmの時計なら国を挙げて頑張れば可能なのでは…と、ちょっと期待してしまいます。
-蛇足 最近、factorioというゲームにハマってます。
-ある惑星に不時着したプレイヤーが、鉄鉱石や銅鉱石、石炭、木などの資源を使って再び宇宙を目指す、というゲームです。 このゲームは採掘、運搬、加工を自動化し、効率的な工場を組み上げるのが楽しさの１つとなっています。
-  このゲームは止め時が難しく、もう少しもう少しとラインを改良していく内に、どんどん時間が溶けていきます。 週末にゲームを立ち上げたら10時間が経っていた、ということも珍しくありません。
-海外のインディーズゲームでは珍しく、日本語にも対応しています。 それも自動翻訳のようなカタコトではなく、有志が翻訳したものを公式が取り込んでくれたので非常に自然な日本語になっています。
-さらにMODにも寛容で、ゲーム内からMODをインストールすることも可能です。 MDOなしでも充分に長時間遊べるのですが、MODを入れることで無限に遊ぶことが可能です。
-まだ今年のGWは数日ありますので、みなさんもすぐにDLして時間を溶かしましょう。
-  </description>
+      <guid>/post/analog_clock/</guid>
+      <description>今回は算数と理科のお話です。 たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。 この場合、文字盤の円周は約6.28cmとなるので、</description>
     </item>
     
     <item>
       <title>退職エントリ</title>
-      <link>http://foresukecom.github.io/post/resign/</link>
+      <link>/post/resign/</link>
       <pubDate>Sat, 29 Dec 2018 10:15:46 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/resign/</guid>
-      <description>12月いっぱいで今の会社を退職します。
-次の職場でもがんばるぞい！</description>
+      <guid>/post/resign/</guid>
+      <description>12月いっぱいで今の会社を退職します。 次の職場でもがんばるぞい！</description>
     </item>
     
     <item>
       <title>コーヒー美味しい</title>
-      <link>http://foresukecom.github.io/post/coffee/</link>
+      <link>/post/coffee/</link>
       <pubDate>Tue, 25 Dec 2018 07:29:54 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/coffee/</guid>
-      <description>コーヒーサーバを手に入れました。
-ありがとうサンタさん、来月はクレカ支払い頑張るよ。
-マグカップが汚い…黒色のマグカップを使えば汚れが目立たなくていいのでは🤔
-ステンレスフィルタを使うのは初めてなのですが粉が残りますね。フィルタを洗うのも手間なので、普段はペーパーフィルタを重ねて使った方が手軽そうです。
-電気ケトルから直接お湯を注いでいるのですが、注ぎ口が広いのでまともに「の」の字を書いてドリップすることができませんでした。 注ぎ口が細くなっている電気ケトルかヤカンが欲しくなります。
-どうせなら、自宅でコーヒー豆を挽いたり、焙煎したり…沼が広がります。
-  </description>
+      <guid>/post/coffee/</guid>
+      <description>コーヒーサーバを手に入れました。 ありがとうサンタさん、来月はクレカ支払い頑張るよ。 マグカップが汚い…黒色のマグカップを使えば汚れが目立たなく</description>
     </item>
     
     <item>
       <title>カタカナ表記について</title>
-      <link>http://foresukecom.github.io/post/katakana/</link>
+      <link>/post/katakana/</link>
       <pubDate>Sat, 21 Oct 2017 12:21:09 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/katakana/</guid>
-      <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くときには長音符は省略した方がいい」と教わってきました。
-そのため「コンピュータ」「ルータ」のように末尾の長音符を省略して書いていました。
-長音符を省略する理由については覚えていないのですが、おそらくJIS規格に準拠しようとしたのでしょう。
-しかし、MicrosoftもWindows7から「コンピューター」「ディレクトリー」のように末尾に長音符をつけるようにしました。
-最近は製品やメディアによって、長音符の有無がバラバラになっている状況になっています。
-表記がブレると見栄えも悪くなり、検索も難しくなるので、少なくとも自分が自由に書く文章については、意識して表記を統一したいと考えています。 とりあえず、使用者が多いWindows製品を真似て、なるべく長音符を付ける方向で、テクニカルコミュニケーター協会が策定しているガイドラインに準拠していきます。
-外来語（カタカナ）表記ガイドライン第3版
-ガイドラインに様々な単語に対するカタカナ表記が記載されているので、これを元にしておけば統一感のでる文章が書けるようになります。
-これまで、長音符を省略して書いていたので、慣れるまでは混ざってしまうかもしれませんが、徐々に慣れていきます。
-ガイドラインに沿って書かれているかを判定してくれるツールがあると助かりますね。
-蛇足 ちなみにガイドラインに沿った場合、profileはプロファイルと表記するようです。 ずっとプロフィールだと思ってました。
-バトルロイヤルとバトルロワイヤルもごっちゃになっていましたが、バトルロイヤルはプロレスなどで全員敵の状態で戦うルールのこと(CoDでいうFree For Allですね)で、バトルロワイヤルは中学生が殺し合いをする小説、映画のタイトルということでした。
-最近人気のPLAYERUNKNOWN&amp;rsquo;S BATTLEGROUNDS(通称:ドン勝)がバトルロワイヤルに影響を受けた、と書かれた記事が多くあるので混乱してしまいました。
-この辺は、ガイドラインにも記載されていないので、それぞれの意味をググって正しい単語を選択しなくてはいけませんね。</description>
+      <guid>/post/katakana/</guid>
+      <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くと</description>
     </item>
     
     <item>
       <title>ブログ再開 -2017秋-</title>
-      <link>http://foresukecom.github.io/post/restart/</link>
+      <link>/post/restart/</link>
       <pubDate>Tue, 17 Oct 2017 07:55:56 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/restart/</guid>
-      <description>ご挨拶 お久しぶりです、foresukeです。
-転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開していきます。
-ブログに慣れるまでは、質より量を優先してどんどん書いていきたいです。</description>
+      <guid>/post/restart/</guid>
+      <description>ご挨拶 お久しぶりです、foresukeです。 転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開してい</description>
     </item>
     
     <item>
       <title>ご挨拶</title>
-      <link>http://foresukecom.github.io/post/about/</link>
+      <link>/post/about/</link>
       <pubDate>Tue, 29 Nov 2016 23:25:30 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/about/</guid>
-      <description>ご挨拶 はじめまして、foresukeです。
-これはIT系の技術ブログになる予定です。サーバサイド、フロントエンド、インフラと広く浅く、学習した内容を公開していきます。
-記載している内容への質問や指摘については、Twitterからお願いします。</description>
+      <guid>/post/about/</guid>
+      <description>ご挨拶 はじめまして、foresukeです。 これはIT系の技術ブログになる予定です。サーバサイド、フロントエンド、インフラと広く浅く、学習した</description>
     </item>
     
     <item>
       <title>本ブログのポリシーについて</title>
-      <link>http://foresukecom.github.io/post/privacy_policy/</link>
+      <link>/post/privacy_policy/</link>
       <pubDate>Mon, 28 Nov 2016 12:17:44 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/privacy_policy/</guid>
-      <description>Amazon 当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。
-Google Analytics 当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
-このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくはここをクリックしてください。</description>
+      <guid>/post/privacy_policy/</guid>
+      <description>Amazon 当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイ</description>
     </item>
     
   </channel>

@@ -1,61 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/javascript/</link>
+    <link>/tags/javascript/</link>
     <description>Recent content in JavaScript on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>©2019 foresuke.</copyright>
     <lastBuildDate>Sun, 11 Nov 2018 08:15:12 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tweetボタンでつぶやく内容を動的に変更する</title>
-      <link>http://foresukecom.github.io/post/dynamic_tweet/</link>
+      <link>/post/dynamic_tweet/</link>
       <pubDate>Sun, 11 Nov 2018 08:15:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/dynamic_tweet/</guid>
-      <description>はじめに 今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。
-本文 Twitterの共有ボタンを設置するだけなら、Twitter公式サイトで生成できる以下のコードをHTMLに埋め込むことで簡単に実現できます。
-&amp;lt;a href=&amp;quot;https://twitter.com/share?ref_src=twsrc%5Etfw&amp;quot; class=&amp;quot;twitter-share-button&amp;quot; data-text=&amp;quot;ハローワールド&amp;quot; data-show-count=&amp;quot;false&amp;quot;&amp;gt;Tweet&amp;lt;/a&amp;gt; &amp;lt;script async src=&amp;quot;https://platform.twitter.com/widgets.js&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; しかし、この方法だとTweetする文章を動的に変更することはできません。
-そこで、JavaScriptでTweetする内容を生成して、window.openメソッドでTweet共有用のURL(https://twitter.com/share) を呼び出すことで対応します。
-URLに以下のパラメータを追加することで、ハッシュタグやアカウントを含めたTweetを行うことができます。
-   パラメータ 説明     text Tweetする文章   url Tweetに含めるURL   via Tweetに含めるアカウント   hashtags Tweetに含めるハッシュタグ   related Tweet後にフォローを勧めるアカウント    サンプルコード 以下がサンプルコードになります。
-JavaScriptのコードが18行ありますが、ほとんどは現在時刻を求めているだけで、実際にTweetを行うのに必要なのは17行目のwindow.open(...);だけです。
-Tweetボタンを押すと、以下のようなTweetを投稿できます。
-※追記
-Tweetが140文字を超えたらどうなるか確認したところ、以下のように403エラーとなりました。
-実際に使うなら、文字数チェックの処理が必要ですね。
-その他 最近Ultimate Chicken Horseをはじめました。
-このゲームは4人対戦の2Dアクションゲームです。スタートからゴールまで早く到着したプレイヤーが勝ち、というシンプルなルールなのですが、試合ごとに足場やトラップを自由に設置できるので、後半になるほどカオスなコースになり、ワイワイと楽しむには最適なゲームです。
-オンライン対戦に対応しているので、今は知らない人たちと野良で遊んでいるのですが、ボイチャをしてこそ真価を発揮するゲームだと思います。
-おそらく年末のsteamセールの対象になるので、誰か買って一緒に遊んでください。
-…作品名をアルティメイト・チキン・ヒーローズだと思っていたことは内緒です。
-  </description>
+      <guid>/post/dynamic_tweet/</guid>
+      <description>はじめに 今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。 本</description>
     </item>
     
     <item>
       <title>JavaScriptでクロージャを触ったお話</title>
-      <link>http://foresukecom.github.io/post/javascript_closure/</link>
+      <link>/post/javascript_closure/</link>
       <pubDate>Sun, 14 Oct 2018 10:46:30 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/javascript_closure/</guid>
-      <description>はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。
-クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。 MDN web docs
-サンプル 1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。 連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。
-実際には結果を操作してるのでランダムとは言えなくなりましたが ^^;
-まずはクロージャを使わない例です。
-前回の結果を保持する変数prevNumをグローバル関数として定義しているので、関数dice()以外からもアクセスが出来てしまいます。
-次がクロージャを使った例です。
-こちらではprevNumをdice()内で定義しているので、dice()の外ではprevNumが使えなくなりました。
-感想 クロージャを使わなくても同じ機能は実装できますが、グローバル変数の使用を抑えられるのは嬉しいところです。 今回のサンプルのような短いプログラムではありがたみも薄くなりますが、
-前回と違う乱数を生成する箇所はfor、ifを使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。
-もっといい感じの計算式をご存知の方がいたら教えてください。
-その他 最近、地元の静岡が舞台になっているローカル女子の遠吠えの4巻が発売されました。 作者の瀬戸口みづき先生も静岡出身ということで、思わず膝を連打するネタが多いです。
-ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。
-あー、亀まんじゅう食べたい。げんこつハンバーグ食べたい。</description>
+      <guid>/post/javascript_closure/</guid>
+      <description>はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。 クロージャの詳しい説明はmozillaが公開して</description>
     </item>
     
   </channel>

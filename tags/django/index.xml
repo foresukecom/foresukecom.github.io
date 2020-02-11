@@ -1,31 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/django/</link>
+    <link>/tags/django/</link>
     <description>Recent content in Django on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>©2019 foresuke.</copyright>
     <lastBuildDate>Sun, 05 Nov 2017 20:12:53 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DockerコンテナでDjango</title>
-      <link>http://foresukecom.github.io/post/gcp_docker_django/</link>
+      <link>/post/gcp_docker_django/</link>
       <pubDate>Sun, 05 Nov 2017 20:12:53 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/gcp_docker_django/</guid>
-      <description>はじめに Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。 Dockerエンジン自体はGoogleComputeEngine上で動かしています。
-今回は、GCPのプロジェクトが作られている前提で説明を進めていきます。
-GCEの仮想マシン作成などはWebUIからも作成できるのですが、説明が面倒くさいので今回はCloudShellからGCE仮想マシンを作って行きます。
-CloudShellは、GCPのリソースを管理できる仮想マシンで、GCPのプロジェクトを作成していれば無料で使用することが可能です。 CloudShellの詳細は以下公式ドキュメントを参照してください。
-Google Cloud Shell ドキュメント
-今回、3つの仮想マシンを操作するので、混乱しないようにプロンプトに仮想マシンを示すようにしています。 使用する仮想マシンは以下の通りです。
-   項目 説明     CloudShell GCPで標準で提供されている仮想マシン。   HostMachine DockerEngineが稼働する仮想マシン。OSはCentOS7です。   Container 実際にDjangoが動くDockerコンテナ。OSはCentOS7です。    全体的な流れ  GCEでCentOS7を作成、SSHで接続 docker導入 Dockerfile作成 Dockerイメージとコンテナを作って接続 djangoプロジェクト作成、allowhost設定 django開発用サーバ起動 ブラウザからアクセス  GCEでCentOS7を作成、SSHで接続 以下コマンドで、GCEをのインスタンスを作成します。 後半で必要になるので、作成したインスタンスのEXTERNAL_IP(外部IP)を控えておいてください。 その後、インスタンスに対してSSHで接続します。
-(CloudShell)$ gcloud compute instances create example-name --tags http-server --zone asia-east1-a --image centos-7 (CloudShell)$ gcloud compute ssh example-name GCEインスタンス作成時に使用したオプションは以下の通りです。
-   オプション名 記事内の値 説明     INSTANCE_NAMES example-name GCEインスタンス名です。オプション名は指定する必要がありません。   zone asia-east1-a GCEインスタンスを作成するゾーンを指定します。指定しないと、対話形式でゾーンを指定することになります。   tags http-server GCEインスタンスに適用するファイアウォールを指定します。今回はHTTPでの接続を許可するファイアウォールを指定しています。   image centos-7 GCEインスタンスの元イメージです。デフォルトではdebian-9が指定されています。    docker導入 以下コマンドでDcokerをインストールし、有効化します。</description>
+      <guid>/post/gcp_docker_django/</guid>
+      <description>はじめに Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。 Dockerエンジン自体はGoogle</description>
     </item>
     
   </channel>

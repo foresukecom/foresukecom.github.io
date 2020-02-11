@@ -1,126 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GAE on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/gae/</link>
+    <link>/tags/gae/</link>
     <description>Recent content in GAE on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>©2019 foresuke.</copyright>
     <lastBuildDate>Wed, 07 Nov 2018 07:44:20 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/gae/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/gae/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GAEでバッチ処理</title>
-      <link>http://foresukecom.github.io/post/gae_cron/</link>
+      <link>/post/gae_cron/</link>
       <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/gae_cron/</guid>
-      <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
-GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
-サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
-slackにメッセージを送る部分は以下のサイトに詳しく記載されているので省略します。
-CrossBridge Lab | GolangでSlackの特定のチャンネルにメッセージを送る
-今回はGAE上でGolangを動かしてみましたよの構成を元に、GAEのプロジェクトを構築します。
-ルートディレクトリ(app.yamlと同じ階層)にcrom.yamlを作成します。
-cron.yaml cron.yamlには、以下のように開始時刻や間隔で実行するタイミングを指定することが出来ます。
-cron: - description: &amp;quot;毎朝7時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every day 7:00 - description: &amp;quot;毎週日曜8時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every sunday 8:00 - description: &amp;quot;毎日0時を起点とし、1時間単位で実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every 1 hours その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は公式のドキュメントに詳しく記載されています。
-注意点 GAEではdev_server.pyでローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、cron.yamlは動作しません。
-localhost:8000 からGAEローカル環境の管理画面を開くことができます。
-管理画面にcron.yamlで設定したスケジュールが一覧で表示されるので、Run nowをクリックすることで手動で実行することができます。 Cronの設定を本番環境にデプロイするときは、gcloud app deploy cron.yamlのようにcrom.yamlを指定します。
-指定しないと、crom.yamlが読み込まれないため、いつまで待っても処理が実行されません。 Cronが設定されているかどうかは、コンソール画面のcronジョブから確認することが出来ます。 仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。
-そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。
-GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine-Cron: trueが含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります
-例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。
-(弾いた後の処理がお粗末ですが…)
-// cron以外からのアクセスは弾く if r.</description>
+      <guid>/post/gae_cron/</guid>
+      <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。 GAEではcron.yamlに設定を記載することで時間を指定</description>
     </item>
     
     <item>
       <title>GAEでfaviconを設定</title>
-      <link>http://foresukecom.github.io/post/gae_favicon/</link>
+      <link>/post/gae_favicon/</link>
       <pubDate>Tue, 06 Nov 2018 23:48:25 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/gae_favicon/</guid>
-      <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。
-faviconとは faviconとは、ブラウザのタブやブックマークに表示されてるアレです。
-最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。
-faviconについては、以下の資料に詳しくまとめられています。
-WEBサイトが「できた」と安心する前に最終チェックすること
-favicon準備 faviconの元にするイラストはこちらです。 このイラストをいい感じにfaviconとして使っていきます。 今回は、スライドで紹介されているFavicon Generatorを使ってfaviconを用意していきます。
-faviconを生成すると、favicon_package_v0.16.zipがダウンロードできます。
-favicon_package_v0.16.zipは以下のような中身になっています。
-favicon_package_v0.16 ├── android-chrome-192x192.png ├── android-chrome-384x384.png ├── apple-touch-icon.png ├── browserconfig.xml ├── favicon-16x16.png ├── favicon-32x32.png ├── favicon.ico ├── mstile-150x150.png ├── safari-pinned-tab.svg └── site.webmanifest この中ので拡張子がpng、icoは実際に表示されるイメージファイルです。
-browserconfig.xmlはWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。
-safari-pinned-tab.svgはベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。
-site.webmanifestはAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。
-今回はGAE上でGolangを動かしてみましたよの構成を元に、faviconを設定します。
-browserconfig.xmlとsite.webmanifestはルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下のimagesに配置します。
-プロジェクトのディレクトリ構成は以下の通りです。
-. ├── app.yaml ├── gae_sample.iml ├── hello.go ├── index.yaml └── static ├── browserconfig.xml ├── site.webmanifest ├── images │ ├── android-chrome-192x192.png │ ├── android-chrome-384x384.png │ ├── apple-touch-icon.png │ ├── favicon-16x16.</description>
+      <guid>/post/gae_favicon/</guid>
+      <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます</description>
     </item>
     
     <item>
       <title>祝日のカウントダウンタイマー</title>
-      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
+      <link>/post/shukujitsu_info/</link>
       <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
-      <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
-https://shukujitsu.info
-処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
-GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。
-使ってる技術 GoogleAppEngine インフラとしてGAEを使いました。
-GAEに対応していない関数とかもあるので、ドキュメントを見ながら覚えていくしかなさそうです。
-たとえば、GolangでHTTPのリクエストを行うときにhttp.Get()を使いますが、GAEでは対応していないのでurlfetch.Clientを使う必要があります。 他にも、Javaでは時刻を扱うjava.time.LocalDateというライブラリがあるのですが、同様にGAEでは使うことができません。
-GAE使うなら言語に依らず注意する必要があります。
-Golang ネット上に公開されているCSVファイルを読み込んで、Cloud Storageにアップロードする部分をやってます。
-もともと、Golangの勉強を兼ねたプロジェクトだったんですが、あまりGolangを使いませんでした。
-Vue.js JavaScriptで変数を書き換えると、いい感じにHTMLで表示される内容も変更されます。
-まだVue.jsを使いこなせてはいませんが、低い学習コストでさっくり使うことができます。
-Scrollify マウススクロールでいい感じに画面を切り替える処理はScrollifyを使いました。
-これを使うだけで今風な感じがでます。
-今後の課題 データ保管場所 情報をCloudStorageに保存してるので、NoSQLを触ってみようかと考え中です。
-日付と祝日名を格納するだけなのでRDBでも問題ないんですけど…
-監視、ログ なんらかのエラーが起きた場合はソーリー画面を出し、StackDriver上にログを出すようにしていますが、能動的にチェックしないとエラーに気が付きません。
-エラーを検知したら通知する仕組みがほしいですね、LINEかSlackに飛ばすのが今風でしょうか…
-パッケージ管理 使用しているライブラリのバージョン管理とかをしていないので、一般的に使われている(らしい)、depを使ってみようかと考え中。
-次バージョンのGolangではmodulesという新たなパッケージ管理機能が正式リリース予定なので、最終的にはそっちに映る感じでしょうか。
-リファクタリング ディレクトリ階層がぐちゃぐちゃで、1つ1つのファイルも肥大化しているのでキレイにしたいです。
-ある程度キレイになったらリポジトリを公開するのもアリですね。
-CIツール導入 現在、dev_appserver.pyでローカル環境を立ち上げて、動作チェックが済んだらgcloud app deployで本番環境を更新する、という雑な運用をしています。
-雑すぎるので、CircleCIとかを使って、PR投げたらステージング環境でテストが実行されてー、というのを導入したいです。
-AltJS 「素のJavaScriptを書くのがツラい」という話を聞くことが増えてきました。
-この規模なら素のJavaScriptでも問題ないですが、今後のことを考えるとTypeScriptかCoffeeScriptあたりを勉強して置き換えることを考え中です。
-WPA化 WPAであれば、オンライン状態でアクセスしておけば、オフライン状態でもそのWebサイトにアクセスができるようです。
-地下鉄などの電波状況が悪い場所でも祝日カウンターが使えれば素敵ですね。
-見た目 レイアウト気にし始めるとキリがないので一旦リリースしてしまいました。
-運用しながら徐々に変更を加える予定です。
-感想 本当はcoinhive仕込みたかったけど神奈川県警に捕まったらいやなので我慢しました。
-認証も、DBへのアクセスもないページですが、1人でインフラ、サーバサイド、フロントエンドの構築を行ったのでいろいろと勉強になりました。
-細々としたTipsはブログに残していきたいです。 課題もたくさん出てきたので、徐々に直していきます。
-欲しい機能とか、気になる箇所があれば、お気軽に@foresukecomまでご連絡下さい。
-その他 ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。
-でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…
-悩ましい飲み物です。</description>
+      <guid>/post/shukujitsu_info/</guid>
+      <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作って</description>
     </item>
     
     <item>
       <title>GAE上でGolangを動かしてみましたよ</title>
-      <link>http://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
+      <link>/post/google_app_engine_go_ajax/</link>
       <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
-      <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
-作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
-環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
-以下のようにバージョンが表示されればOKです。
-$ goapp version go version 1.9.4 (appengine-1.9.74) darwin/amd64 ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。
-構成説明 ディレクトリ構成は以下の通りです。
-├── app.yaml ├── hello.go └── static ├── js │ └── main.js ├── css │ └── main.css └── index.html この中でGAE特有のファイルはapp.yamlになります。
-app.yamlリファレンスに各パラメータの説明が載ってますが、最低限のパラメータだけ書いておきます。
-runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新のバージョンを使用する場合はgo1を指定 handlers: #リクエストと実行する処理をURLパターン毎に指定 - url: / static_files: static/index.html upload: static/index.html - url: /js static_dir: static/js - url: /css static_dir: static/css - url: /.* script: _go_app その他のファイルについては、特別なことはしていないので説明は省略します。</description>
+      <guid>/post/google_app_engine_go_ajax/</guid>
+      <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。 作り始めでつまずくことが多いので自分用の最小構</description>
     </item>
     
   </channel>

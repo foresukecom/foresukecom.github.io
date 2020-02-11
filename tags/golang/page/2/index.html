@@ -3,27 +3,13 @@
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark"><title>golang&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><link rel="alternate" type="application/rss+xml" href="/tags/golang/index.xml" title="ふぉれすけ広場" /><body>
     <div class="base-body"><section id="header" class="site header">
-    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">ふぉれすけ広場</span></a></span>
-        <span class="header right-side"></span></div></section><div id="content"><section class="article header"><h1>golang</h1></section><ul class="note list"><li class="item"><a class="note" href="/post/octal/">
-            <p class="note title">8進数のエラーについて</p><p class="note date">2016-11-30</p><p class="note content">はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。
-エラーの内容 試験用にサンプルの日付データを作っていたら、以下のようなコンパイルエラーとなりました。
-malformed octal constant malformed integer constant: 08 エラーとなった原因のコードはこちらです。
-t = time.Date(2016, time.Month(11), 08, 00, 00, 00, 00, time.Local) 原因 Go言語は先頭に0が付いた数値を8進数だと認識します。08は8進数としては存在しない値のためエラーとなってしまうのでした。同様に、09も同じエラーとなります。
-対策 単純に対策をするのであれば、以下のように08から0を除いてしまえばエラーは解消されます。
-t = time.Date(2016, time.Month(11), 8, 00, 00, 00, 00, time.Local) どうしても08、09と記載したい、そんなときには、数値を&quot;で囲って文字列として指定しておき、文字列から数値に変換させれば大丈夫です。ただし、標準で用意されているstrconv.Atoi関数は2つの戻り値を返すので、そのままでは使えません。以下のように、変換用の関数を用意する必要があります。
-package main import ( &quot;fmt&quot; &quot;os&quot; &quot;strconv&quot; &quot;time&quot; ) func main() { t := time.Date(2016, time.Month(atoi(&quot;11&quot;)), atoi(&quot;08&quot;), atoi(&quot;00&quot;), atoi(&quot;00&quot;), atoi(&quot;00&quot;), atoi(&quot;00&quot;), time.Local) fmt.Println(t) } func atoi(str string) int { num, err := strconv.Atoi(str) if err !<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li><li class="item"><a class="note" href="/post/struct_slice/">
-            <p class="note title">Go言語で構造体のスライスを扱ってみる</p><p class="note date">2016-11-30</p><p class="note content">Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。
-ここで構造体やスライスについて詳しく説明はしません。詳細はA Tour of Goなどに記載されているので、そちらをご確認下さい。 今回は、構造体を要素として持つスライスを扱う方法をまとめています。
-いろいろな操作  要素にする構造体
-今回の説明で使用する構造体は以下の通り定義されています。 社員番号(number)と名前(name)を持つ社員(employee)型です。スライスで複数人の社員情報をまとめて扱うようなイメージです。  type employee struct { number int name string }  スライスの作成
-以下のようにmake関数を使えば、要素数が0のemployee型のスライスを作成することが出来ます。  employees := make([]employee, 0) スライスの作成と初期化をまとめて行うこともできます。
-employees := []employee{employee{1, &quot;Taro&quot;}} 複数の要素を持つスライスを1行で書くことも可能です。
-employees := []employee{employee{1, &quot;Taro&quot;}, employee{2, &quot;Jiro&quot;}, employee{3, &quot;Saburo&quot;}}  要素の追加
-既存のスライスに対して、要素を追加させるには以下のように記載します。  employees = append(employees, employee{4, &quot;Shiro&quot;})  要素の削除
-組込み関数にはスライスの要素を削除する仕組みは実装されていません。そのため、個別に関数を作成する必要があります。例としては、以下のような関数で要素の削除機能が実現できます。  func delete(employees []employee, n int) []employee { result := make([]employee, 0) for i, v := range employees { if i !<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li></ul><div class="pagination">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、壁を登ったり。</span></div></section><div id="content"><section class="article header"><h1>golang</h1></section><ul class="note list"><li class="item"><a class="note" href="/post/octal/">
+            <p class="note title">8進数のエラーについて</p><p class="note date">2016-11-30</p><p class="note content">はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。 エラーの内容 試験用にサンプルの日付データを作っていたら、以下のよう<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li><li class="item"><a class="note" href="/post/struct_slice/">
+            <p class="note title">Go言語で構造体のスライスを扱ってみる</p><p class="note date">2016-11-30</p><p class="note content">Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。 ここで構造体やスライスについて詳しく説明はしません。詳細はA<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li></ul><div class="pagination">
     <ul><li><a class="" href="/tags/golang/">1</a></li><li><a class="active" href="/tags/golang/page/2/">2</a></li></ul>
 </div></div><section id="footer" class="footer"><div class="footer-wrap">
-    <p class="copyright">ふぉれすけ広場</p>
+    <p class="copyright">©2019 foresuke.</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>

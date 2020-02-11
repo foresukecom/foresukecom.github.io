@@ -1,257 +1,123 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/golang/</link>
+    <link>/tags/golang/</link>
     <description>Recent content in golang on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>©2019 foresuke.</copyright>
     <lastBuildDate>Mon, 03 Feb 2020 09:29:53 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TOMLをGolangで読み込もうとして躓いた話</title>
-      <link>http://foresukecom.github.io/post/go_toml/</link>
+      <link>/post/go_toml/</link>
       <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/go_toml/</guid>
-      <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。
-※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。
-https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md
-TOMLを読み込むのは以下のライブラリを使用しています。
-https://github.com/BurntSushi/toml
-焼き寿司🔥🍣…?
-今回は例として、以下のTOMLファイルを読み込もうとします。
-[API] user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 失敗例  このコードを実行したところ、以下のような結果になりました。
-エラーにはなっていませんが、TOMLの内容が読み込まれていません。
-$ go run main1.go false 0 TOMLでは、複数のキー/バリューの組み合わせを纏めたものをテーブルと呼びます。
-角括弧([])で囲まれた文字がテーブル名となり、その下に書かれたキー/バリューがテーブルに含まれる要素になります。
-今回の例ではAPIというテーブル名の中にuser、version、debug、limitという要素が存在することになります。
-解決策  こんな感じにTOML全体を表すConfigとAPIテーブルを表すAPIという構造体を個別に用意したところ、問題なくTOMLの内容を読み込むことが出来ました。
-$ go run main2.go foresuke v0.0.1 true 500 (あまり)よくない解決策 テーブルを使わないようにTOMLファイルを書き換えれば、main1.goでも値を取得することが出来ます。
-ただ記載する項目が多い場合にはキーの重複が考えられるので実用的ではありません。
-user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = true limit = 500 </description>
+      <guid>/post/go_toml/</guid>
+      <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。 ※TOMLファイルについては、公式ドキュメン</description>
     </item>
     
     <item>
       <title>Golangのスコープについて</title>
-      <link>http://foresukecom.github.io/post/go_scope/</link>
+      <link>/post/go_scope/</link>
       <pubDate>Sat, 09 Feb 2019 15:11:21 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/go_scope/</guid>
-      <description>はじめに Golangを書いてて詰まったことがあったのでメモです。
-本文 こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします。
-type product struct { category string name string price uint64 } showcase := []product{ {&amp;quot;果物&amp;quot;, &amp;quot;りんご&amp;quot;, 120}, {&amp;quot;果物&amp;quot;, &amp;quot;バナナ&amp;quot;, 100}, {&amp;quot;果物&amp;quot;, &amp;quot;みかん&amp;quot;, 70}, {&amp;quot;肉&amp;quot;, &amp;quot;鶏もも&amp;quot;, 250}, {&amp;quot;肉&amp;quot;, &amp;quot;豚バラ&amp;quot;, 300}, {&amp;quot;肉&amp;quot;, &amp;quot;カルビ&amp;quot;, 450}, } で、このスライスから果物の価格だけ10円引きします。
-for _, v := range showcase { if v.category == &amp;quot;果物&amp;quot; { v.price -= 10 } } こんな感じで書いたのですが、上のfor文だとshowcaseの中身は変更されません。
-変数のスコープを考えてなかったのが原因です。 変数vはfor文の中でしか使えないので、いくらvの中身を変更してもshowcaseの中身は変わりません。
-for i := 0; i &amp;lt; len(showcase); i++ { if showcase[i].category == &amp;quot;果物&amp;quot; { showcase[i].</description>
+      <guid>/post/go_scope/</guid>
+      <description>はじめに Golangを書いてて詰まったことがあったのでメモです。 本文 こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします</description>
     </item>
     
     <item>
       <title>Golangでテストコードを書く少年のお話</title>
-      <link>http://foresukecom.github.io/post/golang_test/</link>
+      <link>/post/golang_test/</link>
       <pubDate>Tue, 22 Jan 2019 08:25:31 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/golang_test/</guid>
-      <description>はじめに お仕事でGolangのテストコードを書くことになったのでお勉強しました。
-テスト対象は以下のプログラムです。
- 毎朝のルーティンを明文化し、以下の処理をしています。
- 降水確率40%以上なら傘を装備する。 冬、もしくは最低気温が5度以下ならコートを装備する。  以下の通り、4つの命令と2つの条件分岐で構成されています。
-   項 種別 やってること     ① 命令 持ち物を入れるカバンを用意   ② 条件分岐 降水確率による判定   ③ 命令 カバンに傘を入れる   ④ 条件分岐 季節、最低気温による判定   ⑤ 命令 カバンにコートを入れる   ⑥ 命令 カバンを持ち出す    テストの種類 カバレッジとはテストの網羅率のことを指しています。
-「どのパターンのテストを行えば、必要な範囲のテストが完了したのか?」の指標となります。
-「必要な範囲」については、C0カバレッジ、C1カバレッジ、C2カバレッジ…とカバレッジの種類によって異なります。
-それぞのカバレッジについて簡単に説明していきます。
-※C3以降もありますが、よく使われるのはC2までみたいなので、今回は省略します。
-C0カバレッジ(命令網羅) すべての命令を最低1回は実行する、というテストケースを満たせばカバレッジが100%になります。
-以下のパターンを実行すれば、すべての命令を実行することができるので、C0カバレッジ100%になります。
-「降水確率が50%、季節は冬、最低気温12度。」
-C1カバレッジ(分岐網羅) すべて条件分岐の組み合わせを通る、というテストケースを満たせばカバレッジが100%になります。
-今回はTrue/Falseの分岐が2つあるので4パターンの組み合わせでテストを行う必要があります。
-   パターン ② ④ 具体例     パターン1 True True 降水確率が50%、季節は冬、最低気温12度。   パターン2 True False 降水確率が50%、季節は春、最低気温12度。   パターン3 False True 降水確率が20%、季節は冬、最低気温12度。   パターン4 False False 降水確率が20%、季節は春、最低気温12度。    具体的には以下のパラメータでテストをやればOKです。</description>
+      <guid>/post/golang_test/</guid>
+      <description>はじめに お仕事でGolangのテストコードを書くことになったのでお勉強しました。 テスト対象は以下のプログラムです。 毎朝のルーティンを明文化し</description>
     </item>
     
     <item>
       <title>Golangのpanicのお話</title>
-      <link>http://foresukecom.github.io/post/golang_panic/</link>
+      <link>/post/golang_panic/</link>
       <pubDate>Wed, 21 Nov 2018 23:17:10 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/golang_panic/</guid>
-      <description>はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。
-クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。
-今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。
-サンプルコード 実際のコードとは違いますが、当時は以下のようにエラーが発生したらpanic()で処理を中断させるコードを書いていました。
- で、このコードを以下のようなディレクトリ構成の中に配置していました。log_analysisが1つのプロジェクトというイメージです。
-tmp └── tanaka └── azunyan_prpr └── tools └── log_analysis └── main.go このコードをmitchellh/goxを使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。
-$ gox Number of parallel builds: 3 --&amp;gt; freebsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; darwin/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; windows/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; openbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; openbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; windows/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; freebsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; darwin/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; linux/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; freebsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&amp;gt; netbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis $ ls -1 log_analysis_darwin_386 log_analysis_darwin_amd64 log_analysis_freebsd_386 log_analysis_freebsd_amd64 log_analysis_freebsd_arm log_analysis_linux_386 log_analysis_linux_amd64 log_analysis_linux_arm log_analysis_netbsd_386 log_analysis_netbsd_amd64 log_analysis_netbsd_arm log_analysis_openbsd_386 log_analysis_openbsd_amd64 log_analysis_windows_386.</description>
+      <guid>/post/golang_panic/</guid>
+      <description>はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。 クロスコンパイルにより、Macで書いたコードからLinuxやW</description>
     </item>
     
     <item>
       <title>GAEでバッチ処理</title>
-      <link>http://foresukecom.github.io/post/gae_cron/</link>
+      <link>/post/gae_cron/</link>
       <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/gae_cron/</guid>
-      <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
-GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
-サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
-slackにメッセージを送る部分は以下のサイトに詳しく記載されているので省略します。
-CrossBridge Lab | GolangでSlackの特定のチャンネルにメッセージを送る
-今回はGAE上でGolangを動かしてみましたよの構成を元に、GAEのプロジェクトを構築します。
-ルートディレクトリ(app.yamlと同じ階層)にcrom.yamlを作成します。
-cron.yaml cron.yamlには、以下のように開始時刻や間隔で実行するタイミングを指定することが出来ます。
-cron: - description: &amp;quot;毎朝7時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every day 7:00 - description: &amp;quot;毎週日曜8時(日本時間)に実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every sunday 8:00 - description: &amp;quot;毎日0時を起点とし、1時間単位で実行&amp;quot; url: /morning timezone: Asia/Tokyo schedule: every 1 hours その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は公式のドキュメントに詳しく記載されています。
-注意点 GAEではdev_server.pyでローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、cron.yamlは動作しません。
-localhost:8000 からGAEローカル環境の管理画面を開くことができます。
-管理画面にcron.yamlで設定したスケジュールが一覧で表示されるので、Run nowをクリックすることで手動で実行することができます。 Cronの設定を本番環境にデプロイするときは、gcloud app deploy cron.yamlのようにcrom.yamlを指定します。
-指定しないと、crom.yamlが読み込まれないため、いつまで待っても処理が実行されません。 Cronが設定されているかどうかは、コンソール画面のcronジョブから確認することが出来ます。 仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。
-そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。
-GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine-Cron: trueが含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります
-例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。
-(弾いた後の処理がお粗末ですが…)
-// cron以外からのアクセスは弾く if r.</description>
+      <guid>/post/gae_cron/</guid>
+      <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。 GAEではcron.yamlに設定を記載することで時間を指定</description>
     </item>
     
     <item>
       <title>祝日のカウントダウンタイマー</title>
-      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
+      <link>/post/shukujitsu_info/</link>
       <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
-      <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
-https://shukujitsu.info
-処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
-GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。
-使ってる技術 GoogleAppEngine インフラとしてGAEを使いました。
-GAEに対応していない関数とかもあるので、ドキュメントを見ながら覚えていくしかなさそうです。
-たとえば、GolangでHTTPのリクエストを行うときにhttp.Get()を使いますが、GAEでは対応していないのでurlfetch.Clientを使う必要があります。 他にも、Javaでは時刻を扱うjava.time.LocalDateというライブラリがあるのですが、同様にGAEでは使うことができません。
-GAE使うなら言語に依らず注意する必要があります。
-Golang ネット上に公開されているCSVファイルを読み込んで、Cloud Storageにアップロードする部分をやってます。
-もともと、Golangの勉強を兼ねたプロジェクトだったんですが、あまりGolangを使いませんでした。
-Vue.js JavaScriptで変数を書き換えると、いい感じにHTMLで表示される内容も変更されます。
-まだVue.jsを使いこなせてはいませんが、低い学習コストでさっくり使うことができます。
-Scrollify マウススクロールでいい感じに画面を切り替える処理はScrollifyを使いました。
-これを使うだけで今風な感じがでます。
-今後の課題 データ保管場所 情報をCloudStorageに保存してるので、NoSQLを触ってみようかと考え中です。
-日付と祝日名を格納するだけなのでRDBでも問題ないんですけど…
-監視、ログ なんらかのエラーが起きた場合はソーリー画面を出し、StackDriver上にログを出すようにしていますが、能動的にチェックしないとエラーに気が付きません。
-エラーを検知したら通知する仕組みがほしいですね、LINEかSlackに飛ばすのが今風でしょうか…
-パッケージ管理 使用しているライブラリのバージョン管理とかをしていないので、一般的に使われている(らしい)、depを使ってみようかと考え中。
-次バージョンのGolangではmodulesという新たなパッケージ管理機能が正式リリース予定なので、最終的にはそっちに映る感じでしょうか。
-リファクタリング ディレクトリ階層がぐちゃぐちゃで、1つ1つのファイルも肥大化しているのでキレイにしたいです。
-ある程度キレイになったらリポジトリを公開するのもアリですね。
-CIツール導入 現在、dev_appserver.pyでローカル環境を立ち上げて、動作チェックが済んだらgcloud app deployで本番環境を更新する、という雑な運用をしています。
-雑すぎるので、CircleCIとかを使って、PR投げたらステージング環境でテストが実行されてー、というのを導入したいです。
-AltJS 「素のJavaScriptを書くのがツラい」という話を聞くことが増えてきました。
-この規模なら素のJavaScriptでも問題ないですが、今後のことを考えるとTypeScriptかCoffeeScriptあたりを勉強して置き換えることを考え中です。
-WPA化 WPAであれば、オンライン状態でアクセスしておけば、オフライン状態でもそのWebサイトにアクセスができるようです。
-地下鉄などの電波状況が悪い場所でも祝日カウンターが使えれば素敵ですね。
-見た目 レイアウト気にし始めるとキリがないので一旦リリースしてしまいました。
-運用しながら徐々に変更を加える予定です。
-感想 本当はcoinhive仕込みたかったけど神奈川県警に捕まったらいやなので我慢しました。
-認証も、DBへのアクセスもないページですが、1人でインフラ、サーバサイド、フロントエンドの構築を行ったのでいろいろと勉強になりました。
-細々としたTipsはブログに残していきたいです。 課題もたくさん出てきたので、徐々に直していきます。
-欲しい機能とか、気になる箇所があれば、お気軽に@foresukecomまでご連絡下さい。
-その他 ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。
-でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…
-悩ましい飲み物です。</description>
+      <guid>/post/shukujitsu_info/</guid>
+      <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作って</description>
     </item>
     
     <item>
       <title>GAE上でGolangを動かしてみましたよ</title>
-      <link>http://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
+      <link>/post/google_app_engine_go_ajax/</link>
       <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
-      <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
-作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
-環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
-以下のようにバージョンが表示されればOKです。
-$ goapp version go version 1.9.4 (appengine-1.9.74) darwin/amd64 ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。
-構成説明 ディレクトリ構成は以下の通りです。
-├── app.yaml ├── hello.go └── static ├── js │ └── main.js ├── css │ └── main.css └── index.html この中でGAE特有のファイルはapp.yamlになります。
-app.yamlリファレンスに各パラメータの説明が載ってますが、最低限のパラメータだけ書いておきます。
-runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新のバージョンを使用する場合はgo1を指定 handlers: #リクエストと実行する処理をURLパターン毎に指定 - url: / static_files: static/index.html upload: static/index.html - url: /js static_dir: static/js - url: /css static_dir: static/css - url: /.* script: _go_app その他のファイルについては、特別なことはしていないので説明は省略します。</description>
+      <guid>/post/google_app_engine_go_ajax/</guid>
+      <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。 作り始めでつまずくことが多いので自分用の最小構</description>
     </item>
     
     <item>
       <title>Go言語でJSONを作成したときのイージーミス</title>
-      <link>http://foresukecom.github.io/post/golang_json_marshal/</link>
+      <link>/post/golang_json_marshal/</link>
       <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/golang_json_marshal/</guid>
-      <description>はじめに Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。
-JSON形式への変換は標準パッケージに含まれているjson.Marshalを使っています。
-失敗例 こんな感じで構造体のスライスをJSONにしようとしたところ、作成されたJSONの中身が空になっていました。  成功例 原因がわからなかったので色々と試行錯誤した結果、下記のコードで想定した動きを確認することができました。 失敗例では10〜12行目の構造体のフィード名の先頭文字を小文字にしていましたが、成功例では先頭文字を大文字に変えています。
- 原因 ここまで書けば原因がわかる方も多いと思いますが…
-Go言語では変数や関数のスコープが先頭文字列が小文字か、大文字かで判定されます。 先頭文字が大文字の場合は他パッケージからの参照が可能(いわゆるpublic)、先頭文字が小文字の場合は他パッケージから参照不可(いわゆるprivate)となります。 このルールは構造体のフィードにも適用されます。
-そのため、失敗例では構造体のフィードに対してパッケージ外からアクセスすることができず、作成されたJSONが空っぽになっていました。
-ちなみに 作成されるJSONのKeyを先頭小文字にしたい場合、以下のようにフィードに対してタグをつけることで任意の名前を指定することができます。  おわりに 初歩的なミスでしたが原因に気づくまで時間がかかってしまいました。 前に触ったことがあるはずなんですが…先頭文字でスコープが変化するのは慣れないと忘れちゃいますね。
-コンパイルエラーとかで教えてくれないかなぁ。</description>
+      <guid>/post/golang_json_marshal/</guid>
+      <description>はじめに Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。 JSON形式への変換は標準パッケージに含まれているjs</description>
     </item>
     
     <item>
       <title>13日の金曜日です</title>
-      <link>http://foresukecom.github.io/post/friday13th/</link>
+      <link>/post/friday13th/</link>
       <pubDate>Fri, 13 Jan 2017 08:47:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/friday13th/</guid>
-      <description>はじめに 2017年1月13日は金曜日です。 Wikipediaをみると諸説あるようですが、主に海外では縁起の悪い日として知られています。
- キリストの最後の晩餐に13人の人がいたことから、13は不吉な数とされた。また、キリストが金曜日に磔刑に処せられたとされていることから、13日の金曜日が不吉であるとされるようになった。一説には、イヴによるアダムの誘惑も大洪水からノアが脱出したのもバベルの塔が壊されたのも13日の金曜日だと言われるが、聖書にそのような記述はない。
-北欧神話では12人の神が祝宴を催していた時に、13人目となる招かれざる客ロキが乱入して人気者のバルドルを殺してしまったとされ、キリスト教以前から13を不吉な数としており、13日の金曜日についても伝説を持つ。それは魔女としてキリスト教に追いやられたフリッグが11人の魔女と悪魔を招いて毎週金曜日に悪事を企んでいたからだという。なおゲルマン諸語で「金曜日」を表す語は「フリッグの日」に由来する。
-フィリップ4世がフランス全土においてテンプル騎士団の壊滅を図るため、メンバーたちを一斉に逮捕したのが、1307年10月13日の金曜日だった。その後騎士団は異端とされ財産を没収の上解散、幹部たちを火刑に処している。 wikipedia
- 21世紀に発生する13日の金曜日 そこで、21世紀に13日の金曜日が発生するタイミングを求めてみました。手作業で確認してもいいのですが、どうせなので勉強中のGo言語を使って楽をしています。
-作成したプログラムは以下の通りです。
- 21世紀に発生する13日の金曜日、CSVでの結果は以下の通りとなりました。
-2000/10/13,2001/04/13,2001/07/13,2002/09/13,2002/12/13,2003/06/13,2004/02/13,2004/08/13,2005/05/13,2006/01/13,2006/10/13,2007/04/13,2007/07/13,2008/06/13,2009/02/13,2009/03/13,2009/11/13,2010/08/13,2011/05/13,2012/01/13,2012/04/13,2012/07/13,2013/09/13,2013/12/13,2014/06/13,2015/02/13,2015/03/13,2015/11/13,2016/05/13,2017/01/13,2017/10/13,2018/04/13,2018/07/13,2019/09/13,2019/12/13,2020/03/13,2020/11/13,2021/08/13,2022/05/13,2023/01/13,2023/10/13,2024/09/13,2024/12/13,2025/06/13,2026/02/13,2026/03/13,2026/11/13,2027/08/13,2028/10/13,2029/04/13,2029/07/13,2030/09/13,2030/12/13,2031/06/13,2032/02/13,2032/08/13,2033/05/13,2034/01/13,2034/10/13,2035/04/13,2035/07/13,2036/06/13,2037/02/13,2037/03/13,2037/11/13,2038/08/13,2039/05/13,2040/01/13,2040/04/13,2040/07/13,2041/09/13,2041/12/13,2042/06/13,2043/02/13,2043/03/13,2043/11/13,2044/05/13,2045/01/13,2045/10/13,2046/04/13,2046/07/13,2047/09/13,2047/12/13,2048/03/13,2048/11/13,2049/08/13,2050/05/13,2051/01/13,2051/10/13,2052/09/13,2052/12/13,2053/06/13,2054/02/13,2054/03/13,2054/11/13,2055/08/13,2056/10/13,2057/04/13,2057/07/13,2058/09/13,2058/12/13,2059/06/13,2060/02/13,2060/08/13,2061/05/13,2062/01/13,2062/10/13,2063/04/13,2063/07/13,2064/06/13,2065/02/13,2065/03/13,2065/11/13,2066/08/13,2067/05/13,2068/01/13,2068/04/13,2068/07/13,2069/09/13,2069/12/13,2070/06/13,2071/02/13,2071/03/13,2071/11/13,2072/05/13,2073/01/13,2073/10/13,2074/04/13,2074/07/13,2075/09/13,2075/12/13,2076/03/13,2076/11/13,2077/08/13,2078/05/13,2079/01/13,2079/10/13,2080/09/13,2080/12/13,2081/06/13,2082/02/13,2082/03/13,2082/11/13,2083/08/13,2084/10/13,2085/04/13,2085/07/13,2086/09/13,2086/12/13,2087/06/13,2088/02/13,2088/08/13,2089/05/13,2090/01/13,2090/10/13,2091/04/13,2091/07/13,2092/06/13,2093/02/13,2093/03/13,2093/11/13,2094/08/13,2095/05/13,2096/01/13,2096/04/13,2096/07/13,2097/09/13,2097/12/13,2098/06/13,2099/02/13,2099/03/13,2099/11/13,2100/08/13 13日の金曜日ということで、JSON形式でも出力できるようにしています。
-[{&amp;quot;Year&amp;quot;:2000,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2001,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2001,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2002,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2002,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2003,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2004,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2004,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2005,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2006,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2006,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2007,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2007,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2008,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2009,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2009,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2009,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2010,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2011,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2012,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2012,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2012,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2013,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2013,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2014,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2015,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2015,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2015,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2016,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2017,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2017,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2018,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2018,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2019,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2019,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2020,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2020,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2021,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2022,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2023,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2023,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2024,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2024,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2025,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2026,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2026,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2026,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2027,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2028,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2029,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2029,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2030,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2030,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2031,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2032,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2032,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2033,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2034,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2034,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2035,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2035,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2036,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2037,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2037,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2037,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2038,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2039,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2040,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2040,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2040,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2041,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2041,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2042,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2043,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2043,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2043,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2044,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2045,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2045,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2046,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2046,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2047,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2047,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2048,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2048,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2049,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2050,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2051,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2051,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2052,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2052,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2053,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2054,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2054,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2054,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2055,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2056,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2057,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2057,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2058,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2058,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2059,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2060,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2060,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2061,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2062,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2062,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2063,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2063,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2064,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2065,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2065,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2065,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2066,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2067,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2068,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2068,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2068,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2069,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2069,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2070,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2071,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2071,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2071,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2072,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2073,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2073,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2074,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2074,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2075,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2075,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2076,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2076,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2077,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2078,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2079,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2079,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2080,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2080,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2081,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2082,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2082,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2082,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2083,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2084,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2085,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2085,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2086,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2086,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2087,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2088,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2088,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2089,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2090,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2090,&amp;quot;Month&amp;quot;:10,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2091,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2091,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2092,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2093,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2093,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2093,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2094,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2095,&amp;quot;Month&amp;quot;:5,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2096,&amp;quot;Month&amp;quot;:1,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2096,&amp;quot;Month&amp;quot;:4,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2096,&amp;quot;Month&amp;quot;:7,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2097,&amp;quot;Month&amp;quot;:9,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2097,&amp;quot;Month&amp;quot;:12,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2098,&amp;quot;Month&amp;quot;:6,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2099,&amp;quot;Month&amp;quot;:2,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2099,&amp;quot;Month&amp;quot;:3,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2099,&amp;quot;Month&amp;quot;:11,&amp;quot;Day&amp;quot;:13},{&amp;quot;Year&amp;quot;:2100,&amp;quot;Month&amp;quot;:8,&amp;quot;Day&amp;quot;:13}] おわりに 日本で仏滅を忌嫌うように、海外では13日の金曜日を嫌っている人がいる…かもしれません。 グローバルな社会を生きる我々は、様々な文化の中で親しまれている、吉日や凶日を知っておくべきではないのでしょうか。</description>
+      <guid>/post/friday13th/</guid>
+      <description>はじめに 2017年1月13日は金曜日です。 Wikipediaをみると諸説あるようですが、主に海外では縁起の悪い日として知られています。 キリス</description>
     </item>
     
     <item>
       <title>再帰処理してみた</title>
-      <link>http://foresukecom.github.io/post/recursion/</link>
+      <link>/post/recursion/</link>
       <pubDate>Wed, 30 Nov 2016 22:21:13 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/recursion/</guid>
-      <description>はじめに Go言語を使っているときに、「再帰処理できるのか?」と疑問に思ったので試してみました。
-どういった問題が再帰処理に向いているのか分からないので、とりあえず素数判定の処理を作成しています。
-素数判定 標準入力された数値が素数か判断するプログラムです。
- これを元に、標準入力された数値以下の素数をすべて出力するプログラムも作ってみました。
- おわりに 今回は、再帰処理が行えることの確認がメインテーマです。100万以下のすべての素数を求めたところ、2時間20分かかりました。効率とか速度とかは度外視しているので、その辺は何卒ご容赦下さい。
-学生時代、再帰処理の課題に苦労し「全部while文でいいじゃねぇか」と思っていましたが、再帰処理が使えてよかったと思える場面が来るのでしょうか。</description>
+      <guid>/post/recursion/</guid>
+      <description>はじめに Go言語を使っているときに、「再帰処理できるのか?」と疑問に思ったので試してみました。 どういった問題が再帰処理に向いているのか分から</description>
     </item>
     
     <item>
       <title>8進数のエラーについて</title>
-      <link>http://foresukecom.github.io/post/octal/</link>
+      <link>/post/octal/</link>
       <pubDate>Wed, 30 Nov 2016 21:26:57 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/octal/</guid>
-      <description>はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。
-エラーの内容 試験用にサンプルの日付データを作っていたら、以下のようなコンパイルエラーとなりました。
-malformed octal constant malformed integer constant: 08 エラーとなった原因のコードはこちらです。
-t = time.Date(2016, time.Month(11), 08, 00, 00, 00, 00, time.Local) 原因 Go言語は先頭に0が付いた数値を8進数だと認識します。08は8進数としては存在しない値のためエラーとなってしまうのでした。同様に、09も同じエラーとなります。
-対策 単純に対策をするのであれば、以下のように08から0を除いてしまえばエラーは解消されます。
-t = time.Date(2016, time.Month(11), 8, 00, 00, 00, 00, time.Local) どうしても08、09と記載したい、そんなときには、数値を&amp;quot;で囲って文字列として指定しておき、文字列から数値に変換させれば大丈夫です。ただし、標準で用意されているstrconv.Atoi関数は2つの戻り値を返すので、そのままでは使えません。以下のように、変換用の関数を用意する必要があります。
-package main import ( &amp;quot;fmt&amp;quot; &amp;quot;os&amp;quot; &amp;quot;strconv&amp;quot; &amp;quot;time&amp;quot; ) func main() { t := time.Date(2016, time.Month(atoi(&amp;quot;11&amp;quot;)), atoi(&amp;quot;08&amp;quot;), atoi(&amp;quot;00&amp;quot;), atoi(&amp;quot;00&amp;quot;), atoi(&amp;quot;00&amp;quot;), atoi(&amp;quot;00&amp;quot;), time.Local) fmt.Println(t) } func atoi(str string) int { num, err := strconv.Atoi(str) if err !</description>
+      <guid>/post/octal/</guid>
+      <description>はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。 エラーの内容 試験用にサンプルの日付データを作っていたら、以下のよう</description>
     </item>
     
     <item>
       <title>Go言語で構造体のスライスを扱ってみる</title>
-      <link>http://foresukecom.github.io/post/struct_slice/</link>
+      <link>/post/struct_slice/</link>
       <pubDate>Wed, 30 Nov 2016 21:24:20 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/struct_slice/</guid>
-      <description>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。
-ここで構造体やスライスについて詳しく説明はしません。詳細はA Tour of Goなどに記載されているので、そちらをご確認下さい。 今回は、構造体を要素として持つスライスを扱う方法をまとめています。
-いろいろな操作  要素にする構造体
-今回の説明で使用する構造体は以下の通り定義されています。 社員番号(number)と名前(name)を持つ社員(employee)型です。スライスで複数人の社員情報をまとめて扱うようなイメージです。  type employee struct { number int name string }  スライスの作成
-以下のようにmake関数を使えば、要素数が0のemployee型のスライスを作成することが出来ます。  employees := make([]employee, 0) スライスの作成と初期化をまとめて行うこともできます。
-employees := []employee{employee{1, &amp;quot;Taro&amp;quot;}} 複数の要素を持つスライスを1行で書くことも可能です。
-employees := []employee{employee{1, &amp;quot;Taro&amp;quot;}, employee{2, &amp;quot;Jiro&amp;quot;}, employee{3, &amp;quot;Saburo&amp;quot;}}  要素の追加
-既存のスライスに対して、要素を追加させるには以下のように記載します。  employees = append(employees, employee{4, &amp;quot;Shiro&amp;quot;})  要素の削除
-組込み関数にはスライスの要素を削除する仕組みは実装されていません。そのため、個別に関数を作成する必要があります。例としては、以下のような関数で要素の削除機能が実現できます。  func delete(employees []employee, n int) []employee { result := make([]employee, 0) for i, v := range employees { if i !</description>
+      <guid>/post/struct_slice/</guid>
+      <description>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。 ここで構造体やスライスについて詳しく説明はしません。詳細はA</description>
     </item>
     
   </channel>

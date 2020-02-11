@@ -1,158 +1,36 @@
-
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-
-  
-  <meta charset="UTF-8">
-  <title>
-    GoogleComputeEngineとのファイルやりとり | ふぉれすけ広場
-  </title>
-
-
-  
-  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
-
-  
-  <link rel="canonical" href="http://foresukecom.github.io/post/gcp_scp/"/>
-
-  
-  <link rel="stylesheet" href="/css/sanitize.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="stylesheet" href="/css/highlight_monokai.css">
-  <link rel="stylesheet" href="/css/theme.css">
-  <link rel="stylesheet" href="/css/custom.css">
-  
-  
-  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
-  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="images/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-
-</head>
-
-
-
-<body>
-<div class="container">
-
-  
-  <header role="banner">
-    <div class="row gutters">
-      <div id="site-title" class="col span_6">
-        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
-        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
-      </div>
-      <div id="social" class="col span_6">
-        <ul>
-          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
-          
-          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </header>
-
-
-  
-  <main id="single" role="main">
-    <div class="article-header">
-      <h1>GoogleComputeEngineとのファイルやりとり</h1>
-      <div class="meta">
-        Nov 24, 2017 &nbsp;
-        
-          #<a href="/tags/gcp">GCP</a>&nbsp;
-        
-      </div>
-    </div>
-    <article>
-      <p>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。<br>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>GoogleComputeEngineとのファイルやりとり&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、壁を登ったり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">GoogleComputeEngineとのファイルやりとり</h1><p class="article date">2017-11-24</p></section><article class="article markdown-body"><p>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。<br>
 <code>gcloud compute scp</code>でGCEとのファイルのアップロード/ダウンロードが行えます。
 <code>gcloud compute copy-files</code>でもファイルコピーが行えますが、非推奨となっているので<code>gcloud compute scp</code>コマンドを使うのがいいようです。</p>
 <p>ローカルのカレントディレクトリにあるファイルを、GCEの<code>/tmp</code>配下にアップロードするには以下のコマンドで行えます。</p>
 <pre><code>gcloud compute scp ./gokuhi.txt gce_server:/tmp/
 </code></pre><p>逆に、GCEの<code>/tmp</code>配下のファイルを、ローカルのカレントディレクトリにダウンロードするには以下のコマンドです。</p>
 <pre><code>gcloud compute scp gce_server:/tmp/gokuhi.txt ./
-</code></pre><p><a href="https://cloud.google.com/sdk/gcloud/reference/compute/scp">公式ドキュメント</a>にも記載されている通り、<code>gcloud compute scp</code>にもいろいろとオプションが用意されていますが、単純なファイルアップロード/ダウンロードであればオプションを付けなくても簡単に使うことができます</p>
-
-      
-      
-      
-    </article>
-    
- <aside><div id="disqus_thread"></div></aside>
-
-<script type="text/javascript">
-     
-    var disqus_shortname = 'foresuke-com';
-
-     
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-
-  </main>
-  
-  <nav class="pagination-single">
-    
-      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/resas_java/" rel="prev">JavaからRESAS APIを使ってみましたよ</a></span>
-    
-    
-      <span class="next"><a href="http://foresukecom.github.io/post/gcp_docker_django/" rel="next">DockerコンテナでDjango</a> &rarr;</span>
-    
-  </nav>
-
-
-  
-  <footer role="contentinfo">
-    <div style="text-align:center;">
-      <img src="/images/profile.JPG" width="64" height="64"><br>
-      
-    </div>
-  </footer>
-
-
-</div>
-
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</code></pre><p><a href="https://cloud.google.com/sdk/gcloud/reference/compute/scp"target="_blank">公式ドキュメント</a>にも記載されている通り、<code>gcloud compute scp</code>にもいろいろとオプションが用意されていますが、単純なファイルアップロード/ダウンロードであればオプションを付けなくても簡単に使うことができます</p>
+</article><section class="article labels"><a class="tag" href=/tags/gcp/>GCP</a></section><section class="article navigation"><p><a class="link" href="/post/resas_java/"><span class="li">&larr;</span>JavaからRESAS APIを使ってみましたよ</a></p><p><a class="link" href="/post/gcp_docker_django/"><span class="li">&rarr;</span>DockerコンテナでDjango</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-89386946-1', 'auto');
+	
 	ga('send', 'pageview');
+}
 </script>
-
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
 </body>
-</html>
 
+</html>

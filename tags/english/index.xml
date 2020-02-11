@@ -1,62 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>English on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/english/</link>
+    <link>/tags/english/</link>
     <description>Recent content in English on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>©2019 foresuke.</copyright>
     <lastBuildDate>Sun, 20 May 2018 22:58:10 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/english/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/english/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>英語漫画のススメ</title>
-      <link>http://foresukecom.github.io/post/english_comic/</link>
+      <link>/post/english_comic/</link>
       <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/english_comic/</guid>
-      <description>はじめに 最近、海外ドラマを観たりオンライン英会話を受けたりして英語を勉強しています。
-しかし学生時代に英語の勉強をサボっていたので、わからない単語が多すぎて会話に付いていけず苦労しています。
-単語帳なんかも買ってみたのですがすぐに飽きてしまったので、英語版HUNTER×HUNTERをKindleで買って試してみました。
-とりあえず飽きずに10巻まで読み進められたので、メリット/デメリットをまとめてみます。
-メリット  なんとなく読める
-僕は日本語版のHUNTER×HUNTERを何度も読み返しているので、英語版でも100％理解しなくても読み進めることができます。 すぐに買える
-大型書店でないと英語版の漫画は売っていないと思います。(少なくとも僕は売っているのを見たことがありません。) 読みたい時にすぐ買えるのは電子書籍ならではです。 (紙版の本と比べると)安い
-1冊だいたい850円ぐらいなので、日本語版と比べれば割高になります。 しかし、英語版HUNTER×HUNTERは紙の本では1冊1,000円ぐらいします。 翻訳コストがかかるので日本語版よりも高くなるのは仕方がありませんが、紙の本と比べて1〜2割引で買えるのはありがたい限りです。  デメリット  翻訳機能が使えない
-Kindleでは漫画を画像として取り込んでいるので、セリフの検索や翻訳ができません。
-しかし先日、Google I/O 2018で写真に写っているモノをAIが認識するGoogleLensというサービスが発表されました。 KindleはAmazonのサービスなので、Googleのサービスを使うとは思えませんが、こういった技術が発展すれば漫画の中の文字も翻訳対象として扱えるようになると思います。
-最終的にはNetflixの音声や字幕のように、1冊の本を買ったら自由に言語を切り替えて読める世界になるのでしょうか。 英語がすべて大文字
-理由は諸説あるようですが、アメリカンコミックではセリフが大文字で書かれていることが多いようです。 英語版HUNTER×HUNTERでは作者コメントは大文字と小文字が混ざっているのですが、セリフや説明分はすべて大文字で書かれています。 慣れの問題かもしれませんが、なかなか読みにくいものです。  今後 HUNTER×HUNTERを読み終えたら、ハガレンかドラゴンボールに挑戦予定です。
-ハガレンも日本語で何度も読み返しているから大丈夫でしょう。 実はドラゴンボールをしっかりと読んだことがないので、せっかくなので教養として読んでおこうかと。
-3月のライオン、よつばと、ヨルムンガンドあたりもKindleで翻訳版が出てほしいのです。
-  </description>
+      <guid>/post/english_comic/</guid>
+      <description>はじめに 最近、海外ドラマを観たりオンライン英会話を受けたりして英語を勉強しています。 しかし学生時代に英語の勉強をサボっていたので、わからない</description>
     </item>
     
     <item>
       <title>英語のお勉強</title>
-      <link>http://foresukecom.github.io/post/english/</link>
+      <link>/post/english/</link>
       <pubDate>Tue, 24 Oct 2017 05:50:21 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/english/</guid>
-      <description>はじめに みなさんは英語を使いこなしていますか。僕は使えません。
-最近はGoogle翻訳の精度も上がりましたが、英語の講演を聞いたり、画像として表示されている英語を理解するためには自身の英語力を鍛える必要があります。
-国内で開催されるAmazonWebServiceやGoogleCloudPlatformのイベント、セミナーによく参加しているのですが、英語の講演を理解できず、せっかくの貴重な機会を逃してしまうことが多々ありました。
-なので、中学生レベルの英語力があるかも怪しい僕ですが、一念発起して英語の勉強を始めてみました。
-試している勉強方法 とりあえず、英語を読む、聴くことが人並みになることが目標なので、Podcastを使ったリスニング、 Kindleでのリーディングを中心に進めています。
-Podcast 通勤中に以下のPodcastを中心に聴いています。 アメリカとの文化の違いや、最近の時事問題をテーマにすることも多く、飽きずに聴き続ける事ができます。
- 解説！1日5分ビジネス英語 Hapa英会話 Podcast バイリンガルニュース (Bilingual News)  以下のような英語のテック系Podcastも聴いています。 正直なところshow noteで概要を見ながら聴いても内容が聴き取れていません。
-なので、これらのPodcastをスムーズに聴き取れることが現状の目的になっています。
- Python Bytes Google Cloud Platform Podcast  Kindle リーディングの勉強としては、Kindkeを使って、英語の絵本や童謡を読んでいます。
-電子書籍であれば、わからない単語の翻訳も行えるので、なんとか読み進めることができます。 最初は絵本を読むことに恥ずかしさがあったのですが、読んで見ると読めない単語が多いことに気が付き、恥ずかしがっている場合ではないと腹をくくることができました。
-最終的にはO&amp;rsquo;Reillyの洋書とか読みたいですね(格安、または無料で公開されている本も多くありますし)。
-今のところ、読み終えた本は以下の通りです。
-Duolingo 無料で使える語学勉強用のWebサービスDuolingoも使っています。
-このサービスはゲーム感覚でリスニングやリーディング能力を鍛えることができるので毎日続けています。 英文の意味を日本語で解答する問題では、日本語を入力して解答する都合上、文章の揺らぎが生まれるのですが、ある程度はDuolingo側で吸収してくれるので、自分の言葉で解答することができます。
-問題を解いていると「あれ」「これ」「それ」がごっちゃになったり、代名詞の変化を忘れていたりするので、レベルの低さに落ち込むこともありますが、なのか続いています。 1回の学習が10分程度と短時間で完結し、PC版やスマホ版が出ているので、少し空いた時間にサクッとこなせるように設計されているようです。
-おわりに 今のところ、スピーキングについては必要としていないのでスカイプ英会話などは使っていません。
-海外の人と話したい欲求が生まれたら、スピーキングの勉強を始めてもいいかもしれません。</description>
+      <guid>/post/english/</guid>
+      <description>はじめに みなさんは英語を使いこなしていますか。僕は使えません。 最近はGoogle翻訳の精度も上がりましたが、英語の講演を聞いたり、画像として</description>
     </item>
     
   </channel>
