@@ -1,96 +1,14 @@
-
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-
-  
-  <meta charset="UTF-8">
-  <title>
-    JavaScriptでクロージャを触ったお話 | ふぉれすけ広場
-  </title>
-
-
-  
-  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
-
-  
-  <link rel="canonical" href="http://foresukecom.github.io/post/javascript_closure/"/>
-
-  
-  <link rel="stylesheet" href="/css/sanitize.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="stylesheet" href="/css/highlight_monokai.css">
-  <link rel="stylesheet" href="/css/theme.css">
-  <link rel="stylesheet" href="/css/custom.css">
-  
-  
-  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
-  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="images/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-
-</head>
-
-
-
-<body>
-<div class="container">
-
-  
-  <header role="banner">
-    <div class="row gutters">
-      <div id="site-title" class="col span_6">
-        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
-        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
-      </div>
-      <div id="social" class="col span_6">
-        <ul>
-          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
-          
-          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </header>
-
-
-  
-  <main id="single" role="main">
-    <div class="article-header">
-      <h1>JavaScriptでクロージャを触ったお話</h1>
-      <div class="meta">
-        Oct 14, 2018 &nbsp;
-        
-          #<a href="/tags/javascript">JavaScript</a>&nbsp;
-        
-      </div>
-    </div>
-    <article>
-      <h2 id="はじめに">はじめに</h2>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>JavaScriptでクロージャを触ったお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"></span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">JavaScriptでクロージャを触ったお話</h1><p class="article date">2018-10-14</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
 <p>クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。</p>
 <p>クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。
-<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Closures">MDN web docs</a></p>
+<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Closures"target="_blank">MDN web docs</a></p>
 <h2 id="サンプル">サンプル</h2>
 <p>1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。
 連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。<br>
@@ -107,70 +25,30 @@
 <p>前回と違う乱数を生成する箇所は<code>for</code>、<code>if</code>を使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。<br>
 もっといい感じの計算式をご存知の方がいたら教えてください。</p>
 <h2 id="その他">その他</h2>
-<p>最近、地元の静岡が舞台になっている<a href="https://comic.pixiv.net/works/5103">ローカル女子の遠吠え</a>の4巻が発売されました。
+<p>最近、地元の静岡が舞台になっている<a href="https://comic.pixiv.net/works/5103"target="_blank">ローカル女子の遠吠え</a>の4巻が発売されました。
 作者の瀬戸口みづき先生も静岡出身ということで、思わず膝を連打するネタが多いです。</p>
 <p>ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。<br>
 あー、亀まんじゅう食べたい。げんこつハンバーグ食べたい。</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-
-      
-      
-      
-    </article>
-    
- <aside><div id="disqus_thread"></div></aside>
-
-<script type="text/javascript">
-     
-    var disqus_shortname = 'foresuke-com';
-
-     
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-
-  </main>
-  
-  <nav class="pagination-single">
-    
-      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/reactnativefetch/" rel="prev">ReactNativeを触ったお話</a></span>
-    
-    
-      <span class="next"><a href="http://foresukecom.github.io/post/vue_array/" rel="next">Vue.jsで配列を扱ったお話</a> &rarr;</span>
-    
-  </nav>
-
-
-  
-  <footer role="contentinfo">
-    <div style="text-align:center;">
-      <img src="/images/profile.JPG" width="64" height="64"><br>
-      
-    </div>
-  </footer>
-
-
-</div>
-
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</article><section class="article labels"><a class="tag" href=/tags/javascript/>JavaScript</a></section><section class="article navigation"><p><a class="link" href="/post/reactnativefetch/"><span class="li">&larr;</span>ReactNativeを触ったお話</a></p><p><a class="link" href="/post/vue_array/"><span class="li">&rarr;</span>Vue.jsで配列を扱ったお話</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">ふぉれすけ広場</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-89386946-1', 'auto');
+	
 	ga('send', 'pageview');
+}
 </script>
-
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
 </body>
-</html>
 
+</html>

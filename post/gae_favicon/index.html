@@ -1,104 +1,22 @@
-
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-
-  
-  <meta charset="UTF-8">
-  <title>
-    GAEでfaviconを設定 | ふぉれすけ広場
-  </title>
-
-
-  
-  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
-
-  
-  <link rel="canonical" href="http://foresukecom.github.io/post/gae_favicon/"/>
-
-  
-  <link rel="stylesheet" href="/css/sanitize.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="stylesheet" href="/css/highlight_monokai.css">
-  <link rel="stylesheet" href="/css/theme.css">
-  <link rel="stylesheet" href="/css/custom.css">
-  
-  
-  <link href="http://foresukecom.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
-  <link href="http://foresukecom.github.ioindex.xml" rel="feed" type="application/rss+xml" title="ふぉれすけ広場" />
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="images/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-
-</head>
-
-
-
-<body>
-<div class="container">
-
-  
-  <header role="banner">
-    <div class="row gutters">
-      <div id="site-title" class="col span_6">
-        <h1><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
-        <h2>筋トレしたり、お酒を飲んだり、壁を登ったり。</h2>
-      </div>
-      <div id="social" class="col span_6">
-        <ul>
-          <li><a href="https://twitter.com/foresukecom" target="_blank">Twitter</a></li>
-          
-          <li><a href="https://github.com/foresukecom" target="_blank">GitHub</a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </header>
-
-
-  
-  <main id="single" role="main">
-    <div class="article-header">
-      <h1>GAEでfaviconを設定</h1>
-      <div class="meta">
-        Nov 6, 2018 &nbsp;
-        
-          #<a href="/tags/gae">GAE</a>&nbsp;
-        
-      </div>
-    </div>
-    <article>
-      <h2 id="はじめに">はじめに</h2>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>GAEでfaviconを設定&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"></span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">GAEでfaviconを設定</h1><p class="article date">2018-11-06</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
 <p>GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。</p>
 <h2 id="faviconとは">faviconとは</h2>
 <p>faviconとは、ブラウザのタブやブックマークに表示されてるアレです。<br>
 最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。</p>
 <p>faviconについては、以下の資料に詳しくまとめられています。<br>
-<a href="https://speakerdeck.com/oscasierra/websaitoga-dekita-toan-xin-suruqian-nizui-zhong-tietukusurukoto?slide=5">WEBサイトが「できた」と安心する前に最終チェックすること</a></p>
+<a href="https://speakerdeck.com/oscasierra/websaitoga-dekita-toan-xin-suruqian-nizui-zhong-tietukusurukoto?slide=5"target="_blank">WEBサイトが「できた」と安心する前に最終チェックすること</a></p>
 <h2 id="favicon準備">favicon準備</h2>
 <p>faviconの元にするイラストはこちらです。
 このイラストをいい感じにfaviconとして使っていきます。
 <!-- raw HTML omitted --></p>
-<p>今回は、スライドで紹介されている<a href="https://realfavicongenerator.net/">Favicon Generator</a>を使ってfaviconを用意していきます。<br>
+<p>今回は、スライドで紹介されている<a href="https://realfavicongenerator.net/"target="_blank">Favicon Generator</a>を使ってfaviconを用意していきます。<br>
 faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウンロードできます。<br>
 <code>favicon_package_v0.16.zip</code>は以下のような中身になっています。</p>
 <pre><code>favicon_package_v0.16
@@ -116,7 +34,7 @@ faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウン�
 <code>browserconfig.xml</code>はWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。<br>
 <code>safari-pinned-tab.svg</code>はベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。<br>
 <code>site.webmanifest</code>はAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。</p>
-<p>今回は<a href="https://foresuke.com/post/google_app_engine_go_ajax/">GAE上でGolangを動かしてみましたよ</a>の構成を元に、faviconを設定します。<br>
+<p>今回は<a href="https://foresuke.com/post/google_app_engine_go_ajax/"target="_blank">GAE上でGolangを動かしてみましたよ</a>の構成を元に、faviconを設定します。<br>
 <code>browserconfig.xml</code>と<code>site.webmanifest</code>はルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下の<code>images</code>に配置します。<br>
 プロジェクトのディレクトリ構成は以下の通りです。</p>
 <pre><code>.
@@ -140,7 +58,7 @@ faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウン�
     └── js
         └── main.js
 </code></pre><h2 id="gaeで使う">GAEで使う</h2>
-<p>GoogleAppEngineでfaviconを使用するには、HTMLファイルの<code>&lt;head&gt;</code>で読み込む以外に、<a href="https://cloud.google.com/appengine/kb/#erroruris">Why do I get URI error for /favicon.ico?</a>にも書かれているとおり、<code>app.yaml</code>にも記載する必要があります。</p>
+<p>GoogleAppEngineでfaviconを使用するには、HTMLファイルの<code>&lt;head&gt;</code>で読み込む以外に、<a href="https://cloud.google.com/appengine/kb/#erroruris"target="_blank">Why do I get URI error for /favicon.ico?</a>にも書かれているとおり、<code>app.yaml</code>にも記載する必要があります。</p>
 <p>愚直に書く場合、<code>handlers:</code>の配下に以下の記載します。</p>
 <pre><code>- url: /site.webmanifest
   static_files: static/site.webmanifest
@@ -194,71 +112,31 @@ faviconを生成すると、<code>favicon_package_v0.16.zip</code>がダウン�
   static_files: static/images/\1
   upload: static/(.*\.(svg|ico|png))
 </code></pre><p>これで、GAEのページにfaviconを設定することが出来ました。<br>
-<a href="https://realfavicongenerator.net/">Favicon Generator</a>では、各プラットフォームからfaviconにアクセス出来ているかを一括でチェックできるのでとても便利です。<br>
+<a href="https://realfavicongenerator.net/"target="_blank">Favicon Generator</a>では、各プラットフォームからfaviconにアクセス出来ているかを一括でチェックできるのでとても便利です。<br>
 今回は、<code>favicon.ico</code>がルートディレクトリにない、と怒られていますが各プラットフォームからfaviconが見れているいることが確認できました。
 <!-- raw HTML omitted --></p>
 <p>今回のサンプルファイルはgithubで公開してます。<br>
 <a href="https://github.com/foresukecom/gae_favicon">https://github.com/foresukecom/gae_favicon</a></p>
 <h2 id="その他">その他</h2>
 <p>毎回なにかオススメを紹介してましたが、ネタが切れました。</p>
-
-      
-      
-      
-    </article>
-    
- <aside><div id="disqus_thread"></div></aside>
-
-<script type="text/javascript">
-     
-    var disqus_shortname = 'foresuke-com';
-
-     
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-
-  </main>
-  
-  <nav class="pagination-single">
-    
-      <span class="previous">&larr; <a href="http://foresukecom.github.io/post/gae_cron/" rel="prev">GAEでバッチ処理</a></span>
-    
-    
-      <span class="next"><a href="http://foresukecom.github.io/post/shukujitsu_info/" rel="next">祝日のカウントダウンタイマー</a> &rarr;</span>
-    
-  </nav>
-
-
-  
-  <footer role="contentinfo">
-    <div style="text-align:center;">
-      <img src="/images/profile.JPG" width="64" height="64"><br>
-      
-    </div>
-  </footer>
-
-
-</div>
-
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</article><section class="article labels"><a class="tag" href=/tags/gae/>GAE</a></section><section class="article navigation"><p><a class="link" href="/post/gae_cron/"><span class="li">&larr;</span>GAEでバッチ処理</a></p><p><a class="link" href="/post/shukujitsu_info/"><span class="li">&rarr;</span>祝日のカウントダウンタイマー</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">ふぉれすけ広場</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-89386946-1', 'auto');
+	
 	ga('send', 'pageview');
+}
 </script>
-
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
 </body>
-</html>
 
+</html>

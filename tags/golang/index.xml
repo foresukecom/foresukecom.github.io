@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/golang/</link>
+    <link>/tags/golang/</link>
     <description>Recent content in golang on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 03 Feb 2020 09:29:53 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TOMLをGolangで読み込もうとして躓いた話</title>
-      <link>http://foresukecom.github.io/post/go_toml/</link>
+      <link>/post/go_toml/</link>
       <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/go_toml/</guid>
+      <guid>/post/go_toml/</guid>
       <description>GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。
 ※TOMLファイルについては、公式ドキュメントに日本語訳があるのでここでは省略します。
 https://github.com/toml-lang/toml/blob/master/versions/ja/toml-v0.5.0.md
@@ -37,10 +37,10 @@ user = &amp;#34;foresuke&amp;#34; version = &amp;#34;v0.0.1&amp;#34; debug = tru
     
     <item>
       <title>Golangのスコープについて</title>
-      <link>http://foresukecom.github.io/post/go_scope/</link>
+      <link>/post/go_scope/</link>
       <pubDate>Sat, 09 Feb 2019 15:11:21 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/go_scope/</guid>
+      <guid>/post/go_scope/</guid>
       <description>はじめに Golangを書いてて詰まったことがあったのでメモです。
 本文 こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします。
 type product struct { category string name string price uint64 } showcase := []product{ {&amp;quot;果物&amp;quot;, &amp;quot;りんご&amp;quot;, 120}, {&amp;quot;果物&amp;quot;, &amp;quot;バナナ&amp;quot;, 100}, {&amp;quot;果物&amp;quot;, &amp;quot;みかん&amp;quot;, 70}, {&amp;quot;肉&amp;quot;, &amp;quot;鶏もも&amp;quot;, 250}, {&amp;quot;肉&amp;quot;, &amp;quot;豚バラ&amp;quot;, 300}, {&amp;quot;肉&amp;quot;, &amp;quot;カルビ&amp;quot;, 450}, } で、このスライスから果物の価格だけ10円引きします。
@@ -51,10 +51,10 @@ for i := 0; i &amp;lt; len(showcase); i++ { if showcase[i].category == &amp;quot
     
     <item>
       <title>Golangでテストコードを書く少年のお話</title>
-      <link>http://foresukecom.github.io/post/golang_test/</link>
+      <link>/post/golang_test/</link>
       <pubDate>Tue, 22 Jan 2019 08:25:31 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/golang_test/</guid>
+      <guid>/post/golang_test/</guid>
       <description>はじめに お仕事でGolangのテストコードを書くことになったのでお勉強しました。
 テスト対象は以下のプログラムです。
  毎朝のルーティンを明文化し、以下の処理をしています。
@@ -74,10 +74,10 @@ C1カバレッジ(分岐網羅) すべて条件分岐の組み合わせを通る
     
     <item>
       <title>Golangのpanicのお話</title>
-      <link>http://foresukecom.github.io/post/golang_panic/</link>
+      <link>/post/golang_panic/</link>
       <pubDate>Wed, 21 Nov 2018 23:17:10 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/golang_panic/</guid>
+      <guid>/post/golang_panic/</guid>
       <description>はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。
 クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。
 今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。
@@ -89,10 +89,10 @@ $ gox Number of parallel builds: 3 --&amp;gt; freebsd/amd64: _/tmp/tanaka/azunya
     
     <item>
       <title>GAEでバッチ処理</title>
-      <link>http://foresukecom.github.io/post/gae_cron/</link>
+      <link>/post/gae_cron/</link>
       <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/gae_cron/</guid>
+      <guid>/post/gae_cron/</guid>
       <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
 GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
 サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
@@ -115,10 +115,10 @@ GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine
     
     <item>
       <title>祝日のカウントダウンタイマー</title>
-      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
+      <link>/post/shukujitsu_info/</link>
       <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
+      <guid>/post/shukujitsu_info/</guid>
       <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
 https://shukujitsu.info
 処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
@@ -160,10 +160,10 @@ WPA化 WPAであれば、オンライン状態でアクセスしておけば、�
     
     <item>
       <title>GAE上でGolangを動かしてみましたよ</title>
-      <link>http://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
+      <link>/post/google_app_engine_go_ajax/</link>
       <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
+      <guid>/post/google_app_engine_go_ajax/</guid>
       <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
 作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
 環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
@@ -177,10 +177,10 @@ runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新�
     
     <item>
       <title>Go言語でJSONを作成したときのイージーミス</title>
-      <link>http://foresukecom.github.io/post/golang_json_marshal/</link>
+      <link>/post/golang_json_marshal/</link>
       <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/golang_json_marshal/</guid>
+      <guid>/post/golang_json_marshal/</guid>
       <description>はじめに Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。
 JSON形式への変換は標準パッケージに含まれているjson.Marshalを使っています。
 失敗例 こんな感じで構造体のスライスをJSONにしようとしたところ、作成されたJSONの中身が空になっていました。  成功例 原因がわからなかったので色々と試行錯誤した結果、下記のコードで想定した動きを確認することができました。 失敗例では10〜12行目の構造体のフィード名の先頭文字を小文字にしていましたが、成功例では先頭文字を大文字に変えています。
@@ -193,10 +193,10 @@ Go言語では変数や関数のスコープが先頭文字列が小文字か、
     
     <item>
       <title>13日の金曜日です</title>
-      <link>http://foresukecom.github.io/post/friday13th/</link>
+      <link>/post/friday13th/</link>
       <pubDate>Fri, 13 Jan 2017 08:47:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/friday13th/</guid>
+      <guid>/post/friday13th/</guid>
       <description>はじめに 2017年1月13日は金曜日です。 Wikipediaをみると諸説あるようですが、主に海外では縁起の悪い日として知られています。
  キリストの最後の晩餐に13人の人がいたことから、13は不吉な数とされた。また、キリストが金曜日に磔刑に処せられたとされていることから、13日の金曜日が不吉であるとされるようになった。一説には、イヴによるアダムの誘惑も大洪水からノアが脱出したのもバベルの塔が壊されたのも13日の金曜日だと言われるが、聖書にそのような記述はない。
 北欧神話では12人の神が祝宴を催していた時に、13人目となる招かれざる客ロキが乱入して人気者のバルドルを殺してしまったとされ、キリスト教以前から13を不吉な数としており、13日の金曜日についても伝説を持つ。それは魔女としてキリスト教に追いやられたフリッグが11人の魔女と悪魔を招いて毎週金曜日に悪事を企んでいたからだという。なおゲルマン諸語で「金曜日」を表す語は「フリッグの日」に由来する。
@@ -210,10 +210,10 @@ Go言語では変数や関数のスコープが先頭文字列が小文字か、
     
     <item>
       <title>再帰処理してみた</title>
-      <link>http://foresukecom.github.io/post/recursion/</link>
+      <link>/post/recursion/</link>
       <pubDate>Wed, 30 Nov 2016 22:21:13 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/recursion/</guid>
+      <guid>/post/recursion/</guid>
       <description>はじめに Go言語を使っているときに、「再帰処理できるのか?」と疑問に思ったので試してみました。
 どういった問題が再帰処理に向いているのか分からないので、とりあえず素数判定の処理を作成しています。
 素数判定 標準入力された数値が素数か判断するプログラムです。
@@ -224,10 +224,10 @@ Go言語では変数や関数のスコープが先頭文字列が小文字か、
     
     <item>
       <title>8進数のエラーについて</title>
-      <link>http://foresukecom.github.io/post/octal/</link>
+      <link>/post/octal/</link>
       <pubDate>Wed, 30 Nov 2016 21:26:57 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/octal/</guid>
+      <guid>/post/octal/</guid>
       <description>はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。
 エラーの内容 試験用にサンプルの日付データを作っていたら、以下のようなコンパイルエラーとなりました。
 malformed octal constant malformed integer constant: 08 エラーとなった原因のコードはこちらです。
@@ -239,10 +239,10 @@ package main import ( &amp;quot;fmt&amp;quot; &amp;quot;os&amp;quot; &amp;quot;s
     
     <item>
       <title>Go言語で構造体のスライスを扱ってみる</title>
-      <link>http://foresukecom.github.io/post/struct_slice/</link>
+      <link>/post/struct_slice/</link>
       <pubDate>Wed, 30 Nov 2016 21:24:20 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/struct_slice/</guid>
+      <guid>/post/struct_slice/</guid>
       <description>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。
 ここで構造体やスライスについて詳しく説明はしません。詳細はA Tour of Goなどに記載されているので、そちらをご確認下さい。 今回は、構造体を要素として持つスライスを扱う方法をまとめています。
 いろいろな操作  要素にする構造体

@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GAE on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/gae/</link>
+    <link>/tags/gae/</link>
     <description>Recent content in GAE on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 07 Nov 2018 07:44:20 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/gae/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/gae/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GAEでバッチ処理</title>
-      <link>http://foresukecom.github.io/post/gae_cron/</link>
+      <link>/post/gae_cron/</link>
       <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/gae_cron/</guid>
+      <guid>/post/gae_cron/</guid>
       <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
 GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
 サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
@@ -39,10 +39,10 @@ GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine
     
     <item>
       <title>GAEでfaviconを設定</title>
-      <link>http://foresukecom.github.io/post/gae_favicon/</link>
+      <link>/post/gae_favicon/</link>
       <pubDate>Tue, 06 Nov 2018 23:48:25 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/gae_favicon/</guid>
+      <guid>/post/gae_favicon/</guid>
       <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。
 faviconとは faviconとは、ブラウザのタブやブックマークに表示されてるアレです。
 最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。
@@ -63,10 +63,10 @@ browserconfig.xmlとsite.webmanifestはルートディレクトリに配置し�
     
     <item>
       <title>祝日のカウントダウンタイマー</title>
-      <link>http://foresukecom.github.io/post/shukujitsu_info/</link>
+      <link>/post/shukujitsu_info/</link>
       <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/shukujitsu_info/</guid>
+      <guid>/post/shukujitsu_info/</guid>
       <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
 https://shukujitsu.info
 処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
@@ -108,10 +108,10 @@ WPA化 WPAであれば、オンライン状態でアクセスしておけば、�
     
     <item>
       <title>GAE上でGolangを動かしてみましたよ</title>
-      <link>http://foresukecom.github.io/post/google_app_engine_go_ajax/</link>
+      <link>/post/google_app_engine_go_ajax/</link>
       <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/google_app_engine_go_ajax/</guid>
+      <guid>/post/google_app_engine_go_ajax/</guid>
       <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
 作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
 環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。

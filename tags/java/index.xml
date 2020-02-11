@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on ふぉれすけ広場</title>
-    <link>http://foresukecom.github.io/tags/java/</link>
+    <link>/tags/java/</link>
     <description>Recent content in java on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 03 Feb 2018 13:33:02 +0900</lastBuildDate>
     
-	<atom:link href="http://foresukecom.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JavaからRESAS APIを使ってみましたよ</title>
-      <link>http://foresukecom.github.io/post/resas_java/</link>
+      <link>/post/resas_java/</link>
       <pubDate>Sat, 03 Feb 2018 13:33:02 +0900</pubDate>
       
-      <guid>http://foresukecom.github.io/post/resas_java/</guid>
+      <guid>/post/resas_java/</guid>
       <description>お久しぶりです。
 巷で話題のビッグデータを使って何かやってみようかと思い立ったので、RESASから情報を取得してみます。
 RESASとは地域の活性を目的とし、市町村名一覧や人口構成、観光資源などの多くの情報を公開しているWebサイトです。

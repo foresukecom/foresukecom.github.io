@@ -1,199 +1,186 @@
 <!DOCTYPE html>
-<html lang="ja">
-
-<head>
-	<meta name="generator" content="Hugo 0.63.2" />
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<title> ふぉれすけ広場 &middot; ふぉれすけ広場 </title>
-
-
-<link rel="stylesheet" href="http://foresukecom.github.io/css/slim.css">
-<link rel="stylesheet" href="http://foresukecom.github.io/css/highlight.min.css">
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/favicon.ico">
-
-
-<link href="http://foresukecom.github.io/index.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
-
-</head>
-
-<body>
-  <div class="container">
-    <div class="header">
-  <h1 class="site-title"><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
-  <p class="site-tagline">筋トレしたり、お酒を飲んだり、壁を登ったり。</p>
-  <div class="nav">
-    <a class="nav-btn" href="#">
-      <span class="ci ci-burger"></span>
-    </a>
-    <ul class="nav-list">
-       
-	  <li class="spacer">&ac;</li>
-  
-    </ul>
-  </div>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><link rel="alternate" type="application/rss+xml" href="/index.xml" title="ふぉれすけ広場" /><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"></span></div></section><div id="content"><ul class="note list"><li class="item"><a class="note" href="/post/pocket_2018/">
+            <p class="note title">Pocketからお祝いされました -2018-</p><p class="note date">2018-12-23</p><p class="note content">Pocketから以下のメールが届きました。 2016年、2017年には上位5%になったことを祝福するメールが届きましたが、ついに2018年は上位1%のユーザになれたようです。
+自分が登録した記事の中から人気がある記事をピックアップしてみるとQiitaの記事が多いみたいです。
+やはりQiitaはSEOに力を入れているのか閲覧者が多いようですね。
+ちなみに、2018年12月21日時点では全記事数が9,720ページ、未読記事が2,289ページ、既読率76.5%という状況です。 2017年2月4日時点では全記事数が4,887ページ、未読記事が800ページ、既読率83.6%でしたので積読が捗っているようです。
+毎日、未読率を出したり、未読記事からランダムでSlackに投稿するようにしましたが、まだ手緩いようです。todoリストと連携して毎日記事を読むように仕向けましょうか…
+しかし…プレミアム会員にもなっていない自分が上位1%のユーザになれてしまうとは…
+若者のPocket離れが深刻ですね。 Pocketなら気になる記事を後から読み返すことも簡単に出来るし(実際は読み返さないけど)、PocketのArticle Viewなら邪魔くさい広告が表示されないから集中して記事が読めて便利ですよ!
+みんな使いましょう!!</p></a><p class="note labels"><a class="tag" href="/tags/pocket/">pocket</a></p></li><li class="item"><a class="note" href="/post/golang_panic/">
+            <p class="note title">Golangのpanicのお話</p><p class="note date">2018-11-21</p><p class="note content">はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。
+クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。
+今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。
+サンプルコード 実際のコードとは違いますが、当時は以下のようにエラーが発生したらpanic()で処理を中断させるコードを書いていました。
+ で、このコードを以下のようなディレクトリ構成の中に配置していました。log_analysisが1つのプロジェクトというイメージです。
+tmp └── tanaka └── azunyan_prpr └── tools └── log_analysis └── main.go このコードをmitchellh/goxを使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。
+$ gox Number of parallel builds: 3 --&gt; freebsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; netbsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; linux/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; darwin/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; windows/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; openbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; openbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; windows/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; netbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; freebsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; darwin/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; linux/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; linux/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; freebsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis --&gt; netbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis $ ls -1 log_analysis_darwin_386 log_analysis_darwin_amd64 log_analysis_freebsd_386 log_analysis_freebsd_amd64 log_analysis_freebsd_arm log_analysis_linux_386 log_analysis_linux_amd64 log_analysis_linux_arm log_analysis_netbsd_386 log_analysis_netbsd_amd64 log_analysis_netbsd_arm log_analysis_openbsd_386 log_analysis_openbsd_amd64 log_analysis_windows_386.<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li><li class="item"><a class="note" href="/post/dynamic_tweet/">
+            <p class="note title">Tweetボタンでつぶやく内容を動的に変更する</p><p class="note date">2018-11-11</p><p class="note content">はじめに 今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。
+本文 Twitterの共有ボタンを設置するだけなら、Twitter公式サイトで生成できる以下のコードをHTMLに埋め込むことで簡単に実現できます。
+&lt;a href=&quot;https://twitter.com/share?ref_src=twsrc%5Etfw&quot; class=&quot;twitter-share-button&quot; data-text=&quot;ハローワールド&quot; data-show-count=&quot;false&quot;&gt;Tweet&lt;/a&gt; &lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; しかし、この方法だとTweetする文章を動的に変更することはできません。
+そこで、JavaScriptでTweetする内容を生成して、window.openメソッドでTweet共有用のURL(https://twitter.com/share) を呼び出すことで対応します。
+URLに以下のパラメータを追加することで、ハッシュタグやアカウントを含めたTweetを行うことができます。
+   パラメータ 説明     text Tweetする文章   url Tweetに含めるURL   via Tweetに含めるアカウント   hashtags Tweetに含めるハッシュタグ   related Tweet後にフォローを勧めるアカウント    サンプルコード 以下がサンプルコードになります。
+JavaScriptのコードが18行ありますが、ほとんどは現在時刻を求めているだけで、実際にTweetを行うのに必要なのは17行目のwindow.open(...);だけです。
+Tweetボタンを押すと、以下のようなTweetを投稿できます。
+※追記
+Tweetが140文字を超えたらどうなるか確認したところ、以下のように403エラーとなりました。
+実際に使うなら、文字数チェックの処理が必要ですね。
+その他 最近Ultimate Chicken Horseをはじめました。
+このゲームは4人対戦の2Dアクションゲームです。スタートからゴールまで早く到着したプレイヤーが勝ち、というシンプルなルールなのですが、試合ごとに足場やトラップを自由に設置できるので、後半になるほどカオスなコースになり、ワイワイと楽しむには最適なゲームです。
+オンライン対戦に対応しているので、今は知らない人たちと野良で遊んでいるのですが、ボイチャをしてこそ真価を発揮するゲームだと思います。
+おそらく年末のsteamセールの対象になるので、誰か買って一緒に遊んでください。
+…作品名をアルティメイト・チキン・ヒーローズだと思っていたことは内緒です。
+  </p></a><p class="note labels"><a class="tag" href="/tags/javascript/">JavaScript</a></p></li><li class="item"><a class="note" href="/post/gae_cron/">
+            <p class="note title">GAEでバッチ処理</p><p class="note date">2018-11-07</p><p class="note content">はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。
+GAEではcron.yamlに設定を記載することで時間を指定した処理を行うことができます。
+サンプル 今回は、slackにメッセージを送信するアプリを定期的に実行させてみます。
+slackにメッセージを送る部分は以下のサイトに詳しく記載されているので省略します。
+CrossBridge Lab | GolangでSlackの特定のチャンネルにメッセージを送る
+今回はGAE上でGolangを動かしてみましたよの構成を元に、GAEのプロジェクトを構築します。
+ルートディレクトリ(app.yamlと同じ階層)にcrom.yamlを作成します。
+cron.yaml cron.yamlには、以下のように開始時刻や間隔で実行するタイミングを指定することが出来ます。
+cron: - description: &quot;毎朝7時(日本時間)に実行&quot; url: /morning timezone: Asia/Tokyo schedule: every day 7:00 - description: &quot;毎週日曜8時(日本時間)に実行&quot; url: /morning timezone: Asia/Tokyo schedule: every sunday 8:00 - description: &quot;毎日0時を起点とし、1時間単位で実行&quot; url: /morning timezone: Asia/Tokyo schedule: every 1 hours その他のスケジュール指定方法や、HTTPリクエスト失敗時のリトライ回数は公式のドキュメントに詳しく記載されています。
+注意点 GAEではdev_server.pyでローカルにサーバを立ち上げて、動作確認をすることができます。しかし、ローカル環境では、cron.yamlは動作しません。
+localhost:8000 からGAEローカル環境の管理画面を開くことができます。
+管理画面にcron.yamlで設定したスケジュールが一覧で表示されるので、Run nowをクリックすることで手動で実行することができます。 Cronの設定を本番環境にデプロイするときは、gcloud app deploy cron.yamlのようにcrom.yamlを指定します。
+指定しないと、crom.yamlが読み込まれないため、いつまで待っても処理が実行されません。 Cronが設定されているかどうかは、コンソール画面のcronジョブから確認することが出来ます。 仮に他のユーザからHTTPでのリクエストがあった場合、想定していない時間に処理が実行される可能性があります。
+そのため、GAEのcronサービスからのHTTPアクセス以外からのアクセスは除外する必要があります。
+GAEのcronサービスからのHTTPアクセスにはHTTPヘッダにX-Appengine-Cron: trueが含まれているので、HTTPリクエストを受け取ったタイミングで、チェックする必要があります
+例えば、GolangでGAEのcronサービス以外からのHTTPリクエストを弾くには、以下のように書きます。
+(弾いた後の処理がお粗末ですが…)
+// cron以外からのアクセスは弾く if r.<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/gae/">GAE</a><a class="tag" href="/tags/golang/">golang</a></p></li><li class="item"><a class="note" href="/post/gae_favicon/">
+            <p class="note title">GAEでfaviconを設定</p><p class="note date">2018-11-06</p><p class="note content">はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます。
+faviconとは faviconとは、ブラウザのタブやブックマークに表示されてるアレです。
+最近は、スマートフォンでWebページのショートカットをホーム画面や、Windows10のスタートメニューで見かけることも増えてきました。
+faviconについては、以下の資料に詳しくまとめられています。
+WEBサイトが「できた」と安心する前に最終チェックすること
+favicon準備 faviconの元にするイラストはこちらです。 このイラストをいい感じにfaviconとして使っていきます。 今回は、スライドで紹介されているFavicon Generatorを使ってfaviconを用意していきます。
+faviconを生成すると、favicon_package_v0.16.zipがダウンロードできます。
+favicon_package_v0.16.zipは以下のような中身になっています。
+favicon_package_v0.16 ├── android-chrome-192x192.png ├── android-chrome-384x384.png ├── apple-touch-icon.png ├── browserconfig.xml ├── favicon-16x16.png ├── favicon-32x32.png ├── favicon.ico ├── mstile-150x150.png ├── safari-pinned-tab.svg └── site.webmanifest この中ので拡張子がpng、icoは実際に表示されるイメージファイルです。
+browserconfig.xmlはWindows10のスタート画面にWebページをピン留めしたときに表示される画像の設定情報です。このファイルは明示的に読み込まなくても、ルートディレクトリに置いておけば、勝手に読み込んでくれます。
+safari-pinned-tab.svgはベクターというフォーマットの画像ファイルです。safariで表示するfaviconはこの画像を使っているようです。
+site.webmanifestはAndroidでWebページをホーム画面に追加したときのアイコンや、タイトルを設定するファイルです。
+今回はGAE上でGolangを動かしてみましたよの構成を元に、faviconを設定します。
+browserconfig.xmlとsite.webmanifestはルートディレクトリに配置し、その他の画像ファイルはルートディレクトリ直下のimagesに配置します。
+プロジェクトのディレクトリ構成は以下の通りです。
+. ├── app.yaml ├── gae_sample.iml ├── hello.go ├── index.yaml └── static ├── browserconfig.xml ├── site.webmanifest ├── images │ ├── android-chrome-192x192.png │ ├── android-chrome-384x384.png │ ├── apple-touch-icon.png │ ├── favicon-16x16.<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/gae/">GAE</a></p></li><li class="item"><a class="note" href="/post/shukujitsu_info/">
+            <p class="note title">祝日のカウントダウンタイマー</p><p class="note date">2018-10-30</p><p class="note content">はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作ってみました。
+https://shukujitsu.info
+処理の内容 内閣府が祝日の情報をCSV形式で公開しているので、定期的に取得して、加工して、CloudStorageにアップロードしています。
+GAEにアクセスがあると、CloudStorageから祝日情報を読み込んで、いい感じに加工して表示しています。
+使ってる技術 GoogleAppEngine インフラとしてGAEを使いました。
+GAEに対応していない関数とかもあるので、ドキュメントを見ながら覚えていくしかなさそうです。
+たとえば、GolangでHTTPのリクエストを行うときにhttp.Get()を使いますが、GAEでは対応していないのでurlfetch.Clientを使う必要があります。 他にも、Javaでは時刻を扱うjava.time.LocalDateというライブラリがあるのですが、同様にGAEでは使うことができません。
+GAE使うなら言語に依らず注意する必要があります。
+Golang ネット上に公開されているCSVファイルを読み込んで、Cloud Storageにアップロードする部分をやってます。
+もともと、Golangの勉強を兼ねたプロジェクトだったんですが、あまりGolangを使いませんでした。
+Vue.js JavaScriptで変数を書き換えると、いい感じにHTMLで表示される内容も変更されます。
+まだVue.jsを使いこなせてはいませんが、低い学習コストでさっくり使うことができます。
+Scrollify マウススクロールでいい感じに画面を切り替える処理はScrollifyを使いました。
+これを使うだけで今風な感じがでます。
+今後の課題 データ保管場所 情報をCloudStorageに保存してるので、NoSQLを触ってみようかと考え中です。
+日付と祝日名を格納するだけなのでRDBでも問題ないんですけど…
+監視、ログ なんらかのエラーが起きた場合はソーリー画面を出し、StackDriver上にログを出すようにしていますが、能動的にチェックしないとエラーに気が付きません。
+エラーを検知したら通知する仕組みがほしいですね、LINEかSlackに飛ばすのが今風でしょうか…
+パッケージ管理 使用しているライブラリのバージョン管理とかをしていないので、一般的に使われている(らしい)、depを使ってみようかと考え中。
+次バージョンのGolangではmodulesという新たなパッケージ管理機能が正式リリース予定なので、最終的にはそっちに映る感じでしょうか。
+リファクタリング ディレクトリ階層がぐちゃぐちゃで、1つ1つのファイルも肥大化しているのでキレイにしたいです。
+ある程度キレイになったらリポジトリを公開するのもアリですね。
+CIツール導入 現在、dev_appserver.pyでローカル環境を立ち上げて、動作チェックが済んだらgcloud app deployで本番環境を更新する、という雑な運用をしています。
+雑すぎるので、CircleCIとかを使って、PR投げたらステージング環境でテストが実行されてー、というのを導入したいです。
+AltJS 「素のJavaScriptを書くのがツラい」という話を聞くことが増えてきました。
+この規模なら素のJavaScriptでも問題ないですが、今後のことを考えるとTypeScriptかCoffeeScriptあたりを勉強して置き換えることを考え中です。
+WPA化 WPAであれば、オンライン状態でアクセスしておけば、オフライン状態でもそのWebサイトにアクセスができるようです。
+地下鉄などの電波状況が悪い場所でも祝日カウンターが使えれば素敵ですね。
+見た目 レイアウト気にし始めるとキリがないので一旦リリースしてしまいました。
+運用しながら徐々に変更を加える予定です。
+感想 本当はcoinhive仕込みたかったけど神奈川県警に捕まったらいやなので我慢しました。
+認証も、DBへのアクセスもないページですが、1人でインフラ、サーバサイド、フロントエンドの構築を行ったのでいろいろと勉強になりました。
+細々としたTipsはブログに残していきたいです。 課題もたくさん出てきたので、徐々に直していきます。
+欲しい機能とか、気になる箇所があれば、お気軽に@foresukecomまでご連絡下さい。
+その他 ここ数年、ウィルキンソンの炭酸水をAmazonで定期購入してます。炭酸水のおかげで、ビールを飲む量がだいぶ減りました。
+でも、炭酸水はウイスキーのチェイサーに最適なんですよね…割れば簡単にハイボールも作れるし…
+悩ましい飲み物です。</p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a><a class="tag" href="/tags/gae/">GAE</a><a class="tag" href="/tags/vue.js/">Vue.js</a></p></li><li class="item"><a class="note" href="/post/reactnativefetch/">
+            <p class="note title">ReactNativeを触ったお話</p><p class="note date">2018-10-28</p><p class="note content">はじめに お仕事でReactNativeを使うことになったので、触ってみました。
+導入手順について本記事内では説明をしないので、ReactNativeの公式サイトのGetting Startedをご参照ください。
+ちなみに、ReactNativeのバージョンは0.57.3です。
+サンプル 今回はRESAS-APIから都道府県一覧を取得してリスト表示してみます。
+react-native init projectNameを実行直後のディレクトリ構成は以下の通りになっています。
+projectName ├── android ├── ios ├── node_modules ├── App.js ├── app.json ├── index.js ├── package-lock.json └── package.json 今回はApp.jsのみを以下のように変更を加えていきます。
+ RESAS-APIを使うには事前に公式サイトから利用登録する必要があります。
+X-API-KEYはRESAS-API登録時に発行されるキーを指定して下さい。
+感想 ReactNativeは活発に開発が行われていますが、毎週のように最新バージョンが更新されているため、開発環境の構築が面倒ですね。
+今回は使わかなかったから影響ないですが、ReactNativeの0.57.3ではButtonコンポーネントを使うとAndroidシミュレータで以下のエラーが発生します。
+https://stackoverflow.com/questions/52784633/i-have-some-error-when-add-button-to-my-react-native-app
+もう少し安定した(悪く言えば枯れた)技術を使った方が開発も運用も楽なんですが、最近はそんなことを言っていたら取り残されちゃうから、日々勉強するしかないですね。
+でも…せめてLTSがあるといいな…
+開発環境の構築が終われば、シミュレータ上でポンポンとテキストなりボタンなりを配置できるから面白いです。
+その他 最近、フラジャイルを読み返しました。
+医療漫画はいいですね。Dr.コトー診療所を読んだ時もそうですが、泣いてしまいます。特に3巻、4巻のアミノ製薬の話が好きです、火箱ちゃん可愛い。
+フラジャイルはドラマ化しているみたいなので、そのうち観てみたいです。</p></a><p class="note labels"><a class="tag" href="/tags/reactnative/">ReactNative</a></p></li><li class="item"><a class="note" href="/post/javascript_closure/">
+            <p class="note title">JavaScriptでクロージャを触ったお話</p><p class="note date">2018-10-14</p><p class="note content">はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。
+クロージャの詳しい説明はmozillaが公開している以下のドキュメントにわかりやすく載っているので省略します。 MDN web docs
+サンプル 1から6までの整数を返す関数に追加機能として、連続して同じ値が出ないようにしてみます。 連続して同じ値が出なくなったので、ランダム感を演出できるようになりました。
+実際には結果を操作してるのでランダムとは言えなくなりましたが ^^;
+まずはクロージャを使わない例です。
+前回の結果を保持する変数prevNumをグローバル関数として定義しているので、関数dice()以外からもアクセスが出来てしまいます。
+次がクロージャを使った例です。
+こちらではprevNumをdice()内で定義しているので、dice()の外ではprevNumが使えなくなりました。
+感想 クロージャを使わなくても同じ機能は実装できますが、グローバル変数の使用を抑えられるのは嬉しいところです。 今回のサンプルのような短いプログラムではありがたみも薄くなりますが、
+前回と違う乱数を生成する箇所はfor、ifを使わずに、剰余演算を使ってワンライナーできなかと一晩悩みましたが思いつきませんでした。
+もっといい感じの計算式をご存知の方がいたら教えてください。
+その他 最近、地元の静岡が舞台になっているローカル女子の遠吠えの4巻が発売されました。 作者の瀬戸口みづき先生も静岡出身ということで、思わず膝を連打するネタが多いです。
+ただ…この漫画を読むと静岡に帰りたくなるので、転職や引越しなどの重大イベントを控えたタイミングでは読まないほうがいいでしょう。
+あー、亀まんじゅう食べたい。げんこつハンバーグ食べたい。</p></a><p class="note labels"><a class="tag" href="/tags/javascript/">JavaScript</a></p></li><li class="item"><a class="note" href="/post/vue_array/">
+            <p class="note title">Vue.jsで配列を扱ったお話</p><p class="note date">2018-08-21</p><p class="note content">はじめに Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。
+本文 ボタンを押すたびに配列に格納された数値を倍にし、リアルタイムで画面上にも表示するサンプルプログラムです。
+以下のように、配列の中身を変更する箇所を修正したら想定通りに動くようになりました。
+具体的には以下のように、要素番号を指定して配列の中身を変更しても画面上の値は変化しませんが、Vue.jsに用意されているメソッドを使えは配列の中身に応じて画面上の値も変化します。
+/*失敗例*/ this.num_list[i] = this.num_list[i] * 2; /*成功例*/ this.num_list.splice(i, 1, this.num_list[i] * 2) 公式ドキュメントにも注意事項としてちゃんと書かれていました。
+JavaScriptの制限じゃ仕方ないですね(´・ω・`)
+ JavaScript の制限のため、Vue は配列で以下の変更を検出することはできません:
+1.インデックスでアイテムを直接設定するとき。例: vm.items[indexOfItem] = newValue
+2.配列の長さを変更するとき。例: vm.items.length = newLength
+ まとめ 公式ドキュメントを読みましょう。
+内容とはまったく関係ないですが、記事の中にソースコードを埋め込みたかったのでCODEPENを初めて使ってみました。 ソースコードと実行内容をまとめて埋め込めるのは便利ですね。
+その他 最近はRocket Leagueにハマっています。
+車でサッカーをするという天才的発想。 FPSほどの精密な操作は求められないので、お酒を飲みながら遊ぶにはピッタリです。
+  ワイルドスピードやバットマンに登場する車が使えるようになるDLCも多数用意されているので、自分の気に入った車で走り回ることもできます。
+  </p></a><p class="note labels"><a class="tag" href="/tags/vue.js/">Vue.js</a></p></li><li class="item"><a class="note" href="/post/google_app_engine_go_ajax/">
+            <p class="note title">GAE上でGolangを動かしてみましたよ</p><p class="note date">2018-08-13</p><p class="note content">はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。
+作り始めでつまずくことが多いので自分用の最小構成メモです。 ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。
+環境の準備 まずは、GCPの公式ドキュメントを参考にGolang、Cloud SDKをダウンロードします。
+以下のようにバージョンが表示されればOKです。
+$ goapp version go version 1.9.4 (appengine-1.9.74) darwin/amd64 ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。
+構成説明 ディレクトリ構成は以下の通りです。
+├── app.yaml ├── hello.go └── static ├── js │ └── main.js ├── css │ └── main.css └── index.html この中でGAE特有のファイルはapp.yamlになります。
+app.yamlリファレンスに各パラメータの説明が載ってますが、最低限のパラメータだけ書いておきます。
+runtime: go #Golangを使用する場合はgoを指定 api_version: go1 #最新のバージョンを使用する場合はgo1を指定 handlers: #リクエストと実行する処理をURLパターン毎に指定 - url: / static_files: static/index.html upload: static/index.html - url: /js static_dir: static/js - url: /css static_dir: static/css - url: /.* script: _go_app その他のファイルについては、特別なことはしていないので説明は省略します。<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a><a class="tag" href="/tags/gae/">GAE</a></p></li></ul><div class="pagination">
+    <ul><li><a class="" href="/">1</a></li><li><a class="active" href="/page/2/">2</a></li><li><a class="" href="/page/3/">3</a></li><li><a class="" href="/page/4/">4</a></li></ul>
+</div></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">ふぉれすけ広場</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 </div>
-    <div class="content">
-      <div class="posts">
-         
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/pocket_2018/">Pocketからお祝いされました -2018-</a></h2>
-          <span class="post-date">Dec 23, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/pocket">pocket</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/golang_panic/">Golangのpanicのお話</a></h2>
-          <span class="post-date">Nov 21, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/golang">golang</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/dynamic_tweet/">Tweetボタンでつぶやく内容を動的に変更する</a></h2>
-          <span class="post-date">Nov 11, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/javascript">JavaScript</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/gae_cron/">GAEでバッチ処理</a></h2>
-          <span class="post-date">Nov 7, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/gae">GAE</a>&nbsp;
-		  	
-			          #<a href="http://foresukecom.github.iotags/golang">golang</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/gae_favicon/">GAEでfaviconを設定</a></h2>
-          <span class="post-date">Nov 6, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/gae">GAE</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/shukujitsu_info/">祝日のカウントダウンタイマー</a></h2>
-          <span class="post-date">Oct 30, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/golang">golang</a>&nbsp;
-		  	
-			          #<a href="http://foresukecom.github.iotags/gae">GAE</a>&nbsp;
-		  	
-			          #<a href="http://foresukecom.github.iotags/vue.js">Vue.js</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/reactnativefetch/">ReactNativeを触ったお話</a></h2>
-          <span class="post-date">Oct 28, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/reactnative">ReactNative</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/javascript_closure/">JavaScriptでクロージャを触ったお話</a></h2>
-          <span class="post-date">Oct 14, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/javascript">JavaScript</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/vue_array/">Vue.jsで配列を扱ったお話</a></h2>
-          <span class="post-date">Aug 21, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/vue.js">Vue.js</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/google_app_engine_go_ajax/">GAE上でGolangを動かしてみましたよ</a></h2>
-          <span class="post-date">Aug 13, 2018</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/golang">golang</a>&nbsp;
-		  	
-			          #<a href="http://foresukecom.github.iotags/gae">GAE</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-      </div>
-      <div class="pagination">
-  
-  <a class="btn previous" href="/">Newer</a>  
-  <a class="btn next" href="/page/3/">Older</a> 
-</div>
-    </div>
-    <div class="footer">
-  
-  <p>Powered by <a href="https://gohugo.io">Hugo</a>. This theme—Slim—is open sourced on <a href="https://github.com/zhe/hugo-theme-slim">Github</a>.</p>
-  
-</div>
-
-  </div>
-  <script src="http://foresukecom.github.iojs/slim.js"></script>
-  
-
 </body>
 
 </html>

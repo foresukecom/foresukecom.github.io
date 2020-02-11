@@ -1,152 +1,90 @@
 <!DOCTYPE html>
-<html lang="ja">
-
-<head>
-	<meta name="generator" content="Hugo 0.63.2" />
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<title> ふぉれすけ広場 &middot; ふぉれすけ広場 </title>
-
-
-<link rel="stylesheet" href="http://foresukecom.github.io/css/slim.css">
-<link rel="stylesheet" href="http://foresukecom.github.io/css/highlight.min.css">
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/favicon.ico">
-
-
-<link href="http://foresukecom.github.io/index.xml" rel="alternate" type="application/rss+xml" title="ふぉれすけ広場" />
-
-</head>
-
-<body>
-  <div class="container">
-    <div class="header">
-  <h1 class="site-title"><a href="http://foresukecom.github.io">ふぉれすけ広場</a></h1>
-  <p class="site-tagline">筋トレしたり、お酒を飲んだり、壁を登ったり。</p>
-  <div class="nav">
-    <a class="nav-btn" href="#">
-      <span class="ci ci-burger"></span>
-    </a>
-    <ul class="nav-list">
-       
-	  <li class="spacer">&ac;</li>
-  
-    </ul>
-  </div>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.5f0b341df460ef1fdfbfd42c3ca50336a455939836a303acbad7ff5841d74e44f3b08d4963d4cb6bbfc08cd82b4a71fc.css" integrity="sha384-Xws0HfRg7x/fv9QsPKUDNqRVk5g2owOsutf/WEHXTkTzsI1JY9TLa7/AjNgrSnH8"><link rel="alternate" type="application/rss+xml" href="/index.xml" title="ふぉれすけ広場" /><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"></span></div></section><div id="content"><ul class="note list"><li class="item"><a class="note" href="/post/pocket_mail/">
+            <p class="note title">Pocketからお祝いメールが届きました</p><p class="note date">2016-12-22</p><p class="note content">みなさんは、「あとで読む」サービスのPocketを使用していますか?
+僕はスマートフォンでニュースを読んだり、ブラウジングしたときに、気になる記事を一時保管するために以前から使っています。
+先日、Pocketから以下のようなメールが届きました。
+ Congratulations!
+We’re thrilled to let you know that you’re one of the top 5% of readers in Pocket for 2016! To celebrate, we&rsquo;ve put together your very own Year in Review page with some fun stats to review and share.
+ どうやら、Pocketの使用頻度が高いユーザになれたようです。確かに毎日のようにPocketは使っていますが、一般的な使い方をしているつもりなので、上位5%に含まれているとは驚きです。
+今後は、Pocketヘビーユーザの自覚を持ち、真摯にサービスと向き合っていきたいと思います。
+とりあえず、未読の記事が溜まっているので消化していかなきゃですね…</p></a><p class="note labels"><a class="tag" href="/tags/pocket/">pocket</a></p></li><li class="item"><a class="note" href="/post/recursion/">
+            <p class="note title">再帰処理してみた</p><p class="note date">2016-11-30</p><p class="note content">はじめに Go言語を使っているときに、「再帰処理できるのか?」と疑問に思ったので試してみました。
+どういった問題が再帰処理に向いているのか分からないので、とりあえず素数判定の処理を作成しています。
+素数判定 標準入力された数値が素数か判断するプログラムです。
+ これを元に、標準入力された数値以下の素数をすべて出力するプログラムも作ってみました。
+ おわりに 今回は、再帰処理が行えることの確認がメインテーマです。100万以下のすべての素数を求めたところ、2時間20分かかりました。効率とか速度とかは度外視しているので、その辺は何卒ご容赦下さい。
+学生時代、再帰処理の課題に苦労し「全部while文でいいじゃねぇか」と思っていましたが、再帰処理が使えてよかったと思える場面が来るのでしょうか。</p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li><li class="item"><a class="note" href="/post/octal/">
+            <p class="note title">8進数のエラーについて</p><p class="note date">2016-11-30</p><p class="note content">はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。
+エラーの内容 試験用にサンプルの日付データを作っていたら、以下のようなコンパイルエラーとなりました。
+malformed octal constant malformed integer constant: 08 エラーとなった原因のコードはこちらです。
+t = time.Date(2016, time.Month(11), 08, 00, 00, 00, 00, time.Local) 原因 Go言語は先頭に0が付いた数値を8進数だと認識します。08は8進数としては存在しない値のためエラーとなってしまうのでした。同様に、09も同じエラーとなります。
+対策 単純に対策をするのであれば、以下のように08から0を除いてしまえばエラーは解消されます。
+t = time.Date(2016, time.Month(11), 8, 00, 00, 00, 00, time.Local) どうしても08、09と記載したい、そんなときには、数値を&quot;で囲って文字列として指定しておき、文字列から数値に変換させれば大丈夫です。ただし、標準で用意されているstrconv.Atoi関数は2つの戻り値を返すので、そのままでは使えません。以下のように、変換用の関数を用意する必要があります。
+package main import ( &quot;fmt&quot; &quot;os&quot; &quot;strconv&quot; &quot;time&quot; ) func main() { t := time.Date(2016, time.Month(atoi(&quot;11&quot;)), atoi(&quot;08&quot;), atoi(&quot;00&quot;), atoi(&quot;00&quot;), atoi(&quot;00&quot;), atoi(&quot;00&quot;), time.Local) fmt.Println(t) } func atoi(str string) int { num, err := strconv.Atoi(str) if err !<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li><li class="item"><a class="note" href="/post/struct_slice/">
+            <p class="note title">Go言語で構造体のスライスを扱ってみる</p><p class="note date">2016-11-30</p><p class="note content">Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。
+ここで構造体やスライスについて詳しく説明はしません。詳細はA Tour of Goなどに記載されているので、そちらをご確認下さい。 今回は、構造体を要素として持つスライスを扱う方法をまとめています。
+いろいろな操作  要素にする構造体
+今回の説明で使用する構造体は以下の通り定義されています。 社員番号(number)と名前(name)を持つ社員(employee)型です。スライスで複数人の社員情報をまとめて扱うようなイメージです。  type employee struct { number int name string }  スライスの作成
+以下のようにmake関数を使えば、要素数が0のemployee型のスライスを作成することが出来ます。  employees := make([]employee, 0) スライスの作成と初期化をまとめて行うこともできます。
+employees := []employee{employee{1, &quot;Taro&quot;}} 複数の要素を持つスライスを1行で書くことも可能です。
+employees := []employee{employee{1, &quot;Taro&quot;}, employee{2, &quot;Jiro&quot;}, employee{3, &quot;Saburo&quot;}}  要素の追加
+既存のスライスに対して、要素を追加させるには以下のように記載します。  employees = append(employees, employee{4, &quot;Shiro&quot;})  要素の削除
+組込み関数にはスライスの要素を削除する仕組みは実装されていません。そのため、個別に関数を作成する必要があります。例としては、以下のような関数で要素の削除機能が実現できます。  func delete(employees []employee, n int) []employee { result := make([]employee, 0) for i, v := range employees { if i !<span class="mldr">&mldr;more</span></p></a><p class="note labels"><a class="tag" href="/tags/golang/">golang</a></p></li><li class="item"><a class="note" href="/post/about/">
+            <p class="note title">ご挨拶</p><p class="note date">2016-11-29</p><p class="note content">ご挨拶 はじめまして、foresukeです。
+これはIT系の技術ブログになる予定です。サーバサイド、フロントエンド、インフラと広く浅く、学習した内容を公開していきます。
+記載している内容への質問や指摘については、Twitterからお願いします。</p></a><p class="note labels"><a class="tag" href="/tags/%E3%81%9D%E3%81%AE%E4%BB%96/">その他</a></p></li><li class="item"><a class="note" href="/post/privacy_policy/">
+            <p class="note title">本ブログのポリシーについて</p><p class="note date">2016-11-28</p><p class="note content">Amazon 当ブログはamazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムであるAmazonアソシエイト・プログラムの参加者です。
+Google Analytics 当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
+このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくはここをクリックしてください。</p></a><p class="note labels"><a class="tag" href="/tags/%E3%81%9D%E3%81%AE%E4%BB%96/">その他</a></p></li><li class="item"><a class="note" href="/post/20171017_cloudshell/">
+            <p class="note title"></p><p class="note content">cd blo	&mdash; title: &ldquo;CloudShellでのブログ執筆環境&rdquo; slug: &ldquo;ClougShell_hugo&rdquo; tags: [&ldquo;GCP&rdquo;, &ldquo;ClougShell&rdquo;] date: 2017-10-17T22:08:58+09:00 draft: false author: &ldquo;foresuke&rdquo; ブログ環境 こんにちは、ブログを再開した@foresukeです。
+実は諸事情によりメインのPCをChoromeBookを使っています。ChoromeBookはブラウザと、Androidアプリしか使えない端末です。なので基本的にはネットワークに接続していることが前提となっており、スタンドアローンではまともに使うことができません。
+本ブログは、hugoと呼ばれる静的サイトジェネレータで構築しています。静的サイトジェネレータについては以下のサイトに詳しく書かれているので、ここでは省略します。
+脱WordPress！静的サイトの特徴やメリットなどのまとめ
+静的サイトジェネレータの運用方法としては、ローカル上でhtml/cssファイルを生成し、webサーバにアップロードして公開する、といった流れを繰返すことになります。 僕がChromeBookを使っており、ローカル上でhtml/cssファイルを生成できないので、GoogleClougShellをローカル環境として使うことにしました。
+CloudShellはDebianベースのGoogleComputeEngineに開発ツールがインストールされた状態で提供される仮想マシンで、ブラウザから手軽にアクセスできる環境です。がっつり開発するには向きませんが、手軽な開発ツールとして重宝しています。
+Debianベースということもあるので、勉強がてらvimを使おうと四苦八苦していましたが、CloudShellにクラウド版エディタがベータとして提供されたので使ってみました。 クラウド版エディタでmarkdownファイルを編集したところ、画面の右側にプレビューがリアルタイムで表示されました。 これはなかなか便利で、ブログ記事を書くのはクラウド版エディタで充分な感じです。
+まだ改善の余地はありますが、いい感じにブログ執筆環境ができたので、細々と書いていきます。</p></a></li><li class="item"><a class="note" href="/post/20171027_googlehome/">
+            <p class="note title"></p><p class="note content">hu&mdash; title: &ldquo;Google Home Miniを買いました&rdquo; slug: &ldquo;googlehomemini&rdquo; tags: [&ldquo;Google&rdquo;] date: 2017-10-26T05:56:33+09:00 draft: false author: &ldquo;foresuke&rdquo; はじめに 先日のGoogleイベントで日本での発売が発表されたGoogle Home Miniを購入しました。
+Google Home Miniができることや同封物については以下のようなページで多数公開されているので、ここでは省略します。 Google HomeとGoogle Home Miniの違いはスピーカーの音質程度のようで、動作内容自体に差異は内容です。
+手のひらに乗るスマートスピーカ「Google Home Mini」開封の儀
+Google Home Miniの電源ポートはマイクロUSBです。次期的にTypr-Cが使われると思っていたので意外なところです。 ただ、僕の身の回りにはマイクロUSBを使っているデバイスがまだ多いので、他のケーブルを流用できるので結果オーライと考えていました。
+しかし、下の写真を見ていただくと分かる通り、マイクロUSBポートが本体の奥の方についているので、Google Home Mini自体がケーブルと干渉してしまい、僕の持っている他のケーブルでは代用することができませんでした。
+まぁ、持ち運ぶ想定をしていないので仕方がないのですが、ちょっと別の部屋に持っていきたいときには不便でですね(バッテリーも内蔵していないので、給電しながらでないと使えませんし)。 
+とりあえず、天気やニュースを尋ねたり、音楽を再生したりしましたが、対応しているサービスについては、求めている解答が返ってくるのでとても気持ちがいいです。
+僕は滑舌が悪いので、音声認識がうまく動作するか不安だったのですが問題なく使うことができました。 さすがはGoogleさんです。
+しかし、対応しているサービスがまだ少ないので、かゆいところに手が届かないと感じる部分も多いです。 例えば、僕はPocket Castsというサービスはを使ってPodcastを聴いているのですが、まだGoogle Home Miniに対応していません。 「未視聴のPodcastを順次再生」とかを音声で指示ができればベストです。
+懸念事項 Google Home Miniは物理的にミュートボタンがあるので、マイクを無効にすることもできますが、基本的には音を拾い続けたまま使うことになると思われます。
+以下のようなバグもあったようですし、悪意の有無に関わらず、情報が外部に漏れてしまうリスクは考えておくべきでしょう。
+Google Home Miniに常時録音してしまうバグ発覚、すでに修正済みで製品版には影響なし
+極端に悪意がある例では、ジョージオーウェルの1984に登場するテレスコープを使って、国民の監視をしていました。 現時点でのGoogle Home(Mini)は音を拾うだけですが、今後カメラなどが搭載されると、ますますテレスコープ化していくことになります。
+良い例でいうと、自分の家に異常があったことを検知できるので防犯、防災対策に活用することが期待できます。 また、体調の変化をすぐ発見してもらえたり、アリバイの証明に使うこともできるかもしれません。
+今後の希望 現在は、一問一答での対話となっているので、正直なところ会話をしている感じではありません。 会話のキャッチボールが長く続けられるのであれば、英会話のレッスンを受けたり、愚痴を聞いてもらったりできそうです。
+HoloLensをはじめとする、Mixed Realityのヘッドマウントディスプレイと連携させ、アシスタント用のアバターを仮想空間上に表示することも可能になると思います。 そうすれば、Haloシリーズのコルタナや、PSYCHO-PASSの登場人物 常守茜の部屋にいるクラゲ型アバターのキャンディ、のようにますます愛着を持って扱うことができそうです。
+Googleの公式ブログにも記載されているように、開発キットも公開されています。 日本語にも対応し始めたようなので、何か作ってみても面白いかもしれません。
+Google アシスタント対応アプリを日本語で開発してみよう</p></a></li></ul><div class="pagination">
+    <ul><li><a class="" href="/">1</a></li><li><a class="" href="/page/2/">2</a></li><li><a class="" href="/page/3/">3</a></li><li><a class="active" href="/page/4/">4</a></li></ul>
+</div></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">ふぉれすけ広場</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 </div>
-    <div class="content">
-      <div class="posts">
-         
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/pocket_mail/">Pocketからお祝いメールが届きました</a></h2>
-          <span class="post-date">Dec 22, 2016</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/pocket">pocket</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/recursion/">再帰処理してみた</a></h2>
-          <span class="post-date">Nov 30, 2016</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/golang">golang</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/octal/">8進数のエラーについて</a></h2>
-          <span class="post-date">Nov 30, 2016</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/golang">golang</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/struct_slice/">Go言語で構造体のスライスを扱ってみる</a></h2>
-          <span class="post-date">Nov 30, 2016</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/golang">golang</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/about/">ご挨拶</a></h2>
-          <span class="post-date">Nov 29, 2016</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/%E3%81%9D%E3%81%AE%E4%BB%96">その他</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/privacy_policy/">本ブログのポリシーについて</a></h2>
-          <span class="post-date">Nov 28, 2016</span>
-		  
-			<span class="post-tags">
-		  	
-			          #<a href="http://foresukecom.github.iotags/%E3%81%9D%E3%81%AE%E4%BB%96">その他</a>&nbsp;
-		  	
-		    </span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/20171017_cloudshell/"></a></h2>
-          <span class="post-date">Jan 1, 0001</span>
-		  
-		  
-        </div>
-        
-        <div class="post">
-          <h2 class="post-title"><a href="http://foresukecom.github.io/post/20171027_googlehome/"></a></h2>
-          <span class="post-date">Jan 1, 0001</span>
-		  
-		  
-        </div>
-        
-      </div>
-      <div class="pagination">
-  
-  <a class="btn previous" href="/page/3/">Newer</a>  
-</div>
-    </div>
-    <div class="footer">
-  
-  <p>Powered by <a href="https://gohugo.io">Hugo</a>. This theme—Slim—is open sourced on <a href="https://github.com/zhe/hugo-theme-slim">Github</a>.</p>
-  
-</div>
-
-  </div>
-  <script src="http://foresukecom.github.iojs/slim.js"></script>
-  
-
 </body>
 
 </html>
