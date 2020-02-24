@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>アイマスクのすすめ</title>
+      <link>/post/eyemask/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/eyemask/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;最近、寝付きが悪くなってきたのでアイマスクを使い始めました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hugoの記事にコンテンツを埋め込む</title>
@@ -22,7 +32,7 @@
     </item>
     
     <item>
-      <title>Human Fall FlatとSteam Remote Play Togetherについて</title>
+      <title>Human Fall FlatとSteam Remote Play Together</title>
       <link>/post/human_fall_flat/</link>
       <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
       
