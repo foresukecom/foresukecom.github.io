@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.64.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.66.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark"><title>Golangのpanicのお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus"><body>
     <div class="base-body"><section id="header" class="site header">
@@ -75,7 +75,7 @@ D:<span class="se">\t</span>ools&gt;log_analysis_windows_amd64.exe
 panic: ファイルないよ
 
 goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
-main.main<span class="o">(</span><span class="o">)</span>
+main.main<span class="o">()</span>
         /tmp/tanaka/azunyan_prpr/tools/log_analysis/main.go:9 +0xa1
 </code></pre></div><p>想定通り<code>panic</code>にはなりましたが、ソースファイルをコンパイルした際のディレクトリが見えるようになってしまいました…</p>
 <h1 id="まとめ">まとめ</h1>
@@ -103,7 +103,7 @@ $ ./log_analysis
 panic: ファイルないよ
 
 goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
-main.main<span class="o">(</span><span class="o">)</span>
+main.main<span class="o">()</span>
 	??:9 +0x9a
 </code></pre></div><p>goファイル名だけを残したり、</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=`pwd`&#34;</span> main.go
@@ -111,7 +111,7 @@ $ ./log_analysis
 panic: ファイルないよ
 
 goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
-main.main<span class="o">(</span><span class="o">)</span>
+main.main<span class="o">()</span>
 	main.go:9 +0x9a
 </code></pre></div><p>ディレクトリ名を途中まで取り除くことができます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=/tmp/tanaka/azunyan_prpr&#34;</span> main.go
@@ -119,7 +119,7 @@ $ ./log_analysis
 panic: ファイルないよ
 
 goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
-main.main<span class="o">(</span><span class="o">)</span>
+main.main<span class="o">()</span>
 	tools/log_analysis/main.go:9 +0x9a
 </code></pre></div><p>雰囲気で書いてるから、知らない便利な機能がたくさんありますね。
 今後仕事で使うことになるから使えるようになっておかないとです…</p>
