@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>http://foresukecom.github.io/tags/docker/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/docker_image/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/php/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/other/</loc><lastmod>2020-02-24T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-02-24T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-02-24T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/eyemask/</loc><lastmod>2020-02-24T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/hugo/</loc><lastmod>2020-02-11T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/hugo_embed/</loc><lastmod>2020-02-11T00:00:00+00:00</lastmod></url><url>
@@ -46,7 +49,6 @@
     <loc>http://foresukecom.github.io/tags/gcp/</loc><lastmod>2017-11-24T05:20:15+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/gcp_scp/</loc><lastmod>2017-11-24T05:20:15+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/django/</loc><lastmod>2017-11-05T20:12:53+09:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/docker/</loc><lastmod>2017-11-05T20:12:53+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/gcp_docker_django/</loc><lastmod>2017-11-05T20:12:53+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/food/</loc><lastmod>2017-10-29T16:51:19+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/comp/</loc><lastmod>2017-10-29T16:51:19+09:00</lastmod></url><url>
