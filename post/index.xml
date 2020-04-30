@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Fri, 10 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go×ReactでWebsocket通信</title>
+      <link>/post/go_react_websocket/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/go_react_websocket/</guid>
+      <description>&lt;p&gt;GoとReactでWebsocket通信の入門をしましたよ。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ティール組織</title>
