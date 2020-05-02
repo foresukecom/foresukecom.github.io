@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-05-01T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/react/</loc><lastmod>2020-05-01T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/react_tweet/</loc><lastmod>2020-05-01T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-05-01T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/golang/</loc><lastmod>2020-04-30T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/go_react_websocket/</loc><lastmod>2020-04-30T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-04-30T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/react/</loc><lastmod>2020-04-30T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-04-30T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/book/</loc><lastmod>2020-04-10T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/teal/</loc><lastmod>2020-04-10T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/docker/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>

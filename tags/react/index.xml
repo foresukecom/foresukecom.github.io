@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>react on ふぉれすけ広場</title>
+    <title>React on ふぉれすけ広場</title>
     <link>/tags/react/</link>
-    <description>Recent content in react on ふぉれすけ広場</description>
+    <description>Recent content in React on ふぉれすけ広場</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reactの画面にTweet埋め込み</title>
+      <link>/post/react_tweet/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/react_tweet/</guid>
+      <description>&lt;p&gt;Reactで作った画面にTweetを埋め込むときのメモです。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Go×ReactでWebsocket通信</title>

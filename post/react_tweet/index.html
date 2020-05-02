@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.69.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Reactの画面にTweet埋め込み&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Reactの画面にTweet埋め込み</h1><p class="article date">2020/05/01</p></section><article class="article markdown-body"><p>Reactで作った画面にTweetを埋め込むときのメモです。</p>
+<h2 id="普通には埋め込めないのです">普通には埋め込めないのです</h2>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">test</p>&mdash; Twitter (@Twitter) <a href="https://twitter.com/Twitter/status/1225902606607945738?ref_src=twsrc%5Etfw">February 7, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><code>create-react-app</code>で自動生成されるサンプルページに上記Tweetを埋め込もうと、以下の共有コードを貼り付けました。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">blockquote</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;twitter-tweet&#34;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">lang</span><span class="o">=</span><span class="s2">&#34;en&#34;</span> <span class="nx">dir</span><span class="o">=</span><span class="s2">&#34;ltr&#34;</span><span class="o">&gt;</span><span class="nx">test</span><span class="o">&lt;</span><span class="err">/p&gt;&amp;mdash; Twitter (@Twitter) </span>
+    <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;https://twitter.com/Twitter/status/1225902606607945738?ref_src=twsrc%5Etfw&#34;</span><span class="o">&gt;</span><span class="nx">February</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2020</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+<span class="o">&lt;</span><span class="err">/blockquote&gt; </span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">async</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;https://platform.twitter.com/widgets.js&#34;</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div><p>これで、問題なく埋め込めると思ったのですが、以下のような画面になってしまいます。</p>
+<img src="/images/20200501_react_tweet/tweet_1.png" width='500'>
+<p><code>ReactDOM.render()</code>内に<code>script</code>タグを書いても動かないのですが、tweetの共有コードに<code>script</code>タグが含まれていることが原因でした。</p>
+<h2 id="良いライブラリがありました">良いライブラリがありました</h2>
+<p>探してみると、Tweet埋め込みの需要はあるらしく、<code>react-twitter-embed</code>というサードパーティのライブラリが見つかったので感謝して使っていきます。
+<code>yarn add react-twitter-embed</code>してから、Tweetの埋め込み部分を以下のように書き換えたら、問題なくReactの画面にTweetを埋め込むことが出来ました。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span> <span class="nx">TwitterTweetEmbed</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-twitter-embed&#39;</span>
+
+<span class="o">&lt;</span><span class="nx">TwitterTweetEmbed</span> <span class="nx">tweetId</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;1225902606607945738&#34;</span><span class="p">}</span> <span class="o">/&gt;</span>
+</code></pre></div><img src="/images/20200501_react_tweet/tweet_2.png" width='500'>
+<p>このライブラリは機能が充実していて、ユーザやハッシュタグを指定したタイムラインや、フォローボタンなどを埋め込むことが出来ます。</p>
+<img src="/images/20200501_react_tweet/tweet_3.png" width='500'>
+<p>ライブラリ公式で用意されている<a href="https://saurabhnemade.github.io/react-twitter-embed"target="_blank">storybook</a>にサンプルがまとめられているので御覧ください。</p>
+<h2 id="余談">余談</h2>
+<p>YoutubeやSpotify、Steamの共有コードには<code>script</code>タグが含まれていないので、共有コードをReactに直接貼り付けても表示させることが出来ます。</p>
+<img src="/images/20200501_react_tweet/youtube_1.png" width='500'>
+<p><span class="embed amazon-link">
+    <iframe class="amazon-link" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no"
+            frameborder="0"
+            src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke04-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07BGYSX6V&linkId=5572de7d0a231b8291f61b356f4d661c"></iframe>
+</span>
+
+<span class="embed amazon-link">
+    <iframe class="amazon-link" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no"
+            frameborder="0"
+            src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke04-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4873117887&linkId=1c0b8844cf82479a5eeba0373de9dba3"></iframe>
+</span>
+</p></article><section class="article labels"><a class="tag" href=/tags/react/>React</a></section><section class="article navigation"><p><a class="link" href="/post/go_react_websocket/"><span class="li">&rarr;</span>Go×ReactでWebsocket通信</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>
