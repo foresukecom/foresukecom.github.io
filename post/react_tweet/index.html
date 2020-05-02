@@ -20,7 +20,7 @@
 <img src="/images/20200501_react_tweet/tweet_1.png" width='500'>
 <p><code>ReactDOM.render()</code>内に<code>script</code>タグを書いても動かないのですが、tweetの共有コードに<code>script</code>タグが含まれていることが原因でした。</p>
 <h2 id="良いライブラリがありました">良いライブラリがありました</h2>
-<p>探してみると、Tweet埋め込みの需要はあるらしく、<code>react-twitter-embed</code>というサードパーティのライブラリが見つかったので感謝して使っていきます。<br>
+<p>探してみると、Tweet埋め込みの需要はあるらしく、<a href="https://github.com/saurabhnemade/react-twitter-embed"target="_blank">react-twitter-embed</a>というサードパーティのライブラリが見つかったので感謝して使っていきます。<br>
 <code>yarn add react-twitter-embed</code>してから、Tweetの埋め込み部分を以下のように書き換えたら、問題なくReactの画面にTweetを埋め込むことが出来ました。</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span> <span class="nx">TwitterTweetEmbed</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-twitter-embed&#39;</span>
 
@@ -28,7 +28,7 @@
 </code></pre></div><img src="/images/20200501_react_tweet/tweet_2.png" width='500'>
 <p>このライブラリは機能が充実していて、ユーザやハッシュタグを指定したタイムラインや、フォローボタンなどを埋め込むことが出来ます。</p>
 <img src="/images/20200501_react_tweet/tweet_3.png" width='500'>
-<p>ライブラリ公式で用意されている<a href="https://saurabhnemade.github.io/react-twitter-embed"target="_blank">storybook</a>にサンプルがまとめられているので御覧ください。</p>
+<p>ライブラリ公式で用意されている<a href="https://saurabhnemade.github.io/react-twitter-embed"target="_blank">Storybook</a>にサンプルがまとめられているので御覧ください。</p>
 <h2 id="余談">余談</h2>
 <p>YoutubeやSpotify、Steamの共有コードには<code>script</code>タグが含まれていないので、共有コードをReactに直接貼り付けても表示させることが出来ます。</p>
 <img src="/images/20200501_react_tweet/youtube_1.png" width='500'>
