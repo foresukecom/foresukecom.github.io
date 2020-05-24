@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ウィルキンソン 新パッケージ</title>
-      <link>/post/tansan/</link>
-      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tansan/</guid>
-      <description>&lt;p&gt;ウィルキンソン タンサンがバージョンアップしましたよ。&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Reactの画面にTweet埋め込み</title>
