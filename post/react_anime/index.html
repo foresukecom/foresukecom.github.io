@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.71.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Reactでアニメーションを試しましたよ&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Reactでアニメーションを試しましたよ</h1><p class="article date">2020/06/15</p></section><article class="article markdown-body"><p>Reactでアニメーション</p>
+<div class="embed codesandbox-link">
+    <iframe
+        class="codesandbox-link"
+        src="https://codesandbox.io/embed/react-rain-wf1z5?fontsize=14&hidenavigation=1&theme=dark"
+        style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+        title="react-rain"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+</div>
+
+
+
+
+
+
+
+
+<p>Reactではアニメーションを実装するためのサードパーティのライブラリがいくつか用意されていますが、今回は<a href="https://reactcommunity.org/react-transition-group/"target="_blank">react-transition-group</a> というReact公式のライブラリを利用しています。</p>
+<p>詳しい使い方の説明は公式のドキュメントに任せますが、react-transition-group に含まれるTransition コンポーネントは<code>entering</code>, <code>entered</code>, <code>exiting</code>, <code>exited</code> という4つの状態を順に遷移します。それぞれの状態に合ったCSSを用意して動きをつけていきます。<br>
+※今回の下に落ちるアニメーションだけなので2つの状態(<code>entering</code>と<code>entered</code>)だけを使用しています。</p>
+<p>私はCSSを使い慣れていないので色々と手こずりましたが、CSSに慣れた人なら手軽にアニメーションが実装できそうです。</p>
+<p><span class="embed amazon-link">
+    <iframe class="amazon-link" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no"
+            frameborder="0"
+            src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke04-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07BGYSX6V&linkId=5572de7d0a231b8291f61b356f4d661c"></iframe>
+</span>
+
+<span class="embed amazon-link">
+    <iframe class="amazon-link" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no"
+            frameborder="0"
+            src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke04-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4873117887&linkId=1c0b8844cf82479a5eeba0373de9dba3"></iframe>
+</span>
+</p></article><section class="article labels"><a class="tag" href=/tags/react/>React</a></section><section class="article navigation"><p><a class="link" href="/post/tansan/"><span class="li">&rarr;</span>ウィルキンソン 新パッケージ</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>
