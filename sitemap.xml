@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-06-18T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/other/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/steam/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/steam2020summer/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/react/</loc><lastmod>2020-06-18T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/react_anime/</loc><lastmod>2020-06-18T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-06-18T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/other/</loc><lastmod>2020-05-24T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/tansan/</loc><lastmod>2020-05-24T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/react_tweet/</loc><lastmod>2020-05-01T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/golang/</loc><lastmod>2020-04-30T00:00:00+00:00</lastmod></url><url>
@@ -18,7 +20,6 @@
     <loc>http://foresukecom.github.io/tags/hugo/</loc><lastmod>2020-02-11T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/hugo_embed/</loc><lastmod>2020-02-11T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/human_fall_flat/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/steam/</loc><lastmod>2020-02-03T13:23:38+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/go_toml/</loc><lastmod>2020-02-03T09:29:53+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/shiburaku/</loc><lastmod>2019-07-14T18:44:51+09:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/breakfast/</loc><lastmod>2019-07-09T06:52:24+09:00</lastmod></url><url>

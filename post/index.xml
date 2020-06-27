@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Thu, 18 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Steamサマーセール2020です</title>
+      <link>/post/steam2020summer/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/steam2020summer/</guid>
+      <description>&lt;p&gt;Steamサマーセール2020が始まりましたよ。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Reactのアニメーション</title>
