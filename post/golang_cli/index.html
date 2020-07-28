@@ -5,7 +5,7 @@
     <div class="base-body"><section id="header" class="site header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">golangのCLIツールで複数のオプションを受け取る</h1><p class="article date">2020/07/27</p></section><article class="article markdown-body"><p>golangでCLIツールを作るにあたり、同じオプションを複数指定する方法を調べましたよ。</p>
+    <h1 class="article title">golangのCLIツールで複数のオプションを受け取る</h1><p class="article date">2020/07/26</p></section><article class="article markdown-body"><p>golangでCLIツールを作るにあたり、同じオプションを複数指定する方法を調べましたよ。</p>
 <p>最初は同じオプションを複数指定するケースはないと思っていたのですが、Dockerで複数のポートフォワーディングしたり、curlで複数のヘッダを指定するような用途もあるので、golangでの実装方法を確認してみました。</p>
 <h2 id="flag-を使った失敗例">flag を使った失敗例</h2>
 <p>まずは何も考えずに標準パッケージの<a href="https://golang.org/pkg/flag/"target="_blank">flag</a>を使ったパターンです。</p>
