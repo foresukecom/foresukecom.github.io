@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Sun, 26 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>golangのCLIツールで複数のオプションを受け取る</title>
       <link>/post/golang_cli/</link>
-      <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/golang_cli/</guid>
       <description>&lt;p&gt;golangでCLIツールを作るにあたり、同じオプションを複数指定する方法を調べましたよ。&lt;/p&gt;</description>
