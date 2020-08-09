@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>統計学の本を読みましたよ</title>
+      <link>/post/yabai_statistics/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/yabai_statistics/</guid>
+      <description>&lt;p&gt;久しぶりに、漫画、小説以外で仕事に関係ない本を読みました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>golangのCLIツールで複数のオプションを受け取る</title>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>http://foresukecom.github.io/tags/book/</loc><lastmod>2020-08-09T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-08-09T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-08-09T00:00:00+00:00</lastmod></url><url>
+    <loc>http://foresukecom.github.io/post/yabai_statistics/</loc><lastmod>2020-08-09T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/golang/</loc><lastmod>2020-07-28T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/golang_cli/</loc><lastmod>2020-07-28T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/post/</loc><lastmod>2020-07-28T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/</loc><lastmod>2020-07-28T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/other/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/steam/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/steam2020summer/</loc><lastmod>2020-06-26T00:00:00+00:00</lastmod></url><url>
@@ -12,7 +14,6 @@
     <loc>http://foresukecom.github.io/post/tansan/</loc><lastmod>2020-05-24T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/react_tweet/</loc><lastmod>2020-05-01T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/go_react_websocket/</loc><lastmod>2020-04-30T00:00:00+00:00</lastmod></url><url>
-    <loc>http://foresukecom.github.io/tags/book/</loc><lastmod>2020-04-10T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/teal/</loc><lastmod>2020-04-10T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/tags/docker/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>
     <loc>http://foresukecom.github.io/post/docker_image/</loc><lastmod>2020-03-28T00:00:00+00:00</lastmod></url><url>
