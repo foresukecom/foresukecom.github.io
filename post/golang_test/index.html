@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.71.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark"><title>Golangでテストコードを書く少年のお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus"><body>
     <div class="base-body"><section id="header" class="site header">
@@ -19,41 +19,41 @@
 <table>
 <thead>
 <tr>
-<th align="left">項</th>
-<th align="left">種別</th>
-<th align="left">やってること</th>
+<th style="text-align:left">項</th>
+<th style="text-align:left">種別</th>
+<th style="text-align:left">やってること</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">①</td>
-<td align="left">命令</td>
-<td align="left">持ち物を入れるカバンを用意</td>
+<td style="text-align:left">①</td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">持ち物を入れるカバンを用意</td>
 </tr>
 <tr>
-<td align="left">②</td>
-<td align="left">条件分岐</td>
-<td align="left">降水確率による判定</td>
+<td style="text-align:left">②</td>
+<td style="text-align:left">条件分岐</td>
+<td style="text-align:left">降水確率による判定</td>
 </tr>
 <tr>
-<td align="left">③</td>
-<td align="left">命令</td>
-<td align="left">カバンに傘を入れる</td>
+<td style="text-align:left">③</td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">カバンに傘を入れる</td>
 </tr>
 <tr>
-<td align="left">④</td>
-<td align="left">条件分岐</td>
-<td align="left">季節、最低気温による判定</td>
+<td style="text-align:left">④</td>
+<td style="text-align:left">条件分岐</td>
+<td style="text-align:left">季節、最低気温による判定</td>
 </tr>
 <tr>
-<td align="left">⑤</td>
-<td align="left">命令</td>
-<td align="left">カバンにコートを入れる</td>
+<td style="text-align:left">⑤</td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">カバンにコートを入れる</td>
 </tr>
 <tr>
-<td align="left">⑥</td>
-<td align="left">命令</td>
-<td align="left">カバンを持ち出す</td>
+<td style="text-align:left">⑥</td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">カバンを持ち出す</td>
 </tr>
 </tbody>
 </table>
@@ -73,36 +73,36 @@
 <table>
 <thead>
 <tr>
-<th align="left">パターン</th>
-<th align="center">②</th>
-<th align="center">④</th>
-<th align="left">具体例</th>
+<th style="text-align:left">パターン</th>
+<th style="text-align:center">②</th>
+<th style="text-align:center">④</th>
+<th style="text-align:left">具体例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">パターン1</td>
-<td align="center">True</td>
-<td align="center">True</td>
-<td align="left">降水確率が50%、季節は冬、最低気温12度。</td>
+<td style="text-align:left">パターン1</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">True</td>
+<td style="text-align:left">降水確率が50%、季節は冬、最低気温12度。</td>
 </tr>
 <tr>
-<td align="left">パターン2</td>
-<td align="center">True</td>
-<td align="center">False</td>
-<td align="left">降水確率が50%、季節は春、最低気温12度。</td>
+<td style="text-align:left">パターン2</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">False</td>
+<td style="text-align:left">降水確率が50%、季節は春、最低気温12度。</td>
 </tr>
 <tr>
-<td align="left">パターン3</td>
-<td align="center">False</td>
-<td align="center">True</td>
-<td align="left">降水確率が20%、季節は冬、最低気温12度。</td>
+<td style="text-align:left">パターン3</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">True</td>
+<td style="text-align:left">降水確率が20%、季節は冬、最低気温12度。</td>
 </tr>
 <tr>
-<td align="left">パターン4</td>
-<td align="center">False</td>
-<td align="center">False</td>
-<td align="left">降水確率が20%、季節は春、最低気温12度。</td>
+<td style="text-align:left">パターン4</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:left">降水確率が20%、季節は春、最低気温12度。</td>
 </tr>
 </tbody>
 </table>
@@ -115,69 +115,69 @@ C1カバレッジと似ていますが、C1カバレッジは条件分岐の結�
 <table>
 <thead>
 <tr>
-<th align="left">パターン</th>
-<th align="center">②</th>
-<th align="center">④-1</th>
-<th align="center">④-2</th>
-<th align="left">具体例</th>
+<th style="text-align:left">パターン</th>
+<th style="text-align:center">②</th>
+<th style="text-align:center">④-1</th>
+<th style="text-align:center">④-2</th>
+<th style="text-align:left">具体例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">パターン1</td>
-<td align="center">True</td>
-<td align="center">True</td>
-<td align="center">True</td>
-<td align="left">降水確率が20%、季節は冬、最低気温2度。</td>
+<td style="text-align:left">パターン1</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">True</td>
+<td style="text-align:left">降水確率が20%、季節は冬、最低気温2度。</td>
 </tr>
 <tr>
-<td align="left">パターン2</td>
-<td align="center">True</td>
-<td align="center">True</td>
-<td align="center">False</td>
-<td align="left">降水確率が20%、季節は冬、最低気温12度。</td>
+<td style="text-align:left">パターン2</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">False</td>
+<td style="text-align:left">降水確率が20%、季節は冬、最低気温12度。</td>
 </tr>
 <tr>
-<td align="left">パターン3</td>
-<td align="center">True</td>
-<td align="center">False</td>
-<td align="center">True</td>
-<td align="left">降水確率が20%、季節は春、最低気温2度。</td>
+<td style="text-align:left">パターン3</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">True</td>
+<td style="text-align:left">降水確率が20%、季節は春、最低気温2度。</td>
 </tr>
 <tr>
-<td align="left">パターン4</td>
-<td align="center">True</td>
-<td align="center">False</td>
-<td align="center">False</td>
-<td align="left">降水確率が20%、季節は春、最低気温12度。</td>
+<td style="text-align:left">パターン4</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:left">降水確率が20%、季節は春、最低気温12度。</td>
 </tr>
 <tr>
-<td align="left">パターン5</td>
-<td align="center">False</td>
-<td align="center">True</td>
-<td align="center">True</td>
-<td align="left">降水確率が50%、季節は冬、最低気温2度。</td>
+<td style="text-align:left">パターン5</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">True</td>
+<td style="text-align:left">降水確率が50%、季節は冬、最低気温2度。</td>
 </tr>
 <tr>
-<td align="left">パターン6</td>
-<td align="center">False</td>
-<td align="center">True</td>
-<td align="center">False</td>
-<td align="left">降水確率が50%、季節は冬、最低気温12度。</td>
+<td style="text-align:left">パターン6</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">False</td>
+<td style="text-align:left">降水確率が50%、季節は冬、最低気温12度。</td>
 </tr>
 <tr>
-<td align="left">パターン7</td>
-<td align="center">False</td>
-<td align="center">False</td>
-<td align="center">False</td>
-<td align="left">降水確率が50%、季節は春、最低気温2度。</td>
+<td style="text-align:left">パターン7</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:left">降水確率が50%、季節は春、最低気温2度。</td>
 </tr>
 <tr>
-<td align="left">パターン8</td>
-<td align="center">False</td>
-<td align="center">False</td>
-<td align="center">True</td>
-<td align="left">降水確率が50%、季節は春、最低気温12度。</td>
+<td style="text-align:left">パターン8</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">True</td>
+<td style="text-align:left">降水確率が50%、季節は春、最低気温12度。</td>
 </tr>
 </tbody>
 </table>
