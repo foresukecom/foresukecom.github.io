@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>「子供の科学」のススメ</title>
+      <link>/post/koka/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/koka/</guid>
+      <description>&lt;p&gt;今回は科学リテラシーのお話です。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>統計学の本を読みましたよ</title>
