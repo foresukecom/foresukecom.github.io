@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>DockerコンテナでDjango&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus">
+<meta property="og:site_name"           content="ふぉれすけ広場">
+<meta property="og:title"               content="DockerコンテナでDjango">
+<meta property="og:url"                 content="http://foresukecom.github.io/post/gcp_docker_django/">
+<meta property="og:type"                content="article">
+<meta name="twitter:card"               content="summary_large_image">
+<meta property="twitter:title"          content="DockerコンテナでDjango">
+
+    <meta property="og:description"         content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+    <meta property="twitter:description"    content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+
+
+    <meta property="og:image"       content="http://foresukecom.github.io/static/thumbnail.jpg">
+    <meta property="og:image:url"   content="http://foresukecom.github.io/static/thumbnail.jpg">
+<body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">DockerコンテナでDjango</h1><p class="article date">2017/11/05</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
+<p>Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。
+Dockerエンジン自体はGoogleComputeEngine上で動かしています。</p>
+<p>今回は、GCPのプロジェクトが作られている前提で説明を進めていきます。<br>
+GCEの仮想マシン作成などはWebUIからも作成できるのですが、<del>説明が面倒くさいので</del>今回はCloudShellからGCE仮想マシンを作って行きます。<br>
+CloudShellは、GCPのリソースを管理できる仮想マシンで、GCPのプロジェクトを作成していれば無料で使用することが可能です。
+CloudShellの詳細は以下公式ドキュメントを参照してください。<br>
+<a href="https://cloud.google.com/shell/docs/?hl=ja"target="_blank">Google Cloud Shell ドキュメント</a></p>
+<p>今回、3つの仮想マシンを操作するので、混乱しないようにプロンプトに仮想マシンを示すようにしています。
+使用する仮想マシンは以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CloudShell</td>
+<td>GCPで標準で提供されている仮想マシン。</td>
+</tr>
+<tr>
+<td>HostMachine</td>
+<td>DockerEngineが稼働する仮想マシン。OSはCentOS7です。</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>実際にDjangoが動くDockerコンテナ。OSはCentOS7です。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="全体的な流れ">全体的な流れ</h2>
+<ol>
+<li>GCEでCentOS7を作成、SSHで接続</li>
+<li>docker導入</li>
+<li>Dockerfile作成</li>
+<li>Dockerイメージとコンテナを作って接続</li>
+<li>djangoプロジェクト作成、allowhost設定</li>
+<li>django開発用サーバ起動</li>
+<li>ブラウザからアクセス</li>
+</ol>
+<h3 id="gceでcentos7を作成sshで接続">GCEでCentOS7を作成、SSHで接続</h3>
+<p>以下コマンドで、GCEをのインスタンスを作成します。
+後半で必要になるので、作成したインスタンスのEXTERNAL_IP(外部IP)を控えておいてください。
+その後、インスタンスに対してSSHで接続します。</p>
+<pre><code>(CloudShell)$ gcloud compute instances create example-name --tags http-server --zone asia-east1-a --image centos-7
+(CloudShell)$ gcloud compute ssh example-name
+</code></pre><p>GCEインスタンス作成時に使用したオプションは以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th>オプション名</th>
+<th>記事内の値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSTANCE_NAMES</td>
+<td>example-name</td>
+<td>GCEインスタンス名です。オプション名は指定する必要がありません。</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>asia-east1-a</td>
+<td>GCEインスタンスを作成するゾーンを指定します。指定しないと、対話形式でゾーンを指定することになります。</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>http-server</td>
+<td>GCEインスタンスに適用するファイアウォールを指定します。今回はHTTPでの接続を許可するファイアウォールを指定しています。</td>
+</tr>
+<tr>
+<td>image</td>
+<td>centos-7</td>
+<td>GCEインスタンスの元イメージです。デフォルトではdebian-9が指定されています。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="docker導入">docker導入</h3>
+<p>以下コマンドでDcokerをインストールし、有効化します。</p>
+<pre><code>(HostMachine)$ sudo yum install -y docker
+(HostMachine)$ sudo systemctl start docker
+(HostMachine)$ sudo systemctl enable docker
+</code></pre><h3 id="dockerfile作成">Dockerfile作成</h3>
+<p>以下の通りDockerfileを作成します。</p>
+<pre><code>FROM centos:7
+
+# Python3.6
+RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+RUN yum install -y python36u python36u-libs python36u-devel python36u-pip
+
+# Django
+RUN pip3.6 install django
+</code></pre><h3 id="dockerイメージとコンテナを作って接続">Dockerイメージとコンテナを作って接続</h3>
+<p>カレントディレクトリにDockerfileが存在する状態<code>sudo docker</code>コマンドを実施し、Dockerイメージを作成します。
+ここでは、イメージ名が<code>django</code>、タグが<code>1.0</code>で作成しています。<br>
+<code>docker run</code>コマンドで、Dockerイメージからコンテナを作成し、接続します。</p>
+<pre><code>(HostMachine)$ sudo docker build -t django:1.0 .
+(HostMachine)$ sudo docker run -it -p 80:8000 django:1.0
+</code></pre><h3 id="djangoプロジェクト作成allowhost設定">djangoプロジェクト作成、allowhost設定</h3>
+<p>接続したコンテナには、既にPython3.6やDjangoがインストールされているので、さっそく以下のコマンドでDjangoのプロジェクトを作成します。
+今回の例では<code>my_prj</code>のという名前でプロジェクトを作成します。<br>
+作成したプロジェクトの設定ファイル<code>settings.py</code>の、<code>ALLOWED_HOSTS = []</code>を<code>ALLOWED_HOSTS = [&quot;(EXTERNAL_IP)&quot;]</code>に書き換えます。
+EXTERNAL_IPはGCEインスタンスを作成したときに控えたIPアドレスを記載してください。</p>
+<pre><code>(Container)# django-admin startproject my_prj
+(Container)# vi my_prj/my_prj/settings.py
+</code></pre><h3 id="django開発用サーバ起動">django開発用サーバ起動</h3>
+<p>Djangoの開発用サーバを起動します。</p>
+<pre><code>(Container)# python3.6 my_prj/manage.py runserver 0.0.0.0:8000
+</code></pre><h3 id="ブラウザからアクセス">ブラウザからアクセス</h3>
+<p>ブラウザから、EXTERNAL_IP(外部IP)を指定してHTTPで接続します。<br>
+まだDjangoプロジェクトを作っただけなので、以下のデフォルト画面が表示されればOKです。</p>
+<pre><code>It worked!
+Congratulations on your first Django-powered page.
+
+Next, start your first app by running python manage.py startapp [app_label].
+You're seeing this message because you have DEBUG = True in your Django settings file and you haven't configured any URLs. Get to work!
+</code></pre><h2 id="おわりに">おわりに</h2>
+<p>今回はとりあえずの接続確認が目的なので、ソフトウェアの更新などのセキュリティ対策や、ロケール設定を入れていません。
+また、コンテナ内にDjangoのプロジェクトフォルダを作っているので、コンテナを停止するとプロジェクトフォルダが消えてしまいます。<br>
+なので、実際に開発環境や実行環境を作成する際には、必要なソフトウェアを入れたり、プロジェクトフォルダ用に外部ストレージをマウントしたりしてください。</p>
+</article><section class="article labels"><a class="tag" href=/tags/gcp/>GCP</a><a class="tag" href=/tags/docker/>Docker</a><a class="tag" href=/tags/django/>Django</a></section><section class="article navigation"><p><a class="link" href="/post/gcp_scp/"><span class="li">&larr;</span>GoogleComputeEngineとのファイルやりとり</a></p><p><a class="link" href="/post/comp/"><span class="li">&rarr;</span>完全栄養食COMPを食べてます</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>CloudShellでのブログ執筆環境&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus">
+<meta property="og:site_name"           content="ふぉれすけ広場">
+<meta property="og:title"               content="CloudShellでのブログ執筆環境">
+<meta property="og:url"                 content="http://foresukecom.github.io/post/clougshell_hugo/">
+<meta property="og:type"                content="article">
+<meta name="twitter:card"               content="summary_large_image">
+<meta property="twitter:title"          content="CloudShellでのブログ執筆環境">
+
+    <meta property="og:description"         content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+    <meta property="twitter:description"    content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+
+
+    <meta property="og:image"       content="http://foresukecom.github.io/static/thumbnail.jpg">
+    <meta property="og:image:url"   content="http://foresukecom.github.io/static/thumbnail.jpg">
+<body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">CloudShellでのブログ執筆環境</h1><p class="article date">2017/10/17</p></section><article class="article markdown-body"><h2 id="ブログ環境">ブログ環境</h2>
+<p>こんにちは、ブログを再開した<a href="https://twitter.com/foresukecom"target="_blank">@foresuke</a>です。<br>
+実は諸事情によりメインのPCをChromeBookを使っています。ChromeBookはブラウザと、Androidアプリしか使えない端末です。なので基本的にはネットワークに接続していることが前提となっており、スタンドアローンではまともに使うことができません。</p>
+<p>本ブログは、hugoと呼ばれる静的サイトジェネレータで構築しています。静的サイトジェネレータについては以下のサイトに詳しく書かれているので、ここでは省略します。<br>
+<a href="https://webdesign-trends.net/entry/2076"target="_blank">脱WordPress！静的サイトの特徴やメリットなどのまとめ</a></p>
+<p>静的サイトジェネレータの運用方法としては、ローカル上でhtml/cssファイルを生成し、webサーバにアップロードして公開する、といった流れを繰返すことになります。
+僕がChromeBookを使っており、ローカル上でhtml/cssファイルを生成できないので、<a href="https://cloud.google.com/shell/"target="_blank">GoogleClougShell</a>をローカル環境として使うことにしました。</p>
+<p>CloudShellはDebianベースのGoogleComputeEngineに開発ツールがインストールされた状態で提供される仮想マシンで、ブラウザから手軽にアクセスできる環境です。がっつり開発するには向きませんが、手軽な開発ツールとして重宝しています。</p>
+<p>Debianベースということもあるので、勉強がてらvimを使おうと四苦八苦していましたが、CloudShellにクラウド版エディタがベータとして提供されたので使ってみました。
+クラウド版エディタでmarkdownファイルを編集したところ、画面の右側にプレビューがリアルタイムで表示されました。
+これはなかなか便利で、ブログ記事を書くのはクラウド版エディタで充分な感じです。</p>
+<p>まだ改善の余地はありますが、いい感じにブログ執筆環境ができたので、細々と書いていきます。</p>
+</article><section class="article labels"><a class="tag" href=/tags/gcp/>GCP</a><a class="tag" href=/tags/clougshell/>ClougShell</a></section><section class="article navigation"><p><a class="link" href="/post/katakana/"><span class="li">&larr;</span>カタカナ表記について</a></p><p><a class="link" href="/post/restart/"><span class="li">&rarr;</span>ブログ再開 -2017秋-</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>

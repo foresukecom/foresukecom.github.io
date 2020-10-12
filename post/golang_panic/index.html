@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Golangのpanicのお話&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus">
+<meta property="og:site_name"           content="ふぉれすけ広場">
+<meta property="og:title"               content="Golangのpanicのお話">
+<meta property="og:url"                 content="http://foresukecom.github.io/post/golang_panic/">
+<meta property="og:type"                content="article">
+<meta name="twitter:card"               content="summary_large_image">
+<meta property="twitter:title"          content="Golangのpanicのお話">
+
+    <meta property="og:description"         content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+    <meta property="twitter:description"    content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+
+
+    <meta property="og:image"       content="http://foresukecom.github.io/static/thumbnail.jpg">
+    <meta property="og:image:url"   content="http://foresukecom.github.io/static/thumbnail.jpg">
+<body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Golangのpanicのお話</h1><p class="article date">2018/11/21</p></section><article class="article markdown-body"><h1 id="はじめに">はじめに</h1>
+<p>Golangというと、クロスコンパイルが特徴の1つとして挙げられます。<br>
+クロスコンパイルにより、Macで書いたコードからLinuxやWindows向けの実行ファイルを簡単に生成することができます。そのため、業務で使う便利ツールを作ってチーム内に配る、といったことも容易に行えます。<br>
+今回は僕がGolangを書き始めたばかりのころ、他の環境で動かすツールを作ったときに驚いた思い出ばなしです。</p>
+<h1 id="サンプルコード">サンプルコード</h1>
+<p>実際のコードとは違いますが、当時は以下のようにエラーが発生したら<code>panic()</code>で処理を中断させるコードを書いていました。<br>
+<script type="application/javascript" src="https://gist.github.com/foresukecom/79e23472c75c70a07184f0d4da0b6d4b.js"></script>
+</p>
+<p>で、このコードを以下のようなディレクトリ構成の中に配置していました。<code>log_analysis</code>が1つのプロジェクトというイメージです。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">tmp
+└── tanaka
+    └── azunyan_prpr
+        └── tools
+            └── log_analysis
+                └── main.go
+</code></pre></div><p>このコードを<a href="https://github.com/mitchellh/gox"target="_blank">mitchellh/gox</a>を使ってクロスコンパイルすると、以下のように各プラットフォームに対応した実行ファイルが生成されます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ gox
+Number of parallel builds: <span class="m">3</span>
+
+--&gt;   freebsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;      netbsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;       linux/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;      darwin/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;   windows/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     openbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;   openbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     windows/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;      netbsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     freebsd/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;    darwin/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;       linux/arm: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     linux/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;     freebsd/386: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+--&gt;    netbsd/amd64: _/tmp/tanaka/azunyan_prpr/tools/log_analysis
+
+$ ls -1
+log_analysis_darwin_386
+log_analysis_darwin_amd64
+log_analysis_freebsd_386
+log_analysis_freebsd_amd64
+log_analysis_freebsd_arm
+log_analysis_linux_386
+log_analysis_linux_amd64
+log_analysis_linux_arm
+log_analysis_netbsd_386
+log_analysis_netbsd_amd64
+log_analysis_netbsd_arm
+log_analysis_openbsd_386
+log_analysis_openbsd_amd64
+log_analysis_windows_386.exe
+log_analysis_windows_amd64.exe
+main.go
+</code></pre></div><p><code>log_analysis_windows_amd64.exe</code>がWindows(64bit)向けの実行ファイルになるので、Windows10の<code>D:\tools</code>配下に置いておきます。<br>
+<code>log_analysis_windows_amd64.exe</code>を実行すると、読み込むべき<code>sample.log</code>が存在しないので<code>panic(&quot;ファイルないよ&quot;)</code>が実行されます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">D:<span class="se">\t</span>ools&gt;dir
+ ドライブ D のボリューム ラベルがありません。
+ ボリューム シリアル番号は XXXX-XXXX です
+
+ D:<span class="se">\t</span>ools のディレクトリ
+
+2018/11/22  00:04    &lt;DIR&gt;          .
+2018/11/22  00:04    &lt;DIR&gt;          ..
+2018/11/22  00:01         1,273,344 log_analysis_windows_amd64.exe
+               <span class="m">1</span> 個のファイル           1,273,344 バイト
+               <span class="m">2</span> 個のディレクトリ  159,870,349,312 バイトの空き領域
+
+D:<span class="se">\t</span>ools&gt;log_analysis_windows_amd64.exe
+panic: ファイルないよ
+
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">()</span>
+        /tmp/tanaka/azunyan_prpr/tools/log_analysis/main.go:9 +0xa1
+</code></pre></div><p>想定通り<code>panic</code>にはなりましたが、ソースファイルをコンパイルした際のディレクトリが見えるようになってしまいました…</p>
+<h1 id="まとめ">まとめ</h1>
+<p>ツールの使用者からすれば、コンパイルした際のディレクトリ情報は不要な情報なので隠しておきたいところです。
+他のプラットフォームでテストしているときに気が付いたからよかったですが、危うく適当なディレクトリ名の情報をツール使用者に晒すところでした。</p>
+<p>当時はおそらく、「<code>panic()</code>使えば、エラー時のメッセージ出しつつ、プログラムも終了させれるじゃん」ぐらいの軽い気持ちで書いてたんだと思います。</p>
+<p><code>panic()</code>はメモリ不足などの「これ以上は処理が継続できない」ときに使用します。
+今回のような場合は<code>os.Exit(1)</code>か<code>log.Fatal(err)</code>でプログラムを終了させるべきでした。</p>
+<h1 id="20181123-追記">2018/11/23 追記</h1>
+<p>のぼのぼ☂さん(<a href="https://twitter.com/nobonobo"target="_blank">@nobonobo</a>)からご指摘をいただきました。</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/golang?src=hash&amp;ref_src=twsrc%5Etfw">#golang</a> pro tips: go1.7以降であれば「go build -gcflags=-trimpath=$GOPATH -asmflags=-trimpath=$GOPATH」とかするとバイナリに埋められるファイルパスのプレフィックスだけは取り除ける。 <a href="https://t.co/YehDdOyZJ3">https://t.co/YehDdOyZJ3</a></p>&mdash; のぼのぼ📡 (@nobonobo) <a href="https://twitter.com/nobonobo/status/1065526650996027392?ref_src=twsrc%5Etfw">November 22, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>見慣れないオプションをお教えいただいたので、それぞれ調べてみました。<br>
+ビルド時のオプションで<code>gcflags</code>を指定すると<code>go tool compile</code>のオプションを指定でき、<code>asmflags</code>を指定すると<code>go tool asm</code>のオプションを指定できるようです。<br>
+<code>go tool compile</code>コマンドはソースコードを実行可能なオブジェクトコードに変換します。変換されたファイルは<code>.o</code>拡張子のファイルになり、<code>go run</code>コマンドで実行することができます。</p>
+<p>直接使ったことがないコマンドでしたが、<code>go run</code>コマンドでgoファイルを実行したときに、裏では <code>go tool compile</code>が実行されていたようです。
+「<code>go build</code>では実行ファイルを生成し、 <code>go run</code>では実行ファイルを一時的に作ってとりあえず実行する」程度のふわっとした認識でした…</p>
+<p><code>go tool asm</code>コマンドについては…アセンブリ関係らしいのですがドキュメント読んでもよく理解ができなかったので引き続き確認中です。<br>
+<code>gcflags</code>だけでもファイルのパスを隠すことができたので、一旦進めていきます。</p>
+<p><code>trimpath</code>で指定したパスを実行ファイルから取り除くことができます。<br>
+指定するパスによって、goファイル名まで取り除いたり、</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=`pwd`/main.go&#34;</span> main.go
+$ ./log_analysis
+panic: ファイルないよ
+
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">()</span>
+	??:9 +0x9a
+</code></pre></div><p>goファイル名だけを残したり、</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=`pwd`&#34;</span> main.go
+$ ./log_analysis
+panic: ファイルないよ
+
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">()</span>
+	main.go:9 +0x9a
+</code></pre></div><p>ディレクトリ名を途中まで取り除くことができます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ go build -o log_analysis -gcflags<span class="o">=</span><span class="s2">&#34;-trimpath=/tmp/tanaka/azunyan_prpr&#34;</span> main.go
+$ ./log_analysis
+panic: ファイルないよ
+
+goroutine <span class="m">1</span> <span class="o">[</span>running<span class="o">]</span>:
+main.main<span class="o">()</span>
+	tools/log_analysis/main.go:9 +0x9a
+</code></pre></div><p>雰囲気で書いてるから、知らない便利な機能がたくさんありますね。
+今後仕事で使うことになるから使えるようになっておかないとです…</p>
+<p>※追記ここまで</p>
+<h1 id="その他">その他</h1>
+<p>少年チャンピオンで連載されている、<strong>ダーウィンズゲーム</strong>がアニメ化するようです。<br>
+主人公が<strong>アンリミテッド</strong>に<strong>ブレード</strong>を<strong>ワーク</strong>するのがとてもカッコイイので楽しみです。まだ放送時期などは公開されていませんが、ぜひ2クールでがっつりやってほしいものです。<br>
+あと、士明さんもカッコイイ。将来はあんな感じの老人になりたい。</p>
+<p>もう1つのオススメ作品として、週刊少年マガジンで連載中の<strong>将来的に死んでくれ</strong>をご紹介します。<br>
+作品名は過激ですが、主人公(女子高生)がヒロイン(女子高生)に諭吉を渡したり、ホテルに誘ったりする百合ラブコメです。<br>
+ギャグのセンスや絵柄が好みなので、長門知大先生(<a href="https://twitter.com/ngt9chr"target="_blank">@ngt9chr</a>)の作品は読み続けていきます。
+サブタイトルが「交わりを水魚のように」や「臍を噛んでる暇は無い」のようになっているのもお気にポイントの1つです。</p>
+</article><section class="article labels"><a class="tag" href=/tags/golang/>golang</a></section><section class="article navigation"><p><a class="link" href="/post/pocket_2018/"><span class="li">&larr;</span>Pocketからお祝いされました -2018-</a></p><p><a class="link" href="/post/dynamic_tweet/"><span class="li">&rarr;</span>Tweetボタンでつぶやく内容を動的に変更する</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>

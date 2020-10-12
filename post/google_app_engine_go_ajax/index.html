@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>GAE上でGolangを動かしてみましたよ&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus">
+<meta property="og:site_name"           content="ふぉれすけ広場">
+<meta property="og:title"               content="GAE上でGolangを動かしてみましたよ">
+<meta property="og:url"                 content="http://foresukecom.github.io/post/google_app_engine_go_ajax/">
+<meta property="og:type"                content="article">
+<meta name="twitter:card"               content="summary_large_image">
+<meta property="twitter:title"          content="GAE上でGolangを動かしてみましたよ">
+
+    <meta property="og:description"         content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+    <meta property="twitter:description"    content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+
+
+    <meta property="og:image"       content="http://foresukecom.github.io/static/thumbnail.jpg">
+    <meta property="og:image:url"   content="http://foresukecom.github.io/static/thumbnail.jpg">
+<body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">GAE上でGolangを動かしてみましたよ</h1><p class="article date">2018/08/13</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
+<p>GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。<br>
+作り始めでつまずくことが多いので自分用の最小構成メモです。
+ここで説明するwebサービスは、Ajaxで非同期通信し、Golangが返した文字列を表示するだけのものです。</p>
+<h2 id="環境の準備">環境の準備</h2>
+<p>まずは、<a href="https://cloud.google.com/appengine/docs/standard/go/download"target="_blank">GCPの公式ドキュメント</a>を参考にGolang、Cloud SDKをダウンロードします。<br>
+以下のようにバージョンが表示されればOKです。</p>
+<pre><code>$ goapp version
+go version 1.9.4 (appengine-1.9.74) darwin/amd64
+</code></pre><p>ちなみに、開発にはmacOS High Sierra(10.13.6)を使用しています。</p>
+<h2 id="構成説明">構成説明</h2>
+<p>ディレクトリ構成は以下の通りです。</p>
+<pre><code>├── app.yaml
+├── hello.go
+└── static
+    ├── js
+    │   └── main.js
+    ├── css
+    │   └── main.css
+    └── index.html
+</code></pre><p>この中でGAE特有のファイルは<code>app.yaml</code>になります。<br>
+<a href="https://cloud.google.com/appengine/docs/standard/go/config/appref"target="_blank">app.yamlリファレンス</a>に各パラメータの説明が載ってますが、最低限のパラメータだけ書いておきます。</p>
+<pre><code>runtime: go #Golangを使用する場合はgoを指定
+api_version: go1 #最新のバージョンを使用する場合はgo1を指定
+
+handlers: #リクエストと実行する処理をURLパターン毎に指定
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+- url: /js
+  static_dir: static/js
+- url: /css
+  static_dir: static/css
+- url: /.*
+  script: _go_app
+</code></pre><p>その他のファイルについては、特別なことはしていないので説明は省略します。<br>
+各ファイルは<a href="https://github.com/foresukecom/go-appengine-sample"target="_blank">Github</a>に置いてあります。</p>
+<h2 id="ローカル環境での実行">ローカル環境での実行</h2>
+<p>ローカル環境にGoogleAppEngineの開発用サーバを立ち上げるには、Cloud SDKに含まれている<code>dev_appserver.py</code>を実行します。<br>
+実行時のオプションはいくつも用意されていますが、サーバを立ち上げるだけならば、以下のように<code>app.yaml</code>を指定して実行すれば問題ありません。
+※<code>dev_appserver.py</code>を実行するにはPython2.xがインストールされている必要があります。</p>
+<pre><code>dev_appserver.py app.yaml
+</code></pre><p>サーバが立ち上がったら、ブラウザから<a href="http://localhost:8080"target="_blank">http://localhost:8080</a>にアクセスすれば、開発サーバ上のwebサービスにアクセスができます。</p>
+<h2 id="本番へのデプロイ">本番へのデプロイ</h2>
+<p>GoogleAppEngine上にデプロイする場合は、以下のコマンドを実施します。</p>
+<pre><code>gcloud app deploy app.yaml
+</code></pre><h2 id="まとめ">まとめ</h2>
+<p>今回、GoogleAppEngine上で動かすことを目的としているので、最低限のオプションしか指定していません。
+実際に使用する場合は、セキュリティを高めたり、パフォーマンスの最適化を図ってください。<br>
+記事の内容に不備や誤りがありましたら、<a href="https://twitter.com/foresukecom"target="_blank">@foresukecom</a>までご連絡ください。</p>
+<h2 id="その他">その他</h2>
+<p>最近、Life is Strageというゲームをクリアしました。<br>
+後半は感情移入して涙目になりながら遊んでしまいました、ゲームで泣いたのは幻想水滸伝2以来です。
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/H0DyVGnLkOQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<p>ゲーム自体は短めで、週末だけでクリアできる程度のボリュームなので、是非遊んでみてください。
+PS4とSteamで遊ぶことができます(Steamは年に数回75%OFFのセールを実施するので、そこで買っておくのがおすすめです)。</p>
+<div class="embed steam-link">
+    <iframe class="steam-link" src="https://store.steampowered.com/widget/319630/" frameborder="0" width="646" height="190"></iframe>
+</div>
+
+<p>このゲームはストーリーもよいのですが、要所要所で流れるBGMが特に素晴らしいです。<br>
+サントラはAmazonPrimeMusicの対象にもなっているので、Amazonプライム会員の方は是非聴いてみて下さい。落ち着いた音楽で、作業用BGMとしても最適です。</p>
+</article><section class="article labels"><a class="tag" href=/tags/golang/>golang</a><a class="tag" href=/tags/gae/>GAE</a></section><section class="article navigation"><p><a class="link" href="/post/vue_array/"><span class="li">&larr;</span>Vue.jsで配列を扱ったお話</a></p><p><a class="link" href="/post/english_comic/"><span class="li">&rarr;</span>英語漫画のススメ</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>

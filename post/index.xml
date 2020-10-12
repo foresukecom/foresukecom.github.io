@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ふぉれすけ広場</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on ふぉれすけ広場</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>©2019 foresuke.</copyright>
+    <lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>「子供の科学」が面白い</title>
+      <link>/post/koka/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/koka/</guid>
+      <description>&lt;p&gt;今回は科学リテラシーを身に着けたい人の話です。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>統計学の本を読みましたよ</title>
+      <link>/post/yabai_statistics/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/yabai_statistics/</guid>
+      <description>&lt;p&gt;漫画、小説以外で仕事に関係ない本を久しぶりに読みました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golangのCLIツールで複数のオプションを受け取る</title>
+      <link>/post/golang_cli/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/golang_cli/</guid>
+      <description>&lt;p&gt;golangでCLIツールを作るにあたり、同じオプションを複数指定する方法を調べましたよ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Steamサマーセール2020です</title>
+      <link>/post/steam2020summer/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/steam2020summer/</guid>
+      <description>&lt;p&gt;Steamサマーセール2020が始まりましたよ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reactのアニメーション</title>
+      <link>/post/react_anime/</link>
+      <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/react_anime/</guid>
+      <description>&lt;p&gt;Reactでアニメーションを試してみましたよ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ウィルキンソン 新パッケージ</title>
+      <link>/post/tansan/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tansan/</guid>
+      <description>&lt;p&gt;ウィルキンソン タンサンがバージョンアップしましたよ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reactの画面にTweet埋め込み</title>
+      <link>/post/react_tweet/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/react_tweet/</guid>
+      <description>&lt;p&gt;Reactで作った画面にTweetを埋め込むときのメモです。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go×ReactでWebsocket通信</title>
+      <link>/post/go_react_websocket/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/go_react_websocket/</guid>
+      <description>&lt;p&gt;GoとReactでWebsocket通信の入門をしましたよ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ティール組織</title>
+      <link>/post/teal/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/teal/</guid>
+      <description>&lt;p&gt;「ティール組織 ― マネジメントの常識を覆す次世代型組織の出現」 を読みましたよ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dockerイメージを配布する手順</title>
+      <link>/post/docker_image/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/docker_image/</guid>
+      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;以前、「自作のツールをDockerイメージとして配ると便利だよー」と聞いたので試してみました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>アイマスクのすすめ</title>
+      <link>/post/eyemask/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/eyemask/</guid>
+      <description>&lt;p&gt;最近、寝付きが悪くなってきたのでアイマスクを使い始めました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugoの記事にコンテンツを埋め込む</title>
+      <link>/post/hugo_embed/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugo_embed/</guid>
+      <description>&lt;p&gt;ブログに埋め込んだGistのコードやYouTubeが表示されなくなっていたので対処法メモです。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Human Fall FlatとSteam Remote Play Together</title>
+      <link>/post/human_fall_flat/</link>
+      <pubDate>Mon, 03 Feb 2020 13:23:38 +0900</pubDate>
+      
+      <guid>/post/human_fall_flat/</guid>
+      <description>&lt;p&gt;友人とHuman Fall Flatというゲームを遊びました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TOMLをGolangで読み込もうとして躓いた話</title>
+      <link>/post/go_toml/</link>
+      <pubDate>Mon, 03 Feb 2020 09:29:53 +0900</pubDate>
+      
+      <guid>/post/go_toml/</guid>
+      <description>&lt;p&gt;GolangでTOMLファイルに書かれた設定を読み込もうした時に躓いたのでメモを残しておきます。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>渋谷落語を観てきました</title>
+      <link>/post/shiburaku/</link>
+      <pubDate>Sun, 14 Jul 2019 18:44:51 +0900</pubDate>
+      
+      <guid>/post/shiburaku/</guid>
+      <description>渋谷で毎月開催される初心者向け落語会、渋谷落語を観てきました。 「渋谷らくご」3日目 7/14(日) 14:00-16:00 柳家わさび-垂乳根 台所おさん-愛宕山 風藤松</description>
+    </item>
+    
+    <item>
+      <title>朝食の数値化</title>
+      <link>/post/breakfast/</link>
+      <pubDate>Tue, 09 Jul 2019 06:52:24 +0900</pubDate>
+      
+      <guid>/post/breakfast/</guid>
+      <description>はじめに ここ数年、朝食メニューが固定化されてきたので、価格や栄養素を数値化してみます。 メニュー 毎日の朝食は以下の通りです。 シェイク(COMP</description>
+    </item>
+    
+    <item>
+      <title>時計の秒針について</title>
+      <link>/post/analog_clock/</link>
+      <pubDate>Sat, 04 May 2019 08:25:08 +0900</pubDate>
+      
+      <guid>/post/analog_clock/</guid>
+      <description>今回は算数と理科のお話です。 たとえば、文字盤の半径が1cmのアナログ腕時計があるとします。 この場合、文字盤の円周は約6.28cmとなるので、</description>
+    </item>
+    
+    <item>
+      <title>Golangのスコープについて</title>
+      <link>/post/go_scope/</link>
+      <pubDate>Sat, 09 Feb 2019 15:11:21 +0900</pubDate>
+      
+      <guid>/post/go_scope/</guid>
+      <description>はじめに Golangを書いてて詰まったことがあったのでメモです。 本文 こんな感じでカテゴリ、商品名、価格を持った構造体のスライスがあるとします</description>
+    </item>
+    
+    <item>
+      <title>ChromebookにUbuntuをインストールしようとした愚か者のお話</title>
+      <link>/post/goodby_chromebook/</link>
+      <pubDate>Sun, 03 Feb 2019 08:25:15 +0900</pubDate>
+      
+      <guid>/post/goodby_chromebook/</guid>
+      <description>はじめに ChromeBookにUbuntu入れようとしたら、キーボードとトラックパッドが反応しなくなりました。 ＼(^o^)／ [Chromeb</description>
+    </item>
+    
+    <item>
+      <title>Golangでテストコードを書く少年のお話</title>
+      <link>/post/golang_test/</link>
+      <pubDate>Tue, 22 Jan 2019 08:25:31 +0900</pubDate>
+      
+      <guid>/post/golang_test/</guid>
+      <description>はじめに お仕事でGolangのテストコードを書くことになったのでお勉強しました。 テスト対象は以下のプログラムです。 毎朝のルーティンを明文化し</description>
+    </item>
+    
+    <item>
+      <title>退職エントリ</title>
+      <link>/post/resign/</link>
+      <pubDate>Sat, 29 Dec 2018 10:15:46 +0900</pubDate>
+      
+      <guid>/post/resign/</guid>
+      <description>12月いっぱいで今の会社を退職します。 次の職場でもがんばるぞい！</description>
+    </item>
+    
+    <item>
+      <title>コーヒー美味しい</title>
+      <link>/post/coffee/</link>
+      <pubDate>Tue, 25 Dec 2018 07:29:54 +0900</pubDate>
+      
+      <guid>/post/coffee/</guid>
+      <description>コーヒーサーバを手に入れました。 ありがとうサンタさん、来月はクレカ支払い頑張るよ。 マグカップが汚い…黒色のマグカップを使えば汚れが目立たなく</description>
+    </item>
+    
+    <item>
+      <title>Pocketからお祝いされました -2018-</title>
+      <link>/post/pocket_2018/</link>
+      <pubDate>Sun, 23 Dec 2018 10:09:07 +0900</pubDate>
+      
+      <guid>/post/pocket_2018/</guid>
+      <description>Pocketから以下のメールが届きました。 2016年、2017年には上位5%になったことを祝福するメールが届きましたが、ついに2018年は上</description>
+    </item>
+    
+    <item>
+      <title>Golangのpanicのお話</title>
+      <link>/post/golang_panic/</link>
+      <pubDate>Wed, 21 Nov 2018 23:17:10 +0900</pubDate>
+      
+      <guid>/post/golang_panic/</guid>
+      <description>はじめに Golangというと、クロスコンパイルが特徴の1つとして挙げられます。 クロスコンパイルにより、Macで書いたコードからLinuxやW</description>
+    </item>
+    
+    <item>
+      <title>Tweetボタンでつぶやく内容を動的に変更する</title>
+      <link>/post/dynamic_tweet/</link>
+      <pubDate>Sun, 11 Nov 2018 08:15:12 +0900</pubDate>
+      
+      <guid>/post/dynamic_tweet/</guid>
+      <description>はじめに 今回はWebページ設置するTwitterの共有ボタンからTweetを行う際、Tweetする内容を動的に変更する方法をご紹介します。 本</description>
+    </item>
+    
+    <item>
+      <title>GAEでバッチ処理</title>
+      <link>/post/gae_cron/</link>
+      <pubDate>Wed, 07 Nov 2018 07:44:20 +0900</pubDate>
+      
+      <guid>/post/gae_cron/</guid>
+      <description>はじめに Google App Engine(GAE)を使って、バッチ処理が実行できたのでメモです。 GAEではcron.yamlに設定を記載することで時間を指定</description>
+    </item>
+    
+    <item>
+      <title>GAEでfaviconを設定</title>
+      <link>/post/gae_favicon/</link>
+      <pubDate>Tue, 06 Nov 2018 23:48:25 +0900</pubDate>
+      
+      <guid>/post/gae_favicon/</guid>
+      <description>はじめに GoogleAppEngine(GAE)上で提供するWebページにfaviconを設定するさいに、少し迷ったのでメモに残しておきます</description>
+    </item>
+    
+    <item>
+      <title>祝日のカウントダウンタイマー</title>
+      <link>/post/shukujitsu_info/</link>
+      <pubDate>Tue, 30 Oct 2018 00:04:23 +0900</pubDate>
+      
+      <guid>/post/shukujitsu_info/</guid>
+      <description>はじめに GoogleAppEngine(GAE)、Golangの勉強のために、祝日までのカウントダウンタイマーを表示するWebページを作って</description>
+    </item>
+    
+    <item>
+      <title>ReactNativeを触ったお話</title>
+      <link>/post/reactnativefetch/</link>
+      <pubDate>Sun, 28 Oct 2018 14:27:46 +0900</pubDate>
+      
+      <guid>/post/reactnativefetch/</guid>
+      <description>はじめに お仕事でReactNativeを使うことになったので、触ってみました。 導入手順について本記事内では説明をしないので、ReactNat</description>
+    </item>
+    
+    <item>
+      <title>JavaScriptでクロージャを触ったお話</title>
+      <link>/post/javascript_closure/</link>
+      <pubDate>Sun, 14 Oct 2018 10:46:30 +0900</pubDate>
+      
+      <guid>/post/javascript_closure/</guid>
+      <description>はじめに クロージャの存在は知っていましたが、ちゃんと使ったことがなかったんで使ってみました。 クロージャの詳しい説明はmozillaが公開して</description>
+    </item>
+    
+    <item>
+      <title>Vue.jsで配列を扱ったお話</title>
+      <link>/post/vue_array/</link>
+      <pubDate>Tue, 21 Aug 2018 07:05:51 +0900</pubDate>
+      
+      <guid>/post/vue_array/</guid>
+      <description>はじめに Vue.jsを使っていて、配列の中身を変更したのに画面上の値が変わらないなー、となって困ったのでメモです。 本文 ボタンを押すたびに配列</description>
+    </item>
+    
+    <item>
+      <title>GAE上でGolangを動かしてみましたよ</title>
+      <link>/post/google_app_engine_go_ajax/</link>
+      <pubDate>Mon, 13 Aug 2018 20:18:12 +0900</pubDate>
+      
+      <guid>/post/google_app_engine_go_ajax/</guid>
+      <description>はじめに GoogleAppEngine上で動くwebサービスをgolangで作りはじめました。 作り始めでつまずくことが多いので自分用の最小構</description>
+    </item>
+    
+    <item>
+      <title>英語漫画のススメ</title>
+      <link>/post/english_comic/</link>
+      <pubDate>Sun, 20 May 2018 22:58:10 +0900</pubDate>
+      
+      <guid>/post/english_comic/</guid>
+      <description>はじめに 最近、海外ドラマを観たりオンライン英会話を受けたりして英語を勉強しています。 しかし学生時代に英語の勉強をサボっていたので、わからない</description>
+    </item>
+    
+    <item>
+      <title>Go言語でJSONを作成したときのイージーミス</title>
+      <link>/post/golang_json_marshal/</link>
+      <pubDate>Fri, 11 May 2018 05:19:00 +0900</pubDate>
+      
+      <guid>/post/golang_json_marshal/</guid>
+      <description>はじめに Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。 JSON形式への変換は標準パッケージに含まれているjs</description>
+    </item>
+    
+    <item>
+      <title>JavaからRESAS APIを使ってみましたよ</title>
+      <link>/post/resas_java/</link>
+      <pubDate>Sat, 03 Feb 2018 13:33:02 +0900</pubDate>
+      
+      <guid>/post/resas_java/</guid>
+      <description>お久しぶりです。 巷で話題のビッグデータを使って何かやってみようかと思い立ったので、RESASから情報を取得してみます。 RESASとは地域の活</description>
+    </item>
+    
+    <item>
+      <title>GoogleComputeEngineとのファイルやりとり</title>
+      <link>/post/gcp_scp/</link>
+      <pubDate>Fri, 24 Nov 2017 05:20:15 +0900</pubDate>
+      
+      <guid>/post/gcp_scp/</guid>
+      <description>GoogleComputeEngine(GCE)とファイルをやりとりする必要があったので方法を調べてみました。 gcloud compute scpでGCEとのファイル</description>
+    </item>
+    
+    <item>
+      <title>DockerコンテナでDjango</title>
+      <link>/post/gcp_docker_django/</link>
+      <pubDate>Sun, 05 Nov 2017 20:12:53 +0900</pubDate>
+      
+      <guid>/post/gcp_docker_django/</guid>
+      <description>はじめに Dockerコンテナ上にDjangoの開発、実行環境を作りたいなぁ、と思ったので構築メモです。 Dockerエンジン自体はGoogle</description>
+    </item>
+    
+    <item>
+      <title>完全栄養食COMPを食べてます</title>
+      <link>/post/comp/</link>
+      <pubDate>Sun, 29 Oct 2017 16:51:19 +0900</pubDate>
+      
+      <guid>/post/comp/</guid>
+      <description>はじめに みなさんは完全栄養食COMPをご存知でしょうか。 完全栄養食の名の通り、これを食べるだけで必要な栄養素が取得できるという優れものです。</description>
+    </item>
+    
+    <item>
+      <title>Google Home Miniを買いました</title>
+      <link>/post/googlehomemini/</link>
+      <pubDate>Thu, 26 Oct 2017 05:56:33 +0900</pubDate>
+      
+      <guid>/post/googlehomemini/</guid>
+      <description>はじめに 先日のGoogleイベントで日本での発売が発表されたGoogle Home Miniを購入しました。 Google Home Miniができることや同封物については</description>
+    </item>
+    
+    <item>
+      <title>英語のお勉強</title>
+      <link>/post/english/</link>
+      <pubDate>Tue, 24 Oct 2017 05:50:21 +0900</pubDate>
+      
+      <guid>/post/english/</guid>
+      <description>はじめに みなさんは英語を使いこなしていますか。僕は使えません。 最近はGoogle翻訳の精度も上がりましたが、英語の講演を聞いたり、画像として</description>
+    </item>
+    
+    <item>
+      <title>カタカナ表記について</title>
+      <link>/post/katakana/</link>
+      <pubDate>Sat, 21 Oct 2017 12:21:09 +0900</pubDate>
+      
+      <guid>/post/katakana/</guid>
+      <description>はじめに 僕は工業高校の出身なのですが、当時プログラミングやネットワークを教えてくれた先生からComputerやrouterをカタカナで書くと</description>
+    </item>
+    
+    <item>
+      <title>CloudShellでのブログ執筆環境</title>
+      <link>/post/clougshell_hugo/</link>
+      <pubDate>Tue, 17 Oct 2017 22:08:58 +0900</pubDate>
+      
+      <guid>/post/clougshell_hugo/</guid>
+      <description>ブログ環境 こんにちは、ブログを再開した@foresukeです。 実は諸事情によりメインのPCをChromeBookを使っています。Chrome</description>
+    </item>
+    
+    <item>
+      <title>ブログ再開 -2017秋-</title>
+      <link>/post/restart/</link>
+      <pubDate>Tue, 17 Oct 2017 07:55:56 +0900</pubDate>
+      
+      <guid>/post/restart/</guid>
+      <description>ご挨拶 お久しぶりです、foresukeです。 転職、引越しなどがあり、ブログ更新が停滞していましたが、少しは落ち着いた感じがするので再開してい</description>
+    </item>
+    
+    <item>
+      <title>13日の金曜日です</title>
+      <link>/post/friday13th/</link>
+      <pubDate>Fri, 13 Jan 2017 08:47:12 +0900</pubDate>
+      
+      <guid>/post/friday13th/</guid>
+      <description>はじめに 2017年1月13日は金曜日です。 Wikipediaをみると諸説あるようですが、主に海外では縁起の悪い日として知られています。 キリス</description>
+    </item>
+    
+    <item>
+      <title>Pocketからお祝いメールが届きました</title>
+      <link>/post/pocket_mail/</link>
+      <pubDate>Thu, 22 Dec 2016 07:50:59 +0900</pubDate>
+      
+      <guid>/post/pocket_mail/</guid>
+      <description>みなさんは、「あとで読む」サービスのPocketを使用していますか? 僕はスマートフォンでニュースを読んだり、ブラウジングしたときに、気になる</description>
+    </item>
+    
+    <item>
+      <title>再帰処理してみた</title>
+      <link>/post/recursion/</link>
+      <pubDate>Wed, 30 Nov 2016 22:21:13 +0900</pubDate>
+      
+      <guid>/post/recursion/</guid>
+      <description>はじめに Go言語を使っているときに、「再帰処理できるのか?」と疑問に思ったので試してみました。 どういった問題が再帰処理に向いているのか分から</description>
+    </item>
+    
+    <item>
+      <title>8進数のエラーについて</title>
+      <link>/post/octal/</link>
+      <pubDate>Wed, 30 Nov 2016 21:26:57 +0900</pubDate>
+      
+      <guid>/post/octal/</guid>
+      <description>はじめに Go言語を使っていたら見慣れないエラーが出てたので調べてみました。 エラーの内容 試験用にサンプルの日付データを作っていたら、以下のよう</description>
+    </item>
+    
+    <item>
+      <title>Go言語で構造体のスライスを扱ってみる</title>
+      <link>/post/struct_slice/</link>
+      <pubDate>Wed, 30 Nov 2016 21:24:20 +0900</pubDate>
+      
+      <guid>/post/struct_slice/</guid>
+      <description>Go言語で構造体のスライスを扱おうとしたときに少し悩んだので、まとめておきます。 ここで構造体やスライスについて詳しく説明はしません。詳細はA</description>
+    </item>
+    
+  </channel>
+</rss>

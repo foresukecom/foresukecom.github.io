@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>JavaからRESAS APIを使ってみましたよ&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus">
+<meta property="og:site_name"           content="ふぉれすけ広場">
+<meta property="og:title"               content="JavaからRESAS APIを使ってみましたよ">
+<meta property="og:url"                 content="http://foresukecom.github.io/post/resas_java/">
+<meta property="og:type"                content="article">
+<meta name="twitter:card"               content="summary_large_image">
+<meta property="twitter:title"          content="JavaからRESAS APIを使ってみましたよ">
+
+    <meta property="og:description"         content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+    <meta property="twitter:description"    content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+
+
+    <meta property="og:image"       content="http://foresukecom.github.io/static/thumbnail.jpg">
+    <meta property="og:image:url"   content="http://foresukecom.github.io/static/thumbnail.jpg">
+<body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">JavaからRESAS APIを使ってみましたよ</h1><p class="article date">2018/02/03</p></section><article class="article markdown-body"><p>お久しぶりです。</p>
+<p>巷で話題のビッグデータを使って何かやってみようかと思い立ったので、RESASから情報を取得してみます。<br>
+RESASとは地域の活性を目的とし、市町村名一覧や人口構成、観光資源などの多くの情報を公開しているWebサイトです。<br>
+APIも公開されているので、かんたんに情報を取得することができます。</p>
+<blockquote>
+<p>地域経済分析システム（RESAS：リーサス）は、地方創生の様々な取り組みを情報面から支援するために、経済産業省と内閣官房（まち・ひと・しごと創生本部事務局）が提供しています。<br>
+自治体職員の方や、地域の活性化に関心を持つ様々な分野の方によって、効果的な施策の立案・実行・検証のためなどに広く利用されています。<br>
+引用元: <a href="https://resas.go.jp"target="_blank">RESAS 地域経済分析システム</a></p>
+</blockquote>
+<p>とりあえず今回は勉強がてら、Javaを使って都道府県の一覧を取得してみます。<br>
+※RESASのAPIを使うには利用登録をしてAPIキーを発行してもらう必要があります。利用登録は公式サイトから行えます。<br>
+<a href="https://opendata.resas-portal.go.jp/form.html"target="_blank">RESAS-API利用登録</a></p>
+<script type="application/javascript" src="https://gist.github.com/foresukecom/b8cd7c2f983e43396e304ab9eed61bae.js"></script>
+
+<p>以下のように結果が返ってきます。
+JSON形式なので簡単に加工が出来そうです。</p>
+<pre><code>{
+    &quot;message&quot;: null,
+    &quot;result&quot;: [
+        {
+            &quot;prefCode&quot;: 1,
+            &quot;prefName&quot;: &quot;北海道&quot;
+        },
+        {
+            &quot;prefCode&quot;: 2,
+            &quot;prefName&quot;: &quot;青森県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 3,
+            &quot;prefName&quot;: &quot;岩手県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 4,
+            &quot;prefName&quot;: &quot;宮城県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 5,
+            &quot;prefName&quot;: &quot;秋田県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 6,
+            &quot;prefName&quot;: &quot;山形県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 7,
+            &quot;prefName&quot;: &quot;福島県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 8,
+            &quot;prefName&quot;: &quot;茨城県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 9,
+            &quot;prefName&quot;: &quot;栃木県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 10,
+            &quot;prefName&quot;: &quot;群馬県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 11,
+            &quot;prefName&quot;: &quot;埼玉県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 12,
+            &quot;prefName&quot;: &quot;千葉県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 13,
+            &quot;prefName&quot;: &quot;東京都&quot;
+        },
+        {
+            &quot;prefCode&quot;: 14,
+            &quot;prefName&quot;: &quot;神奈川県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 15,
+            &quot;prefName&quot;: &quot;新潟県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 16,
+            &quot;prefName&quot;: &quot;富山県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 17,
+            &quot;prefName&quot;: &quot;石川県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 18,
+            &quot;prefName&quot;: &quot;福井県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 19,
+            &quot;prefName&quot;: &quot;山梨県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 20,
+            &quot;prefName&quot;: &quot;長野県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 21,
+            &quot;prefName&quot;: &quot;岐阜県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 22,
+            &quot;prefName&quot;: &quot;静岡県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 23,
+            &quot;prefName&quot;: &quot;愛知県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 24,
+            &quot;prefName&quot;: &quot;三重県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 25,
+            &quot;prefName&quot;: &quot;滋賀県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 26,
+            &quot;prefName&quot;: &quot;京都府&quot;
+        },
+        {
+            &quot;prefCode&quot;: 27,
+            &quot;prefName&quot;: &quot;大阪府&quot;
+        },
+        {
+            &quot;prefCode&quot;: 28,
+            &quot;prefName&quot;: &quot;兵庫県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 29,
+            &quot;prefName&quot;: &quot;奈良県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 30,
+            &quot;prefName&quot;: &quot;和歌山県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 31,
+            &quot;prefName&quot;: &quot;鳥取県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 32,
+            &quot;prefName&quot;: &quot;島根県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 33,
+            &quot;prefName&quot;: &quot;岡山県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 34,
+            &quot;prefName&quot;: &quot;広島県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 35,
+            &quot;prefName&quot;: &quot;山口県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 36,
+            &quot;prefName&quot;: &quot;徳島県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 37,
+            &quot;prefName&quot;: &quot;香川県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 38,
+            &quot;prefName&quot;: &quot;愛媛県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 39,
+            &quot;prefName&quot;: &quot;高知県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 40,
+            &quot;prefName&quot;: &quot;福岡県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 41,
+            &quot;prefName&quot;: &quot;佐賀県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 42,
+            &quot;prefName&quot;: &quot;長崎県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 43,
+            &quot;prefName&quot;: &quot;熊本県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 44,
+            &quot;prefName&quot;: &quot;大分県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 45,
+            &quot;prefName&quot;: &quot;宮崎県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 46,
+            &quot;prefName&quot;: &quot;鹿児島県&quot;
+        },
+        {
+            &quot;prefCode&quot;: 47,
+            &quot;prefName&quot;: &quot;沖縄県&quot;
+        }
+    ]
+}
+</code></pre><h3 id="備考">備考</h3>
+<p>モンハンワールドが面白すぎて…進捗ダメです。</p>
+</article><section class="article labels"><a class="tag" href=/tags/java/>java</a></section><section class="article navigation"><p><a class="link" href="/post/golang_json_marshal/"><span class="li">&larr;</span>Go言語でJSONを作成したときのイージーミス</a></p><p><a class="link" href="/post/gcp_scp/"><span class="li">&rarr;</span>GoogleComputeEngineとのファイルやりとり</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>

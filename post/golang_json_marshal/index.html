@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Go言語でJSONを作成したときのイージーミス&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.777ee3824a1eff7cd7e15aa64f6d18d4b1574d195cc6288fc6b6cd5dddfd26dc816168cf945ec9cada3ab228c7932bac.css" integrity="sha384-d37jgkoe/3zX4VqmT20Y1LFXTRlcxiiPxrbNXd39JtyBYWjPlF7Jyto6sijHkyus">
+<meta property="og:site_name"           content="ふぉれすけ広場">
+<meta property="og:title"               content="Go言語でJSONを作成したときのイージーミス">
+<meta property="og:url"                 content="http://foresukecom.github.io/post/golang_json_marshal/">
+<meta property="og:type"                content="article">
+<meta name="twitter:card"               content="summary_large_image">
+<meta property="twitter:title"          content="Go言語でJSONを作成したときのイージーミス">
+
+    <meta property="og:description"         content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+    <meta property="twitter:description"    content="筋トレしたり、お酒を飲んだり、ゲームしたり。">
+
+
+    <meta property="og:image"       content="http://foresukecom.github.io/static/thumbnail.jpg">
+    <meta property="og:image:url"   content="http://foresukecom.github.io/static/thumbnail.jpg">
+<body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Go言語でJSONを作成したときのイージーミス</h1><p class="article date">2018/05/11</p></section><article class="article markdown-body"><h3 id="はじめに">はじめに</h3>
+<p>Go言語を使って構造体をJSON形式に変換しようとしたら詰まったのでメモです。<br>
+JSON形式への変換は標準パッケージに含まれている<a href="https://golang.org/pkg/encoding/json/#Marshal"target="_blank">json.Marshal</a>を使っています。</p>
+<h3 id="失敗例">失敗例</h3>
+<p>こんな感じで構造体のスライスをJSONにしようとしたところ、作成されたJSONの中身が空になっていました。
+<script type="application/javascript" src="https://gist.github.com/foresukecom/aedf862960c69c1dafc44883789b2e3b.js"></script>
+</p>
+<h3 id="成功例">成功例</h3>
+<p>原因がわからなかったので色々と試行錯誤した結果、下記のコードで想定した動きを確認することができました。
+失敗例では10〜12行目の構造体のフィード名の先頭文字を小文字にしていましたが、成功例では先頭文字を大文字に変えています。<br>
+<script type="application/javascript" src="https://gist.github.com/foresukecom/10658b91ef3858873a7071015ae53b43.js"></script>
+</p>
+<h3 id="原因">原因</h3>
+<p>ここまで書けば原因がわかる方も多いと思いますが…<br>
+Go言語では変数や関数のスコープが先頭文字列が小文字か、大文字かで判定されます。
+先頭文字が大文字の場合は他パッケージからの参照が可能(いわゆるpublic)、先頭文字が小文字の場合は他パッケージから参照不可(いわゆるprivate)となります。
+このルールは構造体のフィードにも適用されます。<br>
+そのため、失敗例では構造体のフィードに対してパッケージ外からアクセスすることができず、作成されたJSONが空っぽになっていました。</p>
+<h3 id="ちなみに">ちなみに</h3>
+<p>作成されるJSONのKeyを先頭小文字にしたい場合、以下のようにフィードに対してタグをつけることで任意の名前を指定することができます。
+<script type="application/javascript" src="https://gist.github.com/foresukecom/1920fc83383d253c9f81bb93ede361c7.js"></script>
+</p>
+<h3 id="おわりに">おわりに</h3>
+<p>初歩的なミスでしたが原因に気づくまで時間がかかってしまいました。
+前に触ったことがあるはずなんですが…先頭文字でスコープが変化するのは慣れないと忘れちゃいますね。<br>
+コンパイルエラーとかで教えてくれないかなぁ。</p>
+</article><section class="article labels"><a class="tag" href=/tags/golang/>golang</a><a class="tag" href=/tags/json/>json</a></section><section class="article navigation"><p><a class="link" href="/post/english_comic/"><span class="li">&larr;</span>英語漫画のススメ</a></p><p><a class="link" href="/post/resas_java/"><span class="li">&rarr;</span>JavaからRESAS APIを使ってみましたよ</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>
