@@ -18,7 +18,7 @@
       <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/koka/</guid>
-      <description>&lt;p&gt;今回は科学リテラシーを身に着けたい人の話です。&lt;/p&gt;</description>
+      <description>以前からPodcast はよく聴いていたのですが、最近は青春あるでひど、いんよう、ヴォイニッチの科学書 など、サイエンス系のPodcast を聴く</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/yabai_statistics/</guid>
-      <description>&lt;p&gt;漫画、小説以外で仕事に関係ない本を久しぶりに読みました。&lt;/p&gt;</description>
+      <description>2013年10月07日に買って以来、ずっとKindleライブラリの肥やしになっていた「ヤバい統計学」をようやく読みました。 渋滞問題やドーピン</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/golang_cli/</guid>
-      <description>&lt;p&gt;golangでCLIツールを作るにあたり、同じオプションを複数指定する方法を調べましたよ。&lt;/p&gt;</description>
+      <description>CLIツールでは同じオプションを複数指定するようなケースはないと思っていたのですが、Dockerで複数のポートフォワーディングしたり、cur</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/steam2020summer/</guid>
-      <description>&lt;p&gt;Steamサマーセール2020が始まりましたよ。&lt;/p&gt;</description>
+      <description>みんな大好きSteamでサマーセールが始まったので、Steamライブラリのプレイ実績のあるゲームからおすすめを紹介していきます。 ※プレイ時間</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/react_anime/</guid>
-      <description>&lt;p&gt;Reactでアニメーションを試してみましたよ。&lt;/p&gt;</description>
+      <description>Reactではアニメーションを実装するためのサードパーティのライブラリがいくつか用意されていますが、今回はreact-transition-</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/tansan/</guid>
-      <description>&lt;p&gt;ウィルキンソン タンサンがバージョンアップしましたよ。&lt;/p&gt;</description>
+      <description>Amazon定期便を使ってウィルキンソン タンサンを毎月購入してるにですが、新しいパッケージが発売したので試しに買ってみました。 左がもともとの</description>
     </item>
     
     <item>
@@ -72,7 +72,7 @@
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/react_tweet/</guid>
-      <description>&lt;p&gt;Reactで作った画面にTweetを埋め込むときのメモです。&lt;/p&gt;</description>
+      <description>普通には埋め込めないのです test &amp;mdash; Twitter (@Twitter) February 7, 2020 create-react-appで自動生成されるReactのページに上記Tweetを埋め込もうと、以</description>
     </item>
     
     <item>
@@ -81,7 +81,7 @@
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/go_react_websocket/</guid>
-      <description>&lt;p&gt;GoとReactでWebsocket通信の入門をしましたよ。&lt;/p&gt;</description>
+      <description>はじめに バックエンドはGoを、フロントはReactを使ってシンプルなチャットを作ってみました。 Go側はgorilla/websocketを参</description>
     </item>
     
     <item>
@@ -90,7 +90,7 @@
       <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/teal/</guid>
-      <description>&lt;p&gt;「ティール組織 ― マネジメントの常識を覆す次世代型組織の出現」 を読みましたよ。&lt;/p&gt;</description>
+      <description>「ティール組織 ― マネジメントの常識を覆す次世代型組織の出現」 を読みました。 長くなるし、他で紹介されている記事も多くあるので「ティール組織」の</description>
     </item>
     
     <item>
@@ -99,8 +99,7 @@
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/docker_image/</guid>
-      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;以前、「自作のツールをDockerイメージとして配ると便利だよー」と聞いたので試してみました。&lt;/p&gt;</description>
+      <description>はじめに 自作のスクリプトをDockerコンテナにまとめて、配布する方法を試してみました。 今回はPHPのWebアプリを展開してみます。 サンプル</description>
     </item>
     
     <item>

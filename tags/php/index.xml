@@ -18,8 +18,7 @@
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/docker_image/</guid>
-      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;以前、「自作のツールをDockerイメージとして配ると便利だよー」と聞いたので試してみました。&lt;/p&gt;</description>
+      <description>はじめに 自作のスクリプトをDockerコンテナにまとめて、配布する方法を試してみました。 今回はPHPのWebアプリを展開してみます。 サンプル</description>
     </item>
     
   </channel>

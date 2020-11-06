@@ -18,7 +18,7 @@
       <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/golang_cli/</guid>
-      <description>&lt;p&gt;golangでCLIツールを作るにあたり、同じオプションを複数指定する方法を調べましたよ。&lt;/p&gt;</description>
+      <description>CLIツールでは同じオプションを複数指定するようなケースはないと思っていたのですが、Dockerで複数のポートフォワーディングしたり、cur</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/go_react_websocket/</guid>
-      <description>&lt;p&gt;GoとReactでWebsocket通信の入門をしましたよ。&lt;/p&gt;</description>
+      <description>はじめに バックエンドはGoを、フロントはReactを使ってシンプルなチャットを作ってみました。 Go側はgorilla/websocketを参</description>
     </item>
     
     <item>

@@ -18,7 +18,7 @@
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/react_anime/</guid>
-      <description>&lt;p&gt;Reactでアニメーションを試してみましたよ。&lt;/p&gt;</description>
+      <description>Reactではアニメーションを実装するためのサードパーティのライブラリがいくつか用意されていますが、今回はreact-transition-</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/react_tweet/</guid>
-      <description>&lt;p&gt;Reactで作った画面にTweetを埋め込むときのメモです。&lt;/p&gt;</description>
+      <description>普通には埋め込めないのです test &amp;mdash; Twitter (@Twitter) February 7, 2020 create-react-appで自動生成されるReactのページに上記Tweetを埋め込もうと、以</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/go_react_websocket/</guid>
-      <description>&lt;p&gt;GoとReactでWebsocket通信の入門をしましたよ。&lt;/p&gt;</description>
+      <description>はじめに バックエンドはGoを、フロントはReactを使ってシンプルなチャットを作ってみました。 Go側はgorilla/websocketを参</description>
     </item>
     
   </channel>
