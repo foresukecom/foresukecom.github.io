@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Steam</title>
+      <link>/tags/steam/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/steam/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>book</title>
@@ -45,15 +54,6 @@
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/other/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Steam</title>
-      <link>/tags/steam/</link>
-      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/steam/</guid>
       <description></description>
     </item>
     
