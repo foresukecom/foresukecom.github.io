@@ -44,18 +44,150 @@
 ※今回の下に落ちるアニメーションだけなので2つの状態(<code>entering</code>と<code>entered</code>)だけを使用しています。</p>
 <p>私はCSSを使い慣れていないので色々と手こずりましたが、CSSに慣れた人なら手軽にアニメーションが実装できそうです。</p>
 <p>全体のコードは<a href="https://github.com/foresukecom/react-raindrops"target="_blank">github</a>、<a href="https://codesandbox.io/s/react-rain-wf1z5?from-embed"target="_blank">codesandbox</a>で公開しています。</p>
-<p><span class="embed amazon-link">
-    <iframe class="amazon-link" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no"
-            frameborder="0"
-            src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke04-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07BGYSX6V&linkId=5572de7d0a231b8291f61b356f4d661c"></iframe>
-</span>
+<p><div>
+    <a target="_blank" href="https://www.amazon.co.jp/gp/product/B07BGYSX6V/?tag=foresuke0b-22" text-decoration: none;>
+        <div class="amazon-widget">
+            <div class="amazon-widget-img">
+                <img src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B07BGYSX6V&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL350_&tag=foresuke0b-22" />
+            </div>
+            <div class="amazon-widget-body">
+                <div class="amazon-widget-title">
+                    React開発 現場の教科書（リフロー版）
+                </div>
+                <div class="amazon-widget-via">
+                    <img src="https://www.amazon.co.jp/favicon.ico" />
+                    amazon.co.jp
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
 
-<span class="embed amazon-link">
-    <iframe class="amazon-link" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no"
-            frameborder="0"
-            src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=foresuke04-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4873117887&linkId=1c0b8844cf82479a5eeba0373de9dba3"></iframe>
-</span>
-</p>
+<style type="text/css">
+    a:hover{
+        text-decoration: none;
+    }
+
+    .amazon-widget {
+        width: 100%;
+        height: 230px;
+        display: flex;
+        background-color:#232325;
+        color: black;
+        box-shadow:0 0 1px whitesmoke;
+    }
+    .amazon-widget:hover {
+        box-shadow:0 0 15px whitesmoke;
+    }
+    
+    .amazon-widget-img{
+        width: 230px;
+        height: 230px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }    
+    .amazon-widget-img img{
+        max-height: 230px;
+        height: auto;
+    }    
+  
+    .amazon-widget-body {
+        width: 100%;
+    }    
+
+    .amazon-widget-title {
+        color: #a0a0a1;
+        padding:20px 10px 20px 10px;
+        height: 200px;
+    }
+    .amazon-widget-via {
+        color: #a0a0a1;
+        text-align: right;
+        font-size: 14px;
+        }
+    .amazon-widget-via img {
+        width: 15px;
+        height: 15px;
+        margin: 0;
+        padding: 0;
+        display: inline;
+        vertical-align: text-bottom;
+    }
+
+</style>
+<div>
+    <a target="_blank" href="https://www.amazon.co.jp/gp/product/4873117887/?tag=foresuke0b-22" text-decoration: none;>
+        <div class="amazon-widget">
+            <div class="amazon-widget-img">
+                <img src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4873117887&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL350_&tag=foresuke0b-22" />
+            </div>
+            <div class="amazon-widget-body">
+                <div class="amazon-widget-title">
+                    Reactビギナーズガイド ―コンポーネントベースのフロントエンド開発入門
+                </div>
+                <div class="amazon-widget-via">
+                    <img src="https://www.amazon.co.jp/favicon.ico" />
+                    amazon.co.jp
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<style type="text/css">
+    a:hover{
+        text-decoration: none;
+    }
+
+    .amazon-widget {
+        width: 100%;
+        height: 230px;
+        display: flex;
+        background-color:#232325;
+        color: black;
+        box-shadow:0 0 1px whitesmoke;
+    }
+    .amazon-widget:hover {
+        box-shadow:0 0 15px whitesmoke;
+    }
+    
+    .amazon-widget-img{
+        width: 230px;
+        height: 230px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }    
+    .amazon-widget-img img{
+        max-height: 230px;
+        height: auto;
+    }    
+  
+    .amazon-widget-body {
+        width: 100%;
+    }    
+
+    .amazon-widget-title {
+        color: #a0a0a1;
+        padding:20px 10px 20px 10px;
+        height: 200px;
+    }
+    .amazon-widget-via {
+        color: #a0a0a1;
+        text-align: right;
+        font-size: 14px;
+        }
+    .amazon-widget-via img {
+        width: 15px;
+        height: 15px;
+        margin: 0;
+        padding: 0;
+        display: inline;
+        vertical-align: text-bottom;
+    }
+
+</style></p>
 </article><section class="article labels"><a class="tag" href=/tags/react/>React</a></section><section class="article navigation"><p><a class="link" href="/post/steam2020summer/"><span class="li">&larr;</span>Steamサマーセール2020です</a></p><p><a class="link" href="/post/tansan/"><span class="li">&rarr;</span>ウィルキンソン 新パッケージ</a class="link">
     </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
     <p class="copyright">©2019 foresuke.</p>
