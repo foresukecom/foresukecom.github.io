@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dockerコンテナで開発環境を構築しましたよ</title>
+      <link>/post/devcontainer/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/devcontainer/</guid>
+      <description>はじめに MicrosoftがVSCodeの拡張機能として公開しているRemote - Containersを試してみました。 この拡張機能を使うと</description>
+    </item>
     
     <item>
       <title>golangのCLIツールで複数のオプションを受け取る</title>
