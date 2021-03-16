@@ -50,38 +50,47 @@ zsh: <span class="nb">command</span> not found: node
 </code></pre></div><h2 id="バックエンド構築">バックエンド構築</h2>
 <p>まずはバックエンド側の環境構築です。</p>
 <ol>
-<li>適当なディレクトリ(今回は<code>dev-backend</code>)を作成しVSCodeで開きます。<br>
-(このディレクトリの中に開発用コンテナ情報とソースコードが格納されます。)</li>
-<li>VSCodeからコマンドパレットを開き、<code>Remote-Containers: Add Development Container Configuration Files</code> と入力する。</li>
-</ol>
+<li>
+<p>適当なディレクトリ(今回は<code>dev-backend</code>)を作成しVSCodeで開きます。<br>
+(このディレクトリの中に開発用コンテナ情報とソースコードが格納されます。)</p>
+</li>
+<li>
+<p>VSCodeからコマンドパレットを開き、<code>Remote-Containers: Add Development Container Configuration Files</code> と入力する。
 <span class="image-container"><span class="link" ><a href="/images/20210315_devcontainer/backend1.png" 
-        target="_blank"><img class="img" src="/images/20210315_devcontainer/backend1.png"/></a></span><span class="caption">
-            <span class="title">Steve Francia</span class="image-container-caption">
-        </span>
-</span>
-<img src='/images/20210315_devcontainer/backend1.png'>  
-<ol start="3">
-<li>開発環境として使用するベースのコンテナとして、<code>Go</code>を選択する。</li>
-</ol>
-<img src='/images/20210315_devcontainer/backend2.png'>  
-<ol start="4">
+        target="_blank"><img class="img" src="/images/20210315_devcontainer/backend1.png"/></a></span>
+</span></p>
+</li>
+<li>
+<p>開発環境として使用するベースのコンテナとして、<code>Go</code>を選択する。
+<span class="image-container"><span class="link" ><a href="/images/20210315_devcontainer/backend2.png" 
+        target="_blank"><img class="img" src="/images/20210315_devcontainer/backend2.png"/></a></span>
+</span></p>
+</li>
 <li>
 <p>Goのバージョンは最新を選択する。
-<img src='/images/20210315_devcontainer/backend3.png'></p>
+<span class="image-container"><span class="link" ><a href="/images/20210315_devcontainer/backend3.png" 
+        target="_blank"><img class="img" src="/images/20210315_devcontainer/backend3.png"/></a></span>
+</span></p>
 </li>
 <li>
 <p>オプションは追加しない。<br>
 <code>.devcontainer</code>というディレクトリが作成され、中にDockerfileなどのコンテナ情報が入っています。
-<img src='/images/20210315_devcontainer/backend4.png'></p>
+<span class="image-container"><span class="link" ><a href="/images/20210315_devcontainer/backend4.png" 
+        target="_blank"><img class="img" src="/images/20210315_devcontainer/backend4.png"/></a></span>
+</span></p>
 </li>
 <li>
 <p>右下の通知アイコンから、<code>Reopen in Container</code>を選択する。<br>
 初回はコンテナを作るので数分かかります。
-<img src='/images/20210315_devcontainer/backend5.png'></p>
+<span class="image-container"><span class="link" ><a href="/images/20210315_devcontainer/backend5.png" 
+        target="_blank"><img class="img" src="/images/20210315_devcontainer/backend5.png"/></a></span>
+</span></p>
 </li>
 </ol>
 <p>開発用のコンテナに接続した場合、左下が以下のように表示されます。
-<img src='/images/20210315_devcontainer/backend6.png'></p>
+<span class="image-container"><span class="link" ><a href="/images/20210315_devcontainer/backend6.png" 
+        target="_blank"><img class="img" src="/images/20210315_devcontainer/backend6.png"/></a></span>
+</span></p>
 <p>ソースコードについては、以前公開した<a href="https://github.com/foresukecom/go-react-chat"target="_blank">foresukecom/go-react-chat</a>を流用します。
 もとのリポジトリではバックエンドとフロントエンドをまとめていたので、ここではバックエンド部分だけを取得します。</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir go-react-chat
