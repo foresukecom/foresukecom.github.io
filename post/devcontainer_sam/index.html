@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja"><meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Dockerコンテナで開発環境を構築しましたよ その2&nbsp;&ndash;&nbsp;ふぉれすけ広場</title><link rel="stylesheet" href="/css/core.min.fed9bb974f73abb74c3d5716d570bfbd3bcfef41c13f0eb103e396ad8abba37b7a017809732126d0e49cb9c64ae9120e.css" integrity="sha384-/tm7l09zq7dMPVcW1XC/vTvP70HBPw6xA&#43;OWrYq7o3t6AXgJcyEm0OScucZK6RIO">
+<meta property="og:site_name"           content="ふぉれすけ広場">
+<meta property="og:title"               content="Dockerコンテナで開発環境を構築しましたよ その2">
+<meta property="og:url"                 content="http://foresukecom.github.io/post/devcontainer_sam/">
+<meta property="og:type"                content="article">
+<meta name="twitter:card"               content="summary">
+<meta property="twitter:title"          content="Dockerコンテナで開発環境を構築しましたよ その2">
+
+    
+    <meta property="og:description"         content="DevContainerを使ったAWS SAMの開発環境です。">
+    <meta property="twitter:description"    content="DevContainerを使ったAWS SAMの開発環境です。">
+    
+
+
+    
+    <meta property="og:image"       content="http://foresukecom.github.io/icon/docker.png">
+    <meta property="og:image:url"   content="http://foresukecom.github.io/icon/docker.png">
+    
+<body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/profile.JPG" alt /><span class="site name">ふぉれすけ広場</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://github.com/foresukecom"target="_blank">GitHub</a><a class="nav item" href="https://twitter.com/foresukecom"target="_blank">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">筋トレしたり、お酒を飲んだり、ゲームしたり。</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Dockerコンテナで開発環境を構築しましたよ その2</h1><p class="article date">2021/03/18</p></section><article class="article markdown-body"><h2 id="はじめに">はじめに</h2>
+<p><a href="https://foresuke.com/post/devcontainer/"target="_blank">前回</a>に引き続き、VSCodeの<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"target="_blank">Remote - Containers</a>を使って開発環境を構築していきます。</p>
+<p>Remote - Containersでは標準で、Go, Python, PHP, Ruby, Node, Java, Rust, C, swift など、多くの開発環境が用意されています。<br>
+提供されている環境のリストは以下リンクから確認することができます。
+<a href="https://github.com/microsoft/vscode-dev-containers/tree/master/containers">https://github.com/microsoft/vscode-dev-containers/tree/master/containers</a></p>
+<p>今回はこのリストに載ってない AWS SAM(SAM、Serverless Application Model)の開発環境を構築してみます。</p>
+<h2 id="構築手順">構築手順</h2>
+<ol>
+<li>
+<p>適当なディレクトリ(今回は<code>dev-sam</code>)を作成しVSCodeで開きます。<br>
+(このディレクトリの中に開発用コンテナ情報とソースコードが格納されます。)</p>
+</li>
+<li>
+<p>VSCodeからコマンドパレットを開き、<code>Remote-Containers: Add Development Container Configuration Files</code> と入力する。</p>
+</li>
+<li>
+<p>開発環境として使用するベースのコンテナとして、<code>Docker in Docker</code>を選択する。</p>
+</li>
+<li>
+<p><code>Dockerfile</code>を編集する。<br>
+<code>.devcontainer/Dockerfile</code>の末尾に以下を追記する。</p>
+</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-.devcontainer/Dockerfile" data-lang=".devcontainer/Dockerfile"><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span><span class="se">\
+</span><span class="se"></span>    apt-get install -y gcc build-essential curl file git vim<span class="err">
+</span><span class="err"></span><span class="k">USER</span><span class="s"> vscode</span><span class="err">
+</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /home/vscode</span><span class="err">
+</span><span class="err"></span><span class="k">ENV</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="se">\
+</span><span class="se"></span>    <span class="nv">PATH</span><span class="o">=</span>/home/vscode/.linuxbrew/bin:/home/vscode/.linuxbrew/sbin:<span class="nv">$PATH</span> <span class="se">\
+</span><span class="se"></span>    <span class="nv">SHELL</span><span class="o">=</span>/bin/bash<span class="err">
+</span><span class="err"></span><span class="k">RUN</span> git clone https://github.com/Homebrew/brew /home/vscode/.linuxbrew/Homebrew <span class="se">\
+</span><span class="se"></span>    <span class="o">&amp;&amp;</span> mkdir /home/vscode/.linuxbrew/bin <span class="se">\
+</span><span class="se"></span>    <span class="o">&amp;&amp;</span> ln -s ../Homebrew/bin/brew /home/vscode/.linuxbrew/bin/ <span class="se">\
+</span><span class="se"></span>    <span class="o">&amp;&amp;</span> brew config<span class="err">
+</span><span class="err"></span><span class="k">RUN</span> git config --global http.postBuffer 2M <span class="o">&amp;&amp;</span><span class="se">\
+</span><span class="se"></span>    brew tap aws/tap <span class="o">&amp;&amp;</span><span class="se">\
+</span><span class="se"></span>    brew install aws-sam-cli <span class="o">&amp;&amp;</span><span class="se">\
+</span><span class="se"></span>    brew install node<span class="err">
+</span></code></pre></div><ol start="5">
+<li>右下の通知アイコンから、<code>Reopen in Container</code>を選択する。<br>
+linux brew を使って色々インストールしているので初回は時間がかかります。
+(数時間かかるので寝る前にでもやっておきましょう)</li>
+</ol>
+<h2 id="sam-プロジェクト作成">SAM プロジェクト作成</h2>
+<p>とりあえずnode.jsのサンプルプロジェクトを実行してみます。<br>
+オプションは初期設定でポチポチしていきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vscode ➜ /workspaces/sam-container $ sam init
+Which template <span class="nb">source</span> would you like to use?
+        <span class="m">1</span> - AWS Quick Start Templates
+        <span class="m">2</span> - Custom Template Location
+Choice: <span class="m">1</span>
+What package <span class="nb">type</span> would you like to use?
+        <span class="m">1</span> - Zip <span class="o">(</span>artifact is a zip uploaded to S3<span class="o">)</span>
+        <span class="m">2</span> - Image <span class="o">(</span>artifact is an image uploaded to an ECR image repository<span class="o">)</span>
+Package type: <span class="m">1</span>
+
+Which runtime would you like to use?
+        <span class="m">1</span> - nodejs14.x
+        <span class="m">2</span> - python3.8
+        <span class="m">3</span> - ruby2.7
+        <span class="m">4</span> - go1.x
+        <span class="m">5</span> - java11
+        <span class="m">6</span> - dotnetcore3.1
+        <span class="m">7</span> - nodejs12.x
+        <span class="m">8</span> - nodejs10.x
+        <span class="m">9</span> - python3.7
+        <span class="m">10</span> - python3.6
+        <span class="m">11</span> - python2.7
+        <span class="m">12</span> - ruby2.5
+        <span class="m">13</span> - java8.al2
+        <span class="m">14</span> - java8
+        <span class="m">15</span> - dotnetcore2.1
+Runtime: <span class="m">1</span>
+
+Project name <span class="o">[</span>sam-app<span class="o">]</span>: 
+
+Cloning app templates from https://github.com/aws/aws-sam-cli-app-templates
+
+AWS quick start application templates:
+        <span class="m">1</span> - Hello World Example
+        <span class="m">2</span> - Step Functions Sample App <span class="o">(</span>Stock Trader<span class="o">)</span>
+        <span class="m">3</span> - Quick Start: From Scratch
+        <span class="m">4</span> - Quick Start: Scheduled Events
+        <span class="m">5</span> - Quick Start: S3
+        <span class="m">6</span> - Quick Start: SNS
+        <span class="m">7</span> - Quick Start: SQS
+        <span class="m">8</span> - Quick Start: Web Backend
+Template selection: <span class="m">1</span>
+
+    -----------------------
+    Generating application:
+    -----------------------
+    Name: sam-app
+    Runtime: nodejs14.x
+    Dependency Manager: npm
+    Application Template: hello-world
+    Output Directory: .
+    
+    Next steps can be found in the README file at ./sam-app/README.md
+</code></pre></div><p>ビルドして、ローカル(DevContainer内)で実行します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> sam-app
+sam build
+sam <span class="nb">local</span> start-api
+</code></pre></div><p>ローカル環境から、ブラウザや<code>curl</code>で http://127.0.0.1:3000/hello にアクセスすると、<code>{&quot;message&quot;:&quot;hello world&quot;}</code>が返ってきます。</p>
+<h2 id="まとめ">まとめ</h2>
+<p>時間はかかりましたが、SAM環境を構築することができました。
+他のコンテナをベースにすればもっとスマートに環境を構築できるかもしれません。<br>
+もっといい方法があれば教えてください(´・ω・｀)</p>
+</article><section class="article labels"><a class="tag" href=/tags/docker/>Docker</a><a class="tag" href=/tags/aws/>AWS</a></section><section class="article navigation"><p><a class="link" href="/post/devcontainer/"><span class="li">&rarr;</span>Dockerコンテナで開発環境を構築しましたよ</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 foresuke.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-89386946-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>
