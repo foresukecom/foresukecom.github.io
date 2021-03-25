@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>©2019 foresuke.</copyright>
-    <lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Mar 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>『エンジニアリング組織論への招待 ~不確実性に向き合う思考と組織のリファクタリング』を読みましたよ。</title>
+      <link>/post/engineering_organization_theory/</link>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/engineering_organization_theory/</guid>
+      <description>「エンジニアリング組織論への招待」を読んだのでメモです。 エンジニアリング組織論への招待 ~不確実性に向き合う思考と組織のリファクタリング amazon.co.jp a:hover{ text-decoration:</description>
+    </item>
     
     <item>
       <title>「子供の科学」が面白い</title>
